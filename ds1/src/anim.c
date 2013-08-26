@@ -433,6 +433,7 @@ COF_S * anim_load_cof(char * base, char * tok, char * mod, char * clas, long use
         i                                           = 0;
         line                                        = 0;
         glb_ds1edit.obj_desc[obj_line].objects_line = -1;
+
         while ( ! done) {
             sptr = txt2->data + (i * txt2->line_size) + txt2->col[glb_ds1edit.col_objects_id].offset;
             lptr = (long *) sptr;

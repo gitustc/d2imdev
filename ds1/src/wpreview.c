@@ -144,7 +144,7 @@ void wpreview_reiinit_animated_floor(int ds1_idx)
 // draw floor layer
 void wpreview_draw_f(int ds1_idx, int x, int y, int mx, int my, int z, int selected)
 {
-    
+
     BLOCK_TABLE_S * bt_ptr;
     BITMAP        * tmp_bmp;
     CELL_F_S      * f_ptr;
@@ -1059,6 +1059,15 @@ debug:
         if (bmp == NULL) {
             continue;
         }
+
+#if 0
+        most important here;
+
+        dx0 = ((y-2) * -glb_ds1.tile_w / 10) + ((x+3) * glb_ds1.tile_w / 10);
+        dy0 = 4 + ((y-2) *  glb_ds1.tile_h / 10) + ((x+3) * glb_ds1.tile_h / 10);
+
+        x y is offset of tile
+#endif 
         dx = dx0 - glb_ds1edit.win_preview.x0 + cof->xoffset + lay->off_x;
         dy = dy0 - glb_ds1edit.win_preview.y0 + cof->yoffset + lay->off_y;
         if (((dx + bmp->w) < 0) || ((dy + bmp->h) < 0)) {
