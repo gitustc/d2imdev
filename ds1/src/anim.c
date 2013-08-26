@@ -219,6 +219,26 @@ COF_S * anim_load_cof(char * base, char * tok, char * mod, char * clas, long use
     cof->lay = * bptr;
     bptr++;
 
+
+#if 0
+    typedef struct COF_S
+    {
+        UBYTE     lay;
+        UBYTE     fpd; // frames per direction
+        UBYTE     dir;
+        long      xoffset;
+        long      yoffset;
+        LAY_INF_S lay_inf[COMPOSIT_NB];
+        UBYTE     * priority;
+        long      cur_frame;
+        int       cur_dir;
+        long      spd_mul;
+        long      spd_div;
+        long      spd_mod; // = is (mul % div), for extra precision
+        long      orderflag; // from data\global\excel\objects.txt, 0 1 or 2
+    } COF_S;
+#endif
+
     // printf( "lay = %3d\n", cof->lay ); {{{
 
     // lay =   3
@@ -288,7 +308,7 @@ COF_S * anim_load_cof(char * base, char * tok, char * mod, char * clas, long use
         bptr += 4;
 
         // dcc / dc6
-        //HD表示啥?
+        //HD表示啥? HD means head
         sptr = txt->data + (obj_line * txt->line_size) + txt->col[misc_get_txt_column_num(RQ_OBJ, "HD") + idx].offset;
         sprintf(name, "%s/%s/%s/%s%s%s%s%s.dcc", base, tok, comp_str[idx], tok, comp_str[idx], sptr, mod, cof->lay_inf[idx].wclass);
 
