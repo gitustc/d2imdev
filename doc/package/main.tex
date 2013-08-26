@@ -1,0 +1,874 @@
+\chapter{资源压缩与打包}
+游戏中的脚本,贴图,声音,配置文件等极多.如果单靠建立文件夹难以为继,一般的做法是压缩打包.本章我们将简单LZSS压缩方法和打包文件制作,并给出一个游戏资源管理器.
+
+除了压缩与打包,另一个重要的问题就是加密,但是我们这里不涉及.
+
+\newpage
+\section{资源压缩算法}
+压缩资源的理由很简单,现在游戏传播一般使用网路分发方式,更小的文件大小会更方便.
+
+压缩算法很多,我这里只详细的解释我们在D2IM中使用的LASS算法.
+
+\subsection{LASS算法}
+\section{资源打包与提取}
+资源打包的最大理由是磁盘碎片.
+
+然而打包后需要我们快速的在包文件中定位到对应的文件内容.D2IM中使用的通用打包文件后缀为.d2p,我们将在这里对其予以解释.
+
+首先,我们使用文件名的方式对其进行索引.然而如何将多层级树形目录结构对应到片面列表结构,这里我们用到散列算法,d2p文件中使用的散列算法是FVN-1散列算法.这个算法对文件名类有很好的散列效果.
+\subsection{散列算法}
+散列算法又称又称HASH函数或者凑杂算法.HASH函数就是把任意长的输入消息串变化成固定长的输出串的一种函数.这个输出串称为该消息的杂凑值或者HASH值.一个杂凑函数应该至少满足以下几个条件:
+
+\begin{itemize}
+\item 输入长度是任意的
+\item 输出长度是固定的
+\item 对每一个给定的输入,计算出hash值是很容易的
+\item 给定杂凑函数的描述,找到两个不同的输入消息杂凑到同一个值是计算上不可行的
+\end{itemize}
+我们需要的HASH函数接口如下:
+\begin{lstlisting}
+/*输入: filename  输入文件名/路径名
+ *      seed1/2   输入HASH随机数种子
+ *输出: crc1/2    输出校验
+ *      return    HASH值,位宽由宏D2P_CAPACITY_BIT_WIDTH决定
+ */
+uint32_t d2p_hash(
+        const char *filename, 
+        uint32_t seed1, uint32_t seed2,
+        uint32_t *crc1, uint32_t *crc2);
+\end{lstlisting}
+\subsection{FVN算法}
+
+
+FNV哈希算法全名为Fowler-Noll-Vo算法,是以三位发明人Glenn Fowler,Landon Curt Noll,Phong Vo的名字来命名的.FNV能快速HASH大量数据并保持较小的冲突率,它的高度分散使它适用于HASH一些非常相近的字符串,比如URL,hostname,文件名,text,IP地址等.FNV算法有两个版本FNV-1和FNV-1a,下面给出两种算法的C描述:
+
+\begin{lstlisting}
+
+#define FNV_32_PRIME     ((uint32_t) 0x01000193)
+#define FNV_32_INIT      ((uint32_t) 0x811C9DC5)
+static inline uint32_t fnv1_32(void *buf, size_t len)  
+{
+    unsigned char   *bp   = (unsigned char *) buf;
+    unsigned char   *be   = bp + len;
+    uint32_t         hval = FNV_32_INIT;
+    while (bp < be) {
+        hval ^= (uint32_t) *bp++;  
+        hval *= FNV_32_PRIME;
+    }
+    return hval;
+}
+\end{lstlisting}
+
+
+\begin{lstlisting}
+MurmurHash算法：高运算性能，低碰撞率，由Austin Appleby创建于2008年，现已应用到Hadoop、libstdc++、nginx、libmemcached等开源系统。2011年Appleby被Google雇佣，随后Google推出其变种的CityHash算法。
+
+官方网站：https://sites.google.com/site/murmurhash/
+
+MurmurHash算法，自称超级快的hash算法，是FNV的4-5倍。官方数据如下：
+
+    OneAtATime – 354.163715 mb/sec
+    FNV – 443.668038 mb/sec
+    SuperFastHash – 985.335173 mb/sec
+    lookup3 – 988.080652 mb/sec
+    MurmurHash 1.0 – 1363.293480 mb/sec
+    MurmurHash 2.0 – 2056.885653 mb/sec
+
+但也有文章声称，只有当key的长度大于10字节的时候，MurmurHash的运算速度才快于DJB。“从计算速度上来看，MurmurHash只适用于已知长度的、长度比较长的字符”。
+
+研究一下CityHash算法
+
+\end{lstlisting}
+
+\section{D2P文件结构}
+先列出D2P的文件头
+\begin{lstlisting}
+#define D2P_CAPACITY_BIT_WIDTH  ((uint32_t)20)
+#define D2P_CAPACITY            ((uint32_t)(1<<(D2P_CAPACITY_BIT_WIDTH-1)))
+typedef struct{
+    uint8_t         signature1;
+    uint8_t         signature2;
+    uint8_t         signature3;
+    uint8_t         version;
+
+    uint32_t        seed1;
+    uint32_t        seed2;
+
+    uint32_t        capacity;
+}d2phdr_t;
+\end{lstlisting}
+
+\url{http://blog.csdn.net/fg2006/article/details/6838147} hash函数评定
+　　Hash函数主要用于完整性校验和提高数字签名的有效性,目前已有很多方案。这些算法都是伪随机函数,任何杂凑值都是等可能的。输出并不以可辨别的方式依赖于输入;在任何输入串中单个比特的变化,将会导致输出比特串中大约一半的比特发生变化。 
+
+首先，定义两个名词。
+block ：打包数据的单位，可以是一个文件也可以是一个数据块。总之是资源包中的一块数据。
+包，资源包：即包含多份数据的一个文件。
+
+1 block size + block data 
+按数据块大小+数据块内容的方式将一批数据块逐个打包。这是比较简单实用的方法。往往还需要生成一个文本文件指明每个数据块是什么内容。如果按照默认顺序打包和读取就不需要了。
+这种方法主要用于包中的数据需要全部同时读出的情况。因为这种格式的包，从中间单独抽取某个数据块读出比较麻烦。只能跳过若干数据块。
+
+2 offset table + block datas
+这种方式下，首先在包头部写入一个offset table,即每个数据块在包中的起始位置。然后将所有数据块的内容逐个写入包中。这个offset table条目数一般比block数大1，这样
+table[0]=0
+table[1]=block 0 size
+table[2]=block 1 size + table[1]
+table[3]=block 2 size + table[2]
+......
+    table[n]=block n-1 size + table[n-1]
+(block从0开始计数,共n个[0,n-1])
+    读取的时候，根据block id,先在table中查到table[id]和table[id+1], 两者之差就是block size.table[id]是block地址。
+    当然也需要一个配套的文本文件记录每个block id对应的内容。
+    这种方式的好处是可以只读出需要的内容。且table所占的容量只比第一种方式稍大。是非常实用的方式。
+
+    3 trunk 方式
+    首先定义trunk：block id + block size + block data
+    只比第一种方式多了一个block id。但灵活性提高了。因为可以根据id判断当前的block是否是需要载入的。如果是就载入否则跳过这个block接着看下一个block,直到找到或没找到需要载入的block。block id不但可以指明数据块在同类数据中的id,而且可以指明是哪一种资源，这样就可以把不同种类的资源打包到一起。当然在前面的方式中可以在数据块中包含资源类型，但灵活性就差了，特别是必须在所有类型的数据块中统一写一些数据在相同位置来表示资源类型。而在trunk方式中，只要在block id中取一些位来定义资源类型，然后根据资源类型调用不同类型的载入函数去读取数据是相当灵活的。trunk方式的缺点是读取速度稍慢，因为必须一个个找过去。
+
+    4 file name 索引方式
+    不知道除了我有没有人用过这种方式，这是一种偷懒的方式。打包对象是文件。先在包头部写入一个文件名和offset 映射表。文件名按字符串写入包中，所以这之前要写入文件名的字节数。
+    映射表的结构为： 文件名字节数+文件名字符串+文件offset
+    当然文件名必须用ascii编码。这儿还有个变通的方式。你可以用utf-8格式的编码，就不需要写文件名自己数了。
+    映射表之后就按顺序写入文件。
+    这种方式其实是offset table 方式的一种变体。不同的是直接将文件名写入包中。读取时可以指定文件名从包中读出，根从持久性设备上读单个文件的感觉一样。不必再定义额外的文件文件表明每个数据块的含义了。所以是一种比较懒的方式。缺点是浪费容量。
+
+    小结：
+    以上4种方式各有用处，用的最多的是offset table和trunk方式。此文需要持续补充更正完善
+    我既不是Linux版主, 也不是Linux协会负责人, 我只是一个普普通通的Linux用户. 我做版衫的目的只是想让今年和往年一样, 有一件Linux版衫. 4月5日stephenjy发帖求版衫 , 随即李喵喵投稿, 一片赞同之声之后一个月内无人理睬. 5月15日talentmonkey发帖求版衫, 同样的时间我在Linux协会邮件列表里也求, 一片赞同之声之后继续无人理睬. 之后紧接着boj的每周小聚那天晚上, 我直接跟版主说, 于是版主随手发了个帖子正式征集版衫. 在那之后又过了半个月, 仍然只有李喵喵同学一份投稿. 于是我和李喵喵两个人决定着手开始做版衫, 商量到钱的问题的时候向版主询问建议, 版主的回复是这种细节问题你们自己解.
+
+
+
+    %
+    %struct FileHeader
+    %{
+        %unsigned long headsize；//文件头长度
+            %int Version；//文件版本
+            %int Compress；//压缩类型
+            %int AllNumber；//图片总数
+            %}
+%而后紧跟一个结构数组，这个结构描述了每个图片的起始偏移量，这个偏移量是以文件头的长度+索引结构数组的长度+1为基址的，还描述了图片的帧数，为1则表现为静态图片，大于1则表示动态图片(动态图片很有用途，比方海面，被风吹动的树，这些就可以很轻易的表示出来)
+    %struct PicIndex
+    %{
+        %int offset；//图片偏移量
+            %unsigned long PicSize；//图片长度(假如是多帧的则代表这个图片集的总共长度)
+            %int nFrameNumber；//图片帧数
+            %unsigned long nFrameSize[nFrameNumber]，[转载]民族文明之节日仲春二；//每一帧的偏移量，这里的偏移量就是基址+offset+这一个偏移量
+            %//当然上面这个数组定义编译时不能这样写
+            %}
+            %PicIndex结构是一个数组，它的下标为AllNumber个。例如：PicIndex Index[AllNumber]；
+            %然后剩下的就是一些数据了，这些数据已经被压缩了，压缩方法通过文件头的AllNumber变量来取得，开智有方，纸游戏，让孩子心灵手巧。
+            %下标n实在就是AllNumber，这里为了省空间：)
+            %值得留神的是后面的压缩数据不是整块压缩的，而是单个图片的压缩，然后放在一起罢了，我这样做是为了读取便利，就不用读取一个数据还要把全部文件再解压缩一道了，这样压缩率可能也会下降，不晓得是否还有更好的措施，如果有，请联系我~谢谢！
+            %除了我写的这种结构方式来储存文件以外，还有其他的实现计划，然而我感到这个好一点。
+            %代码我刚写一半，还不完整，所以这里就不放上来了。
+            %
+            %
+            %在以前的游戏当中，几乎所有的游戏都有将资源打包，无论是图形资源、声音文件等等。现在，越来越多的游戏的声音资源都公开了，通常背景音乐等采用ogg，音效采用wav；但是图形资源绝大部分游戏还是都是打包了的。有的有加密，有的没有。
+            %
+            %
+            %
+            %文件打包
+            %文件打包有很多方式的，我采取了一种比较简单的方式，我将打包后的结果分为数据文件和索引文件两部分，这样的好处是什么呢？至少我们追加文件的时候很方便也很快。加入我们采用文件头的形式，即索引在数据文件的头部，那么当我们要添加的新文件的时候，则意味着所有文件的重写，因为操作系统不会提供一个执行“插入”操作的API。这样最直接的好处就是游戏工具执行“保存”动作的时候的快速性。
+            %另外，文件打包还可以选择是否加密，是否压缩等等。加密这块我不是很了解，我去年做过一个加了密的，但是后来反思的时候发现并没有什么意义，与其说文件打包是为了保护资源的话，还不如说是为了管理的方便和效率。因为我觉得在一个电脑高手面前，加不加密并没有什么意义，比如说传奇式的”mycrack”大大。压缩个人以为还是有点意义的，至少可以少占不少硬盘，当然，这是需要付出代价的，运行时必须解压。Ogre3D中就支持zip打包，应该也是使用zlib来做的，使用zlib来做这个事情是很容易的，呵呵。它的官方网站是：http://www.zlib.net/
+            %因此我们可以有这样的一个类来做这个简单的操作：
+            %namespace db
+            %{
+                %	class CFilePack
+                    %	{
+                        %	public:
+                            %		typedef detail::Node                    node_type;
+                        %		typedef detail::CFilePackImp::node_vec  node_vec;
+                        %	public:
+                            %		CFilePack( 
+                                    %			const std::wstring& strDataFileName, 
+                                    %			const std::wstring& strIndexFileName
+                                    %			);
+                        %
+                            %		CFilePack(
+                                    %			const std::string& strDataFileName,
+                                    %			const std::string& strIndexFileName
+                                    %			);
+                        %		
+                            %		~CFilePack();
+                        %
+                            %	public:
+                            %		bool addFile( const std::string& strFileName );
+                        %		bool addFile( const std::wstring& strFileName );
+                        %
+                            %		bool load();
+                        %		bool save() const;
+                        %
+                            %		const node_vec& getNodes() const
+                            %		{
+                                %			return m_spImp->getNodes();
+                                %		}
+                                %	protected:
+                                    %		boost::shared_ptr<detail::CFilePackImp>    m_spImp;
+                                %	};
+                                %}
+                                %最终对CFilePack的调用将被转发到detail::CFilePackImp中。提供多种字符串的重载，最终将使用string_shim转换到char调用detail::CfilePackImp的对应的函数：
+                                %namespace db
+                                %{
+                                    %	namespace detail
+                                        %	{
+                                            %		class Node
+                                                %		{
+                                                    %		public:
+                                                        %			enum
+                                                        %			{
+                                                            %				SIZE = 20
+                                                                %			};
+                                                    %			char      szName[SIZE];
+                                                    %			unsigned  uOffset;
+                                                    %			unsigned  uSize;
+                                                    %		public:
+                                                        %			bool operator == ( const Node& node ) const
+                                                        %			{
+                                                            %				return _stricmp( szName, node.szName ) == 0;
+                                                            %			}
+                                                            %
+                                                                %			bool operator == ( const char* strName ) const
+                                                                %			{
+                                                                    %				return _stricmp( szName, strName ) == 0;
+                                                                    %			}
+                                                                    %
+                                                                        %			bool operator < ( const Node& node ) const
+                                                                        %			{
+                                                                            %				return _stricmp( szName, node.szName )<0;
+                                                                            %			}
+                                                                            %		};
+                                                                            %
+                                                                                %		class CFilePackImp
+                                                                                %		{
+                                                                                    %		public:
+                                                                                        %			typedef std::string           string_type;
+                                                                                    %			typedef unsigned              offset_type;
+                                                                                    %			typedef std::vector<Node>     node_vec;
+                                                                                    %		public:
+                                                                                        %			
+                                                                                        %		public:
+                                                                                        %			CFilePackImp( 
+                                                                                                %				const string_type& strDataFileName,
+                                                                                                %				const string_type& strIndexFileName );
+                                                                                    %			~CFilePackImp();
+                                                                                    %		public:
+                                                                                        %			bool  addFile( const string_type& strFileName );
+                                                                                    %	//		bool  deleteFile( const string_type& strFileName );
+                                                                                    %		public:
+                                                                                        %			bool  load();
+                                                                                    %			bool  save() const;
+                                                                                    %
+                                                                                        %			inline const node_vec& getNodes() const
+                                                                                        %			{
+                                                                                            %				return m_vecNodes;
+                                                                                            %			}
+                                                                                            %		protected:
+                                                                                                %			string_type      m_strDataFileName;         // 数据文件名
+                                                                                            %			string_type      m_strIndexFileName;        // 索引文件名	
+                                                                                            %			node_vec         m_vecNodes;
+                                                                                            %
+                                                                                                %			static const size_t uMaxSaveBytesOnTime = 1024 * 1024;  // 1M
+                                                                                            %		};
+                                                                                            %	}
+                                                                                            %}
+                                                                                            %有了这两个类我们就可以这样来生成打包后的数据文件和索引文件，当然下面的Demo代码忽略了错误检测等等：
+                                                                                            %#include "filepack.hpp"
+    %
+%int main()
+    %{
+        %	// 下面我们使用这个类把三首歌曲打包成一个数据文件和一个索引
+            %	db::CFilePack pack( "music.data", "music.inx" );
+        %
+            %	pack.addFile( "drumloop.wav" );
+        %	pack.addFile( "jaguar.wav" );
+        %	pack.addFile( L"swish.wav" );
+        %
+            %	// pack.load();
+        %
+            %	return 0;
+        %}
+        %
+        %实现细节就不说了，大家可以参考附件。
+        %
+        %声音加载与播放
+        %现在我们要做的就是从索引文件中读取出文件信息，然后去数据文件中找我们感兴趣的数据。在上面的代码中我们可以看到，每一个索引节点都由固定长度的文件名字符串、在数据文件中的偏移量和数据的长度组成，现在在管理中就应该先获取这些信息，由于索引文件通常都很小，所以我们在程序运行期间将这些信息保存在内存中，根据是否有boost分别选择散列表unordered_set或者红黑树实现的set来保存。
+        %由于在整个系统中通常都只有一个这样的声音文件包，因此我们实现一个简单的单件管理类，这是它的接口类：
+        %#pragma once
+        %
+        %#include <string>
+        %#include "ISound.hpp"
+        %
+        %namespace db
+        %{
+            %	class ISoundManager
+                %	{
+                    %	public:
+                        %		typedef std::string                 string_type;		
+                    %	public:
+                        %		virtual bool         initialize(
+                                %							    const string_type& strDataFile,
+                                %							    const string_type& strIndexFile
+                                %							    ) = 0;
+                    %		virtual ISound_SP    createSound( const string_type& strFile ) = 0;
+                    %		virtual void         release()=0;
+                    %	};
+                    %}
+                    %
+                    %从它我们实现一个Fmod的管理类：
+                    %#include "..\\pack_base\config.hpp"
+                    %#include "ISoundManager.hpp"
+                    %#include "Singleton.hpp"
+                    %#include "..\\pack_base\filepack.hpp"
+                    %
+                    %#include <fmod.hpp>
+                    %
+                    %#ifdef __DB_WORK_WITH_BOOST__
+                    %#include <boost/unordered/unordered_set.hpp>
+                    %#define __SOUND_MANAGER_CONTAINER_IMP__ boost::unordered_set
+                    %
+                    %struct ihash : public std::unary_function< const db::detail::Node&, size_t >
+                                    %{
+                                        %	size_t operator()( const db::detail::Node& data ) const
+                                            %	{
+                                                %		size_t uSeed = 0;
+                                                %		size_t uLen = strlen( data.szName );
+                                                %		for( size_t i=0; i<uLen; ++i )
+                                                    %		{
+                                                        %			boost::hash_combine( uSeed, toupper( data.szName[i]) );
+                                                        %		}
+                                                        %
+                                                            %		return uSeed;
+                                                        %	}
+                                                        %};
+%
+%#else
+%
+%#include <set>
+%#define __SOUND_MANAGER_CONTAINER_IMP__ std::set
+%
+%#endif // #ifdef __DB_WORK_WITH_BOOST__
+%
+%
+%namespace db
+%{
+    %	class CFmodSoundManager : public ISoundManager, public db::Singleton<CFmodSoundManager>
+                                  %	{
+                                      %	public:
+                                          %		typedef ISoundManager::string_type       string_type;
+                                      %		typedef db::CFilePack::node_type         node_type;
+                                      %#ifdef __DB_WORK_WITH_BOOST__
+                                          %		typedef __SOUND_MANAGER_CONTAINER_IMP__<node_type, ihash>   container_type;
+                                      %#else
+                                          %		typedef __SOUND_MANAGER_CONTAINER_IMP__<node_type>   container_type;
+                                      %#endif 
+                                          %
+                                          %
+                                          %		friend class db::Singleton<CFmodSoundManager>;
+                                      %
+                                          %	protected:
+                                          %		CFmodSoundManager();
+                                      %		virtual ~CFmodSoundManager();
+                                      %	public:
+                                          %		bool         initialize(
+                                                  %			const string_type& strDataFile,
+                                                  %			const string_type& strIndexFile
+                                                  %			);
+                                      %		ISound_SP                      createSound( const string_type& strFile );
+                                      %		void                           release();
+                                      %
+                                          %	protected:
+                                          %		bool       initFmodSystem();
+                                      %		bool       initData();
+                                      %		bool       loadtomemory( void* pBuf, size_t uByteCounts, size_t uoffset );
+                                      %	protected:
+                                          %		string_type         m_strDataFile;
+                                      %		string_type         m_strIndexFile;
+                                      %		container_type      m_nodes;
+                                      %		FMOD::System*       m_pSystem;
+                                      %	};
+                                      %}
+                                      %     这是一个单件。接下来需要实现一个Sound的接口，因为Sound有普通的wav这样的声音文件，也有像mp3这样的流媒体。因此需要区别对待的，比如说wav的处理思路通常都是直接加载到内存中而mp3等是不会的。我们这里只实现wav的。接口类：
+                                      %#pragma once
+                                      %
+                                      %#include <string>
+                                      %#include <boost/smart_ptr/shared_ptr.hpp>
+                                      %
+                                      %namespace db
+                                      %{
+                                          %	class ISound
+                                              %	{
+                                                  %	public:
+                                                      %		typedef    std::string     string_type;
+                                                  %	public:
+                                                      %		virtual bool                load()   = 0;
+                                                  %		virtual void                unLoad() = 0;
+                                                  %		virtual void                play()   = 0;
+                                                  %		virtual void                changePauseState()  = 0;
+                                                  %		virtual const string_type&  getName() const = 0;
+                                                  %		virtual void                release() = 0;
+                                                  %	};
+                                                  %
+                                                      %	typedef boost::shared_ptr<ISound>   ISound_SP;
+                                                  %}
+                                                  %
+                                                  %然后实现我们的内存wav，这和普通的声音有所不同，因为我们需要直接从内存中播放而不是通过一个wav格式的文件的文件名或者路径来构造，因此其实现如下：
+                                                  %#include "ISound.hpp"
+                                                  %#include <fmod.hpp>
+    %
+%#if defined(_MSC_VER )
+    %#pragma comment( lib, "fmodex_vc.lib" )
+    %#endif
+    %
+    %namespace db
+    %{
+        %	class CFmodSoundManager;
+        %	class CMemSound : public db::ISound
+                              %	{
+                                  %	public:
+                                      %		typedef  db::ISound                  base_class;
+                                  %		typedef  base_class::string_type     string_type;
+                                  %
+                                      %		friend class CFmodSoundManager;
+                                  %	public:
+                                      %		CMemSound( FMOD::System* pSystem, const string_type& strFile );
+                                  %		virtual ~CMemSound();
+                                  %	public:
+                                      %		bool               load();
+                                  %		void               unLoad();
+                                  %		void               play();
+                                  %		void               changePauseState();
+                                  %		void               release();
+                                  %		const string_type& getName() const;
+                                  %
+                                      %	protected:
+                                      %		bool               create( void* pBuf, unsigned uBytesCount );
+                                  %	protected:
+                                      %		string_type         m_strName;
+                                  %		FMOD::System*       m_pSystem;
+                                  %		FMOD::Sound*        m_pSound;
+                                  %		FMOD::Channel*      m_pChannel;
+                                  %	};
+                                  %}
+                                  %
+    %现在再看管理单件的实现，其中需要提的就这两个函数：
+%bool CFmodSoundManager::loadtomemory( void* pBuf, size_t uByteCounts, size_t uoffset )
+    %{
+        %		FILE* pData = NULL;
+        %		if( 0 != fopen_s( &pData, m_strDataFile.c_str(), "rb") )
+            %		{
+                %			return false;
+                %		}
+                %
+                    %		fseek( pData, uoffset, SEEK_SET );
+                %		
+                    %		fread_s( pBuf, uByteCounts, uByteCounts, 1, pData );
+                %
+                    %		fclose(pData);
+                %
+                    %		return true;
+                %	}
+    %
+%	ISound_SP CFmodSoundManager::createSound( const string_type& strFile )
+    %	{
+        %		try
+            %		{
+                %			CFilePack::node_type node;
+                %#ifdef __DB_USE_SAFE_CRT_FUNC__
+                    %			strcpy_s( node.szName, strFile.c_str() );
+                %#else
+                    %			strcpy( node.szName, strFile.c_str() );
+                %#endif
+                    %			container_type::const_iterator pos = m_nodes.find( node );
+                %			if( pos == m_nodes.end() )
+                    %			{
+                        %				// 没找到哈
+                            %				throw std::exception("没这个文件");
+                        %			}
+                        %
+                            %			CMemSound* pSound = new CMemSound( m_pSystem, pos->szName );
+                        %			char* pBuf = new char[pos->uSize];
+                        %			
+                            %			if( !this->loadtomemory( pBuf, pos->uSize, pos->uOffset ) )
+                            %			{
+                                %				delete pSound;
+                                %				delete[] pBuf;
+                                %
+                                    %				throw std::exception( "加载失败！" );
+                                %			}
+                                %
+                                    %			pSound->create( pBuf, pos->uSize );
+                                %		
+                                    %			delete[] pBuf;
+                                %
+                                    %			return ISound_SP( pSound, boost::mem_fn( &ISound::release ) );  // 这样就算是pSound由DLL创建也不会出错了
+                                %		}
+                                %		catch( std::exception& /*e*/ )
+                                    %		{
+                                        %			return ISound_SP();
+                                        %		}
+                                        %	}
+                                        %它从散列或者二叉树中查找我们需要的文件的信息，如果找到了则打开数据文件将那一块文件加载到内存中，然后创建内存Sound的智能指针。然后我们就可以使用这个对象进行声音的播放了。下面是主函数的实现：
+                                        %// Test
+                                        %#define _CRTDBG_MAP_ALLOC
+                                        %#include <crtdbg.h>
+                                        %
+                                        %#include "FmodManager.hpp"
+                                        %#include <iostream>
+                                        %#include <conio.h>
+                                        %#include <Windows.h>
+                                        %using namespace std;
+                                        %
+                                        %using namespace db;
+    %
+%void printDebug()
+    %{
+        %	 _CrtDumpMemoryLeaks();  // 它比Manager的析构先调用，因此内存泄露的提示是错误的。
+        %}
+    %
+%int main()
+    %{
+        %	_CrtSetDbgFlag( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF );
+        %	atexit( printDebug );
+        %
+            %	if( !CFmodSoundManager::GetSingletonPtr()->initialize( "music.data", "music.inx" ) )
+            %	{
+                %		cout<< "系统初始化失败！"<< endl;
+                %		return -1;
+                %	}
+                %
+                    %	CFmodSoundManager* pManager = CFmodSoundManager::GetSingletonPtr();
+                %	ISound_SP spSound1 = pManager->createSound( "jaguar.wav" );
+                %
+                    %	if( !spSound1 )
+                    %	{
+                        %		cout<<"jaguar.wav加载失败！"<< endl;
+                        %		return -1;
+                        %	}
+                        %
+                            %	ISound_SP spSound2 = pManager->createSound( "swish.wav" );
+                        %
+                            %	if( !spSound2 )
+                            %	{
+                                %		cout<<"swish.wav加载失败！"<< endl;
+                                %		return -1;
+                                %	}
+                                %
+                                    %	printf_s( "请按播放jaguar.wav\n请按播放swish.wav\n请按q退出\n");
+                                %	
+                                    %	spSound1->play();
+                                %	spSound2->play();
+                                %
+                                    %	bool bExit = false;
+                                %	do 
+                                    %	{	
+                                        %		if (_kbhit())
+                                            %		{
+                                                %			int key = _getch();
+                                                %			switch( key )
+                                                    %			{
+                                                        %			case '1':
+                                                            %				spSound1->play();
+                                                        %				break;
+                                                        %			case '2':
+                                                            %				spSound2->play();
+                                                        %				break;
+                                                        %			case 'q':
+                                                            %				bExit = true;
+                                                        %				break;
+                                                        %			default:
+                                                            %				break;
+                                                        %			}
+                                                        %		}
+                                                        %
+                                                            %		Sleep( 10 );
+                                                        %
+                                                            %	} while (!bExit);
+                                                        %
+                                                            %	system("pause");
+                                                        %
+                                                            %	return 0;
+                                                        %}
+                                                        %
+                                                        %总结
+                                                        %由于时间关系这里只列出了部分代码，详细的工程我会放在附件中。另外就是Bug问题，也是因为时间关系，我没做大量详细的测试，但是我觉得重要的思想而不是具体的操作，只要明白了思想要改也是很容易的。另外这个东东也只是我自己的一些简单的思想，工程中是怎么样的其实我也不知道，呵呵，因为我还没有看过别人是怎么做的；时间仓促也没有做什么详细的构思和设计，敬请原谅，O(∩_∩)O哈哈~
+                                                        %欢迎各位朋友对文中的任何点提出您的意见和问题。
+                                                        %我的QQ是84638372，Email：dbdongbo@vip.qq.com。
+                                                        %2009/6/10于东北大学秦皇岛分校。
+                                                        %
+                                                        %6/11补充
+                                                        %今天对对这个Demo做了一些修改，这些中最主要的修改是对流媒体的支持。在FMOD中普通的Sound需要拷贝到内存中，当我们调用FMOD::System::createSound之后，内存中的数据已经被FMOD系统拷贝到了它自己提供的缓冲区中，所以当创建完成之后我们就必须释放我们所提供的缓冲区，详细可以参加CFmodSoundManager的createSound方法。但是对于mp3这样的比较大一些的文件来说则不应该使用这种方式了，因为流媒体的优势就在于不需要一次性的全部拷贝到内存中，需要的时候再读取。
+                                                        %在以前我也不知道应该怎么实现这种方式，现在知道了这样一个东西：内存映射文件。有了它的帮助我们就可以很容易的实现流媒体打包了。下面我给出的解决方案是对于ogg的，实际上mp3也可以的，这并没有什么大的不同。
+                                                        %现在我们需要从ISound接口派生出CMusic类，这个类用于处理流媒体。
+                                                        %#include "ISound.hpp"
+                                                        %#include <Windows.h>
+                                                        %#include <fmod.hpp>
+    %
+%#if defined(_MSC_VER )
+    %#pragma comment( lib, "fmodex_vc.lib" )
+    %#endif
+    %
+    %namespace db
+    %{
+        %	class CFmodSoundManager;
+        %	class CMusic : public db::ISound
+                           %	{
+                               %	public:
+                                   %	public:
+                                   %		typedef  db::ISound                  base_class;
+                               %		typedef  base_class::string_type     string_type;
+                               %
+                                   %		friend class CFmodSoundManager;
+                               %	public:
+                                   %		CMusic( FMOD::System* pSystem, HANDLE hFile, HANDLE hMap, const string_type& strFile );
+                               %		virtual ~CMusic();
+                               %	public:
+                                   %		bool               load();
+                               %		void               unLoad();
+                               %		void               play();
+                               %		void               changePauseState();
+                               %		void               release();
+                               %		const string_type& getName() const;
+                               %
+                                   %	protected:
+                                   %		bool               create( unsigned uOffset, unsigned uSize );
+                               %
+                                   %	protected:
+                                   %		string_type         m_strName;
+                               %		FMOD::System*       m_pSystem;
+                               %		FMOD::Sound*        m_pSound;
+                               %		FMOD::Channel*      m_pChannel;
+                               %		HANDLE              m_hFileMap;
+                               %		LPVOID              m_pVoid;
+                               %	};
+                               %}
+                               %     其中下面的Handle便是用于文件映射的，另外CFmodSoundManager也需要做一些小的修改，主要是提供流媒体支持：
+                               %namespace db
+                               %{
+                                   %	class CFmodSoundManager : public ISoundManager, public db::Singleton<CFmodSoundManager>
+                                                                  %	{
+                                                                      %	public:
+                                                                          %		typedef ISoundManager::string_type       string_type;
+                                                                      %		typedef db::CFilePack::node_type         node_type;
+                                                                      %#ifdef __DB_WORK_WITH_BOOST__
+                                                                          %		typedef __SOUND_MANAGER_CONTAINER_IMP__<node_type, ihash>   container_type;
+                                                                      %#else
+                                                                          %		typedef __SOUND_MANAGER_CONTAINER_IMP__<node_type>   container_type;
+                                                                      %#endif 
+                                                                          %
+                                                                          %
+                                                                          %		friend class db::Singleton<CFmodSoundManager>;
+                                                                      %
+                                                                          %	protected:
+                                                                          %		CFmodSoundManager();
+                                                                      %		virtual ~CFmodSoundManager();
+                                                                      %	public:
+                                                                          %		bool         initialize(
+                                                                                  %			const string_type& strDataFile,
+                                                                                  %			const string_type& strIndexFile
+                                                                                  %			);
+                                                                      %		ISound_SP                      createSound( const string_type& strFile );
+                                                                      %		ISound_SP                      createStream( const string_type& strFile );
+                                                                      %		void                           release();
+                                                                      %
+                                                                          %	protected:
+                                                                          %		bool       initFmodSystem();
+                                                                      %		bool       initData();
+                                                                      %		bool       initMap();
+                                                                      %		bool       loadtomemory( void* pBuf, size_t uByteCounts, size_t uoffset );
+                                                                      %	protected:
+                                                                          %		string_type         m_strDataFile;
+                                                                      %		string_type         m_strIndexFile;
+                                                                      %		container_type      m_nodes;
+                                                                      %		FMOD::System*       m_pSystem;
+                                                                      %
+                                                                          %		HANDLE              m_hFile;
+                                                                      %		HANDLE              m_hFileMap;
+                                                                      %	};
+                                                                      %}
+                                                                      %
+    %现在还需要初始化文件映射的函数：
+%bool CFmodSoundManager::initMap()
+    %	{
+        %		m_hFile = ::CreateFile( 
+                %						string_shim<TCHAR>(m_strDataFile).toStr(),
+                %						GENERIC_READ|GENERIC_WRITE,
+                %						FILE_SHARE_READ|FILE_SHARE_WRITE,
+                %						NULL,
+                %						OPEN_EXISTING,
+                %						FILE_ATTRIBUTE_NORMAL,
+                %						NULL
+                %					);
+        %		if( INVALID_HANDLE_VALUE == m_hFile )
+            %		{
+                %			return false;
+                %		}
+                %
+                    %		m_hFileMap = ::CreateFileMapping( m_hFile, NULL, PAGE_READWRITE, 0, (DWORD)boost::filesystem::file_size(m_strDataFile), NULL );
+                %
+                    %		if( NULL == m_hFileMap )
+                    %		{
+                        %			return false;
+                        %		}
+                        %
+                            %		return true;
+                        %}
+    %然后将其放入初始化函数中：
+%bool CFmodSoundManager::initialize( const string_type& strDataFile, const string_type& strIndexFile )
+    %	{
+        %		m_strDataFile = strDataFile;
+        %		m_strIndexFile = strIndexFile;
+        %
+            %		if( !this->initFmodSystem() )
+            %		{
+                %			return false;
+                %		}
+                %
+                    %		if( !this->initData() )
+                    %		{
+                        %			return false;
+                        %		}
+                        %
+                            %		if( !this->initMap() )
+                            %		{
+                                %			return false;
+                                %		}
+                                %
+                                    %		// todo : 
+                                    %
+                                    %		return true;
+                                %	}
+                                %
+    %然后创建流媒体对象，这里是CMusic对象：
+%ISound_SP CFmodSoundManager::createStream( const string_type& strFile )
+    %	{
+        %		try
+            %		{
+                %			CFilePack::node_type node;
+                %#ifdef __DB_USE_SAFE_CRT_FUNC__
+                    %			strcpy_s( node.szName, strFile.c_str() );
+                %#else
+                    %			strcpy( node.szName, strFile.c_str() );
+                %#endif
+                    %			container_type::const_iterator pos = m_nodes.find( node );
+                %			if( pos == m_nodes.end() )
+                    %			{
+                        %				// 没找到哈
+                            %				throw std::exception("没这个文件");
+                        %			}
+                        %
+                            %			CMusic* pMusic = new CMusic( m_pSystem, m_hFile, m_hFileMap, pos->szName );
+                        %			if( NULL == pMusic )
+                            %			{
+                                %				throw std::exception("内存分配失败！");
+                                %			}
+                                %
+                                    %			if( !pMusic->create( pos->uOffset, pos->uSize ) )
+                                    %			{
+                                        %				delete pMusic;
+                                        %				throw std::exception("创建失败咯");
+                                        %			}
+                                        %
+                                            %			return ISound_SP( pMusic, boost::mem_fn( &ISound::release ) );  // 这样就算是pSound由DLL创建也不会出错了
+                                        %		}
+                                        %		catch( std::exception& /*e*/ )
+                                            %		{
+                                                %			return ISound_SP();
+                                                %		}
+                                                %	}
+                                                %
+    %转到CMusic的create函数：
+%bool CMusic::create( unsigned uOffset, unsigned uSize )
+    %	{
+        %		m_pVoid = ::MapViewOfFile( m_hFileMap, PAGE_READWRITE, 0, 0/*uOffset - uPass*/ /*uOffset*/, 0 );
+        %
+            %		if( !m_pVoid )
+            %		{
+                %			return false;
+                %		}
+                %
+                    %		FMOD_CREATESOUNDEXINFO  exinfo;
+                %		memset( &exinfo, 0, sizeof(exinfo) );
+                %		exinfo.cbsize = sizeof(FMOD_CREATESOUNDEXINFO);
+                %		exinfo.length = uSize;
+                %
+                    %		FMOD_RESULT result = m_pSystem->createStream( 
+                            %			(const char*)(m_pVoid) + uOffset,
+                            %			FMOD_HARDWARE|FMOD_OPENMEMORY|FMOD_LOOP_NORMAL,
+                            %			&exinfo,
+                            %			&m_pSound
+                            %			);
+                %
+                    %		if( FMOD_OK != result )
+                    %		{
+                        %			return false;
+                        %		}
+                        %
+                            %		return true;
+                        %	}
+    %这样就可以实现ogg的加载与播放了，main：
+%int main()
+    %{
+        %	_CrtSetDbgFlag( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF );
+        %	atexit( printDebug );
+        %
+            %	if( !CFmodSoundManager::GetSingletonPtr()->initialize( "music.data", "music.inx" ) )
+            %	{
+                %		cout<< "系统初始化失败！"<< endl;
+                %		return -1;
+                %	}
+                %
+                    %	CFmodSoundManager* pManager = CFmodSoundManager::GetSingletonPtr();
+                %	ISound_SP spMusic1 = pManager->createStream( "butterfly.ogg" );
+                %	if( !spMusic1 )
+                    %	{
+                        %		cout<<"butterfly.ogg加载失败！"<<endl;
+                        %		return -1;
+                        %	}
+                        %
+                            % 	ISound_SP spMusic2 = pManager->createStream( "shaonianxing.ogg" );
+                        % 	if( !spMusic2 )
+                            % 	{
+                                % 		cout<<"shaonianxing.ogg加载失败！"<<endl;
+                                % 		return -1;
+                                % 	}
+                                %
+                                    %	printf_s( "请按播放&暂停butterfly.ogg\n请按播放&暂停shaonianxing.ogg\n请按q退出\n");
+                                %	
+                                    %	spMusic1->play();
+                                % 	spMusic2->play();
+                                % 	spMusic2->changePauseState();
+                                %	
+                                    %	bool bExit = false;
+                                %	do 
+                                    %	{	
+                                        %		if (_kbhit())
+                                            %		{
+                                                %			int key = _getch();
+                                                %			switch( key )
+                                                    %			{
+                                                        %			case '1':
+                                                            %				spMusic1->changePauseState();
+                                                        %				break;
+                                                        %			case '2':
+                                                            %				spMusic2->changePauseState();
+                                                        %				break;
+                                                        %			case 'q':
+                                                            %				bExit = true;
+                                                        %				break;
+                                                        %			default:
+                                                            %				break;
+                                                        %			}
+                                                        %		}
+                                                        %
+                                                            %		Sleep( 20 );
+                                                        %
+                                                            %	} while (!bExit);
+                                                        %
+                                                            %	system("pause");
+                                                        %
+                                                            %	return 0;
+                                                        %}
+                                                        %
+                                                        %它的特点就是在程序中增加音乐的话也不会导致内存占用的明显上升。这样我们这个程序就可以支持流媒体和普通声音两种模式的处理了！
+                                                        %

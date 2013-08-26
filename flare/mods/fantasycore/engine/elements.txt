@@ -1,0 +1,8 @@
+
+[element]
+name=fire
+resist=Fire Resistance
+
+[element]
+name=ice
+resist=Ice Resistance

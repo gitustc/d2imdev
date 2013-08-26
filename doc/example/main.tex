@@ -1,0 +1,80 @@
+\chapter{关于D2IM}
+这一章我将试图涉及一些在前面没有涉及到但是我认为很重要的东西。
+\newpage
+\section{游戏背景}
+%begin{asy}和end{asy}一定要单独一行，不然无法通过编译
+
+%\begin{asy}
+%
+%size(0,300);
+%
+%
+%\end{asy}
+
+\section{框架结构}
+某一时刻至多只有一个脚本在运行。但是可以有零到多个任务在执行。
+\begin{lstlisting}
+while( 游戏尚未结束 ){
+    process_input();
+    process_script();
+    update();
+}
+\end{lstlisting}
+可见由三部分组成。首先看输入处理：
+\begin{lstlisting}
+process_input(){
+    while( 获取每一个输入事件 ){
+        if( 禁用输入 ){
+            丢弃该事件
+        }else{
+            if( 为键盘事件 ){
+                GUI当前焦点窗口处理之
+                if( 未被处理 ){
+                    丢弃该事件
+                }
+            }else( 为鼠标事件 ){
+                递归让所有GUI尝试截获
+                if( 未被截获 ){
+                    游戏逻辑对输入进行截获
+                    if( 未被截获 ){
+                        丢弃该事件
+                    }
+                }
+            }else{
+                丢弃，不支持的输入事件
+            }
+        }
+    }
+}
+\end{lstlisting}
+其次是脚本和任务处理问题：
+\begin{lstlisting}
+process_script(){
+    if( 当前执行队列为空 ){
+        if( 当前有脚本在运行 ){
+            process_scriptline()
+            if( 命令为start ){
+                while( 成功取到一条命令 ){
+                    switch 命令
+                        case: start
+                            报错，start不能嵌套
+                        case: wait
+                            break
+                        default:
+                            单行命令处理
+
+    if( 当前有脚本在运行 ){
+        if( 任务计数器为0 ){
+            取一条命令
+            if( 命令为start ){
+                while(取一条命令，不为wait){
+                    创建并启动一个任务
+                    任务计数器自增1
+                }
+            }
+        }
+        解锁任务计数器
+    }
+}
+\end{lstlisting}
+

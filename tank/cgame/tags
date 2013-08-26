@@ -1,0 +1,252 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BLOCK_BRICK	map.h	5;"	d
+BLOCK_CONCRETE	map.h	6;"	d
+BLOCK_FOREST	map.h	7;"	d
+BLOCK_HAWK	map.h	10;"	d
+BLOCK_MIX	map.h	12;"	d
+BLOCK_NULL	map.h	4;"	d
+BLOCK_RIVER1	map.h	8;"	d
+BLOCK_RIVER2	map.h	9;"	d
+BLOCK_STONE	map.h	11;"	d
+BONUS_BOMB	sprite.h	9;"	d
+BONUS_CLOCK	sprite.h	7;"	d
+BONUS_HELMET	sprite.h	11;"	d
+BONUS_LIFE	sprite.h	6;"	d
+BONUS_MAX_MS	sprite.h	58;"	d
+BONUS_SHOVEL	sprite.h	8;"	d
+BONUS_STAR	sprite.h	10;"	d
+COL_OFF	game.h	20;"	d
+DIR_DOWN	sprite.h	16;"	d
+DIR_LEFT	sprite.h	17;"	d
+DIR_RIGHT	sprite.h	15;"	d
+DIR_UP	sprite.h	14;"	d
+ENEMY_MAX	game.h	16;"	d
+EXPLODE_HAWK	sprite.h	22;"	d
+EXPLODE_TANK	sprite.h	20;"	d
+EXPLODE_TILE	sprite.h	21;"	d
+Enemy	sprite.h	/^class Enemy : public Tank {$/;"	c
+Example	ex_draw_bitmap.c	/^struct Example {$/;"	s	file:
+FPS	ex_draw_bitmap.c	9;"	d	file:
+FPS	game.h	17;"	d
+GAME_END	game.h	13;"	d
+GAME_MENU	game.h	11;"	d
+GAME_OVER	game.h	12;"	d
+GAME_RUN	game.h	10;"	d
+GAME_START	game.h	9;"	d
+GAME_WIN	game.h	8;"	d
+GLB_GAME_FPS	global.h	4;"	d
+HAWK_BARE	map.h	28;"	d
+HAWK_NORMAL	map.h	29;"	d
+HAWK_PROTECTED	map.h	27;"	d
+MAP_HEIGHT	map.h	25;"	d
+MAP_WIDTH	map.h	24;"	d
+MAX_SPRITES	ex_draw_bitmap.c	10;"	d	file:
+PLAYER_NORMAL	sprite.h	24;"	d
+PLAYER_WINK	sprite.h	25;"	d
+Player	sprite.h	/^class Player : public Tank {$/;"	c
+ROW_OFF	game.h	19;"	d
+Sprite	ex_draw_bitmap.c	/^typedef struct Sprite {$/;"	s	file:
+Sprite	ex_draw_bitmap.c	/^} Sprite;$/;"	t	typeref:struct:Sprite	file:
+_allegro_init	game.c	/^void _allegro_init( game* gp ){$/;"	f
+_bonus_blit	sprite.c	/^static _bonus_blit( sprite* p, int row_off, int col_off ){$/;"	f	file:
+_bore_blit	sprite.c	/^void _bore_blit( bore* p, int row_off, int col_off ){$/;"	f
+_bullet	sprite.h	/^typedef struct _bullet {$/;"	s
+_bullet_blit	sprite.c	/^static void _bullet_blit( bullet* p, int row_off,int col_off ){$/;"	f	file:
+_create_small_explode	game.c	/^void _create_small_explode( int row, int col ){$/;"	f
+_enemy	sprite.h	/^typedef struct _enemy{$/;"	s
+_enemy_bullet_hit_fence	game.c	/^void _enemy_bullet_hit_fence( game* gp ){$/;"	f
+_enemy_bullet_hit_player	game.c	/^void _enemy_bullet_hit_player( game* gp ){$/;"	f
+_enemy_bullet_update	game.c	/^void _enemy_bullet_update( game* gp ){$/;"	f
+_enemy_bullet_update	game.c	/^void _enemy_bullet_update( game* gp, al_evt* pevt ){$/;"	f
+_explode_blit	sprite.c	/^static void _explode_blit( explode* p ){$/;"	f	file:
+_map	map.h	/^typedef struct _map {$/;"	s
+_map_h_	map.h	2;"	d
+_movable_sprite	sprite.h	/^typedef struct _movable_sprite {$/;"	s
+_ms2000	game.c	755;"	d	file:
+_ms5000	game.c	756;"	d	file:
+_mscurr	game.c	757;"	d	file:
+_player	sprite.h	/^typedef struct _player{$/;"	s
+_player_blit	sprite.c	/^void _player_blit( int row_off, int col_off ){$/;"	f
+_player_bullet_hit_enemy	game.c	/^void _player_bullet_hit_enemy( game* gp ){$/;"	f
+_player_bullet_hit_enemy_bullet	game.c	/^static void _player_bullet_hit_enemy_bullet( game* gp ){$/;"	f	file:
+_player_bullet_hit_fence	game.c	/^void _player_bullet_hit_fence( game* gp ){$/;"	f
+_player_bullet_hit_player	game.c	/^void _player_bullet_hit_player( game* gp ){$/;"	f
+_player_bullet_hit_player_bullet	game.c	/^void _player_bullet_hit_player_bullet( game* gp ){$/;"	f
+_player_bullet_hit_tile	game.c	/^void _player_bullet_hit_tile( game* gp ){$/;"	f
+_player_bullet_update	game.c	/^void _player_bullet_update( game* gp ){$/;"	f
+_player_bullet_update	game.c	/^void _player_bullet_update( game* gp, al_evt* pevt ){$/;"	f
+_process_event	game.c	/^void _process_event( game* gp ){$/;"	f
+_process_timer_event	game.c	/^void _process_timer_event( game* gp, al_evt* evt ){$/;"	f
+_process_timer_event_on_run	game.c	/^void _process_timer_event_on_run( game* gp, al_evt* pevt ){$/;"	f
+_res_init	game.c	/^static void _res_init( game* gp ){$/;"	f	file:
+_set_state	game.c	/^static int _set_state( game* gp, int new_state ){$/;"	f	file:
+_sprite	sprite.h	/^typedef struct _sprite{$/;"	s
+_static_sprite	sprite.h	/^typedef struct _static_sprite {$/;"	s
+_static_sprite_update	sprite.c	/^static void _static_sprite_update( static_sprite* p ){$/;"	f	file:
+_tank	sprite.h	/^typedef struct _tank{$/;"	s
+_tank_speed	sprite.c	/^void _tank_speed( tank* t ){$/;"	f
+_tile	map.h	/^typedef struct _tile {$/;"	s
+_tile_block_index	map.c	5;"	d	file:
+_update_screen_on_run	game.c	/^void _update_screen_on_run( game* gp ){$/;"	f
+add_sprite	ex_draw_bitmap.c	/^static void add_sprite(void)$/;"	f	file:
+add_sprites	ex_draw_bitmap.c	/^static void add_sprites(int n)$/;"	f	file:
+add_time	ex_draw_bitmap.c	/^static void add_time(void)$/;"	f	file:
+attack_click	sprite.h	/^	int			attack_click;$/;"	m	struct:_enemy
+bare	map.h	/^    int         bare;$/;"	m	struct:_map
+bitmap	ex_draw_bitmap.c	/^   ALLEGRO_BITMAP *mysha, *bitmap;$/;"	m	struct:Example	file:
+bitmap_size	ex_draw_bitmap.c	/^   int bitmap_size;$/;"	m	struct:Example	file:
+blending	ex_draw_bitmap.c	/^   int blending;$/;"	m	struct:Example	file:
+blit	sprite.h	/^	blit_func	blit;$/;"	m	struct:_sprite
+blit_func	sprite.h	/^typedef void (*blit_func)(sprite*, int, int);$/;"	t
+bonus	sprite.h	/^typedef struct bonus {$/;"	s
+bonus_image	sprite.h	64;"	d
+bonus_init	sprite.c	/^void bonus_init( bonus* p ){$/;"	f
+bonus_set	sprite.c	/^void bonus_set( bonus* p, int bt, int row, int col ){$/;"	f
+bonus_time_out	sprite.h	65;"	d
+bore	sprite.h	/^typedef struct bore {$/;"	s
+bore_image	sprite.h	78;"	d
+bore_init	sprite.c	/^void bore_init( bore* p ){$/;"	f
+bore_set	sprite.c	/^void bore_set( bore* p, int row, int col ){$/;"	f
+bore_time_out	sprite.h	79;"	d
+bullet	sprite.h	/^}bullet;$/;"	t	typeref:struct:_bullet
+bullet_image	sprite.h	99;"	d
+bullet_init	sprite.c	/^void bullet_init( bullet* p ){$/;"	f
+bullet_set	sprite.c	/^void bullet_set( bullet* p, int dir, int row, int col){$/;"	f
+change_size	ex_draw_bitmap.c	/^static void change_size(int size)$/;"	f	file:
+check_hit	sprite.c	/^int check_hit( sprite* p1, sprite* p2 ){$/;"	f
+click	sprite.h	/^	int		click;$/;"	m	struct:bonus
+click	sprite.h	/^	int		click;$/;"	m	struct:bore
+clicks	sprite.h	/^	int		clicks;$/;"	m	struct:_sprite
+col	sprite.h	/^	int		col;$/;"	m	struct:_sprite
+contain	sprite.c	5;"	d	file:
+create_bonus	game.c	/^void Game::create_bonus(){$/;"	f	class:Game
+dark	ex_draw_bitmap.c	/^   ALLEGRO_COLOR dark;$/;"	m	struct:Example	file:
+data	map.h	/^    int data[5];$/;"	m	struct:_tile
+debug	sprite.c	6;"	d	file:
+debug1	sprite.c	7;"	d	file:
+dir	sprite.h	/^	int		dir;$/;"	m	struct:_movable_sprite
+direct_speed_measure	ex_draw_bitmap.c	/^   double direct_speed_measure;$/;"	m	struct:Example	file:
+display	ex_draw_bitmap.c	/^   ALLEGRO_DISPLAY *display;$/;"	m	struct:Example	file:
+dx	ex_draw_bitmap.c	/^   float x, y, dx, dy;$/;"	m	struct:Sprite	file:
+dy	ex_draw_bitmap.c	/^   float x, y, dx, dy;$/;"	m	struct:Sprite	file:
+enemy	sprite.h	/^}enemy;$/;"	t	typeref:struct:_enemy
+example	ex_draw_bitmap.c	/^} example;$/;"	v	typeref:struct:Example
+explode_set	sprite.c	/^void explode_set( explode* p, int et, int row, int col ){$/;"	f
+flash	sprite.h	/^	int			flash;$/;"	m	struct:_enemy
+font	ex_draw_bitmap.c	/^   ALLEGRO_FONT *font;$/;"	m	struct:Example	file:
+frame_times	ex_draw_bitmap.c	/^   double frame_times[FPS];$/;"	m	struct:Example	file:
+ftpos	ex_draw_bitmap.c	/^   int ftpos;$/;"	m	struct:Example	file:
+game_h	game.h	2;"	d
+game_init	game.c	/^void game_init( game* gp ){$/;"	f
+game_over	game.c	/^int game_over( game* p ){$/;"	f
+game_run	game.c	/^void game_run( game* gp ){$/;"	f
+get_fps	ex_draw_bitmap.c	/^static void get_fps(int *average, int *minmax)$/;"	f	file:
+global_h	global.h	2;"	d
+half_white	ex_draw_bitmap.c	/^   ALLEGRO_COLOR half_white;$/;"	m	struct:Example	file:
+hawk_state	map.h	/^    int         hawk_state;$/;"	m	struct:_map
+hawk_state	map.h	59;"	d
+height	sprite.h	/^	int		height;$/;"	m	struct:_sprite
+hitted	sprite.h	/^	hitted_func		hitted;$/;"	m	struct:_enemy
+hitted	sprite.h	/^	hitted_func		hitted;$/;"	m	struct:_player
+hitted	sprite.h	/^	hitted_func		hitted;$/;"	m	struct:_tank
+hitted_func	sprite.h	/^typedef int (*hitted_func)( tank* );$/;"	t
+hot_col	sprite.h	/^	int		hot_col;$/;"	m	struct:_sprite
+hot_row	sprite.h	/^	int		hot_row;$/;"	m	struct:_sprite
+last_x	ex_draw_bitmap.c	/^   int last_x, last_y;$/;"	m	struct:Example	file:
+last_y	ex_draw_bitmap.c	/^   int last_x, last_y;$/;"	m	struct:Example	file:
+level	sprite.h	/^	int		level;$/;"	m	struct:_bullet
+life_left	sprite.h	/^	int			life_left;$/;"	m	struct:_player
+life_left	sprite.h	/^	int			life_left;$/;"	m	struct:_tank
+m_flash	sprite.h	/^		bool	   m_flash;$/;"	m	class:Enemy
+m_flash_click	sprite.h	/^		int		   m_flash_click;$/;"	m	class:Enemy
+m_last_attack_click	sprite.h	/^		int		   m_last_attack_click;$/;"	m	class:Enemy
+m_state	sprite.h	/^		PlayerState m_state;$/;"	m	class:Player
+m_type	sprite.h	/^		EnemyType  m_type;$/;"	m	class:Enemy
+m_type	sprite.h	/^		PlayerType  m_type;$/;"	m	class:Player
+m_wink_click	sprite.h	/^		int			m_wink_click;$/;"	m	class:Player
+main	ex_draw_bitmap.c	/^int main(void)$/;"	f
+main	main.c	/^int main(){$/;"	f
+main_h	main.h	2;"	d
+map	map.h	/^}map;$/;"	t	typeref:struct:_map
+map_blit_floor	map.c	/^void map_blit_floor( map* p, int row_off, int col_off ){$/;"	f
+map_click	map.h	/^    int         map_click;$/;"	m	struct:_map
+map_load	map.c	/^int map_load( map* p, const char* path ){$/;"	f
+map_pixel_tile	map.h	47;"	d
+map_pixel_type	map.h	48;"	d
+map_tile	map.h	46;"	d
+mouse_down	ex_draw_bitmap.c	/^   bool mouse_down;$/;"	m	struct:Example	file:
+movable_sprite	sprite.h	/^}movable_sprite;$/;"	t	typeref:struct:_movable_sprite
+movable_sprite_init	sprite.c	/^void movable_sprite_init( movable_sprite* p ){$/;"	f
+movable_sprite_move	sprite.c	/^void movable_sprite_move( movable_sprite* p ){$/;"	f
+mysha	ex_draw_bitmap.c	/^   ALLEGRO_BITMAP *mysha, *bitmap;$/;"	m	struct:Example	file:
+parent	sprite.h	/^	movable_sprite		parent;$/;"	m	struct:_tank
+parent	sprite.h	/^	movable_sprite	parent;$/;"	m	struct:_bullet
+parent	sprite.h	/^	sprite		parent;$/;"	m	struct:_movable_sprite
+parent	sprite.h	/^	sprite		parent;$/;"	m	struct:_static_sprite
+parent	sprite.h	/^	static_sprite	parent;$/;"	m	struct:bonus
+parent	sprite.h	/^	static_sprite	parent;$/;"	m	struct:bore
+parent	sprite.h	/^	tank			parent;$/;"	m	struct:_enemy
+parent	sprite.h	/^	tank			parent;$/;"	m	struct:_player
+player_update	sprite.c	/^void player_update( player* p ){$/;"	f
+random_in	global.h	6;"	d
+red	ex_draw_bitmap.c	/^   ALLEGRO_COLOR red;$/;"	m	struct:Example	file:
+redraw	ex_draw_bitmap.c	/^static void redraw(void)$/;"	f	file:
+remove_sprites	ex_draw_bitmap.c	/^static void remove_sprites(int n)$/;"	f	file:
+row	sprite.h	/^	int		row;$/;"	m	struct:_sprite
+s_bonus_image	sprite.h	/^bitmap*		s_bonus_image;$/;"	v
+s_bore_image	sprite.h	/^bitmap*		s_bore_image;$/;"	v
+s_bullet_image	sprite.h	/^bitmap*		s_bullet_image;$/;"	v
+s_enemy_image	sprite.h	/^bitmap*		s_enemy_image;$/;"	v
+s_img_enemy	sprite.h	/^		static HSL::Image s_img_enemy;$/;"	m	class:Enemy
+s_img_player0	sprite.h	/^		static HSL::Image s_img_player0;$/;"	m	class:Player
+s_img_player1	sprite.h	/^		static HSL::Image s_img_player1;$/;"	m	class:Player
+s_img_tile	map.c	/^ALLEGRO_BITMAP*     s_img_tile;$/;"	v
+s_player_shield_image	sprite.h	/^bitmap*		s_player_shield_image[2];$/;"	v
+s_tank_shield_image	sprite.h	/^bitmap*		s_tank_shield_image;$/;"	v
+self	sprite.h	/^	sprite*		self;$/;"	m	struct:_sprite
+shield	sprite.h	/^	int			shield;$/;"	m	struct:_enemy
+shield	sprite.h	/^	int			shield;$/;"	m	struct:_player
+shield	sprite.h	/^	int			shield;$/;"	m	struct:_tank
+show_help	ex_draw_bitmap.c	/^   bool show_help;$/;"	m	struct:Example	file:
+speed	sprite.h	/^	int		speed;$/;"	m	struct:_movable_sprite
+sprite	sprite.h	/^}sprite;$/;"	t	typeref:struct:_sprite
+sprite_add_pos	sprite.h	47;"	d
+sprite_count	ex_draw_bitmap.c	/^   int sprite_count;$/;"	m	struct:Example	file:
+sprite_h	sprite.h	2;"	d
+sprite_init	sprite.c	/^void	sprite_init( sprite* p ){$/;"	f
+sprite_set_pos	sprite.h	48;"	d
+sprite_update	ex_draw_bitmap.c	/^static void sprite_update(Sprite *s)$/;"	f	file:
+sprites	ex_draw_bitmap.c	/^   Sprite sprites[MAX_SPRITES];$/;"	m	struct:Example	file:
+state	sprite.h	/^	int			state;$/;"	m	struct:_enemy
+state	sprite.h	/^	int			state;$/;"	m	struct:_player
+static_sprite	sprite.h	/^}static_sprite;$/;"	t	typeref:struct:_static_sprite
+static_sprite	sprite.h	/^}static_sprite;$/;"	t	typeref:struct:bonus
+static_sprite	sprite.h	/^}static_sprite;$/;"	t	typeref:struct:bore
+static_sprite_init	sprite.c	/^void static_sprite_init( static_sprite* p ){$/;"	f
+tank	sprite.h	/^}tank;$/;"	t	typeref:struct:_player
+tank	sprite.h	/^}tank;$/;"	t	typeref:struct:_tank
+tank_init	sprite.c	/^void tank_init( tank* t ){$/;"	f
+tank_shield_image	sprite.h	112;"	d
+tank_shield_image	sprite.h	128;"	d
+tank_shield_image	sprite.h	145;"	d
+text	ex_draw_bitmap.c	/^char const *text[] = {$/;"	v
+tile	map.h	/^}tile;$/;"	t	typeref:struct:_tile
+tile_image	map.h	15;"	d
+tile_sub_type	map.h	22;"	d
+tile_type	map.h	21;"	d
+tiles	map.h	/^    tile        tiles[MAP_WIDTH*MAP_HEIGHT];$/;"	m	struct:_map
+type	sprite.h	/^	int			type;$/;"	m	struct:_enemy
+type	sprite.h	/^	int			type;$/;"	m	struct:_player
+update	ex_draw_bitmap.c	/^static void update(void)$/;"	f	file:
+update	sprite.h	/^	update_func	update;$/;"	m	struct:_sprite
+update_func	sprite.h	/^typedef void (*update_func)(sprite*);$/;"	t
+use_memory_bitmaps	ex_draw_bitmap.c	/^   bool use_memory_bitmaps;$/;"	m	struct:Example	file:
+white	ex_draw_bitmap.c	/^   ALLEGRO_COLOR white;$/;"	m	struct:Example	file:
+width	sprite.h	/^	int		width;$/;"	m	struct:_sprite
+x	ex_draw_bitmap.c	/^   float x, y, dx, dy;$/;"	m	struct:Sprite	file:
+y	ex_draw_bitmap.c	/^   float x, y, dx, dy;$/;"	m	struct:Sprite	file:

@@ -1,0 +1,7 @@
+mkdir -p d2im/data/global/tiles/act1/barracks
+mkdir -p d2im/data/global/tiles/act1/outdoors
+mkdir -p d2im/data/global/tiles/act1/outdoors
+mkdir -p d2im/data/global/tiles/act1/outdoors
+mkdir -p d2im/data/global/tiles/act1/town
+mkdir -p d2im/data/global/tiles/act1/tristram
+mkdir -p d2im/data/global/tiles/act1/outdoors

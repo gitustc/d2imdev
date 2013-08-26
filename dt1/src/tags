@@ -1,0 +1,147 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ALE_KEY_DOWN	defines.h	5;"	d
+ALE_KEY_UP	defines.h	6;"	d
+ALK_A	defines.h	10;"	d
+ALK_B	defines.h	11;"	d
+ALK_C	defines.h	12;"	d
+ALK_D	defines.h	13;"	d
+ALK_E	defines.h	14;"	d
+ALK_ESC	defines.h	9;"	d
+ALK_F	defines.h	15;"	d
+ALK_G	defines.h	16;"	d
+ALK_H	defines.h	17;"	d
+ALK_I	defines.h	18;"	d
+ALK_J	defines.h	19;"	d
+ALK_K	defines.h	20;"	d
+ALK_L	defines.h	21;"	d
+ALK_M	defines.h	22;"	d
+ALK_N	defines.h	23;"	d
+ALK_O	defines.h	24;"	d
+ALK_P	defines.h	25;"	d
+ALK_Q	defines.h	26;"	d
+ALK_R	defines.h	27;"	d
+ALK_S	defines.h	28;"	d
+ALK_T	defines.h	29;"	d
+ALK_U	defines.h	30;"	d
+ALK_V	defines.h	31;"	d
+ALK_W	defines.h	32;"	d
+ALK_X	defines.h	33;"	d
+ALK_Y	defines.h	34;"	d
+ALK_Z	defines.h	35;"	d
+CC	Makefile	/^CC		=	gcc -Wall -g$/;"	m
+CFLAGS	Makefile	/^CFLAGS  =   -I..\/..\/allegro\/allegro5\/include\/allegro5\/$/;"	m
+GC_060	dt1show.c	/^    GC_060, GC_062, GC_064, GC_066, GC_068,$/;"	e	enum:__anon3	file:
+GC_062	dt1show.c	/^    GC_060, GC_062, GC_064, GC_066, GC_068,$/;"	e	enum:__anon3	file:
+GC_064	dt1show.c	/^    GC_060, GC_062, GC_064, GC_066, GC_068,$/;"	e	enum:__anon3	file:
+GC_066	dt1show.c	/^    GC_060, GC_062, GC_064, GC_066, GC_068,$/;"	e	enum:__anon3	file:
+GC_068	dt1show.c	/^    GC_060, GC_062, GC_064, GC_066, GC_068,$/;"	e	enum:__anon3	file:
+GC_070	dt1show.c	/^    GC_070, GC_072, GC_074, GC_076, GC_078,$/;"	e	enum:__anon3	file:
+GC_072	dt1show.c	/^    GC_070, GC_072, GC_074, GC_076, GC_078,$/;"	e	enum:__anon3	file:
+GC_074	dt1show.c	/^    GC_070, GC_072, GC_074, GC_076, GC_078,$/;"	e	enum:__anon3	file:
+GC_076	dt1show.c	/^    GC_070, GC_072, GC_074, GC_076, GC_078,$/;"	e	enum:__anon3	file:
+GC_078	dt1show.c	/^    GC_070, GC_072, GC_074, GC_076, GC_078,$/;"	e	enum:__anon3	file:
+GC_080	dt1show.c	/^    GC_080, GC_082, GC_084, GC_086, GC_088,$/;"	e	enum:__anon3	file:
+GC_082	dt1show.c	/^    GC_080, GC_082, GC_084, GC_086, GC_088,$/;"	e	enum:__anon3	file:
+GC_084	dt1show.c	/^    GC_080, GC_082, GC_084, GC_086, GC_088,$/;"	e	enum:__anon3	file:
+GC_086	dt1show.c	/^    GC_080, GC_082, GC_084, GC_086, GC_088,$/;"	e	enum:__anon3	file:
+GC_088	dt1show.c	/^    GC_080, GC_082, GC_084, GC_086, GC_088,$/;"	e	enum:__anon3	file:
+GC_090	dt1show.c	/^    GC_090, GC_092, GC_094, GC_096, GC_098,$/;"	e	enum:__anon3	file:
+GC_092	dt1show.c	/^    GC_090, GC_092, GC_094, GC_096, GC_098,$/;"	e	enum:__anon3	file:
+GC_094	dt1show.c	/^    GC_090, GC_092, GC_094, GC_096, GC_098,$/;"	e	enum:__anon3	file:
+GC_096	dt1show.c	/^    GC_090, GC_092, GC_094, GC_096, GC_098,$/;"	e	enum:__anon3	file:
+GC_098	dt1show.c	/^    GC_090, GC_092, GC_094, GC_096, GC_098,$/;"	e	enum:__anon3	file:
+GC_100	dt1show.c	/^    GC_100,$/;"	e	enum:__anon3	file:
+GC_110	dt1show.c	/^    GC_110, GC_120, GC_130, GC_140, GC_150,$/;"	e	enum:__anon3	file:
+GC_120	dt1show.c	/^    GC_110, GC_120, GC_130, GC_140, GC_150,$/;"	e	enum:__anon3	file:
+GC_130	dt1show.c	/^    GC_110, GC_120, GC_130, GC_140, GC_150,$/;"	e	enum:__anon3	file:
+GC_140	dt1show.c	/^    GC_110, GC_120, GC_130, GC_140, GC_150,$/;"	e	enum:__anon3	file:
+GC_150	dt1show.c	/^    GC_110, GC_120, GC_130, GC_140, GC_150,$/;"	e	enum:__anon3	file:
+GC_160	dt1show.c	/^    GC_160, GC_170, GC_180, GC_190, GC_200,$/;"	e	enum:__anon3	file:
+GC_170	dt1show.c	/^    GC_160, GC_170, GC_180, GC_190, GC_200,$/;"	e	enum:__anon3	file:
+GC_180	dt1show.c	/^    GC_160, GC_170, GC_180, GC_190, GC_200,$/;"	e	enum:__anon3	file:
+GC_190	dt1show.c	/^    GC_160, GC_170, GC_180, GC_190, GC_200,$/;"	e	enum:__anon3	file:
+GC_200	dt1show.c	/^    GC_160, GC_170, GC_180, GC_190, GC_200,$/;"	e	enum:__anon3	file:
+GC_210	dt1show.c	/^    GC_210, GC_220, GC_230, GC_240, GC_250,$/;"	e	enum:__anon3	file:
+GC_220	dt1show.c	/^    GC_210, GC_220, GC_230, GC_240, GC_250,$/;"	e	enum:__anon3	file:
+GC_230	dt1show.c	/^    GC_210, GC_220, GC_230, GC_240, GC_250,$/;"	e	enum:__anon3	file:
+GC_240	dt1show.c	/^    GC_210, GC_220, GC_230, GC_240, GC_250,$/;"	e	enum:__anon3	file:
+GC_250	dt1show.c	/^    GC_210, GC_220, GC_230, GC_240, GC_250,$/;"	e	enum:__anon3	file:
+GC_260	dt1show.c	/^    GC_260, GC_270, GC_280, GC_290, GC_300,$/;"	e	enum:__anon3	file:
+GC_270	dt1show.c	/^    GC_260, GC_270, GC_280, GC_290, GC_300,$/;"	e	enum:__anon3	file:
+GC_280	dt1show.c	/^    GC_260, GC_270, GC_280, GC_290, GC_300,$/;"	e	enum:__anon3	file:
+GC_290	dt1show.c	/^    GC_260, GC_270, GC_280, GC_290, GC_300,$/;"	e	enum:__anon3	file:
+GC_300	dt1show.c	/^    GC_260, GC_270, GC_280, GC_290, GC_300,$/;"	e	enum:__anon3	file:
+GC_ENUM	dt1show.c	/^} GC_ENUM;$/;"	t	typeref:enum:__anon3	file:
+GC_MAX	dt1show.c	/^    GC_MAX$/;"	e	enum:__anon3	file:
+LIBS	Makefile	/^LIBS    =   ..\/..\/allegro\/allegro5\/lib\/*.a -lm -lpthread -lX11 -lXcursor -lXcursor -ldl$/;"	m
+_AL_DEFINES_	defines.h	2;"	d
+als_bmp	defines.h	/^typedef ALLEGRO_BITMAP                  als_bmp;$/;"	t
+als_cfg	defines.h	/^typedef ALLEGRO_CONFIG                  als_cfg;$/;"	t
+als_disp	defines.h	/^typedef ALLEGRO_DISPLAY                 als_disp;$/;"	t
+als_evt	defines.h	/^typedef ALLEGRO_EVENT                   als_evt;$/;"	t
+als_evtq	defines.h	/^typedef ALLEGRO_EVENT_QUEUE             als_evtq;$/;"	t
+als_file	defines.h	/^typedef ALLEGRO_FILE                    als_file;$/;"	t
+als_timer	defines.h	/^typedef ALLEGRO_TIMER                   als_timer;$/;"	t
+als_ustr	defines.h	/^typedef ALLEGRO_USTR                    als_ustr;$/;"	t
+animated	dt1show.c	/^    unsigned char   animated;$/;"	m	struct:__anon2	file:
+b	dt1show.c	/^    uint8_t     b;$/;"	m	struct:__anon4	file:
+cur_gamma	dt1show.c	/^int             cur_gamma = GC_140;$/;"	v
+d2_pal	dt1show.c	/^palette_t       d2_pal;$/;"	v
+data	dt1show.c	/^    unsigned char  *data;$/;"	m	struct:__anon1	file:
+data_length	dt1show.c	/^    long            data_length;$/;"	m	struct:__anon1	file:
+data_offset	dt1show.c	/^    long            data_offset;$/;"	m	struct:__anon1	file:
+direction	dt1show.c	/^    long            direction;$/;"	m	struct:__anon2	file:
+draw_block	dt1show.c	/^void draw_block(BITMAP * dst, int x0, int y0, int b)$/;"	f
+draw_sub_tile_isometric	dt1show.c	/^void draw_sub_tile_isometric (BITMAP * dst, int x0, int y0, unsigned char * data, int length)$/;"	f
+draw_sub_tile_normal	dt1show.c	/^void draw_sub_tile_normal (BITMAP * dst, int x0, int y0, unsigned char * data, int length)$/;"	f
+dt1block_t	dt1show.c	/^} dt1block_t;$/;"	t	typeref:struct:__anon2	file:
+dt1debug_exit	dt1show.c	/^void dt1debug_exit(void)$/;"	f
+dt1subtile_t	dt1show.c	/^} dt1subtile_t;$/;"	t	typeref:struct:__anon1	file:
+format	dt1show.c	/^    short int       format;$/;"	m	struct:__anon1	file:
+frame	dt1show.c	/^    long            frame;$/;"	m	struct:__anon2	file:
+g	dt1show.c	/^    uint8_t     g;$/;"	m	struct:__anon4	file:
+gamma_str	dt1show.c	/^char gamma_str[GC_MAX][5] = {$/;"	v
+gamma_table	dt1show.c	/^unsigned char   gamma_table[GC_MAX][256];$/;"	v
+glb_block	dt1show.c	/^dt1block_t     *glb_block = NULL;$/;"	v
+glb_block_number	dt1show.c	/^long            glb_block_number = 0;$/;"	v
+load_palette	dt1show.c	/^void load_palette(char * name)$/;"	f
+main	dt1show.c	/^int main(int argc, char * argv[])$/;"	f
+main_index	dt1show.c	/^    long            main_index;$/;"	m	struct:__anon2	file:
+new_gfx_mode	dt1show.c	/^void new_gfx_mode(int x, int y)$/;"	f
+orientation	dt1show.c	/^    long            orientation;$/;"	m	struct:__anon2	file:
+pal_d2_2_vga	dt1show.c	/^void pal_d2_2_vga(void)$/;"	f
+palette_t	dt1show.c	/^typedef rgb_t   palette_t[256];$/;"	t	file:
+r	dt1show.c	/^    uint8_t     r;$/;"	m	struct:__anon4	file:
+read_blocks_headers	dt1show.c	/^void read_blocks_headers(FILE * in)$/;"	f
+read_dt1_header	dt1show.c	/^void read_dt1_header(FILE * in)$/;"	f
+read_gamma	dt1show.c	/^void read_gamma(void)$/;"	f
+read_tiles_of_block	dt1show.c	/^void read_tiles_of_block(FILE * in, long b)$/;"	f
+rgb_t	dt1show.c	/^}rgb_t;$/;"	t	typeref:struct:__anon4	file:
+roof_y	dt1show.c	/^    short int       roof_y;$/;"	m	struct:__anon2	file:
+sub_index	dt1show.c	/^    long            sub_index;$/;"	m	struct:__anon2	file:
+sub_tiles_flags	dt1show.c	/^    int             sub_tiles_flags[32];$/;"	m	struct:__anon2	file:
+the_pal	dt1show.c	/^PALETTE         the_pal;$/;"	v
+tile	dt1show.c	/^    sub_tile        *tile;$/;"	m	struct:__anon2	file:
+tile_sound	dt1show.c	/^    unsigned char   tile_sound;$/;"	m	struct:__anon2	file:
+tiles_length	dt1show.c	/^    long            tiles_length;$/;"	m	struct:__anon2	file:
+tiles_number	dt1show.c	/^    long            tiles_number;$/;"	m	struct:__anon2	file:
+tiles_ptr	dt1show.c	/^    long            tiles_ptr;$/;"	m	struct:__anon2	file:
+unknown1	dt1show.c	/^    short int       unknown1;$/;"	m	struct:__anon1	file:
+unknown2	dt1show.c	/^    short int       unknown2;$/;"	m	struct:__anon1	file:
+unknown_a	dt1show.c	/^    unsigned char   unknown_a;$/;"	m	struct:__anon2	file:
+unknown_b	dt1show.c	/^    unsigned char   unknown_b;$/;"	m	struct:__anon2	file:
+unknown_c	dt1show.c	/^    unsigned char   unknown_c;$/;"	m	struct:__anon2	file:
+unknown_d	dt1show.c	/^    unsigned char   unknown_d;$/;"	m	struct:__anon2	file:
+xgrid	dt1show.c	/^    int             xgrid;$/;"	m	struct:__anon1	file:
+xpos	dt1show.c	/^    short int       xpos;$/;"	m	struct:__anon1	file:
+xsize	dt1show.c	/^    long            xsize;$/;"	m	struct:__anon2	file:
+ygrid	dt1show.c	/^    int             ygrid;$/;"	m	struct:__anon1	file:
+ypos	dt1show.c	/^    short int       ypos;$/;"	m	struct:__anon1	file:
+ysize	dt1show.c	/^    long            ysize;$/;"	m	struct:__anon2	file:
+zeros1	dt1show.c	/^    long            zeros1;$/;"	m	struct:__anon2	file:
+zeros2	dt1show.c	/^    int             zeros2[12];$/;"	m	struct:__anon2	file:

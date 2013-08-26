@@ -1,0 +1,42 @@
+11.3:
+决定不给window设置timer
+因为win只是在X服务器得到一系列事件
+如果真的出现timer时间
+也不应该是Xserver来的
+而是在自己的程序里面 有自己产生，预告，处理
+
+
+11.5
+为HSL::Image 增加draw  重载为带mask和不带mask的两个函数
+XImage 按照目前的生成方式为32位的,每个像素占有4个字节,但是这里不需要这么多,
+	   其中3个字节为RGB,还有一个没用,但是我只打算实现24字节的图像,准备在下一次
+	   的改进中将此问题解决一下
+
+	   另外,create HSL::Image默认使用的为32,但是将bmp转为Image只支持24的bmp
+
+	   XImage 32bit 中的顺序为[b   g    r     unused]
+	   						  [0~7 8~15 16~23 24~31 ]
+		XImage->data={[bgru][bgru][bgru]....}
+		并且从左上开始到右下
+
+		实现带mask的blit 但是需要优化 最好以后用汇编实现
+		
+		实现RGB
+
+11.9 关于window
+1.仅仅存在一个
+2.当Window::close调用后,这个window就不存在了,不可再重新打开(close 取名destory更合适?)
+3.关于~Window和Window::close两个函数要慎重处理
+4.当window没有了后 需要维持g_pdis ,因为还有图片的处理依赖它
+  因而g_pids不会随着window的消失而消失  仅仅减少一个引用计数
+5.引用计数有个问题,就是仅在constructor和desctructor中操作
+  故在close中不能减少g_display_count  仅仅在window的destructor中减一
+
+
+
+ 注意关于消息循环:
+ 这里的handle_event中通常在esc按下后就close了window
+
+ 但是这有一个问题:while(true)还没跳出,
+ 这时候的wndow已经close了 那么后面的了next_event便是个未有定义的...
+ 故避免使用 while(true)

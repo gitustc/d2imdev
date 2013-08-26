@@ -1,0 +1,453 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BlockBrick	map.hpp	/^	BlockBrick,    \/\/砖$/;"	e	enum:__anon3
+BlockConcrete	map.hpp	/^	BlockConcrete, \/\/钢板$/;"	e	enum:__anon3
+BlockHawk	map.hpp	/^	BlockHawk,$/;"	e	enum:__anon3
+BlockMix	map.hpp	/^	BlockMix,		\/\/杂和板$/;"	e	enum:__anon3
+BlockNull	map.hpp	/^	BlockNull = 0,$/;"	e	enum:__anon3
+BlockRiver1	map.hpp	/^	BlockRiver1,$/;"	e	enum:__anon3
+BlockRiver2	map.hpp	/^	BlockRiver2,$/;"	e	enum:__anon3
+BlockStone	map.hpp	/^	BlockStone,    \/\/死掉的老王$/;"	e	enum:__anon3
+BlockTree	map.hpp	/^	BlockTree,$/;"	e	enum:__anon3
+BlockType	map.hpp	/^}BlockType;$/;"	t	typeref:enum:__anon3
+Bonus	sprite.cpp	/^Bonus::Bonus(){}$/;"	f	class:Bonus
+Bonus	sprite.hpp	/^class Bonus : public Sprite {$/;"	c
+BonusBomb	sprite.hpp	/^	BonusBomb,$/;"	e	enum:__anon4
+BonusClock	sprite.hpp	/^	BonusClock,$/;"	e	enum:__anon4
+BonusHelmet	sprite.hpp	/^	BonusHelmet,  \/\/安全帽$/;"	e	enum:__anon4
+BonusLife	sprite.hpp	/^	BonusLife=0,$/;"	e	enum:__anon4
+BonusShovel	sprite.hpp	/^	BonusShovel, \/\/铲子$/;"	e	enum:__anon4
+BonusStar	sprite.hpp	/^	BonusStar,$/;"	e	enum:__anon4
+BonusType	sprite.hpp	/^}BonusType;$/;"	t	typeref:enum:__anon4
+Bore	sprite.cpp	/^Bore::Bore(){$/;"	f	class:Bore
+Bore	sprite.hpp	/^class Bore : public Sprite{$/;"	c
+Bullet	sprite.cpp	/^Bullet::Bullet(){$/;"	f	class:Bullet
+Bullet	sprite.hpp	/^class Bullet : public SpriteMovble {$/;"	c
+BulletLevel	sprite.hpp	/^}BulletLevel;$/;"	t	typeref:enum:__anon7
+BulletLevel0	sprite.hpp	/^	BulletLevel0=0,$/;"	e	enum:__anon7
+BulletLevel1	sprite.hpp	/^	BulletLevel1,$/;"	e	enum:__anon7
+BulletLevel2	sprite.hpp	/^	BulletLevel2,$/;"	e	enum:__anon7
+BulletLevel3	sprite.hpp	/^	BulletLevel3,$/;"	e	enum:__anon7
+DirDown	sprite.hpp	/^	DirDown,$/;"	e	enum:__anon5
+DirLeft	sprite.hpp	/^	DirLeft,$/;"	e	enum:__anon5
+DirRight	sprite.hpp	/^	DirRight,$/;"	e	enum:__anon5
+DirUp	sprite.hpp	/^	DirUp=0,$/;"	e	enum:__anon5
+Direction	sprite.hpp	/^}Direction;$/;"	t	typeref:enum:__anon5
+Enemy	sprite.cpp	/^Enemy::Enemy():Tank(){}$/;"	f	class:Enemy
+Enemy	sprite.hpp	/^class Enemy : public Tank {$/;"	c
+EnemyType	sprite.hpp	/^}EnemyType;$/;"	t	typeref:enum:__anon10
+EnemyTypeOne	sprite.hpp	/^	EnemyTypeOne=0,$/;"	e	enum:__anon10
+EnemyTypeThree	sprite.hpp	/^	EnemyTypeThree,$/;"	e	enum:__anon10
+EnemyTypeTwo	sprite.hpp	/^	EnemyTypeTwo,$/;"	e	enum:__anon10
+Example	ex_draw_bitmap.c	/^struct Example {$/;"	s	file:
+Explode	sprite.cpp	/^Explode::Explode(){}$/;"	f	class:Explode
+Explode	sprite.hpp	/^class Explode : public Sprite {$/;"	c
+ExplodeHawk	sprite.hpp	/^	ExplodeHawk,$/;"	e	enum:__anon6
+ExplodeTank	sprite.hpp	/^	ExplodeTank = 0,$/;"	e	enum:__anon6
+ExplodeTile	sprite.hpp	/^	ExplodeTile,$/;"	e	enum:__anon6
+ExplodeType	sprite.hpp	/^}ExplodeType;$/;"	t	typeref:enum:__anon6
+FPS	ex_draw_bitmap.c	9;"	d	file:
+Game	game.cpp	/^Game::Game():m_map()$/;"	f	class:Game
+Game	game.hpp	/^class Game {$/;"	c
+GameEnd	game.hpp	/^	GameEnd, \/\/彻底的结束，用在外层while(state != GameEnd ) 中$/;"	e	enum:__anon1
+GameOver	game.hpp	/^	GameOver ,$/;"	e	enum:__anon1
+GameRun	game.hpp	/^	GameRun ,$/;"	e	enum:__anon1
+GameSelect	game.hpp	/^	GameSelect,$/;"	e	enum:__anon1
+GameSplash	game.hpp	/^	GameSplash ,$/;"	e	enum:__anon1
+GameStart	game.hpp	/^	GameStart,$/;"	e	enum:__anon1
+GameState	game.hpp	/^}GameState;$/;"	t	typeref:enum:__anon1
+GameWin	game.hpp	/^	GameWin = 0,$/;"	e	enum:__anon1
+MAX_SPRITES	ex_draw_bitmap.c	10;"	d	file:
+Map	map.cpp	/^Map::Map(){}$/;"	f	class:Map
+Map	map.hpp	/^class Map {$/;"	c
+Player	sprite.cpp	/^Player::Player():Tank(){}$/;"	f	class:Player
+Player	sprite.hpp	/^class Player : public Tank {$/;"	c
+PlayerNormal	sprite.hpp	/^	PlayerNormal=0,$/;"	e	enum:__anon9
+PlayerState	sprite.hpp	/^}PlayerState;$/;"	t	typeref:enum:__anon9
+PlayerType	sprite.hpp	/^}PlayerType;$/;"	t	typeref:enum:__anon11
+PlayerTypeOne	sprite.hpp	/^	PlayerTypeOne=0,$/;"	e	enum:__anon11
+PlayerTypeTwo	sprite.hpp	/^	PlayerTypeTwo,$/;"	e	enum:__anon11
+PlayerWink	sprite.hpp	/^	PlayerWink,$/;"	e	enum:__anon9
+Position	sprite.hpp	/^}Position;$/;"	t	typeref:struct:__anon12
+SoundEnemyGetBonus	game.hpp	275;"	d
+SoundHawkHitted	game.hpp	273;"	d
+SoundPlayerGetBonus	game.hpp	274;"	d
+SoundTankHitted	game.hpp	272;"	d
+SplashBlock	game.hpp	/^	SplashBlock,$/;"	e	enum:__anon2
+SplashJalousie	game.hpp	/^	SplashJalousie=0,$/;"	e	enum:__anon2
+SplashOther	game.hpp	/^	SplashOther,$/;"	e	enum:__anon2
+SplashStyle	game.hpp	/^}SplashStyle;$/;"	t	typeref:enum:__anon2
+SplashWindow	game.hpp	/^	SplashWindow,$/;"	e	enum:__anon2
+Sprite	ex_draw_bitmap.c	/^typedef struct Sprite {$/;"	s	file:
+Sprite	ex_draw_bitmap.c	/^} Sprite;$/;"	t	typeref:struct:Sprite	file:
+Sprite	sprite.cpp	/^Sprite::Sprite(){$/;"	f	class:Sprite
+Sprite	sprite.hpp	/^class Sprite {$/;"	c
+SpriteMovble	sprite.cpp	/^SpriteMovble::SpriteMovble(){}$/;"	f	class:SpriteMovble
+SpriteMovble	sprite.hpp	/^class SpriteMovble : public Sprite {$/;"	c
+Tank	sprite.cpp	/^Tank::Tank(){$/;"	f	class:Tank
+Tank	sprite.hpp	/^class Tank : public SpriteMovble {$/;"	c
+TankLevel	sprite.hpp	/^}TankLevel;$/;"	t	typeref:enum:__anon8
+TankLevel0	sprite.hpp	/^	TankLevel0 = 0,$/;"	e	enum:__anon8
+TankLevel1	sprite.hpp	/^	TankLevel1,$/;"	e	enum:__anon8
+TankLevel2	sprite.hpp	/^	TankLevel2,$/;"	e	enum:__anon8
+TankLevel3	sprite.hpp	/^	TankLevel3,$/;"	e	enum:__anon8
+Tile	map.hpp	/^class Tile{$/;"	c
+add_col	sprite.cpp	/^void SpriteMovble::add_col(int pix){$/;"	f	class:SpriteMovble
+add_level	sprite.cpp	/^void Bullet::add_level(int bl){$/;"	f	class:Bullet
+add_level	sprite.cpp	/^void Tank::add_level(int le){$/;"	f	class:Tank
+add_life	sprite.cpp	/^void Tank::add_life(int add){$/;"	f	class:Tank
+add_pos	sprite.cpp	/^void SpriteMovble::add_pos(int row,int col){$/;"	f	class:SpriteMovble
+add_row	sprite.cpp	/^void SpriteMovble::add_row(int pix){$/;"	f	class:SpriteMovble
+add_sprite	ex_draw_bitmap.c	/^static void add_sprite(void)$/;"	f	file:
+add_sprites	ex_draw_bitmap.c	/^static void add_sprites(int n)$/;"	f	file:
+add_time	ex_draw_bitmap.c	/^static void add_time(void)$/;"	f	file:
+attack_click	sprite.cpp	/^int Enemy::attack_click(){$/;"	f	class:Enemy
+bitmap	ex_draw_bitmap.c	/^   ALLEGRO_BITMAP *mysha, *bitmap;$/;"	m	struct:Example	file:
+bitmap_size	ex_draw_bitmap.c	/^   int bitmap_size;$/;"	m	struct:Example	file:
+blending	ex_draw_bitmap.c	/^   int blending;$/;"	m	struct:Example	file:
+blit	sprite.cpp	/^void Bonus::blit(HSL::Image& buffer,$/;"	f	class:Bonus
+blit	sprite.cpp	/^void Bonus::blit(HSL::Image& buffer,int row_off,int col_off){$/;"	f	class:Bonus
+blit	sprite.cpp	/^void Bore::blit(HSL::Image& buffer,$/;"	f	class:Bore
+blit	sprite.cpp	/^void Bore::blit(HSL::Image& buffer,int row_off,int col_off){$/;"	f	class:Bore
+blit	sprite.cpp	/^void Bullet::blit(HSL::Image& buffer,$/;"	f	class:Bullet
+blit	sprite.cpp	/^void Bullet::blit(HSL::Image& buffer,int row_off,int col_off){$/;"	f	class:Bullet
+blit	sprite.cpp	/^void Enemy::blit(HSL::Image& buffer,int row_off,int col_off){$/;"	f	class:Enemy
+blit	sprite.cpp	/^void Enemy::blit(HSL::Image& buffer,int row_off,int col_off,HSL::Color){$/;"	f	class:Enemy
+blit	sprite.cpp	/^void Explode::blit(HSL::Image& buffer,$/;"	f	class:Explode
+blit	sprite.cpp	/^void Explode::blit(HSL::Image& buffer,int row_off,int col_off){$/;"	f	class:Explode
+blit	sprite.cpp	/^void Player::blit(HSL::Image& buffer,int row_off,int col_off){$/;"	f	class:Player
+blit	sprite.cpp	/^void Player::blit(HSL::Image& buffer,int row_off,int col_off,HSL::Color){$/;"	f	class:Player
+blit_cover	map.cpp	/^void Map::blit_cover(HSL::Image& dst,int row_off,int col_off){$/;"	f	class:Map
+blit_floor	map.cpp	/^void Map::blit_floor(HSL::Image& dst,int row_off,int col_off){$/;"	f	class:Map
+blit_tile	map.cpp	/^void Map::blit_tile(HSL::Image& dst,int row_off,int col_off)$/;"	f	class:Map
+change_size	ex_draw_bitmap.c	/^static void change_size(int size)$/;"	f	file:
+check_hit	sprite.cpp	/^bool Sprite::check_hit(const Sprite& sp)const{$/;"	f	class:Sprite
+click	game.cpp	/^int click(int ms){$/;"	f
+col	sprite.cpp	/^int Sprite::col()const{$/;"	f	class:Sprite
+col_off	game.cpp	4;"	d	file:
+comefrom	game.cpp	19;"	d	file:
+comein	game.cpp	20;"	d	file:
+contain	sprite.cpp	6;"	d	file:
+create	sprite.cpp	/^void Bonus::create(BonusType bt,int row,int col){$/;"	f	class:Bonus
+create	sprite.cpp	/^void Bore::create(int row,int col){$/;"	f	class:Bore
+create	sprite.cpp	/^void Bullet::create(BulletLevel bl,$/;"	f	class:Bullet
+create	sprite.cpp	/^void Enemy::create(EnemyType et,bool flash,int row,int col){$/;"	f	class:Enemy
+create	sprite.cpp	/^void Explode::create(ExplodeType et,int row,int col){$/;"	f	class:Explode
+create	sprite.cpp	/^void Player::create(PlayerType pt,int row ,int col){$/;"	f	class:Player
+create_big_explode	game.cpp	/^void Game::create_big_explode(int row,int col){$/;"	f	class:Game
+create_bonus	game.cpp	/^void Game::create_bonus(){$/;"	f	class:Game
+create_enemy	game.cpp	/^void Game::create_enemy(int row,int col){$/;"	f	class:Game
+create_enemy_bore	game.cpp	/^void Game::create_enemy_bore(int i){$/;"	f	class:Game
+create_enemy_bullet	game.cpp	/^void Game::create_enemy_bullet(int i){$/;"	f	class:Game
+create_hawk_explode	game.cpp	/^void Game::create_hawk_explode(){$/;"	f	class:Game
+create_player	game.cpp	/^void Game::create_player(int i){$/;"	f	class:Game
+create_player_bore	game.cpp	/^void Game::create_player_bore(int i){$/;"	f	class:Game
+create_player_bullet	game.cpp	/^void Game::create_player_bullet(int i){$/;"	f	class:Game
+create_small_explode	game.cpp	/^void Game::create_small_explode(int row,int col){$/;"	f	class:Game
+dark	ex_draw_bitmap.c	/^   ALLEGRO_COLOR dark;$/;"	m	struct:Example	file:
+deal_with_bonus	game.cpp	/^void Game::deal_with_bonus(){$/;"	f	class:Game
+deal_with_delay	game.cpp	/^void Game::deal_with_delay(){$/;"	f	class:Game
+deal_with_enemy	game.cpp	/^void Game::deal_with_enemy(){$/;"	f	class:Game
+deal_with_enemy_bore	game.cpp	/^void Game::deal_with_enemy_bore(){$/;"	f	class:Game
+deal_with_enemy_bullet	game.cpp	/^void Game::deal_with_enemy_bullet(){$/;"	f	class:Game
+deal_with_explode	game.cpp	/^void Game::deal_with_explode(){$/;"	f	class:Game
+deal_with_message	game.cpp	/^void Game::deal_with_message(){$/;"	f	class:Game
+deal_with_player	game.cpp	/^void Game::deal_with_player(){$/;"	f	class:Game
+deal_with_player_bore	game.cpp	/^void Game::deal_with_player_bore(){$/;"	f	class:Game
+deal_with_player_bullet	game.cpp	/^void Game::deal_with_player_bullet(){$/;"	f	class:Game
+debug	game.cpp	14;"	d	file:
+debug	map.cpp	4;"	d	file:
+debug	sprite.cpp	7;"	d	file:
+debug1	game.cpp	15;"	d	file:
+debug1	map.cpp	5;"	d	file:
+debug1	sprite.cpp	8;"	d	file:
+debug2	game.cpp	16;"	d	file:
+debug2	map.cpp	6;"	d	file:
+debug3	game.cpp	17;"	d	file:
+debug3	map.cpp	7;"	d	file:
+debug4	map.cpp	8;"	d	file:
+debug5	map.cpp	9;"	d	file:
+delay	game.cpp	/^void Game::delay(){$/;"	f	class:Game
+destroy_tile_block	game.cpp	/^void Game::destroy_tile_block(Tile* pt,int ind){$/;"	f	class:Game
+dir	sprite.cpp	/^Direction SpriteMovble::dir(){$/;"	f	class:SpriteMovble
+direct_speed_measure	ex_draw_bitmap.c	/^   double direct_speed_measure;$/;"	m	struct:Example	file:
+display	ex_draw_bitmap.c	/^   ALLEGRO_DISPLAY *display;$/;"	m	struct:Example	file:
+draw_enemy_left	game.cpp	/^void Game::draw_enemy_left(){$/;"	f	class:Game
+draw_game_level	game.cpp	/^void Game::draw_game_level(){$/;"	f	class:Game
+draw_periphery	game.cpp	/^void Game::draw_periphery(){$/;"	f	class:Game
+draw_player_level	game.cpp	/^void Game::draw_player_level(){$/;"	f	class:Game
+draw_player_life_left	game.cpp	/^void Game::draw_player_life_left(){$/;"	f	class:Game
+draw_screen_on_over	game.cpp	/^void Game::draw_screen_on_over(){$/;"	f	class:Game
+draw_screen_on_run	game.cpp	/^void Game::draw_screen_on_run(){$/;"	f	class:Game
+draw_screen_on_select	game.cpp	/^void Game::draw_screen_on_select(){$/;"	f	class:Game
+draw_screen_on_splash	game.cpp	/^void Game::draw_screen_on_splash(){$/;"	f	class:Game
+draw_screen_on_start	game.cpp	/^void Game::draw_screen_on_start(){$/;"	f	class:Game
+draw_screen_on_win	game.cpp	/^void Game::draw_screen_on_win(){$/;"	f	class:Game
+draw_sprite	game.cpp	/^void Game::draw_sprite(){$/;"	f	class:Game
+dx	ex_draw_bitmap.c	/^   float x, y, dx, dy;$/;"	m	struct:Sprite	file:
+dy	ex_draw_bitmap.c	/^   float x, y, dx, dy;$/;"	m	struct:Sprite	file:
+enemy_bullet_hit_fence	game.cpp	/^void Game::enemy_bullet_hit_fence(){$/;"	f	class:Game
+enemy_bullet_hit_player	game.cpp	/^void Game::enemy_bullet_hit_player(){$/;"	f	class:Game
+enemy_bullet_hit_tile	game.cpp	/^void Game::enemy_bullet_hit_tile(){$/;"	f	class:Game
+enemy_bullet_update	game.cpp	/^void Game::enemy_bullet_update(){$/;"	f	class:Game
+enemy_try_attack	game.cpp	/^void Game::enemy_try_attack(int i){$/;"	f	class:Game
+enemy_try_go_ahead	game.cpp	/^bool Game::enemy_try_go_ahead(int i){$/;"	f	class:Game
+example	ex_draw_bitmap.c	/^} example;$/;"	v	typeref:struct:Example
+flash	sprite.cpp	/^bool Enemy::flash(){$/;"	f	class:Enemy
+font	ex_draw_bitmap.c	/^   ALLEGRO_FONT *font;$/;"	m	struct:Example	file:
+frame_times	ex_draw_bitmap.c	/^   double frame_times[FPS];$/;"	m	struct:Example	file:
+ftpos	ex_draw_bitmap.c	/^   int ftpos;$/;"	m	struct:Example	file:
+g_fps	game.hpp	31;"	d
+g_max_enemy_count	game.hpp	30;"	d
+g_parg1	global.cpp	/^void* g_parg1; \/\/设置时间处理函数参数指针$/;"	v
+g_pfun1	global.cpp	/^void* g_pfun1; \/\/设置时间处理函数指针 $/;"	v
+game_control_on_run	game.cpp	/^void game_control_on_run(HSL::Event& event,Game& game){$/;"	f
+game_hpp	game.hpp	2;"	d
+game_random	game.cpp	/^int game_random(int min,int max){$/;"	f
+get_fps	ex_draw_bitmap.c	/^static void get_fps(int *average, int *minmax)$/;"	f	file:
+get_info_of_hit	game.cpp	/^void Game::get_info_of_hit(Tile** pt0,int* pind0,$/;"	f	class:Game
+half_white	ex_draw_bitmap.c	/^   ALLEGRO_COLOR half_white;$/;"	m	struct:Example	file:
+handle_event	game.cpp	/^void handle_event(HSL::Event& event,void* arg){$/;"	f
+handle_timer	game.cpp	/^void handle_timer(void* parg){$/;"	f
+height	sprite.cpp	/^int Sprite::height()const{$/;"	f	class:Sprite
+hitted	sprite.cpp	/^bool Enemy::hitted(){$/;"	f	class:Enemy
+hitted	sprite.cpp	/^bool Player::hitted(){$/;"	f	class:Player
+hot_col	sprite.cpp	/^int Sprite::hot_col()const{$/;"	f	class:Sprite
+hot_row	sprite.cpp	/^int Sprite::hot_row()const{$/;"	f	class:Sprite
+init	game.cpp	/^void Game::init(){$/;"	f	class:Game
+init_map	game.cpp	/^void Game::init_map(){$/;"	f	class:Game
+kill_enemy	game.cpp	/^void Game::kill_enemy(){$/;"	f	class:Game
+last_x	ex_draw_bitmap.c	/^   int last_x, last_y;$/;"	m	struct:Example	file:
+last_y	ex_draw_bitmap.c	/^   int last_x, last_y;$/;"	m	struct:Example	file:
+level	sprite.cpp	/^BulletLevel Bullet::level(){$/;"	f	class:Bullet
+level	sprite.cpp	/^TankLevel Tank::level(){$/;"	f	class:Tank
+life	sprite.cpp	/^int Tank::life(){$/;"	f	class:Tank
+load	map.cpp	/^bool Map::load(const char* path){$/;"	f	class:Map
+m_audio	game.hpp	/^		HSL::Audio  m_audio;$/;"	m	class:Game
+m_bare	map.hpp	/^		bool    m_bare;$/;"	m	class:Map
+m_bare_click	map.hpp	/^		int 	m_bare_click;$/;"	m	class:Map
+m_big_explode	game.hpp	/^		Explode   m_big_explode[20];$/;"	m	class:Game
+m_big_explode_living	game.hpp	/^		int		  m_big_explode_living;$/;"	m	class:Game
+m_blit_click	sprite.hpp	/^		int m_blit_click;$/;"	m	class:Sprite
+m_bonus	game.hpp	/^		Bonus     m_bonus;$/;"	m	class:Game
+m_bonus_living	game.hpp	/^		bool      m_bonus_living;$/;"	m	class:Game
+m_buffer	game.hpp	/^		HSL::Image  m_buffer;$/;"	m	class:Game
+m_col	sprite.hpp	/^		int m_row,m_col;$/;"	m	class:Sprite
+m_count	game.hpp	/^		int  m_count[2][4];$/;"	m	class:Game
+m_data	map.hpp	/^		BlockType m_data[5];$/;"	m	class:Tile
+m_dir	sprite.hpp	/^		Direction m_dir;$/;"	m	class:SpriteMovble
+m_enemy	game.hpp	/^		Enemy  m_enemy[g_max_enemy_count];$/;"	m	class:Game
+m_enemy_bore	game.hpp	/^		Bore   		m_enemy_bore[3];$/;"	m	class:Game
+m_enemy_bore_living	game.hpp	/^		int	        m_enemy_bore_living;$/;"	m	class:Game
+m_enemy_bullet	game.hpp	/^		Bullet m_enemy_bullet[40];$/;"	m	class:Game
+m_enemy_bullet_living	game.hpp	/^		int	   m_enemy_bullet_living;$/;"	m	class:Game
+m_enemy_freezing	game.hpp	/^		bool   m_enemy_freezing;$/;"	m	class:Game
+m_enemy_freezing_click	game.hpp	/^		int	   m_enemy_freezing_click;$/;"	m	class:Game
+m_enemy_left	game.hpp	/^		int    m_enemy_left;$/;"	m	class:Game
+m_enemy_level	game.hpp	/^		int  m_enemy_level;$/;"	m	class:Game
+m_enemy_living	game.hpp	/^		int    m_enemy_living;$/;"	m	class:Game
+m_flash	sprite.hpp	/^		bool	   m_flash;$/;"	m	class:Enemy
+m_flash_click	sprite.hpp	/^		int		   m_flash_click;$/;"	m	class:Enemy
+m_full_screen	game.hpp	/^		bool m_full_screen;$/;"	m	class:Game
+m_game_state	game.hpp	/^		GameState m_game_state;$/;"	m	class:Game
+m_hawk_explode	game.hpp	/^		Explode   m_hawk_explode;$/;"	m	class:Game
+m_hawk_explode_living	game.hpp	/^		bool       m_hawk_explode_living;$/;"	m	class:Game
+m_height	map.hpp	75;"	d
+m_height	sprite.hpp	/^		int m_height;$/;"	m	class:Sprite
+m_hot_col	sprite.hpp	/^		int m_hot_col;$/;"	m	class:Sprite
+m_hot_row	sprite.hpp	/^		int m_hot_row;$/;"	m	class:Sprite
+m_img_over	game.hpp	/^		HSL::Image  m_img_over;$/;"	m	class:Game
+m_img_select_double	game.hpp	/^		HSL::Image  m_img_select_double;$/;"	m	class:Game
+m_img_select_single	game.hpp	/^		HSL::Image  m_img_select_single;$/;"	m	class:Game
+m_img_tiles	game.hpp	/^		HSL::Image  m_img_tiles;$/;"	m	class:Game
+m_img_win	game.hpp	/^		HSL::Image  m_img_win;$/;"	m	class:Game
+m_img_world	game.hpp	/^		HSL::Image  m_img_world;$/;"	m	class:Game
+m_last_attack_click	sprite.hpp	/^		int		   m_last_attack_click;$/;"	m	class:Enemy
+m_last_click	sprite.hpp	/^		int m_last_click;$/;"	m	class:Bonus
+m_last_click	sprite.hpp	/^		int m_last_click;$/;"	m	class:Bore
+m_last_click	sprite.hpp	/^		int m_last_click;$/;"	m	class:Explode
+m_last_enemy_bore_click	game.hpp	/^		int	        m_last_enemy_bore_click;$/;"	m	class:Game
+m_level	game.hpp	/^		int  m_level;$/;"	m	class:Game
+m_level	sprite.hpp	/^		BulletLevel m_level;$/;"	m	class:Bullet
+m_level	sprite.hpp	/^		TankLevel m_level;$/;"	m	class:Tank
+m_life_left	sprite.hpp	/^		int 	  m_life_left;$/;"	m	class:Tank
+m_map	game.hpp	/^		Map 			m_map;$/;"	m	class:Game
+m_msg	game.hpp	/^		std::string m_msg;$/;"	m	class:Game
+m_msg_click	game.hpp	/^		int  m_msg_click;$/;"	m	class:Game
+m_mutex	game.hpp	/^		pthread_mutex_t m_mutex;$/;"	m	class:Game
+m_old_time	game.hpp	/^		struct timespec m_old_time;$/;"	m	class:Game	typeref:struct:Game::timespec
+m_over_click	game.hpp	/^		int 	  m_over_click;\/\/表示"game over"画面的时间$/;"	m	class:Game
+m_over_delay_click	game.hpp	/^		int 	  m_over_delay_click ;$/;"	m	class:Game
+m_pen	game.hpp	/^		HSL::Font   m_pen;$/;"	m	class:Game
+m_player	game.hpp	/^		Player m_player[2];$/;"	m	class:Game
+m_player_bore	game.hpp	/^		Bore  m_player_bore[2];$/;"	m	class:Game
+m_player_bore_click	game.hpp	/^		int	   	    m_player_bore_click[2];$/;"	m	class:Game
+m_player_bore_living	game.hpp	/^		int	        m_player_bore_living[2];$/;"	m	class:Game
+m_player_bullet	game.hpp	/^		Bullet m_player_bullet[2][20];$/;"	m	class:Game
+m_player_bullet_living	game.hpp	/^		int    m_player_bullet_living[2];$/;"	m	class:Game
+m_player_freezing	game.hpp	/^		bool   m_player_freezing;$/;"	m	class:Game
+m_player_freezing_click	game.hpp	/^		int    m_player_freezing_click;$/;"	m	class:Game
+m_player_level	game.hpp	/^		int  m_player_level[2];$/;"	m	class:Game
+m_player_life_left	game.hpp	/^		int	   m_player_life_left[2];$/;"	m	class:Game
+m_player_living	game.hpp	/^		bool   m_player_living[2];$/;"	m	class:Game
+m_protect_click	map.hpp	/^		int		m_protect_click;$/;"	m	class:Map
+m_protected	map.hpp	/^		bool 	m_protected;$/;"	m	class:Map
+m_row	sprite.hpp	/^		int m_row,m_col;$/;"	m	class:Sprite
+m_run_click	game.hpp	/^		int 	  m_run_click;$/;"	m	class:Game
+m_score	game.hpp	/^		int  m_score[2];$/;"	m	class:Game
+m_select_click	game.hpp	/^		int  m_select_click;$/;"	m	class:Game
+m_shield	sprite.hpp	/^		bool      m_shield;$/;"	m	class:Tank
+m_shield_click	sprite.hpp	/^		int 	  m_shield_click;$/;"	m	class:Tank
+m_single_player	game.hpp	/^		bool m_single_player;$/;"	m	class:Game
+m_small_explode	game.hpp	/^		Explode   m_small_explode[30];$/;"	m	class:Game
+m_small_explode_living	game.hpp	/^		int		  m_small_explode_living;$/;"	m	class:Game
+m_splash_click	game.hpp	/^		int		  m_splash_click;$/;"	m	class:Game
+m_splash_style	game.hpp	/^		SplashStyle m_splash_style;$/;"	m	class:Game
+m_start_click	game.hpp	/^		int  m_start_click;$/;"	m	class:Game
+m_state	sprite.hpp	/^		PlayerState m_state;$/;"	m	class:Player
+m_tile_array	map.hpp	/^		Tile	m_tile_array[m_height*m_width];$/;"	m	class:Map
+m_time	game.hpp	/^		struct timespec m_time;$/;"	m	class:Game	typeref:struct:Game::timespec
+m_type	sprite.hpp	/^		BonusType m_type;$/;"	m	class:Bonus
+m_type	sprite.hpp	/^		EnemyType  m_type;$/;"	m	class:Enemy
+m_type	sprite.hpp	/^		ExplodeType  m_type;$/;"	m	class:Explode
+m_type	sprite.hpp	/^		PlayerType  m_type;$/;"	m	class:Player
+m_width	map.hpp	74;"	d
+m_width	sprite.hpp	/^		int m_width;$/;"	m	class:Sprite
+m_win	game.hpp	/^		HSL::Window m_win;$/;"	m	class:Game
+m_win_click	game.hpp	/^		int 	  m_win_click;\/\/表示胜利画面的时间$/;"	m	class:Game
+m_win_delay_click	game.hpp	/^		int 	  m_win_delay_click ;$/;"	m	class:Game
+m_wink_click	sprite.hpp	/^		int			m_wink_click;$/;"	m	class:Player
+main	ex_draw_bitmap.c	/^int main(void)$/;"	f
+main	main.cpp	/^int main(){$/;"	f
+main_h	main.hpp	2;"	d
+map_h	map.hpp	2;"	d
+mark_time	game.cpp	/^void Game::mark_time(){$/;"	f	class:Game
+mouse_down	ex_draw_bitmap.c	/^   bool mouse_down;$/;"	m	struct:Example	file:
+move	sprite.cpp	/^void SpriteMovble::move(){$/;"	f	class:SpriteMovble
+mysha	ex_draw_bitmap.c	/^   ALLEGRO_BITMAP *mysha, *bitmap;$/;"	m	struct:Example	file:
+near_middle	game.cpp	23;"	d	file:
+over	game.cpp	/^void Game::over(){$/;"	f	class:Game
+pixel_height	map.cpp	/^int Map::pixel_height(){$/;"	f	class:Map
+pixel_tile	map.cpp	/^Tile& Map::pixel_tile(int pix_row,int pix_col){$/;"	f	class:Map
+pixel_type	map.cpp	/^BlockType Map::pixel_type(int p_row,int p_col){$/;"	f	class:Map
+pixel_width	map.cpp	/^int Map::pixel_width(){$/;"	f	class:Map
+player_bullet_hit_enemy	game.cpp	/^void Game::player_bullet_hit_enemy(){$/;"	f	class:Game
+player_bullet_hit_enemy_bullet	game.cpp	/^void Game::player_bullet_hit_enemy_bullet(){$/;"	f	class:Game
+player_bullet_hit_fence	game.cpp	/^void Game::player_bullet_hit_fence(){$/;"	f	class:Game
+player_bullet_hit_player	game.cpp	/^void Game::player_bullet_hit_player(){$/;"	f	class:Game
+player_bullet_hit_player_bullet	game.cpp	/^void Game::player_bullet_hit_player_bullet(){$/;"	f	class:Game
+player_bullet_hit_tile	game.cpp	/^void Game::player_bullet_hit_tile(){$/;"	f	class:Game
+player_bullet_update	game.cpp	/^void Game::player_bullet_update(){$/;"	f	class:Game
+player_dir	game.cpp	/^Direction Game::player_dir(int i){$/;"	f	class:Game
+player_freezing	game.cpp	/^bool Game::player_freezing(){$/;"	f	class:Game
+player_move	game.cpp	/^void Game::player_move(int i){$/;"	f	class:Game
+player_try_attack	game.cpp	/^void Game::player_try_attack(int i){$/;"	f	class:Game
+process_input	game.cpp	/^void Game::process_input(){$/;"	f	class:Game
+red	ex_draw_bitmap.c	/^   ALLEGRO_COLOR red;$/;"	m	struct:Example	file:
+redraw	ex_draw_bitmap.c	/^static void redraw(void)$/;"	f	file:
+remove_big_explode	game.cpp	/^void Game::remove_big_explode(int i){$/;"	f	class:Game
+remove_enemy	game.cpp	/^void Game::remove_enemy(int i){$/;"	f	class:Game
+remove_enemy_bore	game.cpp	/^void Game::remove_enemy_bore(int i){$/;"	f	class:Game
+remove_enemy_bullet	game.cpp	/^void Game::remove_enemy_bullet(int i){$/;"	f	class:Game
+remove_player	game.cpp	/^void Game::remove_player(int i){$/;"	f	class:Game
+remove_player_bore	game.cpp	/^void Game::remove_player_bore(int i){$/;"	f	class:Game
+remove_player_bullet	game.cpp	/^void Game::remove_player_bullet(int i,int j){$/;"	f	class:Game
+remove_small_explode	game.cpp	/^void Game::remove_small_explode(int i){$/;"	f	class:Game
+remove_sprites	ex_draw_bitmap.c	/^static void remove_sprites(int n)$/;"	f	file:
+row	sprite.cpp	/^int Sprite::row()const{$/;"	f	class:Sprite
+row_off	game.cpp	3;"	d	file:
+run	game.cpp	/^void Game::run(){$/;"	f	class:Game
+s_img_big_explode	sprite.hpp	/^		static HSL::Image s_img_big_explode;$/;"	m	class:Explode
+s_img_bonus	sprite.hpp	/^		static HSL::Image s_img_bonus;$/;"	m	class:Bonus
+s_img_bore	sprite.hpp	/^		static HSL::Image s_img_bore;$/;"	m	class:Bore
+s_img_bullet	sprite.hpp	/^		static HSL::Image s_img_bullet;$/;"	m	class:Bullet
+s_img_enemy	sprite.hpp	/^		static HSL::Image s_img_enemy;$/;"	m	class:Enemy
+s_img_player0	sprite.hpp	/^		static HSL::Image s_img_player0;$/;"	m	class:Player
+s_img_player1	sprite.hpp	/^		static HSL::Image s_img_player1;$/;"	m	class:Player
+s_img_shield	sprite.hpp	/^		static HSL::Image s_img_shield;$/;"	m	class:Tank
+s_img_small_explode	sprite.hpp	/^		static HSL::Image s_img_small_explode;$/;"	m	class:Explode
+s_img_tile	map.hpp	/^		static  HSL::Image s_img_tile;$/;"	m	class:Map
+set_attack_click	sprite.cpp	/^void Enemy::set_attack_click(int click){$/;"	f	class:Enemy
+set_dir	sprite.cpp	/^void SpriteMovble::set_dir(Direction dir){$/;"	f	class:SpriteMovble
+set_enemy_freezing	game.cpp	/^void Game::set_enemy_freezing(){$/;"	f	class:Game
+set_event_handler	game.cpp	/^void Game::set_event_handler(HSL::EventHandler event_handler,void* parg){$/;"	f	class:Game
+set_hawk_bare	map.cpp	/^void Map::set_hawk_bare(){$/;"	f	class:Map
+set_hawk_normal	map.cpp	/^void Map::set_hawk_normal(){$/;"	f	class:Map
+set_hawk_protected	map.cpp	/^void Map::set_hawk_protected(){$/;"	f	class:Map
+set_player_dir	game.cpp	/^void Game::set_player_dir(int i,Direction d){$/;"	f	class:Game
+set_pos	sprite.cpp	/^void Sprite::set_pos(int row,int col){$/;"	f	class:Sprite
+set_shield	sprite.cpp	/^void Tank::set_shield(bool fl){$/;"	f	class:Tank
+set_single_player	game.cpp	/^void Game::set_single_player(bool fl){$/;"	f	class:Game
+set_state	game.cpp	/^void Game::set_state(GameState gs){$/;"	f	class:Game
+set_state	sprite.cpp	/^void Player::set_state(PlayerState ps){$/;"	f	class:Player
+set_tile	map.cpp	/^void Map::set_tile(int row,int col,BlockType ty){$/;"	f	class:Map
+set_tile	map.cpp	/^void Map::set_tile(int row,int col,int i,BlockType ty){$/;"	f	class:Map
+set_timer	game.cpp	/^void Game::set_timer(int ms,TimerHandler timer_handler,void* parg){$/;"	f	class:Game
+set_type	map.cpp	/^void Tile::set_type(BlockType bt){$/;"	f	class:Tile
+set_type	map.cpp	/^void Tile::set_type(int i,BlockType bt){$/;"	f	class:Tile
+shield	sprite.cpp	/^bool Tank::shield(){$/;"	f	class:Tank
+show_help	ex_draw_bitmap.c	/^   bool show_help;$/;"	m	struct:Example	file:
+show_message	game.cpp	/^void Game::show_message(const std::string& msg,int ms){$/;"	f	class:Game
+single_player	game.cpp	/^bool Game::single_player(){$/;"	f	class:Game
+speed	sprite.cpp	/^int Bullet::speed(){$/;"	f	class:Bullet
+speed	sprite.cpp	/^int Tank::speed(){$/;"	f	class:Tank
+sprite_count	ex_draw_bitmap.c	/^   int sprite_count;$/;"	m	struct:Example	file:
+sprite_h	sprite.hpp	2;"	d
+sprite_update	ex_draw_bitmap.c	/^static void sprite_update(Sprite *s)$/;"	f	file:
+sprites	ex_draw_bitmap.c	/^   Sprite sprites[MAX_SPRITES];$/;"	m	struct:Example	file:
+state	game.cpp	/^GameState Game::state(){$/;"	f	class:Game
+state	sprite.cpp	/^PlayerState Player::state(){$/;"	f	class:Player
+text	ex_draw_bitmap.c	/^char const *text[] = {$/;"	v
+tile	map.cpp	/^Tile& Map::tile(int row,int col){$/;"	f	class:Map
+tile_block_index	game.cpp	21;"	d	file:
+tile_block_index	map.cpp	22;"	d	file:
+tile_height	map.cpp	/^int Map::tile_height(){$/;"	f	class:Map
+tile_width	map.cpp	/^int Map::tile_width(){$/;"	f	class:Map
+time_out	sprite.cpp	/^bool Bonus::time_out(){$/;"	f	class:Bonus
+time_out	sprite.cpp	/^bool Bore::time_out(){$/;"	f	class:Bore
+time_out	sprite.cpp	/^bool Explode::time_out(){$/;"	f	class:Explode
+try_create_enemy_bore	game.cpp	/^void Game::try_create_enemy_bore(){$/;"	f	class:Game
+try_create_player_bore	game.cpp	/^void Game::try_create_player_bore(){$/;"	f	class:Game
+type	map.cpp	/^BlockType Tile::type(){$/;"	f	class:Tile
+type	map.cpp	/^BlockType Tile::type(int i){$/;"	f	class:Tile
+type	sprite.cpp	/^BonusType Bonus::type(){$/;"	f	class:Bonus
+type	sprite.cpp	/^EnemyType Enemy::type(){$/;"	f	class:Enemy
+update	ex_draw_bitmap.c	/^static void update(void)$/;"	f	file:
+update	map.cpp	/^void Map::update(){$/;"	f	class:Map
+update	sprite.cpp	/^void Bonus::update(){$/;"	f	class:Bonus
+update	sprite.cpp	/^void Bore::update(){$/;"	f	class:Bore
+update	sprite.cpp	/^void Bullet::update(){$/;"	f	class:Bullet
+update	sprite.cpp	/^void Enemy::update(){$/;"	f	class:Enemy
+update	sprite.cpp	/^void Explode::update(){$/;"	f	class:Explode
+update	sprite.cpp	/^void Player::update(){$/;"	f	class:Player
+update_auto_data	game.cpp	/^void Game::update_auto_data(){$/;"	f	class:Game
+update_auto_data_on_over	game.cpp	/^void Game::update_auto_data_on_over(){$/;"	f	class:Game
+update_auto_data_on_run	game.cpp	/^void Game::update_auto_data_on_run()$/;"	f	class:Game
+update_auto_data_on_select	game.cpp	/^void Game::update_auto_data_on_select(){$/;"	f	class:Game
+update_auto_data_on_splash	game.cpp	/^void Game::update_auto_data_on_splash(){$/;"	f	class:Game
+update_auto_data_on_start	game.cpp	/^void Game::update_auto_data_on_start(){$/;"	f	class:Game
+update_auto_data_on_win	game.cpp	/^void Game::update_auto_data_on_win(){$/;"	f	class:Game
+update_river	map.cpp	/^void Map::update_river(){$/;"	f	class:Map
+update_screen	game.cpp	/^void Game::update_screen(){$/;"	f	class:Game
+use_memory_bitmaps	ex_draw_bitmap.c	/^   bool use_memory_bitmaps;$/;"	m	struct:Example	file:
+white	ex_draw_bitmap.c	/^   ALLEGRO_COLOR white;$/;"	m	struct:Example	file:
+width	sprite.cpp	/^int Sprite::width()const{$/;"	f	class:Sprite
+x	ex_draw_bitmap.c	/^   float x, y, dx, dy;$/;"	m	struct:Sprite	file:
+x	sprite.hpp	/^	int x,y;$/;"	m	struct:__anon12
+y	ex_draw_bitmap.c	/^   float x, y, dx, dy;$/;"	m	struct:Sprite	file:
+y	sprite.hpp	/^	int x,y;$/;"	m	struct:__anon12
+~Bonus	sprite.cpp	/^Bonus::~Bonus(){}$/;"	f	class:Bonus
+~Bore	sprite.cpp	/^Bore::~Bore(){}$/;"	f	class:Bore
+~Bullet	sprite.cpp	/^Bullet::~Bullet(){$/;"	f	class:Bullet
+~Enemy	sprite.cpp	/^Enemy::~Enemy(){}$/;"	f	class:Enemy
+~Explode	sprite.cpp	/^Explode::~Explode(){}$/;"	f	class:Explode
+~Game	game.cpp	/^Game::~Game(){$/;"	f	class:Game
+~Map	map.cpp	/^Map::~Map(){}$/;"	f	class:Map
+~Player	sprite.cpp	/^Player::~Player(){}$/;"	f	class:Player
+~Sprite	sprite.cpp	/^Sprite::~Sprite(){}$/;"	f	class:Sprite
+~SpriteMovble	sprite.cpp	/^SpriteMovble::~SpriteMovble(){}$/;"	f	class:SpriteMovble
+~Tank	sprite.cpp	/^Tank::~Tank(){}$/;"	f	class:Tank

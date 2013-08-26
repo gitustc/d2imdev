@@ -1,0 +1,19 @@
+# Settings for the GameNew menu
+# the first two values are x,y positions
+# some items have two more values, width and height
+
+button_prev=16,108
+button_next=188,108
+button_permadeath=128,212
+
+name_input=128,202
+
+portrait=28,30,160,160
+
+class_list=224,30
+show_classlist=1
+
+portrait_label=108,20,center,top
+name_label=160,190,center,top
+permadeath_label=142,218,left,center
+classlist_label=256,20,center,top
