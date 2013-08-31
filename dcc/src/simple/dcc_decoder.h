@@ -2,6 +2,8 @@
 
 #define _DCC_INFO_H_
 
+#include "allegro.h"
+
 #define FALSE  0
 #define TRUE  -1
 

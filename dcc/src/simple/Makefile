@@ -7,6 +7,6 @@ all:$(OBJS)
 test:
 	./a.out FATRLITA1HTH.dcc
 clean:
-	rm *.o a.out -rf
+	rm *.o *.pcx *.bmp a.out -rf
 $(OBJS):%.o:%.c
 	$(CC) -c $(CFLAGS) $< -o $@

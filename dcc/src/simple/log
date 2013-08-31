@@ -1,0 +1,1275 @@
+./a.out FATRLITA1HTH.dcc
+file_signature = 116
+version        = 6
+directions     = 8
+frames_per_dir = 10
+tag            = 1
+final_dc6_size = 77299 bytes
+
+box                = (-30, -56)  --->  (30, 4)  =  61 * 61
+
+direction  0
+   outsize_coded       = 9607 bytes
+   compression_flag    = 3
+   variable0_bits      =  0  ( 0 bits)
+   width_bits          =  4  ( 6 bits)
+   height_bits         =  4  ( 6 bits)
+   xoffset_bits        =  4  ( 6 bits)
+   yoffset_bits        =  3  ( 4 bits)
+   optional_bytes_bits =  0  ( 0 bits)
+   coded_bytes_bits    =  6  (10 bits)
+   box                 = (-29, -54)  --->  (12, 4)  =  42 * 59
+   cells               = 11 * 15 = 165
+   CVDCC.DLL offsets   = -29, 4 (in version < 3.0)
+
+   equal_cell_bitstream_size       =     1089 bits (read     1089)
+   pixel_mask_bitstream_size       =     2636 bits (read     2636)
+   encoding_type_bitstream_size    =      799 bits (read      799)
+   raw_pixel_bitstream_size        =     3728 bits (read     3728)
+   pixel_code_and_displacment.size =    28420 bits (read    28415)
+
+   pixel_values :
+   0   1   2   3   5   7   8  13  15  16  17  18  20  21  23  24
+  25  26  27  28  33  34  35  36  37  38  39  40  41  42  43  44
+  45  46  47  48  49  50  51  52  53  54  55  56  57  58  61  62
+  65  66  68  70  71  72  73  76  77  78  79  80  82  83  84  85
+  87  88  91  97 100 107 137 165 167 170 171 172 173 174 175 176
+ 178 180 181 182 184 187 189 190 191 193 194 196 199 201 202 204
+ 207 209 210 211 218   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+   frame   0
+      width          = 25
+      height         = 58
+      xoffset        = -14
+      yoffset        = 4
+      coded_bytes    = 926
+      bottom_up      = 0
+      box            = (-14, -53)  --->  (10, 4)  =  25 * 58
+      box2           = (15, 1)  --->  (39, 58)  =  25 * 58
+      cells          = 7 * 15 = 105
+      1st cell0_x, y = 15, 1
+
+   frame   1
+      width          = 33
+      height         = 58
+      xoffset        = -21
+      yoffset        = 4
+      coded_bytes    = 960
+      bottom_up      = 0
+      box            = (-21, -53)  --->  (11, 4)  =  33 * 58
+      box2           = (8, 1)  --->  (40, 58)  =  33 * 58
+      cells          = 8 * 15 = 120
+      1st cell0_x, y = 8, 1
+
+   frame   2
+      width          = 38
+      height         = 58
+      xoffset        = -25
+      yoffset        = 4
+      coded_bytes    = 969
+      bottom_up      = 0
+      box            = (-25, -53)  --->  (12, 4)  =  38 * 58
+      box2           = (4, 1)  --->  (41, 58)  =  38 * 58
+      cells          = 10 * 15 = 150
+      1st cell0_x, y = 4, 1
+
+   frame   3
+      width          = 40
+      height         = 58
+      xoffset        = -27
+      yoffset        = 4
+      coded_bytes    = 972
+      bottom_up      = 0
+      box            = (-27, -53)  --->  (12, 4)  =  40 * 58
+      box2           = (2, 1)  --->  (41, 58)  =  40 * 58
+      cells          = 11 * 15 = 165
+      1st cell0_x, y = 2, 1
+
+   frame   4
+      width          = 38
+      height         = 58
+      xoffset        = -27
+      yoffset        = 4
+      coded_bytes    = 942
+      bottom_up      = 0
+      box            = (-27, -53)  --->  (10, 4)  =  38 * 58
+      box2           = (2, 1)  --->  (39, 58)  =  38 * 58
+      cells          = 10 * 15 = 150
+      1st cell0_x, y = 2, 1
+
+   frame   5
+      width          = 31
+      height         = 59
+      xoffset        = -23
+      yoffset        = 4
+      coded_bytes    = 931
+      bottom_up      = 0
+      box            = (-23, -54)  --->  (7, 4)  =  31 * 59
+      box2           = (6, 0)  --->  (36, 58)  =  31 * 59
+      cells          = 8 * 15 = 120
+      1st cell0_x, y = 6, 0
+
+   frame   6
+      width          = 27
+      height         = 55
+      xoffset        = -21
+      yoffset        = 4
+      coded_bytes    = 901
+      bottom_up      = 0
+      box            = (-21, -50)  --->  (5, 4)  =  27 * 55
+      box2           = (8, 4)  --->  (34, 58)  =  27 * 55
+      cells          = 7 * 14 = 98
+      1st cell0_x, y = 8, 4
+
+   frame   7
+      width          = 37
+      height         = 48
+      xoffset        = -29
+      yoffset        = 4
+      coded_bytes    = 884
+      bottom_up      = 0
+      box            = (-29, -43)  --->  (7, 4)  =  37 * 48
+      box2           = (0, 11)  --->  (36, 58)  =  37 * 48
+      cells          = 9 * 13 = 117
+      1st cell0_x, y = 0, 11
+
+   frame   8
+      width          = 34
+      height         = 51
+      xoffset        = -23
+      yoffset        = 4
+      coded_bytes    = 903
+      bottom_up      = 0
+      box            = (-23, -46)  --->  (10, 4)  =  34 * 51
+      box2           = (6, 8)  --->  (39, 58)  =  34 * 51
+      cells          = 9 * 13 = 117
+      1st cell0_x, y = 6, 8
+
+   frame   9
+      width          = 29
+      height         = 55
+      xoffset        = -19
+      yoffset        = 4
+      coded_bytes    = 869
+      bottom_up      = 0
+      box            = (-19, -50)  --->  (9, 4)  =  29 * 55
+      box2           = (10, 4)  --->  (38, 58)  =  29 * 55
+      cells          = 8 * 14 = 112
+      1st cell0_x, y = 10, 4
+
+direction  1
+   outsize_coded       = 10077 bytes
+   compression_flag    = 3
+   variable0_bits      =  0  ( 0 bits)
+   width_bits          =  4  ( 6 bits)
+   height_bits         =  4  ( 6 bits)
+   xoffset_bits        =  4  ( 6 bits)
+   yoffset_bits        =  2  ( 2 bits)
+   optional_bytes_bits =  0  ( 0 bits)
+   coded_bytes_bits    =  7  (12 bits)
+   box                 = (-26, -56)  --->  (22, 1)  =  49 * 58
+   cells               = 13 * 15 = 195
+   CVDCC.DLL offsets   = -26, 1 (in version < 3.0)
+
+   equal_cell_bitstream_size       =     1180 bits (read     1180)
+   pixel_mask_bitstream_size       =     2744 bits (read     2744)
+   encoding_type_bitstream_size    =      837 bits (read      837)
+   raw_pixel_bitstream_size        =     2216 bits (read     2216)
+   pixel_code_and_displacment.size =    30703 bits (read    30696)
+
+   pixel_values :
+   0   1   3   5   8   9  15  16  18  19  20  22  23  25  29  33
+  34  35  36  37  38  40  41  42  44  45  46  47  49  50  51  52
+  53  54  55  56  57  58  60  61  62  63  64  65  66  68  70  72
+  73  76  78  79  80  83  85  88  91  94 100 106 170 172 173 174
+ 175 176 177 178 179 182 183 184 187 189 191 193 194 196 198 201
+ 202 204 205   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+   frame   0
+      width          = 38
+      height         = 55
+      xoffset        = -24
+      yoffset        = 1
+      coded_bytes    = 989
+      bottom_up      = 0
+      box            = (-24, -53)  --->  (13, 1)  =  38 * 55
+      box2           = (2, 3)  --->  (39, 57)  =  38 * 55
+      cells          = 10 * 15 = 150
+      1st cell0_x, y = 2, 3
+
+   frame   1
+      width          = 35
+      height         = 54
+      xoffset        = -19
+      yoffset        = 1
+      coded_bytes    = 990
+      bottom_up      = 0
+      box            = (-19, -52)  --->  (15, 1)  =  35 * 54
+      box2           = (7, 4)  --->  (41, 57)  =  35 * 54
+      cells          = 10 * 14 = 140
+      1st cell0_x, y = 7, 4
+
+   frame   2
+      width          = 30
+      height         = 54
+      xoffset        = -12
+      yoffset        = 1
+      coded_bytes    = 1001
+      bottom_up      = 0
+      box            = (-12, -52)  --->  (17, 1)  =  30 * 54
+      box2           = (14, 4)  --->  (43, 57)  =  30 * 54
+      cells          = 8 * 14 = 112
+      1st cell0_x, y = 14, 4
+
+   frame   3
+      width          = 33
+      height         = 53
+      xoffset        = -11
+      yoffset        = 1
+      coded_bytes    = 1008
+      bottom_up      = 0
+      box            = (-11, -51)  --->  (21, 1)  =  33 * 53
+      box2           = (15, 5)  --->  (47, 57)  =  33 * 53
+      cells          = 9 * 14 = 126
+      1st cell0_x, y = 15, 5
+
+   frame   4
+      width          = 34
+      height         = 54
+      xoffset        = -11
+      yoffset        = 1
+      coded_bytes    = 1034
+      bottom_up      = 0
+      box            = (-11, -52)  --->  (22, 1)  =  34 * 54
+      box2           = (15, 4)  --->  (48, 57)  =  34 * 54
+      cells          = 9 * 14 = 126
+      1st cell0_x, y = 15, 4
+
+   frame   5
+      width          = 37
+      height         = 57
+      xoffset        = -18
+      yoffset        = 1
+      coded_bytes    = 1026
+      bottom_up      = 0
+      box            = (-18, -55)  --->  (18, 1)  =  37 * 57
+      box2           = (8, 1)  --->  (44, 57)  =  37 * 57
+      cells          = 9 * 15 = 135
+      1st cell0_x, y = 8, 1
+
+   frame   6
+      width          = 37
+      height         = 58
+      xoffset        = -25
+      yoffset        = 1
+      coded_bytes    = 985
+      bottom_up      = 0
+      box            = (-25, -56)  --->  (11, 1)  =  37 * 58
+      box2           = (1, 0)  --->  (37, 57)  =  37 * 58
+      cells          = 10 * 15 = 150
+      1st cell0_x, y = 1, 0
+
+   frame   7
+      width          = 38
+      height         = 54
+      xoffset        = -26
+      yoffset        = 1
+      coded_bytes    = 909
+      bottom_up      = 0
+      box            = (-26, -52)  --->  (11, 1)  =  38 * 54
+      box2           = (0, 4)  --->  (37, 57)  =  38 * 54
+      cells          = 10 * 14 = 140
+      1st cell0_x, y = 0, 4
+
+   frame   8
+      width          = 36
+      height         = 52
+      xoffset        = -24
+      yoffset        = 1
+      coded_bytes    = 859
+      bottom_up      = 0
+      box            = (-24, -50)  --->  (11, 1)  =  36 * 52
+      box2           = (2, 6)  --->  (37, 57)  =  36 * 52
+      cells          = 10 * 14 = 140
+      1st cell0_x, y = 2, 6
+
+   frame   9
+      width          = 37
+      height         = 54
+      xoffset        = -25
+      yoffset        = 1
+      coded_bytes    = 926
+      bottom_up      = 0
+      box            = (-25, -52)  --->  (11, 1)  =  37 * 54
+      box2           = (1, 4)  --->  (37, 57)  =  37 * 54
+      cells          = 10 * 14 = 140
+      1st cell0_x, y = 1, 4
+
+direction  2
+   outsize_coded       = 9126 bytes
+   compression_flag    = 3
+   variable0_bits      =  0  ( 0 bits)
+   width_bits          =  4  ( 6 bits)
+   height_bits         =  4  ( 6 bits)
+   xoffset_bits        =  4  ( 6 bits)
+   yoffset_bits        =  3  ( 4 bits)
+   optional_bytes_bits =  0  ( 0 bits)
+   coded_bytes_bits    =  6  (10 bits)
+   box                 = (-14, -54)  --->  (26, 4)  =  41 * 59
+   cells               = 11 * 15 = 165
+   CVDCC.DLL offsets   = -14, 4 (in version < 3.0)
+
+   equal_cell_bitstream_size       =     1072 bits (read     1072)
+   pixel_mask_bitstream_size       =     2508 bits (read     2508)
+   encoding_type_bitstream_size    =      746 bits (read      746)
+   raw_pixel_bitstream_size        =     3064 bits (read     3064)
+   pixel_code_and_displacment.size =    27498 bits (read    27492)
+
+   pixel_values :
+   0   1   3   4   5   8   9  13  15  16  17  18  20  23  25  26
+  27  30  33  34  35  36  37  38  39  40  41  42  43  44  45  46
+  47  48  49  50  51  52  53  54  55  56  57  58  60  61  62  64
+  65  66  68  70  71  72  73  76  77  78  79  80  81  83  84  85
+  88  91  92  94  95 100 167 172 173 175 177 178 179 182 184 185
+ 187 188 189 191 193 194 195 196 200 201 204 208 209 210 213 215
+ 218   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+   frame   0
+      width          = 25
+      height         = 57
+      xoffset        = -12
+      yoffset        = 4
+      coded_bytes    = 876
+      bottom_up      = 0
+      box            = (-12, -52)  --->  (12, 4)  =  25 * 57
+      box2           = (2, 2)  --->  (26, 58)  =  25 * 57
+      cells          = 7 * 15 = 105
+      1st cell0_x, y = 2, 2
+
+   frame   1
+      width          = 31
+      height         = 56
+      xoffset        = -12
+      yoffset        = 4
+      coded_bytes    = 884
+      bottom_up      = 0
+      box            = (-12, -51)  --->  (18, 4)  =  31 * 56
+      box2           = (2, 3)  --->  (32, 58)  =  31 * 56
+      cells          = 8 * 15 = 120
+      1st cell0_x, y = 2, 3
+
+   frame   2
+      width          = 38
+      height         = 55
+      xoffset        = -13
+      yoffset        = 4
+      coded_bytes    = 899
+      bottom_up      = 0
+      box            = (-13, -50)  --->  (24, 4)  =  38 * 55
+      box2           = (1, 4)  --->  (38, 58)  =  38 * 55
+      cells          = 10 * 14 = 140
+      1st cell0_x, y = 1, 4
+
+   frame   3
+      width          = 40
+      height         = 54
+      xoffset        = -14
+      yoffset        = 4
+      coded_bytes    = 896
+      bottom_up      = 0
+      box            = (-14, -49)  --->  (25, 4)  =  40 * 54
+      box2           = (0, 5)  --->  (39, 58)  =  40 * 54
+      cells          = 10 * 14 = 140
+      1st cell0_x, y = 0, 5
+
+   frame   4
+      width          = 38
+      height         = 54
+      xoffset        = -11
+      yoffset        = 4
+      coded_bytes    = 846
+      bottom_up      = 0
+      box            = (-11, -49)  --->  (26, 4)  =  38 * 54
+      box2           = (3, 5)  --->  (40, 58)  =  38 * 54
+      cells          = 10 * 14 = 140
+      1st cell0_x, y = 3, 5
+
+   frame   5
+      width          = 31
+      height         = 58
+      xoffset        = -9
+      yoffset        = 4
+      coded_bytes    = 823
+      bottom_up      = 0
+      box            = (-9, -53)  --->  (21, 4)  =  31 * 58
+      box2           = (5, 1)  --->  (35, 58)  =  31 * 58
+      cells          = 8 * 15 = 120
+      1st cell0_x, y = 5, 1
+
+   frame   6
+      width          = 27
+      height         = 59
+      xoffset        = -6
+      yoffset        = 4
+      coded_bytes    = 879
+      bottom_up      = 0
+      box            = (-6, -54)  --->  (20, 4)  =  27 * 59
+      box2           = (8, 0)  --->  (34, 58)  =  27 * 59
+      cells          = 7 * 15 = 105
+      1st cell0_x, y = 8, 0
+
+   frame   7
+      width          = 34
+      height         = 57
+      xoffset        = -7
+      yoffset        = 4
+      coded_bytes    = 925
+      bottom_up      = 0
+      box            = (-7, -52)  --->  (26, 4)  =  34 * 57
+      box2           = (7, 2)  --->  (40, 58)  =  34 * 57
+      cells          = 9 * 15 = 135
+      1st cell0_x, y = 7, 2
+
+   frame   8
+      width          = 33
+      height         = 55
+      xoffset        = -10
+      yoffset        = 4
+      coded_bytes    = 880
+      bottom_up      = 0
+      box            = (-10, -50)  --->  (22, 4)  =  33 * 55
+      box2           = (4, 4)  --->  (36, 58)  =  33 * 55
+      cells          = 8 * 14 = 112
+      1st cell0_x, y = 4, 4
+
+   frame   9
+      width          = 29
+      height         = 56
+      xoffset        = -10
+      yoffset        = 4
+      coded_bytes    = 868
+      bottom_up      = 0
+      box            = (-10, -51)  --->  (18, 4)  =  29 * 56
+      box2           = (4, 3)  --->  (32, 58)  =  29 * 56
+      cells          = 7 * 15 = 105
+      1st cell0_x, y = 4, 3
+
+direction  3
+   outsize_coded       = 9543 bytes
+   compression_flag    = 3
+   variable0_bits      =  0  ( 0 bits)
+   width_bits          =  4  ( 6 bits)
+   height_bits         =  4  ( 6 bits)
+   xoffset_bits        =  4  ( 6 bits)
+   yoffset_bits        =  2  ( 2 bits)
+   optional_bytes_bits =  0  ( 0 bits)
+   coded_bytes_bits    =  6  (10 bits)
+   box                 = (-23, -52)  --->  (25, 1)  =  49 * 54
+   cells               = 13 * 14 = 182
+   CVDCC.DLL offsets   = -23, 1 (in version < 3.0)
+
+   equal_cell_bitstream_size       =     1092 bits (read     1092)
+   pixel_mask_bitstream_size       =     2584 bits (read     2584)
+   encoding_type_bitstream_size    =      788 bits (read      788)
+   raw_pixel_bitstream_size        =     2376 bits (read     2376)
+   pixel_code_and_displacment.size =    29924 bits (read    29918)
+
+   pixel_values :
+   0   1   3   5   7   8  13  15  16  17  18  19  20  22  23  25
+  27  28  29  33  34  35  36  37  38  39  40  41  42  44  45  46
+  47  48  49  50  51  52  53  54  55  56  57  58  60  61  62  64
+  65  66  68  70  71  72  73  76  77  78  79  80  85  88  90  91
+ 166 172 173 174 175 177 178 181 182 184 187 189 191 193 194 196
+ 201 204 206 207 210 211 212 214 215 217 218   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+   frame   0
+      width          = 40
+      height         = 54
+      xoffset        = -15
+      yoffset        = 1
+      coded_bytes    = 1012
+      bottom_up      = 0
+      box            = (-15, -52)  --->  (24, 1)  =  40 * 54
+      box2           = (8, 0)  --->  (47, 53)  =  40 * 54
+      cells          = 10 * 14 = 140
+      1st cell0_x, y = 8, 0
+
+   frame   1
+      width          = 36
+      height         = 53
+      xoffset        = -16
+      yoffset        = 0
+      coded_bytes    = 953
+      bottom_up      = 0
+      box            = (-16, -52)  --->  (19, 0)  =  36 * 53
+      box2           = (7, 0)  --->  (42, 52)  =  36 * 53
+      cells          = 10 * 13 = 130
+      1st cell0_x, y = 7, 0
+
+   frame   2
+      width          = 31
+      height         = 52
+      xoffset        = -19
+      yoffset        = 0
+      coded_bytes    = 933
+      bottom_up      = 0
+      box            = (-19, -51)  --->  (11, 0)  =  31 * 52
+      box2           = (4, 1)  --->  (34, 52)  =  31 * 52
+      cells          = 8 * 13 = 104
+      1st cell0_x, y = 4, 1
+
+   frame   3
+      width          = 33
+      height         = 51
+      xoffset        = -22
+      yoffset        = 0
+      coded_bytes    = 922
+      bottom_up      = 0
+      box            = (-22, -50)  --->  (10, 0)  =  33 * 51
+      box2           = (1, 2)  --->  (33, 52)  =  33 * 51
+      cells          = 9 * 13 = 117
+      1st cell0_x, y = 1, 2
+
+   frame   4
+      width          = 34
+      height         = 51
+      xoffset        = -23
+      yoffset        = 0
+      coded_bytes    = 972
+      bottom_up      = 0
+      box            = (-23, -50)  --->  (10, 0)  =  34 * 51
+      box2           = (0, 2)  --->  (33, 52)  =  34 * 51
+      cells          = 9 * 13 = 117
+      1st cell0_x, y = 0, 2
+
+   frame   5
+      width          = 38
+      height         = 52
+      xoffset        = -19
+      yoffset        = 0
+      coded_bytes    = 1011
+      bottom_up      = 0
+      box            = (-19, -51)  --->  (18, 0)  =  38 * 52
+      box2           = (4, 1)  --->  (41, 52)  =  38 * 52
+      cells          = 10 * 13 = 130
+      1st cell0_x, y = 4, 1
+
+   frame   6
+      width          = 38
+      height         = 49
+      xoffset        = -12
+      yoffset        = 1
+      coded_bytes    = 841
+      bottom_up      = 0
+      box            = (-12, -47)  --->  (25, 1)  =  38 * 49
+      box2           = (11, 5)  --->  (48, 53)  =  38 * 49
+      cells          = 10 * 13 = 130
+      1st cell0_x, y = 11, 5
+
+   frame   7
+      width          = 38
+      height         = 44
+      xoffset        = -12
+      yoffset        = 1
+      coded_bytes    = 847
+      bottom_up      = 0
+      box            = (-12, -42)  --->  (25, 1)  =  38 * 44
+      box2           = (11, 10)  --->  (48, 53)  =  38 * 44
+      cells          = 10 * 12 = 120
+      1st cell0_x, y = 11, 10
+
+   frame   8
+      width          = 36
+      height         = 47
+      xoffset        = -12
+      yoffset        = 1
+      coded_bytes    = 803
+      bottom_up      = 0
+      box            = (-12, -45)  --->  (23, 1)  =  36 * 47
+      box2           = (11, 7)  --->  (46, 53)  =  36 * 47
+      cells          = 10 * 13 = 130
+      1st cell0_x, y = 11, 7
+
+   frame   9
+      width          = 37
+      height         = 51
+      xoffset        = -12
+      yoffset        = 1
+      coded_bytes    = 899
+      bottom_up      = 0
+      box            = (-12, -49)  --->  (24, 1)  =  37 * 51
+      box2           = (11, 3)  --->  (47, 53)  =  37 * 51
+      cells          = 10 * 14 = 140
+      1st cell0_x, y = 11, 3
+
+direction  4
+   outsize_coded       = 8998 bytes
+   compression_flag    = 3
+   variable0_bits      =  0  ( 0 bits)
+   width_bits          =  4  ( 6 bits)
+   height_bits         =  4  ( 6 bits)
+   xoffset_bits        =  4  ( 6 bits)
+   yoffset_bits        =  3  ( 4 bits)
+   optional_bytes_bits =  0  ( 0 bits)
+   coded_bytes_bits    =  6  (10 bits)
+   box                 = (-18, -51)  --->  (18, 3)  =  37 * 55
+   cells               = 10 * 14 = 140
+   CVDCC.DLL offsets   = -18, 3 (in version < 3.0)
+
+   equal_cell_bitstream_size       =      890 bits (read      890)
+   pixel_mask_bitstream_size       =     2384 bits (read     2384)
+   encoding_type_bitstream_size    =      692 bits (read      692)
+   raw_pixel_bitstream_size        =     2520 bits (read     2520)
+   pixel_code_and_displacment.size =    27074 bits (read    27074)
+
+   pixel_values :
+   0   1   3   4   5   8  14  15  16  18  19  20  23  24  26  27
+  28  30  33  34  35  36  37  38  39  40  41  42  43  44  45  46
+  47  48  49  50  51  52  53  54  55  56  57  58  61  62  63  64
+  65  66  70  71  72  73  76  77  78  79  80  83  85  88  93  94
+  95 106 166 167 172 173 174 176 178 181 182 184 187 189 193 194
+ 196 198 201 202 204 207 212 218   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+   frame   0
+      width          = 27
+      height         = 55
+      xoffset        = -15
+      yoffset        = 3
+      coded_bytes    = 859
+      bottom_up      = 0
+      box            = (-15, -51)  --->  (11, 3)  =  27 * 55
+      box2           = (3, 0)  --->  (29, 54)  =  27 * 55
+      cells          = 8 * 14 = 112
+      1st cell0_x, y = 3, 0
+
+   frame   1
+      width          = 26
+      height         = 55
+      xoffset        = -17
+      yoffset        = 3
+      coded_bytes    = 818
+      bottom_up      = 0
+      box            = (-17, -51)  --->  (8, 3)  =  26 * 55
+      box2           = (1, 0)  --->  (26, 54)  =  26 * 55
+      cells          = 7 * 14 = 98
+      1st cell0_x, y = 1, 0
+
+   frame   2
+      width          = 26
+      height         = 55
+      xoffset        = -17
+      yoffset        = 3
+      coded_bytes    = 856
+      bottom_up      = 0
+      box            = (-17, -51)  --->  (8, 3)  =  26 * 55
+      box2           = (1, 0)  --->  (26, 54)  =  26 * 55
+      cells          = 7 * 14 = 98
+      1st cell0_x, y = 1, 0
+
+   frame   3
+      width          = 26
+      height         = 55
+      xoffset        = -17
+      yoffset        = 3
+      coded_bytes    = 874
+      bottom_up      = 0
+      box            = (-17, -51)  --->  (8, 3)  =  26 * 55
+      box2           = (1, 0)  --->  (26, 54)  =  26 * 55
+      cells          = 7 * 14 = 98
+      1st cell0_x, y = 1, 0
+
+   frame   4
+      width          = 24
+      height         = 55
+      xoffset        = -15
+      yoffset        = 3
+      coded_bytes    = 888
+      bottom_up      = 0
+      box            = (-15, -51)  --->  (8, 3)  =  24 * 55
+      box2           = (3, 0)  --->  (26, 54)  =  24 * 55
+      cells          = 7 * 14 = 98
+      1st cell0_x, y = 3, 0
+
+   frame   5
+      width          = 27
+      height         = 55
+      xoffset        = -18
+      yoffset        = 3
+      coded_bytes    = 884
+      bottom_up      = 0
+      box            = (-18, -51)  --->  (8, 3)  =  27 * 55
+      box2           = (0, 0)  --->  (26, 54)  =  27 * 55
+      cells          = 7 * 14 = 98
+      1st cell0_x, y = 0, 0
+
+   frame   6
+      width          = 30
+      height         = 50
+      xoffset        = -16
+      yoffset        = 3
+      coded_bytes    = 910
+      bottom_up      = 0
+      box            = (-16, -46)  --->  (13, 3)  =  30 * 50
+      box2           = (2, 5)  --->  (31, 54)  =  30 * 50
+      cells          = 8 * 13 = 104
+      1st cell0_x, y = 2, 5
+
+   frame   7
+      width          = 29
+      height         = 45
+      xoffset        = -12
+      yoffset        = 3
+      coded_bytes    = 794
+      bottom_up      = 0
+      box            = (-12, -41)  --->  (16, 3)  =  29 * 45
+      box2           = (6, 10)  --->  (34, 54)  =  29 * 45
+      cells          = 8 * 12 = 96
+      1st cell0_x, y = 6, 10
+
+   frame   8
+      width          = 32
+      height         = 46
+      xoffset        = -13
+      yoffset        = 3
+      coded_bytes    = 848
+      bottom_up      = 0
+      box            = (-13, -42)  --->  (18, 3)  =  32 * 46
+      box2           = (5, 9)  --->  (36, 54)  =  32 * 46
+      cells          = 8 * 12 = 96
+      1st cell0_x, y = 5, 9
+
+   frame   9
+      width          = 32
+      height         = 51
+      xoffset        = -15
+      yoffset        = 3
+      coded_bytes    = 917
+      bottom_up      = 0
+      box            = (-15, -47)  --->  (16, 3)  =  32 * 51
+      box2           = (3, 4)  --->  (34, 54)  =  32 * 51
+      cells          = 9 * 13 = 117
+      1st cell0_x, y = 3, 4
+
+direction  5
+   outsize_coded       = 10405 bytes
+   compression_flag    = 3
+   variable0_bits      =  0  ( 0 bits)
+   width_bits          =  4  ( 6 bits)
+   height_bits         =  4  ( 6 bits)
+   xoffset_bits        =  4  ( 6 bits)
+   yoffset_bits        =  3  ( 4 bits)
+   optional_bytes_bits =  0  ( 0 bits)
+   coded_bytes_bits    =  7  (12 bits)
+   box                 = (-30, -56)  --->  (19, 3)  =  50 * 60
+   cells               = 13 * 15 = 195
+   CVDCC.DLL offsets   = -30, 3 (in version < 3.0)
+
+   equal_cell_bitstream_size       =     1380 bits (read     1380)
+   pixel_mask_bitstream_size       =     3036 bits (read     3036)
+   encoding_type_bitstream_size    =      911 bits (read      911)
+   raw_pixel_bitstream_size        =     3264 bits (read     3264)
+   pixel_code_and_displacment.size =    32061 bits (read    32060)
+
+   pixel_values :
+   0   1   2   3   5   8  13  14  15  16  17  18  19  20  21  23
+  24  25  26  27  29  33  34  35  36  37  38  39  40  41  42  44
+  45  46  47  49  50  51  52  53  54  55  56  57  58  61  62  64
+  65  66  68  70  71  72  73  76  77  78  79  80  82  83  85  91
+ 171 172 173 174 175 177 178 181 182 184 187 189 191 193 194 195
+ 196 199 200 201 204 205 207 209 213 215   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+   frame   0
+      width          = 42
+      height         = 58
+      xoffset        = -26
+      yoffset        = 3
+      coded_bytes    = 1025
+      bottom_up      = 0
+      box            = (-26, -54)  --->  (15, 3)  =  42 * 58
+      box2           = (4, 2)  --->  (45, 59)  =  42 * 58
+      cells          = 11 * 15 = 165
+      1st cell0_x, y = 4, 2
+
+   frame   1
+      width          = 44
+      height         = 57
+      xoffset        = -27
+      yoffset        = 2
+      coded_bytes    = 1031
+      bottom_up      = 0
+      box            = (-27, -54)  --->  (16, 2)  =  44 * 57
+      box2           = (3, 2)  --->  (46, 58)  =  44 * 57
+      cells          = 12 * 15 = 180
+      1st cell0_x, y = 3, 2
+
+   frame   2
+      width          = 44
+      height         = 56
+      xoffset        = -25
+      yoffset        = 2
+      coded_bytes    = 1043
+      bottom_up      = 0
+      box            = (-25, -53)  --->  (18, 2)  =  44 * 56
+      box2           = (5, 3)  --->  (48, 58)  =  44 * 56
+      cells          = 11 * 15 = 165
+      1st cell0_x, y = 5, 3
+
+   frame   3
+      width          = 41
+      height         = 56
+      xoffset        = -21
+      yoffset        = 2
+      coded_bytes    = 1037
+      bottom_up      = 0
+      box            = (-21, -53)  --->  (19, 2)  =  41 * 56
+      box2           = (9, 3)  --->  (49, 58)  =  41 * 56
+      cells          = 11 * 15 = 165
+      1st cell0_x, y = 9, 3
+
+   frame   4
+      width          = 42
+      height         = 57
+      xoffset        = -24
+      yoffset        = 2
+      coded_bytes    = 1041
+      bottom_up      = 0
+      box            = (-24, -54)  --->  (17, 2)  =  42 * 57
+      box2           = (6, 2)  --->  (47, 58)  =  42 * 57
+      cells          = 11 * 15 = 165
+      1st cell0_x, y = 6, 2
+
+   frame   5
+      width          = 41
+      height         = 59
+      xoffset        = -28
+      yoffset        = 2
+      coded_bytes    = 1041
+      bottom_up      = 0
+      box            = (-28, -56)  --->  (12, 2)  =  41 * 59
+      box2           = (2, 0)  --->  (42, 58)  =  41 * 59
+      cells          = 11 * 15 = 165
+      1st cell0_x, y = 2, 0
+
+   frame   6
+      width          = 38
+      height         = 57
+      xoffset        = -26
+      yoffset        = 2
+      coded_bytes    = 970
+      bottom_up      = 0
+      box            = (-26, -54)  --->  (11, 2)  =  38 * 57
+      box2           = (4, 2)  --->  (41, 58)  =  38 * 57
+      cells          = 10 * 15 = 150
+      1st cell0_x, y = 4, 2
+
+   frame   7
+      width          = 42
+      height         = 52
+      xoffset        = -30
+      yoffset        = 2
+      coded_bytes    = 979
+      bottom_up      = 0
+      box            = (-30, -49)  --->  (11, 2)  =  42 * 52
+      box2           = (0, 7)  --->  (41, 58)  =  42 * 52
+      cells          = 11 * 14 = 154
+      1st cell0_x, y = 0, 7
+
+   frame   8
+      width          = 35
+      height         = 52
+      xoffset        = -23
+      yoffset        = 2
+      coded_bytes    = 921
+      bottom_up      = 0
+      box            = (-23, -49)  --->  (11, 2)  =  35 * 52
+      box2           = (7, 7)  --->  (41, 58)  =  35 * 52
+      cells          = 10 * 14 = 140
+      1st cell0_x, y = 7, 7
+
+   frame   9
+      width          = 34
+      height         = 55
+      xoffset        = -21
+      yoffset        = 3
+      coded_bytes    = 967
+      bottom_up      = 0
+      box            = (-21, -51)  --->  (12, 3)  =  34 * 55
+      box2           = (9, 5)  --->  (42, 59)  =  34 * 55
+      cells          = 9 * 14 = 126
+      1st cell0_x, y = 9, 5
+
+direction  6
+   outsize_coded       = 9119 bytes
+   compression_flag    = 3
+   variable0_bits      =  0  ( 0 bits)
+   width_bits          =  4  ( 6 bits)
+   height_bits         =  4  ( 6 bits)
+   xoffset_bits        =  4  ( 6 bits)
+   yoffset_bits        =  3  ( 4 bits)
+   optional_bytes_bits =  0  ( 0 bits)
+   coded_bytes_bits    =  6  (10 bits)
+   box                 = (-18, -54)  --->  (17, 4)  =  36 * 59
+   cells               = 9 * 15 = 135
+   CVDCC.DLL offsets   = -18, 4 (in version < 3.0)
+
+   equal_cell_bitstream_size       =      916 bits (read      916)
+   pixel_mask_bitstream_size       =     2416 bits (read     2416)
+   encoding_type_bitstream_size    =      717 bits (read      717)
+   raw_pixel_bitstream_size        =     2024 bits (read     2024)
+   pixel_code_and_displacment.size =    27423 bits (read    27416)
+
+   pixel_values :
+   0   1   3   4   5   7   8  12  13  14  15  16  17  18  20  23
+  33  34  35  36  37  38  39  40  41  42  44  45  46  47  48  49
+  50  51  52  53  54  55  56  57  58  60  61  62  64  65  66  70
+  71  72  73  76  77  78  79  80  82  83  85  88  90  93  94  97
+ 100 107 170 171 172 173 174 175 178 182 184 187 189 191 193 194
+ 196 201 204 207 211   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+   frame   0
+      width          = 26
+      height         = 56
+      xoffset        = -11
+      yoffset        = 4
+      coded_bytes    = 895
+      bottom_up      = 0
+      box            = (-11, -51)  --->  (14, 4)  =  26 * 56
+      box2           = (7, 3)  --->  (32, 58)  =  26 * 56
+      cells          = 7 * 15 = 105
+      1st cell0_x, y = 7, 3
+
+   frame   1
+      width          = 26
+      height         = 55
+      xoffset        = -9
+      yoffset        = 4
+      coded_bytes    = 879
+      bottom_up      = 0
+      box            = (-9, -50)  --->  (16, 4)  =  26 * 55
+      box2           = (9, 4)  --->  (34, 58)  =  26 * 55
+      cells          = 7 * 14 = 98
+      1st cell0_x, y = 9, 4
+
+   frame   2
+      width          = 26
+      height         = 54
+      xoffset        = -9
+      yoffset        = 4
+      coded_bytes    = 832
+      bottom_up      = 0
+      box            = (-9, -49)  --->  (16, 4)  =  26 * 54
+      box2           = (9, 5)  --->  (34, 58)  =  26 * 54
+      cells          = 7 * 14 = 98
+      1st cell0_x, y = 9, 5
+
+   frame   3
+      width          = 25
+      height         = 53
+      xoffset        = -9
+      yoffset        = 4
+      coded_bytes    = 828
+      bottom_up      = 0
+      box            = (-9, -48)  --->  (15, 4)  =  25 * 53
+      box2           = (9, 6)  --->  (33, 58)  =  25 * 53
+      cells          = 7 * 14 = 98
+      1st cell0_x, y = 9, 6
+
+   frame   4
+      width          = 25
+      height         = 54
+      xoffset        = -9
+      yoffset        = 4
+      coded_bytes    = 851
+      bottom_up      = 0
+      box            = (-9, -49)  --->  (15, 4)  =  25 * 54
+      box2           = (9, 5)  --->  (33, 58)  =  25 * 54
+      cells          = 7 * 14 = 98
+      1st cell0_x, y = 9, 5
+
+   frame   5
+      width          = 27
+      height         = 58
+      xoffset        = -9
+      yoffset        = 4
+      coded_bytes    = 916
+      bottom_up      = 0
+      box            = (-9, -53)  --->  (17, 4)  =  27 * 58
+      box2           = (9, 1)  --->  (35, 58)  =  27 * 58
+      cells          = 7 * 15 = 105
+      1st cell0_x, y = 9, 1
+
+   frame   6
+      width          = 28
+      height         = 59
+      xoffset        = -13
+      yoffset        = 4
+      coded_bytes    = 964
+      bottom_up      = 0
+      box            = (-13, -54)  --->  (14, 4)  =  28 * 59
+      box2           = (5, 0)  --->  (32, 58)  =  28 * 59
+      cells          = 7 * 15 = 105
+      1st cell0_x, y = 5, 0
+
+   frame   7
+      width          = 28
+      height         = 58
+      xoffset        = -16
+      yoffset        = 4
+      coded_bytes    = 892
+      bottom_up      = 0
+      box            = (-16, -53)  --->  (11, 4)  =  28 * 58
+      box2           = (2, 1)  --->  (29, 58)  =  28 * 58
+      cells          = 8 * 15 = 120
+      1st cell0_x, y = 2, 1
+
+   frame   8
+      width          = 30
+      height         = 55
+      xoffset        = -18
+      yoffset        = 4
+      coded_bytes    = 842
+      bottom_up      = 0
+      box            = (-18, -50)  --->  (11, 4)  =  30 * 55
+      box2           = (0, 4)  --->  (29, 58)  =  30 * 55
+      cells          = 8 * 14 = 112
+      1st cell0_x, y = 0, 4
+
+   frame   9
+      width          = 31
+      height         = 55
+      xoffset        = -16
+      yoffset        = 4
+      coded_bytes    = 870
+      bottom_up      = 0
+      box            = (-16, -50)  --->  (14, 4)  =  31 * 55
+      box2           = (2, 4)  --->  (32, 58)  =  31 * 55
+      cells          = 8 * 14 = 112
+      1st cell0_x, y = 2, 4
+
+direction  7
+   outsize_coded       = 10080 bytes
+   compression_flag    = 3
+   variable0_bits      =  0  ( 0 bits)
+   width_bits          =  4  ( 6 bits)
+   height_bits         =  4  ( 6 bits)
+   xoffset_bits        =  4  ( 6 bits)
+   yoffset_bits        =  3  ( 4 bits)
+   optional_bytes_bits =  0  ( 0 bits)
+   coded_bytes_bits    =  7  (12 bits)
+   box                 = (-20, -53)  --->  (30, 3)  =  51 * 57
+   cells               = 13 * 15 = 195
+   CVDCC.DLL offsets   = -20, 3 (in version < 3.0)
+
+   equal_cell_bitstream_size       =     1297 bits (read     1297)
+   pixel_mask_bitstream_size       =     2832 bits (read     2832)
+   encoding_type_bitstream_size    =      867 bits (read      867)
+   raw_pixel_bitstream_size        =     3512 bits (read     3512)
+   pixel_code_and_displacment.size =    31504 bits (read    31504)
+
+   pixel_values :
+   0   1   3   4   5   7   8  13  14  15  16  17  18  19  20  22
+  23  24  25  28  29  33  34  35  36  37  38  39  40  41  42  44
+  45  46  47  48  49  50  51  52  53  54  55  56  57  58  60  61
+  62  64  65  66  68  70  71  72  73  76  77  78  79  80  82  84
+  85  88  90  91  94 100 165 166 167 172 173 178 179 180 182 184
+ 187 189 191 194 196 200 201 202 204 207 208 211 212 213 214 215
+ 217 218   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+   frame   0
+      width          = 42
+      height         = 57
+      xoffset        = -16
+      yoffset        = 3
+      coded_bytes    = 979
+      bottom_up      = 0
+      box            = (-16, -53)  --->  (25, 3)  =  42 * 57
+      box2           = (4, 0)  --->  (45, 56)  =  42 * 57
+      cells          = 11 * 14 = 154
+      1st cell0_x, y = 4, 0
+
+   frame   1
+      width          = 44
+      height         = 56
+      xoffset        = -17
+      yoffset        = 3
+      coded_bytes    = 1012
+      bottom_up      = 0
+      box            = (-17, -52)  --->  (26, 3)  =  44 * 56
+      box2           = (3, 1)  --->  (46, 56)  =  44 * 56
+      cells          = 12 * 14 = 168
+      1st cell0_x, y = 3, 1
+
+   frame   2
+      width          = 45
+      height         = 55
+      xoffset        = -19
+      yoffset        = 3
+      coded_bytes    = 1029
+      bottom_up      = 0
+      box            = (-19, -51)  --->  (25, 3)  =  45 * 55
+      box2           = (1, 2)  --->  (45, 56)  =  45 * 55
+      cells          = 12 * 14 = 168
+      1st cell0_x, y = 1, 2
+
+   frame   3
+      width          = 43
+      height         = 54
+      xoffset        = -20
+      yoffset        = 3
+      coded_bytes    = 1015
+      bottom_up      = 0
+      box            = (-20, -50)  --->  (22, 3)  =  43 * 54
+      box2           = (0, 3)  --->  (42, 56)  =  43 * 54
+      cells          = 11 * 14 = 154
+      1st cell0_x, y = 0, 3
+
+   frame   4
+      width          = 43
+      height         = 54
+      xoffset        = -18
+      yoffset        = 3
+      coded_bytes    = 1001
+      bottom_up      = 0
+      box            = (-18, -50)  --->  (24, 3)  =  43 * 54
+      box2           = (2, 3)  --->  (44, 56)  =  43 * 54
+      cells          = 11 * 14 = 154
+      1st cell0_x, y = 2, 3
+
+   frame   5
+      width          = 41
+      height         = 56
+      xoffset        = -13
+      yoffset        = 3
+      coded_bytes    = 955
+      bottom_up      = 0
+      box            = (-13, -52)  --->  (27, 3)  =  41 * 56
+      box2           = (7, 1)  --->  (47, 56)  =  41 * 56
+      cells          = 11 * 14 = 154
+      1st cell0_x, y = 7, 1
+
+   frame   6
+      width          = 38
+      height         = 55
+      xoffset        = -12
+      yoffset        = 3
+      coded_bytes    = 906
+      bottom_up      = 0
+      box            = (-12, -51)  --->  (25, 3)  =  38 * 55
+      box2           = (8, 2)  --->  (45, 56)  =  38 * 55
+      cells          = 10 * 14 = 140
+      1st cell0_x, y = 8, 2
+
+   frame   7
+      width          = 43
+      height         = 52
+      xoffset        = -12
+      yoffset        = 3
+      coded_bytes    = 956
+      bottom_up      = 0
+      box            = (-12, -48)  --->  (30, 3)  =  43 * 52
+      box2           = (8, 5)  --->  (50, 56)  =  43 * 52
+      cells          = 11 * 13 = 143
+      1st cell0_x, y = 8, 5
+
+   frame   8
+      width          = 36
+      height         = 52
+      xoffset        = -12
+      yoffset        = 3
+      coded_bytes    = 948
+      bottom_up      = 0
+      box            = (-12, -48)  --->  (23, 3)  =  36 * 52
+      box2           = (8, 5)  --->  (43, 56)  =  36 * 52
+      cells          = 9 * 13 = 117
+      1st cell0_x, y = 8, 5
+
+   frame   9
+      width          = 33
+      height         = 55
+      xoffset        = -13
+      yoffset        = 3
+      coded_bytes    = 929
+      bottom_up      = 0
+      box            = (-13, -51)  --->  (19, 3)  =  33 * 55
+      box2           = (7, 2)  --->  (39, 56)  =  33 * 55
+      cells          = 9 * 14 = 126
+      1st cell0_x, y = 7, 2
+
+dcc_error[] :
