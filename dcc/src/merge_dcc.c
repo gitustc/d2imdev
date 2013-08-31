@@ -25,8 +25,8 @@
 
 
 char    cofname[8], token[3], animtype[3];
-char    * dat_dir = "datas\\",
-        * tok_dir = "tokens\\";
+char    * dat_dir = "datas/",
+        * tok_dir = "tokens/";
 UBYTE   * cofmem = NULL, * coftbl = NULL;
 UBYTE   act1_pal[256][3];
 UBYTE   palshift[8][256];
@@ -88,7 +88,7 @@ void load_cmap(int comp_idx, char * line)
          strcpy(nb, & name[i + 1]);
          done = TRUE;
       }
-      else if (name[i] == '\\')
+      else if (name[i] == '/')
          done = TRUE;
    }
    pal = atoi(nb);
@@ -191,7 +191,7 @@ int ini_load(FILE * in, char * name, DCC_BOX_S * anim_box, int * have_box,
      animtype[0] = cofname[2];
      animtype[1] = cofname[3];
      animtype[2] = 0;
-     sprintf(tmp, "%s%s\\COF\\%s.COF", tok_dir, token, cofname);
+     sprintf(tmp, "%s%s/COF/%s.COF", tok_dir, token, cofname);
      cf = fopen(tmp, "rb");
      if (cf == NULL)
      {
@@ -223,7 +223,7 @@ int ini_load(FILE * in, char * name, DCC_BOX_S * anim_box, int * have_box,
   coftbl  = cofmem + 28;
 
   // palshift.dat
-  sprintf(tmp, "%s%s\\COF\\palshift.dat", tok_dir, token);
+  sprintf(tmp, "%s%s/COF/palshift.dat", tok_dir, token);
   ps = fopen(tmp, "rb");
   if (ps)
   {
@@ -381,7 +381,7 @@ int ini_load(FILE * in, char * name, DCC_BOX_S * anim_box, int * have_box,
                  // from palshift.dat
                  sprintf(
                     cof_comp[i].cmapname,
-                    "%s%s\\COF\\palshift.dat",
+                    "%s%s/COF/palshift.dat",
                     tok_dir,
                     token
                  );
@@ -612,7 +612,7 @@ int main (void)
    {
       if (cof_comp[i].present && cof_comp[i].active)
       {
-         sprintf(tmp, "%s%s\\%s\\%s%s%s%s%s.DCC",
+         sprintf(tmp, "%s%s/%s/%s%s%s%s%s.DCC",
             tok_dir,
             token, comp_str[i],
             token, comp_str[i], cof_comp[i].name, animtype,

@@ -6,8 +6,8 @@ COF file               = FAA1HTH
 # frames per direction = 10
 # layers               = 4
 Layers list            = SH TR S1 RH
-* TR : tokens\FA\TR\FATRLITA1HTH.DCC (tokens\FA\COF\palshift.dat, block 4)
-* RH : tokens\FA\RH\FARHCLBA1HTH.DCC (tokens\FA\COF\palshift.dat, block 6)
-* SH : tokens\FA\SH\FASHBUCA1HTH.DCC (tokens\FA\COF\palshift.dat, block 3)
-* S1 : tokens\FA\S1\FAS1MEDA1HTH.DCC (tokens\FA\COF\palshift.dat, block 5)
+* TR : tokens/FA/TR/FATRLITA1HTH.DCC (tokens/FA/COF/palshift.dat, block 4)
+* RH : tokens/FA/RH/FARHCLBA1HTH.DCC (tokens/FA/COF/palshift.dat, block 6)
+* SH : tokens/FA/SH/FASHBUCA1HTH.DCC (tokens/FA/COF/palshift.dat, block 3)
+* S1 : tokens/FA/S1/FAS1MEDA1HTH.DCC (tokens/FA/COF/palshift.dat, block 5)
 box = (-53, -79) - (54, 11) = 108 * 91 pixels
