@@ -1872,6 +1872,7 @@ int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)
         // now we're on the objects data
         ptr = (long *) bptr;
 
+        // we van get the object nb from the ds1 file
         glb_ds1.obj_num = 0;
         if (glb_ds1.version >= 2){
             glb_ds1.obj_num = *ptr;
@@ -2029,6 +2030,24 @@ int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)
         }
 
         // update the new number of objects in that ds1
+
+
+        // test here
+        {
+            memcpy(glb_ds1.obj+current_valid_obj_idx, glb_ds1.obj, sizeof(OBJ_S));
+            glb_ds1.obj[current_valid_obj_idx].x = 5;
+            glb_ds1.obj[current_valid_obj_idx].y = 5;
+            glb_ds1.obj[current_valid_obj_idx].type = 1;
+            glb_ds1.obj[current_valid_obj_idx].id = 22;
+            editobj_make_obj_desc(ds1_idx, current_valid_obj_idx);
+            printf("++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+            printf("type=%d, id=%d, x=%d, y=%d\n", glb_ds1.obj[current_valid_obj_idx].type, glb_ds1.obj[current_valid_obj_idx].id, glb_ds1.obj[current_valid_obj_idx].x, glb_ds1.obj[current_valid_obj_idx].y);
+            printf("++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+            current_valid_obj_idx++;
+        }
+
+
+
         glb_ds1.obj_num = current_valid_obj_idx;
 
         // warning :

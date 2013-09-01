@@ -623,7 +623,7 @@ void anim_update_gfx(int progress)
         }
     }
 
-    // update cof datas 这个txt是data/obj.txt中的东西 不是dame_data中的东西
+    // update cof datas 这个txt是data/obj.txt中的东西 不是demo_data中的东西
     for (od=0; od < txt->line_num; od++) {
         cof = glb_ds1edit.obj_desc[od].cof;
         if (glb_ds1edit.obj_desc[od].usage_count == 0) {

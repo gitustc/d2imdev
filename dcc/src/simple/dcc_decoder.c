@@ -1057,8 +1057,10 @@ int dcc_save_frame(DCC_S * dcc, int d, int f, BITMAP * frm_bmp)
             tmppal[i].r = (UBYTE) fgetc(in) >> 2;
          }
          fclose(in);
-         sprintf(tmp, "d%02i-f%03i.pcx", d, f);
-         save_pcx(tmp, frm_bmp, tmppal);
+         //sprintf(tmp, "d%02i-f%03i.pcx", d, f);
+         sprintf(tmp, "d%02i-f%03i.bmp", d, f);
+         //save_pcx(tmp, frm_bmp, tmppal);
+         save_bmp(tmp, frm_bmp, tmppal);
       }
       else
          return 1;

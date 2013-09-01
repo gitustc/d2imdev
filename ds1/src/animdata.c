@@ -373,8 +373,7 @@ void animdata_load(void)
         // debug infos
         printf("   block %3i: animdata_name = %10s, hash = %5i, nb_records = %5li\n", curr_block, animdata_name, hash, nb_rec);
 
-        //   下面是所有算出的hash值
-        //   {{{
+        //   {{{ 下面是所有算出的hash值
         //   block   0:    animdata_name = L1OPHTH,          hash =   0,    nb_records =    54
         //   block   1:    animdata_name = L2OPHTH,          hash =   1,    nb_records =    57
         //   block   2:    animdata_name = F9OPHTH,          hash =   2,    nb_records =    53
