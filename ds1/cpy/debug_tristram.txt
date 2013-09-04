@@ -1,0 +1,11 @@
+ds1edit_init()
+
+allocate 331600 bytes for glb_ds1[100]
+allocate 46800 bytes for glb_dt1[300]
+
+.exe version : Visual C++ 2010 Express Edition, Build Date = ?, Build Mode = unknown
+
+ds1edit_error() :
+ds1edit_init(), error.
+Can't open the file "pcx\cursor_t.pcx".
+

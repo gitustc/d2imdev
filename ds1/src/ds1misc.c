@@ -2038,7 +2038,7 @@ int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)
             glb_ds1.obj[current_valid_obj_idx].x = 5;
             glb_ds1.obj[current_valid_obj_idx].y = 5;
             glb_ds1.obj[current_valid_obj_idx].type = 1;
-            glb_ds1.obj[current_valid_obj_idx].id = 22;
+            glb_ds1.obj[current_valid_obj_idx].id = 13;
             editobj_make_obj_desc(ds1_idx, current_valid_obj_idx);
             printf("++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
             printf("type=%d, id=%d, x=%d, y=%d\n", glb_ds1.obj[current_valid_obj_idx].type, glb_ds1.obj[current_valid_obj_idx].id, glb_ds1.obj[current_valid_obj_idx].x, glb_ds1.obj[current_valid_obj_idx].y);
