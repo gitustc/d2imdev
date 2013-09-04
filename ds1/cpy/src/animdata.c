@@ -25,7 +25,7 @@ UBYTE animdata_hash_value(char * name)
 // ==========================================================================
 void animdata_load(void)
 {
-   char               * name = "Data\\Global\\AnimData.d2", animdata_name[10];
+   char               * name = "data/global/animdata.d2", animdata_name[10];
    int                entry, done = FALSE, curr_block = 0;
    long               * lptr, nb_rec;
    ANIM_DATA_RECORD_S * rec_ptr = NULL;

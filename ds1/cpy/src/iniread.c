@@ -130,7 +130,7 @@ void ini_read(char * ininame)
                else
                {
                   strcpy(buf, str);
-                  if ((buf[strlen(buf)-1] == '\\') || (buf[strlen(buf)-1] == '/'))
+                  if ((buf[strlen(buf)-1] == '/') || (buf[strlen(buf)-1] == '/'))
                      buf[strlen(buf)-1] = 0;
                   tmpptr = datas[i].data_ptr;
                   * tmpptr = buf;

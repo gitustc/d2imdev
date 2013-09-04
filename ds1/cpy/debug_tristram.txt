@@ -5,7 +5,63 @@ allocate 46800 bytes for glb_dt1[300]
 
 .exe version : Visual C++ 2010 Express Edition, Build Date = ?, Build Mode = unknown
 
+[allegro var]
+allegro_id          = "Allegro 4.4.2, Unix"
+os_type             = Linux
+os_version          = 3
+os_revision         = 2
+os_multitasking     = TRUE
+cpu_vendor          = 
+cpu_family          = unknown
+cpu_model           = -
+cpu_capabilities    = 0x00000000
+desktop_color_depth = 32bpp
+desktop_resolution  = 1920 * 1080
+
+ini_read()
+
+d2char                  = /home/anhong/mpq/d2char.mpq
+d2data                  = /home/anhong/mpq/d2data.mpq
+d2exp                   = /home/anhong/mpq/d2exp.mpq
+patch_d2                = /home/anhong/mpq/patch_d2.mpq
+mod_dir                 = ./demo
+fullscreen              = NO
+screen_width            = 800
+screen_height           = 600
+screen_depth            = 32
+refresh_rate            = 60
+keyb_scroll_x           = 40
+keyb_scroll_y           = 20
+mouse_scroll_x          = 20
+mouse_scroll_y          = 10
+edit_scroll_x           = 20
+edit_scroll_y           = 20
+obj_edit_scroll         = 2
+mouse_speed_x           = 2
+mouse_speed_y           = 2
+gamma_correction        = 1.20
+only_normal_type2       = YES
+always_max_layers       = YES
+stretch_sprites         = YES
+winobj_can_scroll_keyb  = YES
+winobj_can_scroll_mouse = NO
+center_zoom             = NO_CHANGE
+nb_type1_per_act        = 60
+nb_type2_per_act        = 150
+ds1_saved_minimize      = YES
+lower_speed_zoom_out    = NO
+workspace_enable        = YES
+
+ds1edit_open_all_mpq()
+opening mpq 0 : /home/anhong/mpq/patch_d2.mpq
+opening mpq 1 : /home/anhong/mpq/d2exp.mpq
+opening mpq 2 : /home/anhong/mpq/d2data.mpq
+opening mpq 3 : /home/anhong/mpq/d2char.mpq
+
+loading palettes
+want to read a palette from mpq : data/global/palette/act1/pal.pl2
+
 ds1edit_error() :
-ds1edit_init(), error.
-Can't open the file "pcx\cursor_t.pcx".
+ds1edit_load_palettes() :
+File "data/global/palette/act1/pal.pl2" not found.
 

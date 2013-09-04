@@ -515,7 +515,7 @@ void txt_convert_slash(char * str)
 
    for (i=0; i < s; i++)
       if (str[i] == '/')
-         str[i] = '\\';
+         str[i] = '/';
 }
 
 
@@ -571,7 +571,7 @@ void txt_debug(char * file_path_mem, char * file_path_def, TXT_S * txt)
 int read_lvltypes_txt(int ds1_idx, int type)
 {
    TXT_S * txt = NULL;
-   char  lvltypes[] = "Data\\Global\\Excel\\LvlTypes.txt",
+   char  lvltypes[] = "data/global/excel/lvltypes.txt",
          ds1edt_file[] = "ds1edit.dt1", * buff, * sptr;
    int   i, f;
    long  * lptr = NULL, act;
@@ -681,7 +681,7 @@ int read_lvltypes_txt(int ds1_idx, int type)
 int read_lvlprest_txt(int ds1_idx, int def)
 {
    TXT_S * txt;
-   char  * buff, * lvlprest = "Data\\Global\\Excel\\LvlPrest.txt";
+   char  * buff, * lvlprest = "data/global/excel/lvlprest.txt";
    int   i, b;
    long  * lptr;
    char  * sptr, tmp[150], * found_ptr = NULL;
@@ -739,7 +739,7 @@ int read_lvlprest_txt(int ds1_idx, int def)
                   last_slash = 0;
                   for (c=0; c < length; c++)
                   {
-                     if ((sptr[c] == '/') || (sptr[c] == '\\'))
+                     if ((sptr[c] == '/') || (sptr[c] == '/'))
                         last_slash = c;
                   }
 
@@ -945,7 +945,7 @@ int read_obj_txt(void)
 int read_objects_txt(void)
 {
    TXT_S * txt;
-   char  * buff, * objects = "Data\\Global\\Excel\\Objects.txt";
+   char  * buff, * objects = "data/global/excel/objects.txt";
 
 
    // load the file in mem

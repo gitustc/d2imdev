@@ -5,7 +5,7 @@ OBJS    =   ./mpq/dcl_tbl.o ./mpq/explode.o ./mpq/mpqview.o ./mpq/wav_unp.o anim
 all:$(OBJS)
 	$(CC) $(OBJS)  $(CFLAGS) $(LIBS) -o ../mapedit
 test:
-	make test -C ../bin
+	make test -C ..
 debug:
 	make debug -C ../bin
 clean:

@@ -364,7 +364,7 @@ int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)
 
    // take file name without path
    x = strlen(ds1name) - 1;
-   while ((x >= 0) && (ds1name[x] != '\\') && (ds1name[x] != '/') && (ds1name[x] != ':'))
+   while ((x >= 0) && (ds1name[x] != '/') && (ds1name[x] != '/') && (ds1name[x] != ':'))
       x--;
    if (x == 0)
       strcpy(glb_ds1[ds1_idx].filename, ds1name);

@@ -224,19 +224,19 @@ GLB_DS1EDIT_S glb_ds1edit;                    // global datas of the editor
 GLB_MPQ_S     glb_mpq_struct [MAX_MPQ_FILE];  // global data of 1 mpq
 DS1_S         * glb_ds1                = NULL; // ds1 datas
 DT1_S         * glb_dt1                = NULL; // dt1 datas
-char          glb_tiles_path        [] = "Data\\Global\\Tiles\\";
-char          glb_ds1edit_data_dir  [] = "Data\\";
-char          glb_ds1edit_tmp_dir   [] = "Tmp\\";
+char          glb_tiles_path        [] = "data/global/tiles/";
+char          glb_ds1edit_data_dir  [] = "./data/";
+char          glb_ds1edit_tmp_dir   [] = "tmp/";
 
 // debug files
-char          * glb_path_lvltypes_mem = "Debug\\Editor.lvltypes.memory.bin";
-char          * glb_path_lvltypes_def = "Debug\\D2.lvltypes.headers.txt";
-char          * glb_path_lvlprest_mem = "Debug\\Editor.lvlprest.memory.bin";
-char          * glb_path_lvlprest_def = "Debug\\D2.lvlprest.headers.txt";
-char          * glb_path_obj_mem      = "Debug\\Editor.obj.memory.bin";
-char          * glb_path_obj_def      = "Debug\\Editor.obj.headers.txt";
-char          * glb_path_objects_mem  = "Debug\\Editor.objects.memory.bin";
-char          * glb_path_objects_def  = "Debug\\D2.objects.headers.txt";
+char          * glb_path_lvltypes_mem = "debug/editor.lvltypes.memory.bin";
+char          * glb_path_lvltypes_def = "debug/d2.lvltypes.headers.txt";
+char          * glb_path_lvlprest_mem = "debug/editor.lvlprest.memory.bin";
+char          * glb_path_lvlprest_def = "debug/d2.lvlprest.headers.txt";
+char          * glb_path_obj_mem      = "debug/editor.obj.memory.bin";
+char          * glb_path_obj_def      = "debug/editor.obj.headers.txt";
+char          * glb_path_objects_mem  = "debug/editor.objects.memory.bin";
+char          * glb_path_objects_def  = "debug/d2.objects.headers.txt";
 
 
 // ==========================================================================
@@ -249,10 +249,10 @@ void ds1edit_init(void)
       char   name[40];
       MODE_E idx;
    } cursor[MOD_MAX] = {
-        {"pcx\\cursor_t.pcx", MOD_T}, // tiles
-        {"pcx\\cursor_o.pcx", MOD_O}, // objects
-        {"pcx\\cursor_p.pcx", MOD_P}, // paths
-        {"pcx\\cursor_l.pcx", MOD_L}  // lights
+        {"pcx/cursor_t.pcx", MOD_T}, // tiles
+        {"pcx/cursor_o.pcx", MOD_O}, // objects
+        {"pcx/cursor_p.pcx", MOD_P}, // paths
+        {"pcx/cursor_l.pcx", MOD_L}  // lights
      };
    int  i, o;
    static int
@@ -781,7 +781,7 @@ void ds1edit_load_palettes(void)
          glb_ds1edit.pal_loaded[i] = FALSE;
          
          // make full path
-         sprintf(palname, "Data\\Global\\Palette\\Act%i\\Pal.pl2", i+1);
+         sprintf(palname, "data/global/palette/act%i/pal.pl2", i+1);
          
          // load the palette
          printf("want to read a palette from mpq : %s\n", palname);
@@ -969,6 +969,8 @@ int main(int argc, char * argv[])
    set_window_title(tmp);
 
    // allegro dll safety check
+   // we skip this for linux
+   /*
    if (strcmp(allegro_id, DS1EDIT_GOOD_DLL) != 0)
    {
       sprintf(tmp,
@@ -991,27 +993,36 @@ int main(int argc, char * argv[])
       );
       ds1edit_error(tmp);
    }
+   */
 
    // check data\tmp directory
-   sprintf(tmp, "%s%s\\.", glb_ds1edit_data_dir, glb_ds1edit_tmp_dir);
-   if (file_exists(tmp, -1, NULL) == 0)
-   {
-      // create tmp directory
-      sprintf(tmp, "%s%s", glb_ds1edit_data_dir, glb_ds1edit_tmp_dir);
-      if (strlen(tmp))
-         tmp[strlen(tmp) - 1] = 0;
-      if (mkdir(tmp) != 0)
-      {
-         // re-use the tmp var for a different string
-         sprintf(
-            tmp,
-            "main(), error.\n"
-            "Can't create directory \"%s%s\".",
-            glb_ds1edit_data_dir, glb_ds1edit_tmp_dir);
-         tmp[strlen(tmp) - 1] = 0;
-         ds1edit_error(tmp);
-      }
-   }
+
+
+    sprintf(tmp, "%s%s/.", glb_ds1edit_data_dir, glb_ds1edit_tmp_dir);
+    if (!file_exists(tmp, -1, NULL)){
+        sprintf(tmp, "%s%s", glb_ds1edit_data_dir, glb_ds1edit_tmp_dir);
+        mkdir(tmp);
+    }
+
+//   sprintf(tmp, "%s%s/.", glb_ds1edit_data_dir, glb_ds1edit_tmp_dir);
+//   if (file_exists(tmp, -1, NULL) == 0)
+//   {
+//      // create tmp directory
+//      sprintf(tmp, "%s%s", glb_ds1edit_data_dir, glb_ds1edit_tmp_dir);
+//      if (strlen(tmp))
+//         tmp[strlen(tmp) - 1] = 0;
+//      if (mkdir(tmp) != 0)
+//      {
+//         // re-use the tmp var for a different string
+//         sprintf(
+//            tmp,
+//            "main(), error.\n"
+//            "Can't create directory \"%s%s\".",
+//            glb_ds1edit_data_dir, glb_ds1edit_tmp_dir);
+//         tmp[strlen(tmp) - 1] = 0;
+//         ds1edit_error(tmp);
+//      }
+//   }
    
    // check if ds1edit.ini exists
    sprintf(tmp, "ds1edit.ini");
@@ -1035,7 +1046,7 @@ int main(int argc, char * argv[])
    mod_num = 0;
    if (glb_config.mod_dir[0] != NULL)
    {
-      sprintf(tmp, "%s\\.", glb_config.mod_dir[0]);
+      sprintf(tmp, "%s/.", glb_config.mod_dir[0]);
       if (file_exists(tmp, -1, NULL) == 0)
       {
          sprintf(

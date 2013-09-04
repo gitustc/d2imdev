@@ -161,7 +161,7 @@ COF_S * anim_load_cof(char * base, char * tok, char * mod, char * clas,
    // load cof
    sprintf(
       name,
-      "%s\\%s\\Cof\\%s%s%s.cof", base, tok, tok, mod, clas
+      "%s/%s/cof/%s%s%s.cof", base, tok, tok, mod, clas
    );
    if (progress)
    {
@@ -230,7 +230,7 @@ COF_S * anim_load_cof(char * base, char * tok, char * mod, char * clas,
       // dcc / dc6
       sptr = txt->data + (obj_line * txt->line_size) +
              txt->col[misc_get_txt_column_num(RQ_OBJ, "HD") + idx].offset;
-      sprintf(name, "%s\\%s\\%s\\%s%s%s%s%s.dcc",
+      sprintf(name, "%s/%s/%s/%s%s%s%s%s.dcc",
          base,
          tok,
          comp_str[idx],

@@ -887,17 +887,17 @@ void misc_open_several_ds1(char * filename)
 void misc_walkable_tile_info_pcx(void)
 {
    static char pcxname[11][30] = {
-             {"pcx\\bit0.pcx"},
-             {"pcx\\bit1.pcx"},
-             {"pcx\\bit2.pcx"},
-             {"pcx\\bit3.pcx"},
-             {"pcx\\bit4.pcx"},
-             {"pcx\\bit5.pcx"},
-             {"pcx\\bit6.pcx"},
-             {"pcx\\bit7.pcx"},
-             {"pcx\\bit8.pcx"},
-             {"pcx\\st_nowalk.pcx"},
-             {"pcx\\st_nojump.pcx"}
+             {"pcx/bit0.pcx"},
+             {"pcx/bit1.pcx"},
+             {"pcx/bit2.pcx"},
+             {"pcx/bit3.pcx"},
+             {"pcx/bit4.pcx"},
+             {"pcx/bit5.pcx"},
+             {"pcx/bit6.pcx"},
+             {"pcx/bit7.pcx"},
+             {"pcx/bit8.pcx"},
+             {"pcx/st_nowalk.pcx"},
+             {"pcx/st_nojump.pcx"}
           };
    int    loop, i, x0, y0, z, w=0, h=0;
    BITMAP * tmpbmp, * subtile, * subtile2;
@@ -1192,15 +1192,17 @@ int misc_load_mpq_file(char * filename, char ** buffer, long * buf_len, int outp
    int  i, entry, max;
 
 
-   // convert slash ('/') to backslash ('\\')
+   // convert slash ('/') to backslash ('/')
    // seems the mpq library expect backslash and not slash as directory separator
    strcpy(glb_ds1edit.strtmp, filename);
    max = strlen(glb_ds1edit.strtmp);
+#if 0
    for (i=0; i < max; i++)
    {
       if (glb_ds1edit.strtmp[i] == '/')
-         glb_ds1edit.strtmp[i] = '\\';
+         glb_ds1edit.strtmp[i] = '/';
    }
+#endif
 
    // 1st try in mod directory
    for (i=0; i<MAX_MOD_DIR; i++)
@@ -1252,10 +1254,10 @@ int misc_get_txt_column_num(RQ_ENUM txt_idx, char * col_name)
    int   i = 0;
    char  * desc, tmp_str[256],
          txt_list[RQ_MAX][80] = {
-            {"Data\\Global\\Excel\\LvlTypes.txt"},
-            {"Data\\Global\\Excel\\LvlPrest.txt"},
-            {"data\\obj.txt"},
-            {"Data\\Global\\Excel\\Objects.txt"},
+            {"Data/Global/Excel/LvlTypes.txt"},
+            {"Data/Global/Excel/LvlPrest.txt"},
+            {"data/obj.txt"},
+            {"Data/Global/Excel/Objects.txt"},
          };
 
    if (txt_idx >= RQ_MAX)
