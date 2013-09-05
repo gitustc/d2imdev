@@ -1050,7 +1050,8 @@ loading ./data/cmap2_2.bin
 loading ./data/cmap3_2.bin
 loading ./data/cmap4_2.bin
 done
+no key was pressed, sleep
 
-ds1edit_error() :
-undo_new_tile_buffer() : can't create ./data/tmp/undo0tile0.bin
+ds1edit_exit()
 
+removing tmp undo buffers (./data/tmp/undo*.bin)...done

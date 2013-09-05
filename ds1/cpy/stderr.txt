@@ -1,9 +1,3 @@
-
-
-ds1edit_error() :
-undo_new_tile_buffer() : can't create ./data/tmp/undo0tile0.bin
-
-undo_new_tile_buffer() : can't create ./data/tmp/undo0tile0.bin
 closing /home/anhong/mpq/patch_d2.mpq
 closing /home/anhong/mpq/d2exp.mpq
 closing /home/anhong/mpq/d2data.mpq
