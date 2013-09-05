@@ -61,7 +61,7 @@ int mod_load_in_mem(
    * buf_len = 0;
 
    // open file
-   sprintf(strtmp, "%s\\%s", moddir, filename);
+   sprintf(strtmp, "%s/%s", moddir, filename);
    in = fopen(strtmp, "rb");
    if (in == NULL)
       return -1; // not read

@@ -1515,9 +1515,10 @@ void misc_draw_screen(int mx, int my)
       glb_config.screen.width,
       glb_config.screen.height
    );
-   draw_sprite(video_bmp, mouse_sprite, mx, my);
+   //draw_sprite(video_bmp, mouse_sprite, mx, my);
    show_video_bitmap(video_bmp);
-   glb_ds1edit.video_page_num = (glb_ds1edit.video_page_num + 1) % 2;
+   glb_ds1edit.video_page_num = 0;//(glb_ds1edit.video_page_num + 1) % 2;
+   //glb_ds1edit.video_page_num = (glb_ds1edit.video_page_num + 1) % 2;
 }
 
 // ==================================================================================

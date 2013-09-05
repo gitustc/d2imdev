@@ -388,6 +388,15 @@ int dt1_add(char * dt1name)
 {
    int  i, idx, entry;
    char tmp[256];
+   char tmp2[256];
+
+   for(i=0;i<strlen(dt1name);i++){
+       tmp2[i] = tolower(dt1name[i]);
+   }
+   tmp2[i]=0;
+
+   dt1name = tmp2;
+
 
    if (dt1_already_loaded(dt1name, & idx) == TRUE)
    {

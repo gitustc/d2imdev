@@ -21,7 +21,7 @@
 #define SHADOW_MAX_LAYER       1
 #define TAG_MAX_LAYER          1
 #define WALL_MAX_LAYER         4
-#define OBJ_MAX_START        100
+#define OBJ_MAX_START        500
 #define OBJ_MAX_GRANULARITY   50
 #define WINDS1EDIT_PATH_MAX  100
 

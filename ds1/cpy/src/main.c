@@ -1353,7 +1353,7 @@ int main(int argc, char * argv[])
          glb_config.screen.width,
          glb_config.screen.height
       );
-      ds1edit_error(tmp);
+      //ds1edit_error(tmp);
    }
 
    // when the editor is minimized, stop it until the user returns

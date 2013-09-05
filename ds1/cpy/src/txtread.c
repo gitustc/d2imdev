@@ -510,12 +510,14 @@ void * txt_read_in_mem(char * txtname)
 // ==========================================================================
 void txt_convert_slash(char * str)
 {
+#if 0
    int i, s = strlen(str);
 
 
    for (i=0; i < s; i++)
       if (str[i] == '/')
          str[i] = '/';
+#endif
 }
 
 
@@ -866,7 +868,7 @@ int read_lvlprest_txt(int ds1_idx, int def)
 int read_obj_txt(void)
 {
    TXT_S * txt;
-   char  * buff, obj[] = "Obj.txt";
+   char  * buff, obj[] = "obj.txt";
    int   i, size;
    long  * lptr, len;
    char  * sptr, tmp[150];

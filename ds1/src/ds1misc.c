@@ -7,6 +7,26 @@
 #include "ds1misc.h"
 #include "misc.h"
 
+void test_add_one_object(
+        int ds1_idx,
+        int *current_valid_obj_idx,
+        int x,
+        int y,
+        int type,
+        int id
+        )
+{
+    memcpy(glb_ds1.obj+(*current_valid_obj_idx), glb_ds1.obj, sizeof(OBJ_S));
+    glb_ds1.obj[(*current_valid_obj_idx)].x = x;
+    glb_ds1.obj[(*current_valid_obj_idx)].y = y;
+    glb_ds1.obj[(*current_valid_obj_idx)].type = type;
+    glb_ds1.obj[(*current_valid_obj_idx)].id = id;
+    editobj_make_obj_desc(ds1_idx, (*current_valid_obj_idx));
+    printf("++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+    printf("type=%d, id=%d, x=%d, y=%d\n", glb_ds1.obj[(*current_valid_obj_idx)].type, glb_ds1.obj[(*current_valid_obj_idx)].id, glb_ds1.obj[(*current_valid_obj_idx)].x, glb_ds1.obj[(*current_valid_obj_idx)].y);
+    printf("++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+    (*current_valid_obj_idx)++;
+}
 
 
 // ==========================================================================
@@ -2034,16 +2054,20 @@ int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)
 
         // test here
         {
-            memcpy(glb_ds1.obj+current_valid_obj_idx, glb_ds1.obj, sizeof(OBJ_S));
-            glb_ds1.obj[current_valid_obj_idx].x = 5;
-            glb_ds1.obj[current_valid_obj_idx].y = 5;
-            glb_ds1.obj[current_valid_obj_idx].type = 1;
-            glb_ds1.obj[current_valid_obj_idx].id = 13;
-            editobj_make_obj_desc(ds1_idx, current_valid_obj_idx);
-            printf("++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
-            printf("type=%d, id=%d, x=%d, y=%d\n", glb_ds1.obj[current_valid_obj_idx].type, glb_ds1.obj[current_valid_obj_idx].id, glb_ds1.obj[current_valid_obj_idx].x, glb_ds1.obj[current_valid_obj_idx].y);
-            printf("++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
-            current_valid_obj_idx++;
+
+            int ccc;
+            test_add_one_object(ds1_idx, &current_valid_obj_idx, 5, 5, 1, 22);
+            for(ccc=0;ccc<50;ccc++){
+                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%300, rand()%300, 1, 22);
+            }
+
+            for(ccc=0;ccc<50;ccc++){
+                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%300, rand()%300, 1, 21);
+            }
+
+            for(ccc=0;ccc<50;ccc++){
+                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%300, rand()%300, 1, 20);
+            }
         }
 
 
