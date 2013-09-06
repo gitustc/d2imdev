@@ -2053,21 +2053,54 @@ int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)
 
 
         // test here
+
+        {
+            int *p;
+            int i,j,k;
+
+            p = &current_valid_obj_idx;
+
+
+            for (i=1;i<3;i++){
+                for (j=1;j<150;j++){
+                    for (k=1;k<5;k++){
+                        test_add_one_object(ds1_idx, p, rand()%400, rand()%400, i, j);
+                    }
+                }
+            }
+
+
+
+        }
         {
 
+#if 0
             int ccc;
-            test_add_one_object(ds1_idx, &current_valid_obj_idx, 5, 5, 1, 22);
-            for(ccc=0;ccc<50;ccc++){
-                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%300, rand()%300, 1, 22);
+            for(ccc=0;ccc<10;ccc++){
+                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%30, rand()%30, 1, 22);
             }
 
-            for(ccc=0;ccc<50;ccc++){
-                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%300, rand()%300, 1, 21);
+            for(ccc=0;ccc<10;ccc++){
+                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%30, rand()%30, 1, 21);
             }
 
-            for(ccc=0;ccc<50;ccc++){
-                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%300, rand()%300, 1, 20);
+            for(ccc=0;ccc<10;ccc++){
+                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%30, rand()%30, 1, 20);
             }
+
+            for(ccc=0;ccc<10;ccc++){
+                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%30, rand()%30, 1, 12);
+            }
+            for(ccc=0;ccc<10;ccc++){
+                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%30, rand()%30, 1, 5);
+            }
+            for(ccc=0;ccc<10;ccc++){
+                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%30, rand()%30, 1, 3);
+            }
+            for(ccc=0;ccc<10;ccc++){
+                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%30, rand()%30, 1, 17);
+            }
+#endif 
         }
 
 

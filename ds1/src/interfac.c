@@ -7,6 +7,62 @@
 #include "txtread.h"
 #include "interfac.h"
 
+// {{{ process input event in process_input(), add any handler here
+char key_value_to_ascii(int key)
+{
+    return key & 0xff;
+}
+
+char key_value_to_cascii(int key)
+{
+    return (key & 0xff) - 1 + 'a';
+}
+
+int key_value_to_keycode(int key)
+{
+    return (key>>8);
+}
+
+
+
+int process_input()
+{
+    int done;
+    done = 0;
+    while(keypressed()){
+
+
+        int keyval;
+
+        keyval = readkey();
+
+        if(key_value_to_keycode(keyval)==KEY_ESC){
+            done = 1;
+        }
+
+        if(key_value_to_keycode(keyval) == KEY_UP){
+            glb_ds1edit.win_preview.y0 -= glb_ds1.cur_scroll.keyb.y;
+        }
+
+        if(key_value_to_keycode(keyval)==KEY_DOWN){
+            glb_ds1edit.win_preview.y0 += glb_ds1.cur_scroll.keyb.y;
+        }
+
+        if(key_value_to_keycode(keyval)==KEY_LEFT) {
+            glb_ds1edit.win_preview.x0 -= glb_ds1.cur_scroll.keyb.x;
+        }
+
+        if(key_value_to_keycode(keyval)==KEY_RIGHT) {
+            glb_ds1edit.win_preview.x0 += glb_ds1.cur_scroll.keyb.x;
+        }
+
+    }
+    return done;
+}
+
+//}}}
+
+// {{{ process the delay by function my_set_fps
 struct timeval  _my_delay;
 int             _my_count = 1;
 
@@ -21,11 +77,14 @@ void my_set_fps(){
     _my_set_d();
 
     ds1edit_counter_tick();
+    ds1edit_counter_fps();
+#if 0
     if( _my_count == 26 ){
         ds1edit_counter_fps();
         _my_count = 1;
     }
-    //select( 0, NULL, NULL, NULL, &_my_delay );
+#endif 
+    select( 0, NULL, NULL, NULL, &_my_delay );
 
 }
 
@@ -40,8 +99,10 @@ int _my_key_state(char *key)
     return 0;
 }
 
-#define RELEASE_KEY(keyname) (_my_key_state(key+KEY_##keyname))
-#define KEY_STATE(keyname)   (!(!(key[KEY_##keyname])))
+
+
+// }}}
+
 
 int  ds1_idx;
 void show_all_layer(int b)
@@ -91,6 +152,10 @@ void interfac_user_handler(int start_ds1_idx)
 
 
     // main loop
+
+    clear_keybuf();
+
+
     while (! done) {
 
         my_set_fps();
@@ -123,24 +188,8 @@ void interfac_user_handler(int start_ds1_idx)
 
 
 
-        if (key[KEY_UP]) {
-            glb_ds1edit.win_preview.y0 -= glb_ds1.cur_scroll.keyb.y;
-        }
 
-        if (key[KEY_DOWN]) {
-            glb_ds1edit.win_preview.y0 += glb_ds1.cur_scroll.keyb.y;
-        }
+        done = process_input();
 
-        if (key[KEY_LEFT]) {
-            glb_ds1edit.win_preview.x0 -= glb_ds1.cur_scroll.keyb.x;
-        }
-
-        if (key[KEY_RIGHT]) {
-            glb_ds1edit.win_preview.x0 += glb_ds1.cur_scroll.keyb.x;
-        }
-
-
-        // read ds1_save() carefully!!!!!!!!!!!
-        done = RELEASE_KEY(ESC);
     }
 }
