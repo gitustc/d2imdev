@@ -1364,6 +1364,7 @@ int main(int argc, char * argv[])
 
    text_mode(-1); // draw text as sprite, no background color
 
+#if 0
    LOCK_VARIABLE(glb_ds1edit.old_fps);
    LOCK_VARIABLE(glb_ds1edit.fps);
    LOCK_VARIABLE(glb_ds1edit.ticks_elapsed);
@@ -1386,6 +1387,7 @@ int main(int argc, char * argv[])
       );
       ds1edit_error(tmp);
    }
+#endif
 
    if (install_mouse() == -1)
    {

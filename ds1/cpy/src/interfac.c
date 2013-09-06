@@ -14,6 +14,29 @@
 #include "msg_quit.h"
 #include "interfac.h"
 
+struct timeval  _my_delay;
+int             _my_count = 1;
+
+void _my_set_d(){
+    _my_delay.tv_sec  = 0;
+    _my_delay.tv_usec = 40*1000;
+}
+
+void my_set_fps(){
+
+    _my_count++;
+    _my_set_d();
+
+    ds1edit_counter_tick();
+    if( _my_count == 26 ){
+        ds1edit_counter_fps();
+        _my_count = 1;
+    }
+    //select( 0, NULL, NULL, NULL, &_my_delay );
+
+}
+
+
 
 inline char keyval_to_ascii(int keyval){
     return keyval & 0xff;
@@ -70,6 +93,9 @@ void interfac_user_handler(int start_ds1_idx)
    // main loop
    while (! done)
    {
+
+
+       my_set_fps();
       can_swich_mode = TRUE;
       if (glb_ds1edit.mode == MOD_P)
       {
@@ -141,17 +167,17 @@ void interfac_user_handler(int start_ds1_idx)
          // therefore it's at 2/5 of 25 fps
          // but internal unit is in 5th
          glb_ds1[ds1_idx].cur_anim_floor_frame += ticks_elapsed * 2;
-      }
-      else
+      } else{
          glb_ds1edit.ticks_elapsed = 0;
+      }
 
       // redraw the whole screen
       wpreview_draw_tiles(ds1_idx);
       glb_ds1edit.fps++;
+
       
 
       while(!keypressed()){
-
           printf("no key was pressed, sleep\n");
           system("sleep 1");
           return;
@@ -162,6 +188,7 @@ void interfac_user_handler(int start_ds1_idx)
       // scroll UP / DOWN / LEFT / RIGHT
 
       // if the Object Editing Window is display
+      /*
       if (glb_ds1[ds1_idx].draw_edit_obj == TRUE)
       {
          if (glb_config.winobj_scroll_keyb == TRUE)
@@ -2782,5 +2809,6 @@ void _interfac_user_handler(int start_ds1_idx)
                break;
          }
       }
+      */
    }
 }
