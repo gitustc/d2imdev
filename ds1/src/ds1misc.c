@@ -7,6 +7,11 @@
 #include "ds1misc.h"
 #include "misc.h"
 
+#if 0
+In a DS1 you can find 2 kind of units. 
+The Type 1 units are Monsters/NPC, taken from Data\Global\Excel\MonStats.txt, Data\Global\Excel\MonPlace.txt, and Data\Global\Excel\SuperUniques.txt. Each Type 1 units can have Paths. 
+The Type 2 units are Objects, taken from Data\Global\Excel\Objects.txt, such as Chest, Shrine, Torch...
+#endif
 void test_add_one_object(
         int ds1_idx,
         int *current_valid_obj_idx,
