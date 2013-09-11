@@ -1261,7 +1261,29 @@ void wpreview_draw_obj_tile_shad(int ds1_idx, int x, int y, int * cur_idx)
     for (;;) {
         if ((obj->tx == x) && (obj->ty == y)) {
             // draw this obj
-            wpreview_draw_an_object_shad(ds1_idx, o);
+
+
+
+            {
+                int tmpi;
+                UBYTE infos[25];
+
+
+                misc_search_walk_infos(0, x, y, infos);
+                for(tmpi=0;tmpi<25;tmpi++){
+                    if(infos[tmpi]&0x04 || infos[tmpi]&0x09){
+                        printf("no-----------------------------\n");
+                        break;
+                    }
+                }
+                if(tmpi==25){
+                    wpreview_draw_an_object_shad(ds1_idx, o);
+                }
+            }
+
+
+
+            //wpreview_draw_an_object_shad(ds1_idx, o);
 
             // next obj
             (* cur_idx) ++;
