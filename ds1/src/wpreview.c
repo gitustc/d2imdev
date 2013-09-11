@@ -1363,7 +1363,22 @@ link: http://hi.baidu.com/hubingjy/blog/item/a965e802750ea0703812bbe5.html
                       if (cof != NULL) {
                           // printf(" cof is not NULL .................\n");
                           if ((cof->orderflag == 0) || (cof->orderflag == 2)) {
-                              wpreview_draw_an_object(ds1_idx, o);
+
+
+                              int tmpi;
+                              UBYTE infos[25];
+
+
+                              misc_search_walk_infos(0, x, y, infos);
+                              for(tmpi=0;tmpi<25;tmpi++){
+                                  if(infos[tmpi]&0x04 || infos[tmpi]&0x09){
+                                      printf("no-----------------------------\n");
+                                      break;
+                                  }
+                              }
+                              if(tmpi==25){
+                                  wpreview_draw_an_object(ds1_idx, o);
+                              }
                           }
                       }
                   }

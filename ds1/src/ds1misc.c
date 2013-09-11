@@ -39,6 +39,7 @@ void test_add_objects(){
                 tmpy = rand()%glb_ds1.height;
 
                 misc_search_walk_infos(0, tmpx, tmpy, infos);
+#if 0
                 for(tmpi=0;tmpi<25;tmpi++){
                     if(infos[tmpi]&0x04 || infos[tmpi]&0x09){
                         printf("no-----------------------------\n");
@@ -46,11 +47,14 @@ void test_add_objects(){
                     }
                 }
                 if(tmpi==25){
+#endif     
                     if( *p > glb_ds1.current_obj_max ){
                         return;
                     }
                     test_add_one_object(0, p, tmpx*5, tmpy*5, i, j);
+#if 0
                 }
+#endif 
             }
         }
     }
@@ -2105,10 +2109,11 @@ int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)
         // update the new number of objects in that ds1
         glb_ds1.obj_num = current_valid_obj_idx;
 
-
-
-
         test_add_objects();
+
+
+
+
         // warning :
         // In fact there can be less groups than expected
         // like in data\global\tiles\act1\outdoors\trees.ds1
