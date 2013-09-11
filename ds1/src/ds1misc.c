@@ -12,25 +12,73 @@ In a DS1 you can find 2 kind of units.
 The Type 1 units are Monsters/NPC, taken from Data\Global\Excel\MonStats.txt, Data\Global\Excel\MonPlace.txt, and Data\Global\Excel\SuperUniques.txt. Each Type 1 units can have Paths. 
 The Type 2 units are Objects, taken from Data\Global\Excel\Objects.txt, such as Chest, Shrine, Torch...
 #endif
+
+void test_add_objects(){
+
+    int *p;
+    int i,j,k;
+
+    p = &(glb_ds1.obj_num);
+
+
+    if( *p > glb_ds1.current_obj_max ){
+        return;
+    }
+
+    printf("in test_add_object===============================\n");
+
+    for (i=1;i<3;i++){
+        for (j=1;j<150;j++){
+
+            for (k=1;k<5;k++){
+                int tmpx, tmpy, tmpi;
+                UBYTE  infos[25];
+
+                tmpi=0;
+                tmpx = rand()%glb_ds1.width;
+                tmpy = rand()%glb_ds1.height;
+
+                misc_search_walk_infos(0, tmpx, tmpy, infos);
+                for(tmpi=0;tmpi<25;tmpi++){
+                    if(infos[tmpi]&0x04 || infos[tmpi]&0x09){
+                        printf("no-----------------------------\n");
+                        break;
+                    }
+                }
+                if(tmpi==25){
+                    if( *p > glb_ds1.current_obj_max ){
+                        return;
+                    }
+                    test_add_one_object(0, p, tmpx*5, tmpy*5, i, j);
+                }
+            }
+        }
+    }
+
+
+
+
+
+}
 void test_add_one_object(
         int ds1_idx,
-        int *current_valid_obj_idx,
+        int *p,
         int x,
         int y,
         int type,
         int id
         )
 {
-    memcpy(glb_ds1.obj+(*current_valid_obj_idx), glb_ds1.obj, sizeof(OBJ_S));
-    glb_ds1.obj[(*current_valid_obj_idx)].x = x;
-    glb_ds1.obj[(*current_valid_obj_idx)].y = y;
-    glb_ds1.obj[(*current_valid_obj_idx)].type = type;
-    glb_ds1.obj[(*current_valid_obj_idx)].id = id;
-    editobj_make_obj_desc(ds1_idx, (*current_valid_obj_idx));
+    memcpy(glb_ds1.obj+(*p), glb_ds1.obj, sizeof(OBJ_S));
+    glb_ds1.obj[(*p)].x = x;
+    glb_ds1.obj[(*p)].y = y;
+    glb_ds1.obj[(*p)].type = type;
+    glb_ds1.obj[(*p)].id = id;
+    editobj_make_obj_desc(ds1_idx, (*p));
     printf("++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
-    printf("type=%d, id=%d, x=%d, y=%d\n", glb_ds1.obj[(*current_valid_obj_idx)].type, glb_ds1.obj[(*current_valid_obj_idx)].id, glb_ds1.obj[(*current_valid_obj_idx)].x, glb_ds1.obj[(*current_valid_obj_idx)].y);
+    printf("type=%d, id=%d, x=%d, y=%d\n", glb_ds1.obj[(*p)].type, glb_ds1.obj[(*p)].id, glb_ds1.obj[(*p)].x, glb_ds1.obj[(*p)].y);
     printf("++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
-    (*current_valid_obj_idx)++;
+    (*p)++;
 }
 
 
@@ -125,7 +173,7 @@ void ds1_save(int ds1_idx, int is_tmp_file)
             fwrite(cptr, flen, 1, out);
             cptr += flen;
         }
-        
+
         // minimize ds1 size
         save_wall_num  = glb_ds1.wall_num;
         save_floor_num = glb_ds1.floor_num;
@@ -2055,63 +2103,12 @@ int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)
         }
 
         // update the new number of objects in that ds1
-
-
-        // test here
-
-        {
-            int *p;
-            int i,j,k;
-
-            p = &current_valid_obj_idx;
-
-
-            for (i=1;i<3;i++){
-                for (j=1;j<150;j++){
-                    for (k=1;k<5;k++){
-                        test_add_one_object(ds1_idx, p, rand()%400, rand()%400, i, j);
-                    }
-                }
-            }
-
-
-
-        }
-        {
-
-#if 0
-            int ccc;
-            for(ccc=0;ccc<10;ccc++){
-                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%30, rand()%30, 1, 22);
-            }
-
-            for(ccc=0;ccc<10;ccc++){
-                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%30, rand()%30, 1, 21);
-            }
-
-            for(ccc=0;ccc<10;ccc++){
-                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%30, rand()%30, 1, 20);
-            }
-
-            for(ccc=0;ccc<10;ccc++){
-                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%30, rand()%30, 1, 12);
-            }
-            for(ccc=0;ccc<10;ccc++){
-                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%30, rand()%30, 1, 5);
-            }
-            for(ccc=0;ccc<10;ccc++){
-                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%30, rand()%30, 1, 3);
-            }
-            for(ccc=0;ccc<10;ccc++){
-                test_add_one_object(ds1_idx, &current_valid_obj_idx, rand()%30, rand()%30, 1, 17);
-            }
-#endif 
-        }
-
-
-
         glb_ds1.obj_num = current_valid_obj_idx;
 
+
+
+
+        test_add_objects();
         // warning :
         // In fact there can be less groups than expected
         // like in data\global\tiles\act1\outdoors\trees.ds1
@@ -2441,6 +2438,7 @@ int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)
         glb_map_test=1;
         ds1_save(0,TRUE);
         glb_map_test=0;
+
     }
 
     return 0;

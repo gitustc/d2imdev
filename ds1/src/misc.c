@@ -1354,3 +1354,121 @@ int misc_increase_ds1_objects_max(int ds1_idx, long nb_objects)
     glb_ds1.current_obj_max = new_max;
     return 0;
 }
+
+
+
+
+
+
+
+// ==========================================================================
+// fill the table with the walkable infos of all layers for 1 cell
+void misc_search_walk_infos(int ds1_idx, int x, int y, UBYTE * dsttable)
+{
+   BLOCK_TABLE_S * bt_ptr;
+   CELL_F_S      * f_ptr;
+   CELL_W_S      * w_ptr;
+   int           tf, tw, b, f, w, di, bi, i;
+   BLOCK_S       * bh_ptr;
+   UBYTE         * u_ptr, all_floor_props = 0;
+   
+   
+   tf    = (y * glb_ds1.floor_line) + (x * glb_ds1.floor_num);
+   tw    = (y * glb_ds1.wall_line)  + (x * glb_ds1.wall_num);
+   f_ptr = glb_ds1.floor_buff + tf;
+   w_ptr = glb_ds1.wall_buff  + tw;
+
+   // init
+   for (i=0; i<25; i++)
+      dsttable[i] = 0; // no flags by default
+   bt_ptr = glb_ds1.block_table;
+   
+   // floors
+   for (f=0; f < glb_ds1.floor_num; f++)
+   {
+      all_floor_props |= f_ptr[f].prop1 | f_ptr[f].prop2 |
+                         f_ptr[f].prop3 | f_ptr[f].prop4;
+      if (f_ptr[f].prop3 & 0x02)
+      {
+         // this is a global unwalkable info
+         for (i=0; i<25; i++)
+            dsttable[i] |= 1;
+      }
+      b = f_ptr[f].bt_idx;
+      if (b > 0) // not -1 and not 0
+      {
+         di     = bt_ptr[b].dt1_idx;
+         bi     = bt_ptr[b].block_idx;
+         bh_ptr = glb_dt1[di].bh_buffer;
+         u_ptr  = bh_ptr[bi].sub_tiles_flags;
+
+         // add the flags
+         for (i=0; i<25; i++)
+            dsttable[i] |= u_ptr[i];
+      }
+   }
+
+   // if no floor at all (F1 & F2 layer) the tile is completly unwalkable
+   if (glb_ds1.floor_num == 1)
+   {
+      if (f_ptr[0].prop1 == 0)
+      {
+         for (i=0; i<25; i++)
+            dsttable[i] |= 1;
+      }
+   }
+   else if (glb_ds1.floor_num == 2)
+   {
+      if ((f_ptr[0].prop1 == 0) && (f_ptr[1].prop1 == 0))
+      {
+         for (i=0; i<25; i++)
+            dsttable[i] |= 1;
+      }
+   }
+
+   // walls
+   for (w=0; w < glb_ds1.wall_num; w++)
+   {
+      if (w_ptr[w].prop3 & 0x02)
+      {
+         // this is a global unwalkable info
+         for (i=0; i<25; i++)
+            dsttable[i] |= 1;
+      }
+      b = w_ptr[w].bt_idx;
+      if (b > 0) // not -1 and not 0
+      {
+         di     = bt_ptr[b].dt1_idx;
+         bi     = bt_ptr[b].block_idx;
+         bh_ptr = glb_dt1[di].bh_buffer;
+         u_ptr  = bh_ptr[bi].sub_tiles_flags;
+
+         // add the flags
+         for (i=0; i<25; i++)
+            dsttable[i] |= u_ptr[i];
+
+         // upper / left tile corner 2nd tile
+         if (w_ptr[w].orientation == 3)
+         {
+            i = misc_seach_block_or4(ds1_idx,
+                   bt_ptr,
+                   b,
+                   bt_ptr[b].main_idx,
+                   bt_ptr[b].sub_idx
+                );
+            if (i != -1)
+            {
+               b      = i;
+               di     = bt_ptr[b].dt1_idx;
+               bi     = bt_ptr[b].block_idx;
+               bh_ptr = glb_dt1[di].bh_buffer;
+               u_ptr  = bh_ptr[bi].sub_tiles_flags;
+
+               // add the flags
+               for (i=0; i<25; i++)
+                  dsttable[i] |= u_ptr[i];
+            }
+         }
+      }
+   }
+}

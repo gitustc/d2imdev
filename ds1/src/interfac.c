@@ -6,6 +6,7 @@
 #include "anim.h"
 #include "txtread.h"
 #include "interfac.h"
+#include "ds1misc.h"
 
 // {{{ process input event in process_input(), add any handler here
 char key_value_to_ascii(int key)
@@ -154,6 +155,7 @@ void interfac_user_handler(int start_ds1_idx)
     // main loop
 
     clear_keybuf();
+
 
 
     while (! done) {
