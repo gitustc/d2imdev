@@ -1272,7 +1272,6 @@ void wpreview_draw_obj_tile_shad(int ds1_idx, int x, int y, int * cur_idx)
                 misc_search_walk_infos(0, x, y, infos);
                 for(tmpi=0;tmpi<25;tmpi++){
                     if(infos[tmpi]&0x04 || infos[tmpi]&0x09){
-                        printf("no-----------------------------\n");
                         break;
                     }
                 }
@@ -1394,7 +1393,6 @@ link: http://hi.baidu.com/hubingjy/blog/item/a965e802750ea0703812bbe5.html
                               misc_search_walk_infos(0, x, y, infos);
                               for(tmpi=0;tmpi<25;tmpi++){
                                   if(infos[tmpi]&0x04 || infos[tmpi]&0x09){
-                                      printf("no-----------------------------\n");
                                       break;
                                   }
                               }
