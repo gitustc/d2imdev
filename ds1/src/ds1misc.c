@@ -14,6 +14,7 @@ The Type 2 units are Objects, taken from Data\Global\Excel\Objects.txt, such as 
 #endif
 
 void test_add_objects(){
+    return;
 
     int *p;
     int i,j,k;

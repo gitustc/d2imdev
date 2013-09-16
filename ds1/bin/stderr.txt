@@ -10,15 +10,29 @@ exit, memory free :
    * palettes...
    * DT1 files...
       . ./res/data/ds1edit.dt1
-      . data/global/tiles/act1/town/floor.dt1
-      . data/global/tiles/act1/tristram/town.dt1
-      . data/global/tiles/act1/outdoors/stonewall.dt1
-      . data/global/tiles/act1/outdoors/river.dt1
-      . data/global/tiles/act1/outdoors/objects.dt1
-      . data/global/tiles/act1/outdoors/treegroups.dt1
+      . data/global/tiles/expansion/town/blacksmith.dt1
+      . data/global/tiles/expansion/town/ground.dt1
+      . data/global/tiles/expansion/town/keepwall.dt1
+      . data/global/tiles/expansion/town/otherwalls.dt1
+      . data/global/tiles/expansion/town/shrine.dt1
+      . data/global/tiles/expansion/town/walls.dt1
+      . data/global/tiles/expansion/siege/shrub.dt1
+      . data/global/tiles/expansion/town/collision.dt1
+      . data/global/tiles/expansion/siege/path.dt1
+      . data/global/tiles/expansion/town/tent.dt1
+      . data/global/tiles/expansion/siege/snow.dt1
+      . data/global/tiles/expansion/siege/trees.dt1
+      . data/global/tiles/expansion/town/buildingses.dt1
+      . data/global/tiles/expansion/siege/fence.dt1
+      . data/global/tiles/expansion/town/waypt.dt1
+      . data/global/tiles/expansion/town/maingate.dt1
+      . data/global/tiles/expansion/town/clutter.dt1
+      . data/global/tiles/expansion/town/trees.dt1
+      . data/global/tiles/expansion/siege/rockcliff.dt1
+      . data/global/tiles/expansion/siege/rockclifffloor.dt1
    * DS1 files...
-      . tri_town4.ds1
-         bytes free = 244319
+      . townwest.ds1
+         bytes free = 244746
    * objects descriptions...
    * walkable info tiles...
    * walkable info tiles combinations...

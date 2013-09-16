@@ -1,3 +1,1 @@
-@echo off
-./mapedit TownWest.ds1 29 863
-pause
+./mapedit townwest.ds1 29 863
