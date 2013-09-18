@@ -1,0 +1,105 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BuildBaseMassive	MpqView.c	/^void BuildBaseMassive()$/;"	f
+CMP_ASCII	Dclib.h	8;"	d
+CMP_BINARY	Dclib.h	7;"	d
+CMP_BUFFER_SIZE	Dclib.h	5;"	d
+Crc	MpqView.c	/^DWORD Crc(char *string,DWORD *massive_base,DWORD massive_base_offset)$/;"	f
+DCL_ERROR_1	Dclib.h	14;"	d
+DCL_ERROR_2	Dclib.h	15;"	d
+DCL_ERROR_3	Dclib.h	16;"	d
+DCL_ERROR_4	Dclib.h	17;"	d
+DCL_NO_ERROR	Dclib.h	13;"	d
+DICT_SIZE_1	Dclib.h	9;"	d
+DICT_SIZE_2	Dclib.h	10;"	d
+DICT_SIZE_4	Dclib.h	11;"	d
+DWORD	mpqtypes.h	13;"	d
+Decode	MpqView.c	/^void Decode(DWORD *data_in, DWORD *massive_base, DWORD crc, DWORD lenght)$/;"	f
+EXP_BUFFER_SIZE	Dclib.h	6;"	d
+ExtWavUnp1	Wav_unp.c	/^UInt32 ExtWavUnp1(UInt32 buf_in, UInt32 size_in, UInt32 buf_out, UInt32 size_out)$/;"	f
+ExtWavUnp2	Wav_unp.c	/^UInt32 ExtWavUnp2(UInt32 buf_in,UInt32 size_in,UInt32 buf_out,UInt32 size_out)$/;"	f
+ExtWavUnp3	Wav_unp.c	/^UInt32 ExtWavUnp3(UInt32 buf_in,UInt32 size_in,UInt32 buf_out,UInt32 size_out)$/;"	f
+ExtractTo	MpqView.c	/^int ExtractTo(FILE *fp_new,DWORD entry)$/;"	f
+ExtractToMem	MpqView.c	/^int ExtractToMem(void * mp_new, DWORD entry)$/;"	f
+FreeLocals	MpqView.c	/^void FreeLocals()$/;"	f
+GLB_MPQ_S	mpqtypes.h	/^typedef struct GLB_MPQ_S$/;"	s
+GLB_MPQ_S	mpqtypes.h	/^} GLB_MPQ_S;$/;"	t	typeref:struct:GLB_MPQ_S
+GetUnknowCrc	MpqView.c	/^DWORD GetUnknowCrc(DWORD entry)$/;"	f
+InitializeLocals	MpqView.c	/^int InitializeLocals()$/;"	f
+MPQTYPES_MAX_PATH	mpqtypes.h	15;"	d
+SInt16	mpqtypes.h	9;"	d
+SInt32	mpqtypes.h	11;"	d
+Sub_WavUnp1	Wav_unp.c	/^void Sub_WavUnp1(UInt32 arg1,UInt32 base)$/;"	f
+Sub_WavUnp10	Wav_unp.c	/^void Sub_WavUnp10(UInt32 arg1,UInt32 arg2)$/;"	f
+Sub_WavUnp11	Wav_unp.c	/^UInt32 Sub_WavUnp11(UInt32 buf_out,UInt32 size_out,UInt32 work_buff,UInt32 base)$/;"	f
+Sub_WavUnp12	Wav_unp.c	/^void Sub_WavUnp12(UInt32 base)$/;"	f
+Sub_WavUnp13	Wav_unp.c	/^UInt32 Sub_WavUnp13(UInt32 buf_in,UInt32 size_in,UInt32 flag,UInt32 buf_out,UInt32 size_out)$/;"	f
+Sub_WavUnp2	Wav_unp.c	/^UInt32 Sub_WavUnp2(UInt32 arg1,UInt32 arg2,UInt32 arg3)$/;"	f
+Sub_WavUnp3	Wav_unp.c	/^void Sub_WavUnp3(UInt32 ptr)  $/;"	f
+Sub_WavUnp4	Wav_unp.c	/^void Sub_WavUnp4(UInt32 arg1,UInt32 arg2,UInt32 arg3,UInt32 arg4)$/;"	f
+Sub_WavUnp5	Wav_unp.c	/^UInt32 Sub_WavUnp5(UInt32 arg1)$/;"	f
+Sub_WavUnp6	Wav_unp.c	/^void Sub_WavUnp6(UInt32 ptr_base)$/;"	f
+Sub_WavUnp7	Wav_unp.c	/^UInt32 Sub_WavUnp7(UInt32 arg1)$/;"	f
+Sub_WavUnp8	Wav_unp.c	/^UInt32 Sub_WavUnp8(UInt32 arg1)$/;"	f
+Sub_WavUnp9	Wav_unp.c	/^void Sub_WavUnp9(UInt32 arg1,UInt32 arg2)$/;"	f
+UInt16	mpqtypes.h	8;"	d
+UInt32	mpqtypes.h	10;"	d
+UInt8	mpqtypes.h	7;"	d
+_MPQTYPES_H_	mpqtypes.h	3;"	d
+_MPQVIEW_H_	MpqView.h	3;"	d
+__explode_1	Explode.c	/^UInt16 __explode_1(UInt8 *buf)$/;"	f
+__explode_2	Explode.c	/^UInt16 __explode_2(UInt8 *buf)$/;"	f
+__explode_3	Explode.c	/^UInt16 __explode_3(UInt8 *buf, UInt16 flag)$/;"	f
+__explode_4	Explode.c	/^UInt16 __explode_4(UInt8 *buf, UInt32 flag)$/;"	f
+__explode_5	Explode.c	/^void __explode_5(UInt16 count, UInt8 *buf_1, const UInt8 *table, UInt8 *buf_2)$/;"	f
+__explode_6	Explode.c	/^void __explode_6(UInt8 *buf, const UInt8 *table)$/;"	f
+__explode_7	Explode.c	/^void __explode_7(UInt8 *buf, const UInt8 *table, UInt32 count)$/;"	f
+avail_metods	mpqtypes.h	/^   DWORD	 avail_metods[4];\/\/={0x08,0x01,0x40,0x80};$/;"	m	struct:GLB_MPQ_S
+block_table	mpqtypes.h	/^   DWORD	*block_table;		\/\/ Block table$/;"	m	struct:GLB_MPQ_S
+buf_in	MpqView.c	/^	char * buf_in;$/;"	m	struct:params	file:
+buf_out	MpqView.c	/^	char * buf_out;$/;"	m	struct:params	file:
+count_files	mpqtypes.h	/^   DWORD	count_files;		\/\/ Number of files in MPQ (calculated from size of block_table)$/;"	m	struct:GLB_MPQ_S
+dcl_table	Dcl_tbl.c	/^const UInt8 dcl_table[] =$/;"	v
+default_list	mpqtypes.h	/^   char	default_list[MPQTYPES_MAX_PATH];\/\/ Path to list file$/;"	m	struct:GLB_MPQ_S
+explode	Explode.c	/^UInt32 explode(read_data_proc read_data, write_data_proc write_data, void * param)$/;"	f
+explode_buffer	mpqtypes.h	/^   UInt8  * global_buffer, * read_buffer_start, * write_buffer_start, * explode_buffer;$/;"	m	struct:GLB_MPQ_S
+file_header	mpqtypes.h	/^   UInt32 * file_header;$/;"	m	struct:GLB_MPQ_S
+file_name	mpqtypes.h	/^   char	file_name[257];		\/\/ Name of archive$/;"	m	struct:GLB_MPQ_S
+filename_table	mpqtypes.h	/^   char	*filename_table;	\/\/ Array of MPQ filenames$/;"	m	struct:GLB_MPQ_S
+fpMpq	mpqtypes.h	/^   FILE	*fpMpq;$/;"	m	struct:GLB_MPQ_S
+glb_mpq	MpqView.c	/^GLB_MPQ_S * glb_mpq = NULL; \/\/ pointer to current mpq file structure$/;"	v
+global_buffer	mpqtypes.h	/^   UInt8  * global_buffer, * read_buffer_start, * write_buffer_start, * explode_buffer;$/;"	m	struct:GLB_MPQ_S
+hash_table	mpqtypes.h	/^   DWORD	*hash_table;		\/\/ Hash table$/;"	m	struct:GLB_MPQ_S
+identify_table	mpqtypes.h	/^   char	*identify_table;	\/\/ Bitmap table of MPQ filenames 1 - if file name for this entry is known, 0 - if is not$/;"	m	struct:GLB_MPQ_S
+is_open	mpqtypes.h	/^   int   is_open;          \/\/ FALSE \/ TRUE$/;"	m	struct:GLB_MPQ_S
+lenght_btbl	mpqtypes.h	/^   DWORD	lenght_btbl;		\/\/ Lenght of block table$/;"	m	struct:GLB_MPQ_S
+lenght_htbl	mpqtypes.h	/^   DWORD	lenght_htbl;		\/\/ Lenght of hash table$/;"	m	struct:GLB_MPQ_S
+lenght_mpq_part	mpqtypes.h	/^   DWORD	lenght_mpq_part;	\/\/ Lenght of MPQ file data$/;"	m	struct:GLB_MPQ_S
+lenght_write	mpqtypes.h	/^   DWORD	 lenght_write;$/;"	m	struct:GLB_MPQ_S
+massive_base	mpqtypes.h	/^   DWORD	massive_base[0x500];\/\/ This massive is used to calculate crc and decode files, $/;"	m	struct:GLB_MPQ_S
+mod_load_in_mem	MpqView.c	/^int mod_load_in_mem($/;"	f
+mpq_batch_close	MpqView.c	/^void mpq_batch_close()$/;"	f
+mpq_batch_load_in_mem	MpqView.c	/^int mpq_batch_load_in_mem(char * filename, void ** buffer, long * buf_len,$/;"	f
+mpq_batch_open	MpqView.c	/^void mpq_batch_open(char * mpqname)$/;"	f
+offset_btbl	mpqtypes.h	/^   DWORD	offset_btbl;		\/\/ Offset to block_table of MPQ$/;"	m	struct:GLB_MPQ_S
+offset_htbl	mpqtypes.h	/^   DWORD	offset_htbl;		\/\/ Offset to hash_table of MPQ$/;"	m	struct:GLB_MPQ_S
+offset_mpq	mpqtypes.h	/^   DWORD	offset_mpq;			\/\/ Offset to MPQ file data$/;"	m	struct:GLB_MPQ_S
+params	MpqView.c	/^typedef struct params$/;"	s	file:
+params	MpqView.c	/^} params;$/;"	t	typeref:struct:params	file:
+prnbuf	mpqtypes.h	/^   char	prnbuf[MPQTYPES_MAX_PATH+100];	\/\/ Buffer$/;"	m	struct:GLB_MPQ_S
+read_buffer_start	mpqtypes.h	/^   UInt8  * global_buffer, * read_buffer_start, * write_buffer_start, * explode_buffer;$/;"	m	struct:GLB_MPQ_S
+read_data	MpqView.c	/^UInt16 read_data(UInt8 *buffer,UInt16 size,void *crap)$/;"	f
+read_data_proc	Dclib.h	/^typedef UInt16 read_data_proc  (UInt8 * buffer, UInt16 size, void * param);$/;"	t
+small_tbl1	Wav_unp.h	/^UInt32 small_tbl1[90] =$/;"	v
+small_tbl2	Wav_unp.h	/^UInt32 small_tbl2[32] =$/;"	v
+test_prepare_archive	MpqView.c	/^int test_prepare_archive(void)$/;"	f
+test_tell_entry	MpqView.c	/^DWORD test_tell_entry(char * filename)$/;"	f
+wav_table	Wav_unp.h	/^UInt8 wav_table[2512] =$/;"	v
+work_dir	mpqtypes.h	/^   char	work_dir[MPQTYPES_MAX_PATH];	\/\/ Work directory$/;"	m	struct:GLB_MPQ_S
+write_buffer_start	mpqtypes.h	/^   UInt8  * global_buffer, * read_buffer_start, * write_buffer_start, * explode_buffer;$/;"	m	struct:GLB_MPQ_S
+write_data	MpqView.c	/^void write_data(UInt8 *buffer,UInt16 size,void *crap)$/;"	f
+write_data_proc	Dclib.h	/^typedef void   write_data_proc (UInt8 * buffer, UInt16 size, void * param);$/;"	t

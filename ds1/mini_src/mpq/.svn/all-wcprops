@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/68/trunk/mapedit/src/mpq
+END
+wav_unp.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/68/trunk/mapedit/src/mpq/wav_unp.c
+END
+explode.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/68/trunk/mapedit/src/mpq/explode.c
+END
+dclib.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/68/trunk/mapedit/src/mpq/dclib.h
+END
+dcl_tbl.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/68/trunk/mapedit/src/mpq/dcl_tbl.c
+END
+wav_unp.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/68/trunk/mapedit/src/mpq/wav_unp.h
+END
+mpqtypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/68/trunk/mapedit/src/mpq/mpqtypes.h
+END
+mpqview.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/68/trunk/mapedit/src/mpq/mpqview.c
+END
+mpqview.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/68/trunk/mapedit/src/mpq/mpqview.h
+END
+tags
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/68/trunk/mapedit/src/mpq/tags
+END
