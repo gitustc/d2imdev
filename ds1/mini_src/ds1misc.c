@@ -153,354 +153,356 @@ void ds1_save(int ds1_idx, int is_tmp_file)
 
 
 
+
+
+    // version
+    n = 18;
+    fwrite(& n, 4, 1, out);
+
+    // width
+    n = glb_ds1.width - 1;
+    fwrite(& n, 4, 1, out);
+
+    // height
+    n = glb_ds1.height - 1;
+    fwrite(& n, 4, 1, out);
+
+    // act
+    n = glb_ds1.act - 1;
+    fwrite(& n, 4, 1, out);
+
+    // tag type
+    fwrite(& glb_ds1.tag_type, 4, 1, out);
+
+    // filenames
+
+    // count how many filenames (not workspace datas)
+    file_count = 0;
+    cptr = glb_ds1.file_buff;
+    for (i=0; i < glb_ds1.file_num; i++)
     {
-
-        // version
-        n = 18;
-        fwrite(& n, 4, 1, out);
-
-        // width
-        n = glb_ds1.width - 1;
-        fwrite(& n, 4, 1, out);
-
-        // height
-        n = glb_ds1.height - 1;
-        fwrite(& n, 4, 1, out);
-
-        // act
-        n = glb_ds1.act - 1;
-        fwrite(& n, 4, 1, out);
-
-        // tag type
-        fwrite(& glb_ds1.tag_type, 4, 1, out);
-
-        // filenames
-
-        // count how many filenames (not workspace datas)
-        file_count = 0;
-        cptr = glb_ds1.file_buff;
-        for (i=0; i < glb_ds1.file_num; i++)
+        flen = strlen(cptr) + 1;
+        is_data = FALSE;
+        // for all workspace datas
+        for(y=0; y < WRKSPC_MAX; y++)
         {
-            flen = strlen(cptr) + 1;
-            is_data = FALSE;
-            // for all workspace datas
-            for(y=0; y < WRKSPC_MAX; y++)
-            {
-                // check if it's one of our datas
+            // check if it's one of our datas
 
-                // for all characters
-                x = 0;
-                while ( (cptr[x] != 0x00) && (glb_wrkspc_datas[y].id[x] != 0x00) && (cptr[x] == glb_wrkspc_datas[y].id[x])) {
-                    // continue on next character
-                    x++;
-                }
-                if ((glb_wrkspc_datas[y].id[x] == 0x00) && (cptr[x]== '=')) {
-                    // this is our data, don't count it
-                    is_data = TRUE;
+            // for all characters
+            x = 0;
+            while ( (cptr[x] != 0x00) && (glb_wrkspc_datas[y].id[x] != 0x00) && (cptr[x] == glb_wrkspc_datas[y].id[x])) {
+                // continue on next character
+                x++;
+            }
+            if ((glb_wrkspc_datas[y].id[x] == 0x00) && (cptr[x]== '=')) {
+                // this is our data, don't count it
+                is_data = TRUE;
+                break;
+            }
+        }
+        if (is_data == FALSE)
+            file_count++;
+        // next filename
+        cptr += flen;
+    }
+    if (glb_config.workspace_enable){
+        file_count += WRKSPC_MAX;
+    }
+
+    {
+        long cc=7;
+        //fwrite(& file_count, 4, 1, out);
+        fwrite(& cc, 4, 1, out);
+    }
+
+    // write filenames (not workspace datas)
+    cptr = glb_ds1.file_buff;
+    for (i=0; i < glb_ds1.file_num; i++)
+    {
+        flen = strlen(cptr) + 1;
+        is_data = FALSE;
+        // for all workspace datas
+        for(y=0; y < WRKSPC_MAX; y++)
+        {
+            // check if it's one of our datas
+
+            // for all characters
+            x = 0;
+            while ( (cptr[x] != 0x00) &&
+                    (glb_wrkspc_datas[y].id[x] != 0x00) &&
+                    (cptr[x] == glb_wrkspc_datas[y].id[x])
+                  )
+            {
+                // continue on next character
+                x++;
+            }
+            if ((glb_wrkspc_datas[y].id[x] == 0x00) && (cptr[x]== '='))
+            {
+                // this is our data, skip it
+                is_data = TRUE;
+                break;
+            }
+        }
+        if (is_data == FALSE)
+            fwrite(cptr, flen, 1, out);
+
+        // next filename
+        cptr += flen;
+    }
+
+    if (glb_config.workspace_enable)
+    {
+        // write all workspace datas
+        ax = glb_ds1edit.win_preview.x0 + glb_ds1edit.win_preview.w / 2;
+        ay = glb_ds1edit.win_preview.y0 + glb_ds1edit.win_preview.h / 2;
+        coord_to_tile(ds1_idx, ax, ay, & cx, & cy);
+        if ( (glb_ds1edit.mode == MOD_O) ||
+                (glb_ds1edit.mode == MOD_P) ||
+                (glb_ds1edit.mode == MOD_L) )
+        {
+            cx /= 5;
+            cy /= 5;
+        }
+        for (i=0; i < WRKSPC_MAX; i++)
+        {
+            switch (i)
+            {
+                case WRKSPC_TILE_X :
+                    sprintf(tmp, "%s=%i", glb_wrkspc_datas[i].id, cx);
+                    fwrite(tmp, strlen(tmp) + 1, 1, out);
                     break;
-                }
-            }
-            if (is_data == FALSE)
-                file_count++;
-            // next filename
-            cptr += flen;
-        }
-        if (glb_config.workspace_enable)
-            file_count += WRKSPC_MAX;
-        {
-            long cc=7;
-            //fwrite(& file_count, 4, 1, out);
-            fwrite(& cc, 4, 1, out);
-        }
 
-        // write filenames (not workspace datas)
-        cptr = glb_ds1.file_buff;
-        for (i=0; i < glb_ds1.file_num; i++)
-        {
-            flen = strlen(cptr) + 1;
-            is_data = FALSE;
-            // for all workspace datas
-            for(y=0; y < WRKSPC_MAX; y++)
-            {
-                // check if it's one of our datas
-
-                // for all characters
-                x = 0;
-                while ( (cptr[x] != 0x00) &&
-                        (glb_wrkspc_datas[y].id[x] != 0x00) &&
-                        (cptr[x] == glb_wrkspc_datas[y].id[x])
-                      )
-                {
-                    // continue on next character
-                    x++;
-                }
-                if ((glb_wrkspc_datas[y].id[x] == 0x00) && (cptr[x]== '='))
-                {
-                    // this is our data, skip it
-                    is_data = TRUE;
+                case WRKSPC_TILE_Y :
+                    sprintf(tmp, "%s=%i", glb_wrkspc_datas[i].id, cy);
+                    fwrite(tmp, strlen(tmp) + 1, 1, out);
                     break;
-                }
-            }
-            if (is_data == FALSE)
-                fwrite(cptr, flen, 1, out);
 
-            // next filename
-            cptr += flen;
-        }
-
-        if (glb_config.workspace_enable)
-        {
-            // write all workspace datas
-            ax = glb_ds1edit.win_preview.x0 + glb_ds1edit.win_preview.w / 2;
-            ay = glb_ds1edit.win_preview.y0 + glb_ds1edit.win_preview.h / 2;
-            coord_to_tile(ds1_idx, ax, ay, & cx, & cy);
-            if ( (glb_ds1edit.mode == MOD_O) ||
-                    (glb_ds1edit.mode == MOD_P) ||
-                    (glb_ds1edit.mode == MOD_L) )
-            {
-                cx /= 5;
-                cy /= 5;
-            }
-            for (i=0; i < WRKSPC_MAX; i++)
-            {
-                switch (i)
-                {
-                    case WRKSPC_TILE_X :
-                        sprintf(tmp, "%s=%i", glb_wrkspc_datas[i].id, cx);
-                        fwrite(tmp, strlen(tmp) + 1, 1, out);
-                        break;
-
-                    case WRKSPC_TILE_Y :
-                        sprintf(tmp, "%s=%i", glb_wrkspc_datas[i].id, cy);
-                        fwrite(tmp, strlen(tmp) + 1, 1, out);
-                        break;
-
-                    case WRKSPC_ZOOM :
-                        sprintf(tmp, "%s=%i", glb_wrkspc_datas[i].id, glb_ds1.cur_zoom);
-                        fwrite(tmp, strlen(tmp) + 1, 1, out);
-                        break;
-
-                    case WRKSPC_VERSION :
-                        sprintf(tmp, "%s=Build YYYY/MM/DD", glb_wrkspc_datas[i].id);
-                        fwrite(tmp, strlen(tmp) + 1, 1, out);
-                        break;
-
-                    case WRKSPC_SAVE_COUNT :
-                        glb_ds1.save_count++;
-                        sprintf(tmp, "%s=%lu", glb_wrkspc_datas[i].id, glb_ds1.save_count);
-                        fwrite(tmp, strlen(tmp) + 1, 1, out);
-                        break;
-                }
-            }
-        }
-
-        // minimize ds1 size
-        save_wall_num  = glb_ds1.wall_num;
-        save_floor_num = glb_ds1.floor_num;
-        if (glb_config.minimize_ds1 == TRUE)
-        {
-            // how many wall layers are really used ?
-            // (keep a minimum of 1)
-            for (i = save_wall_num - 1; i >= 1; i--)
-            {
-                used = FALSE;
-
-                for (y=0; y < glb_ds1.height; y++)
-                {
-                    for (x=0; x < glb_ds1.width; x++)
-                    {
-                        t = (y * glb_ds1.wall_line) + (x * glb_ds1.wall_num);
-                        w_ptr = glb_ds1.wall_buff + t + i;
-                        if ((w_ptr->prop1 | w_ptr->prop2 | w_ptr->prop3 | w_ptr->prop4 |
-                                    w_ptr->orientation) != 0)
-                        {
-                            used = TRUE;
-                            break;
-                        }
-                    }
-                    if (used)
-                        break;
-                }
-                if (used)
+                case WRKSPC_ZOOM :
+                    sprintf(tmp, "%s=%i", glb_wrkspc_datas[i].id, glb_ds1.cur_zoom);
+                    fwrite(tmp, strlen(tmp) + 1, 1, out);
                     break;
-                else
-                    save_wall_num--;
-            }
 
-            // how many floor layers are really used ?
-            // (keep a minimum of 1)
-            for (i = save_floor_num - 1; i >= 1; i--)
-            {
-                used = FALSE;
-
-                for (y=0; y < glb_ds1.height; y++)
-                {
-                    for (x=0; x < glb_ds1.width; x++)
-                    {
-                        t = (y * glb_ds1.floor_line) + (x * glb_ds1.floor_num);
-                        f_ptr = glb_ds1.floor_buff + t + i;
-                        if ((f_ptr->prop1 | f_ptr->prop2 | f_ptr->prop3 | f_ptr->prop4) != 0)
-                        {
-                            used = TRUE;
-                            break;
-                        }
-                    }
-                    if (used)
-                        break;
-                }
-                if (used)
+                case WRKSPC_VERSION :
+                    sprintf(tmp, "%s=Build YYYY/MM/DD", glb_wrkspc_datas[i].id);
+                    fwrite(tmp, strlen(tmp) + 1, 1, out);
                     break;
-                else
-                    save_floor_num--;
+
+                case WRKSPC_SAVE_COUNT :
+                    glb_ds1.save_count++;
+                    sprintf(tmp, "%s=%lu", glb_wrkspc_datas[i].id, glb_ds1.save_count);
+                    fwrite(tmp, strlen(tmp) + 1, 1, out);
+                    break;
             }
         }
+    }
 
-
-        // wall num
-        fwrite(& save_wall_num,  4, 1, out);
-
-        // floor num
-        fwrite(& save_floor_num, 4, 1, out);
-
-        // walls
-        for (i=0; i < save_wall_num; i++)
+    // minimize ds1 size
+    save_wall_num  = glb_ds1.wall_num;
+    save_floor_num = glb_ds1.floor_num;
+    if (glb_config.minimize_ds1 == TRUE)
+    {
+        // how many wall layers are really used ?
+        // (keep a minimum of 1)
+        for (i = save_wall_num - 1; i >= 1; i--)
         {
-            // props layer
+            used = FALSE;
+
             for (y=0; y < glb_ds1.height; y++)
             {
                 for (x=0; x < glb_ds1.width; x++)
                 {
                     t = (y * glb_ds1.wall_line) + (x * glb_ds1.wall_num);
                     w_ptr = glb_ds1.wall_buff + t + i;
-                    fputc(w_ptr->prop1, out);
-                    fputc(w_ptr->prop2, out);
-                    fputc(w_ptr->prop3, out);
-                    fputc(w_ptr->prop4, out);
+                    if ((w_ptr->prop1 | w_ptr->prop2 | w_ptr->prop3 | w_ptr->prop4 |
+                                w_ptr->orientation) != 0)
+                    {
+                        used = TRUE;
+                        break;
+                    }
                 }
+                if (used)
+                    break;
             }
-
-            // orientation layer
-            for (y=0; y < glb_ds1.height; y++)
-            {
-                for (x=0; x < glb_ds1.width; x++)
-                {
-                    t = (y * glb_ds1.wall_line) + (x * glb_ds1.wall_num);
-                    w_ptr = glb_ds1.wall_buff + t + i;
-                    fputc(w_ptr->orientation, out);
-                    fputc(0, out);
-                    fputc(0, out);
-                    fputc(0, out);
-                }
-            }
+            if (used)
+                break;
+            else
+                save_wall_num--;
         }
 
-        // floors
-        for (i=0; i < save_floor_num; i++)
+        // how many floor layers are really used ?
+        // (keep a minimum of 1)
+        for (i = save_floor_num - 1; i >= 1; i--)
         {
-            // props layer
+            used = FALSE;
+
             for (y=0; y < glb_ds1.height; y++)
             {
                 for (x=0; x < glb_ds1.width; x++)
                 {
                     t = (y * glb_ds1.floor_line) + (x * glb_ds1.floor_num);
                     f_ptr = glb_ds1.floor_buff + t + i;
-                    fputc(f_ptr->prop1, out);
-                    fputc(f_ptr->prop2, out);
-                    fputc(f_ptr->prop3, out);
-                    fputc(f_ptr->prop4, out);
+                    if ((f_ptr->prop1 | f_ptr->prop2 | f_ptr->prop3 | f_ptr->prop4) != 0)
+                    {
+                        used = TRUE;
+                        break;
+                    }
                 }
+                if (used)
+                    break;
+            }
+            if (used)
+                break;
+            else
+                save_floor_num--;
+        }
+    }
+
+
+    // wall num
+    fwrite(& save_wall_num,  4, 1, out);
+
+    // floor num
+    fwrite(& save_floor_num, 4, 1, out);
+
+    // walls
+    for (i=0; i < save_wall_num; i++)
+    {
+        // props layer
+        for (y=0; y < glb_ds1.height; y++)
+        {
+            for (x=0; x < glb_ds1.width; x++)
+            {
+                t = (y * glb_ds1.wall_line) + (x * glb_ds1.wall_num);
+                w_ptr = glb_ds1.wall_buff + t + i;
+                fputc(w_ptr->prop1, out);
+                fputc(w_ptr->prop2, out);
+                fputc(w_ptr->prop3, out);
+                fputc(w_ptr->prop4, out);
             }
         }
 
-        // shadows
-        for (i=0; i < glb_ds1.shadow_num; i++)
+        // orientation layer
+        for (y=0; y < glb_ds1.height; y++)
+        {
+            for (x=0; x < glb_ds1.width; x++)
+            {
+                t = (y * glb_ds1.wall_line) + (x * glb_ds1.wall_num);
+                w_ptr = glb_ds1.wall_buff + t + i;
+                fputc(w_ptr->orientation, out);
+                fputc(0, out);
+                fputc(0, out);
+                fputc(0, out);
+            }
+        }
+    }
+
+    // floors
+    for (i=0; i < save_floor_num; i++)
+    {
+        // props layer
+        for (y=0; y < glb_ds1.height; y++)
+        {
+            for (x=0; x < glb_ds1.width; x++)
+            {
+                t = (y * glb_ds1.floor_line) + (x * glb_ds1.floor_num);
+                f_ptr = glb_ds1.floor_buff + t + i;
+                fputc(f_ptr->prop1, out);
+                fputc(f_ptr->prop2, out);
+                fputc(f_ptr->prop3, out);
+                fputc(f_ptr->prop4, out);
+            }
+        }
+    }
+
+    // shadows
+    for (i=0; i < glb_ds1.shadow_num; i++)
+    {
+        // props layer
+        for (y=0; y < glb_ds1.height; y++)
+        {
+            for (x=0; x < glb_ds1.width; x++)
+            {
+                t = (y * glb_ds1.shadow_line) + (x * glb_ds1.shadow_num);
+                s_ptr = glb_ds1.shadow_buff + t + i;
+                fputc(s_ptr->prop1, out);
+                fputc(s_ptr->prop2, out);
+                fputc(s_ptr->prop3, out);
+                fputc(s_ptr->prop4, out);
+            }
+        }
+    }
+
+    // optional tag layer
+    if (glb_ds1.tag_type)
+    {
+        for (i=0; i<glb_ds1.tag_num; i++)
         {
             // props layer
             for (y=0; y < glb_ds1.height; y++)
             {
                 for (x=0; x < glb_ds1.width; x++)
                 {
-                    t = (y * glb_ds1.shadow_line) + (x * glb_ds1.shadow_num);
-                    s_ptr = glb_ds1.shadow_buff + t + i;
-                    fputc(s_ptr->prop1, out);
-                    fputc(s_ptr->prop2, out);
-                    fputc(s_ptr->prop3, out);
-                    fputc(s_ptr->prop4, out);
+                    t = (y * glb_ds1.tag_line) + (x * glb_ds1.tag_num);
+                    t_ptr = glb_ds1.tag_buff + t + i;
+                    fwrite( & t_ptr->num, 4, 1, out);
                 }
             }
-        }
-
-        // optional tag layer
-        if (glb_ds1.tag_type)
-        {
-            for (i=0; i<glb_ds1.tag_num; i++)
-            {
-                // props layer
-                for (y=0; y < glb_ds1.height; y++)
-                {
-                    for (x=0; x < glb_ds1.width; x++)
-                    {
-                        t = (y * glb_ds1.tag_line) + (x * glb_ds1.tag_num);
-                        t_ptr = glb_ds1.tag_buff + t + i;
-                        fwrite( & t_ptr->num, 4, 1, out);
-                    }
-                }
-            }
-        }
-
-        // objects
-        fwrite(&glb_ds1.obj_num, 4, 1, out);
-        for (i=0; i < glb_ds1.obj_num; i++)
-        {
-            fwrite(&glb_ds1.obj[i].type,      4, 1, out);
-            fwrite(&glb_ds1.obj[i].id,        4, 1, out);
-            fwrite(&glb_ds1.obj[i].x,         4, 1, out);
-            fwrite(&glb_ds1.obj[i].y,         4, 1, out);
-            fwrite(&glb_ds1.obj[i].ds1_flags, 4, 1, out);
-            if (glb_ds1.obj[i].path_num)
-                npc++;
-        }
-
-        // optional groups
-        if (glb_ds1.tag_type)
-        {
-            // put a 0 dword
-            n = 0;
-            fwrite(&n, 4, 1, out);
-
-            // # of groups
-            fwrite(&glb_ds1.group_num, 4, 1, out);
-
-            // groups
-            // what is group????????????????????
-            for (i=0; i < glb_ds1.group_num; i++)
-            {
-                fwrite(&glb_ds1.group[i].tile_x, 4, 1, out);
-                fwrite(&glb_ds1.group[i].tile_y, 4, 1, out);
-                fwrite(&glb_ds1.group[i].width,  4, 1, out);
-                fwrite(&glb_ds1.group[i].height, 4, 1, out);
-                fwrite(&glb_ds1.group[i].unk,    4, 1, out);
-            }
-        }
-
-        // npc paths
-        fwrite(&npc, 4, 1, out);
-        for (i=0; i < npc; i++)
-        {
-            while ( ! glb_ds1.obj[cur_o].path_num)
-                cur_o++;
-            fwrite(&glb_ds1.obj[cur_o].path_num, 4, 1, out);
-            fwrite(&glb_ds1.obj[cur_o].x,        4, 1, out);
-            fwrite(&glb_ds1.obj[cur_o].y,        4, 1, out);
-            for (p=0; p < glb_ds1.obj[cur_o].path_num; p++)
-            {
-                fwrite(&glb_ds1.obj[cur_o].path[p].x,      4, 1, out);
-                fwrite(&glb_ds1.obj[cur_o].path[p].y,      4, 1, out);
-                fwrite(&glb_ds1.obj[cur_o].path[p].action, 4, 1, out);
-            }
-            cur_o++;
         }
     }
+
+    // objects
+    fwrite(&glb_ds1.obj_num, 4, 1, out);
+    for (i=0; i < glb_ds1.obj_num; i++)
+    {
+        fwrite(&glb_ds1.obj[i].type,      4, 1, out);
+        fwrite(&glb_ds1.obj[i].id,        4, 1, out);
+        fwrite(&glb_ds1.obj[i].x,         4, 1, out);
+        fwrite(&glb_ds1.obj[i].y,         4, 1, out);
+        fwrite(&glb_ds1.obj[i].ds1_flags, 4, 1, out);
+        if (glb_ds1.obj[i].path_num)
+            npc++;
+    }
+
+    // optional groups
+    if (glb_ds1.tag_type)
+    {
+        // put a 0 dword
+        n = 0;
+        fwrite(&n, 4, 1, out);
+
+        // # of groups
+        fwrite(&glb_ds1.group_num, 4, 1, out);
+
+        // groups
+        // what is group????????????????????
+        for (i=0; i < glb_ds1.group_num; i++)
+        {
+            fwrite(&glb_ds1.group[i].tile_x, 4, 1, out);
+            fwrite(&glb_ds1.group[i].tile_y, 4, 1, out);
+            fwrite(&glb_ds1.group[i].width,  4, 1, out);
+            fwrite(&glb_ds1.group[i].height, 4, 1, out);
+            fwrite(&glb_ds1.group[i].unk,    4, 1, out);
+        }
+    }
+
+    // npc paths
+    fwrite(&npc, 4, 1, out);
+    for (i=0; i < npc; i++)
+    {
+        while ( ! glb_ds1.obj[cur_o].path_num)
+            cur_o++;
+        fwrite(&glb_ds1.obj[cur_o].path_num, 4, 1, out);
+        fwrite(&glb_ds1.obj[cur_o].x,        4, 1, out);
+        fwrite(&glb_ds1.obj[cur_o].y,        4, 1, out);
+        for (p=0; p < glb_ds1.obj[cur_o].path_num; p++)
+        {
+            fwrite(&glb_ds1.obj[cur_o].path[p].x,      4, 1, out);
+            fwrite(&glb_ds1.obj[cur_o].path[p].y,      4, 1, out);
+            fwrite(&glb_ds1.obj[cur_o].path[p].action, 4, 1, out);
+        }
+        cur_o++;
+    }
+
 
     // end
     fclose(out);
