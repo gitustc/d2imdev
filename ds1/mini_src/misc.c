@@ -207,7 +207,7 @@ int misc_qsort_helper_block_table_2(const void * e1, const void * e2)
        n2 = bt2->dt1_idx;
        }
        else
-     */
+       */
     if (bt1->main_idx != bt2->main_idx)
     {
         n1 = bt1->main_idx;
@@ -680,74 +680,23 @@ void misc_make_cmaps(void)
 {
     CMAP_E cm;
     int    a, cmap_ok, i, c, start;
-    char   tmp[100];
     FILE   * out, * in;
 
-    printf("\n");
-    for (cm=0; cm < CM_MAX; cm++)
-    {
-        for (a=0; a < ACT_MAX; a++)
-        {
-            fprintf(stderr, ".");
-            sprintf(tmp, "%s/cmap%i_%i.bin", glb_ds1edit_data_dir, a, cm);
-            cmap_ok = FALSE;
-            if (file_exists(tmp, -1, NULL) && (glb_ds1edit.pal_loaded[a] == TRUE))
-            {
-                // load the colormap from disk, instead of making it
-                in = fopen(tmp, "rb");
-                if (in == NULL){
-                    printf("can't read %s\n", tmp);
-                }else{
-                    printf("loading %s\n", tmp);
-                    fread(& glb_ds1edit.cmap[cm][a], sizeof(COLOR_MAP), 1, in);
-                    fclose(in);
-                    cmap_ok = TRUE;
-                }
-            }
-
-            if (cmap_ok == FALSE)
-            {
-                // not found or can't be open, so create it
-
-                if (cm == CM_SELECT)
-                {
-                    // color table
-                    create_color_table(& glb_ds1edit.cmap[cm][a],
-                            glb_ds1edit.vga_pal[a],
-                            misc_make_cmaps_helper,
-                            NULL);
-
-                }
-                else if (cm == CM_TRANS)
-                {
-                    create_trans_table(& glb_ds1edit.cmap[cm][a],
-                            glb_ds1edit.vga_pal[a],
-                            128, 128, 128,
-                            NULL);
-                }
-                else if (cm == CM_SHADOW)
-                {
-                    for (c=0; c < 256; c++)
-                    {
-                        start = 1024 + (256 * (c/8));
-                        for (i=0; i<256; i++)
-                        {
-                            glb_ds1edit.cmap[cm][a].data[c][i] =
-                                glb_ds1edit.d2_pal[a][start + i];
-                        }
+    for (cm=0; cm < CM_MAX; cm++) {
+        for (a=0; a < ACT_MAX; a++) {
+            if (cm == CM_SELECT) {
+                create_color_table(& glb_ds1edit.cmap[cm][a], glb_ds1edit.vga_pal[a], misc_make_cmaps_helper, NULL);
+            } else if (cm == CM_TRANS) {
+                create_trans_table(& glb_ds1edit.cmap[cm][a], glb_ds1edit.vga_pal[a], 128, 128, 128, NULL);
+            } else if (cm == CM_SHADOW) {
+                for (c=0; c < 256; c++) {
+                    start = 1024 + (256 * (c/8));
+                    for (i=0; i<256; i++) {
+                        glb_ds1edit.cmap[cm][a].data[c][i] = glb_ds1edit.d2_pal[a][start + i];
                     }
                 }
-
-                out = fopen(tmp, "wb");
-                if (out == NULL)
-                    printf("can't write %s\n", tmp);
-                else
-                {
-                    printf("saving %s\n", tmp);
-                    fwrite(& glb_ds1edit.cmap[cm][a], sizeof(COLOR_MAP), 1, out);
-                    fclose(out);
-                }
             }
+
         }
     }
 }
@@ -761,6 +710,7 @@ int misc_load_pal_from_disk(int pal_idx)
     FILE        *in;
     long         size;
 
+    return FALSE;
     sprintf(tmp, "%s/pal%i.bin", glb_ds1edit_data_dir, pal_idx);
     if(file_exists(tmp, -1, NULL)){
         // load the palette from disk, instead of mpq
@@ -898,7 +848,7 @@ char * misc_search_name(char * tmp)
 void misc_open_1_ds1(int ds1_idx, char * name, int type, int def, int new_width, int new_height)
 {
     // ds1
-    
+
     DEBUG_MESSAGE("misc_open_1_ds1(\"%s\"):in\n", name );
 
     ds1_read(name, ds1_idx, new_width, new_height);
@@ -1365,110 +1315,110 @@ int misc_increase_ds1_objects_max(int ds1_idx, long nb_objects)
 // fill the table with the walkable infos of all layers for 1 cell
 void misc_search_walk_infos(int ds1_idx, int x, int y, UBYTE * dsttable)
 {
-   BLOCK_TABLE_S * bt_ptr;
-   CELL_F_S      * f_ptr;
-   CELL_W_S      * w_ptr;
-   int           tf, tw, b, f, w, di, bi, i;
-   BLOCK_S       * bh_ptr;
-   UBYTE         * u_ptr, all_floor_props = 0;
-   
-   
-   tf    = (y * glb_ds1.floor_line) + (x * glb_ds1.floor_num);
-   tw    = (y * glb_ds1.wall_line)  + (x * glb_ds1.wall_num);
-   f_ptr = glb_ds1.floor_buff + tf;
-   w_ptr = glb_ds1.wall_buff  + tw;
+    BLOCK_TABLE_S * bt_ptr;
+    CELL_F_S      * f_ptr;
+    CELL_W_S      * w_ptr;
+    int           tf, tw, b, f, w, di, bi, i;
+    BLOCK_S       * bh_ptr;
+    UBYTE         * u_ptr, all_floor_props = 0;
 
-   // init
-   for (i=0; i<25; i++)
-      dsttable[i] = 0; // no flags by default
-   bt_ptr = glb_ds1.block_table;
-   
-   // floors
-   for (f=0; f < glb_ds1.floor_num; f++)
-   {
-      all_floor_props |= f_ptr[f].prop1 | f_ptr[f].prop2 |
-                         f_ptr[f].prop3 | f_ptr[f].prop4;
-      if (f_ptr[f].prop3 & 0x02)
-      {
-         // this is a global unwalkable info
-         for (i=0; i<25; i++)
-            dsttable[i] |= 1;
-      }
-      b = f_ptr[f].bt_idx;
-      if (b > 0) // not -1 and not 0
-      {
-         di     = bt_ptr[b].dt1_idx;
-         bi     = bt_ptr[b].block_idx;
-         bh_ptr = glb_dt1[di].bh_buffer;
-         u_ptr  = bh_ptr[bi].sub_tiles_flags;
 
-         // add the flags
-         for (i=0; i<25; i++)
-            dsttable[i] |= u_ptr[i];
-      }
-   }
+    tf    = (y * glb_ds1.floor_line) + (x * glb_ds1.floor_num);
+    tw    = (y * glb_ds1.wall_line)  + (x * glb_ds1.wall_num);
+    f_ptr = glb_ds1.floor_buff + tf;
+    w_ptr = glb_ds1.wall_buff  + tw;
 
-   // if no floor at all (F1 & F2 layer) the tile is completly unwalkable
-   if (glb_ds1.floor_num == 1)
-   {
-      if (f_ptr[0].prop1 == 0)
-      {
-         for (i=0; i<25; i++)
-            dsttable[i] |= 1;
-      }
-   }
-   else if (glb_ds1.floor_num == 2)
-   {
-      if ((f_ptr[0].prop1 == 0) && (f_ptr[1].prop1 == 0))
-      {
-         for (i=0; i<25; i++)
-            dsttable[i] |= 1;
-      }
-   }
+    // init
+    for (i=0; i<25; i++)
+        dsttable[i] = 0; // no flags by default
+    bt_ptr = glb_ds1.block_table;
 
-   // walls
-   for (w=0; w < glb_ds1.wall_num; w++)
-   {
-      if (w_ptr[w].prop3 & 0x02)
-      {
-         // this is a global unwalkable info
-         for (i=0; i<25; i++)
-            dsttable[i] |= 1;
-      }
-      b = w_ptr[w].bt_idx;
-      if (b > 0) // not -1 and not 0
-      {
-         di     = bt_ptr[b].dt1_idx;
-         bi     = bt_ptr[b].block_idx;
-         bh_ptr = glb_dt1[di].bh_buffer;
-         u_ptr  = bh_ptr[bi].sub_tiles_flags;
+    // floors
+    for (f=0; f < glb_ds1.floor_num; f++)
+    {
+        all_floor_props |= f_ptr[f].prop1 | f_ptr[f].prop2 |
+            f_ptr[f].prop3 | f_ptr[f].prop4;
+        if (f_ptr[f].prop3 & 0x02)
+        {
+            // this is a global unwalkable info
+            for (i=0; i<25; i++)
+                dsttable[i] |= 1;
+        }
+        b = f_ptr[f].bt_idx;
+        if (b > 0) // not -1 and not 0
+        {
+            di     = bt_ptr[b].dt1_idx;
+            bi     = bt_ptr[b].block_idx;
+            bh_ptr = glb_dt1[di].bh_buffer;
+            u_ptr  = bh_ptr[bi].sub_tiles_flags;
 
-         // add the flags
-         for (i=0; i<25; i++)
-            dsttable[i] |= u_ptr[i];
+            // add the flags
+            for (i=0; i<25; i++)
+                dsttable[i] |= u_ptr[i];
+        }
+    }
 
-         // upper / left tile corner 2nd tile
-         if (w_ptr[w].orientation == 3)
-         {
-            i = misc_seach_block_or4(ds1_idx,
-                   bt_ptr,
-                   b,
-                   bt_ptr[b].main_idx,
-                   bt_ptr[b].sub_idx
-                );
-            if (i != -1)
+    // if no floor at all (F1 & F2 layer) the tile is completly unwalkable
+    if (glb_ds1.floor_num == 1)
+    {
+        if (f_ptr[0].prop1 == 0)
+        {
+            for (i=0; i<25; i++)
+                dsttable[i] |= 1;
+        }
+    }
+    else if (glb_ds1.floor_num == 2)
+    {
+        if ((f_ptr[0].prop1 == 0) && (f_ptr[1].prop1 == 0))
+        {
+            for (i=0; i<25; i++)
+                dsttable[i] |= 1;
+        }
+    }
+
+    // walls
+    for (w=0; w < glb_ds1.wall_num; w++)
+    {
+        if (w_ptr[w].prop3 & 0x02)
+        {
+            // this is a global unwalkable info
+            for (i=0; i<25; i++)
+                dsttable[i] |= 1;
+        }
+        b = w_ptr[w].bt_idx;
+        if (b > 0) // not -1 and not 0
+        {
+            di     = bt_ptr[b].dt1_idx;
+            bi     = bt_ptr[b].block_idx;
+            bh_ptr = glb_dt1[di].bh_buffer;
+            u_ptr  = bh_ptr[bi].sub_tiles_flags;
+
+            // add the flags
+            for (i=0; i<25; i++)
+                dsttable[i] |= u_ptr[i];
+
+            // upper / left tile corner 2nd tile
+            if (w_ptr[w].orientation == 3)
             {
-               b      = i;
-               di     = bt_ptr[b].dt1_idx;
-               bi     = bt_ptr[b].block_idx;
-               bh_ptr = glb_dt1[di].bh_buffer;
-               u_ptr  = bh_ptr[bi].sub_tiles_flags;
+                i = misc_seach_block_or4(ds1_idx,
+                        bt_ptr,
+                        b,
+                        bt_ptr[b].main_idx,
+                        bt_ptr[b].sub_idx
+                        );
+                if (i != -1)
+                {
+                    b      = i;
+                    di     = bt_ptr[b].dt1_idx;
+                    bi     = bt_ptr[b].block_idx;
+                    bh_ptr = glb_dt1[di].bh_buffer;
+                    u_ptr  = bh_ptr[bi].sub_tiles_flags;
 
-               // add the flags
-               for (i=0; i<25; i++)
-                  dsttable[i] |= u_ptr[i];
+                    // add the flags
+                    for (i=0; i<25; i++)
+                        dsttable[i] |= u_ptr[i];
+                }
             }
-         }
-      }
-   }
+        }
+    }
 }

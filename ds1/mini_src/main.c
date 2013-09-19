@@ -3,12 +3,10 @@
 #include "mpqview.h"
 #include "dt1misc.h"
 #include "ds1misc.h"
-#include "anim.h"
 #include "txtread.h"
 #include "misc.h"
 #include "inicreat.h"
 #include "iniread.h"
-#include "animdata.h"
 #include "interfac.h"
 
 
@@ -18,7 +16,6 @@
 
 // workspace datas saved in .ds1
 
-int glb_map_test;
 
 WRKSPC_DATAS_S glb_wrkspc_datas[WRKSPC_MAX] = {
     {("DS1EDIT_WRKSPC_TILE_X")},
@@ -517,7 +514,7 @@ void ds1edit_exit(void)
     fflush(stderr);
     if (glb_ds1edit.obj_desc != NULL)
     {
-        anim_exit();
+        //anim_exit();
         free(glb_ds1edit.obj_desc);
         glb_ds1edit.obj_desc = NULL;
         glb_ds1edit.obj_desc_num = 0;
@@ -658,35 +655,20 @@ void ds1edit_load_palettes(void)
     char palname[80], tmp[150];
 
 
-    //#define ACT_MAX                5
-    // act是关的意思, 一个关里面有若干任务
-    // 我在想是不是每一关中的元素比较近似~ 
-    // 比如第一关就全是草地 树木之类的东西
-    // 第二关就是沙漠 枯树什么的
     for(i=0; i<ACT_MAX; i++){
-        glb_ds1edit.pal_loaded[i] = TRUE;
-        // first checking on disk
-        // 这个就是保存到磁盘的tmp文件吧
-        // 我调试时候返回true, 直接跳过花括号里面的了
-
-        if(misc_load_pal_from_disk(i) == FALSE) {
-            // not already on disk
-            glb_ds1edit.pal_loaded[i] = FALSE;
-            // make full path
-            sprintf(palname, "data/global/palette/act%i/pal.pl2", i+1);
-            // load the palette
-            DEBUG_MESSAGE("want to read a palette from mpq : %s\n", palname);
-            entry = misc_load_mpq_file( palname, (char **) & glb_ds1edit.d2_pal[i], & glb_ds1edit.pal_size[i], TRUE );
-            if(entry == -1){
-                DEBUG_MESSAGE("file \"%s\" not found.", palname );
-                if (i < 4){
-                    fprintf(stderr, tmp);
-                }else{
-                    printf("warning :\n%s\n", tmp);
-                }
+        glb_ds1edit.pal_loaded[i] = FALSE;
+        // make full path
+        sprintf(palname, "data/global/palette/act%i/pal.pl2", i+1);
+        // load the palette
+        DEBUG_MESSAGE("want to read a palette from mpq : %s\n", palname);
+        entry = misc_load_mpq_file( palname, (char **) & glb_ds1edit.d2_pal[i], & glb_ds1edit.pal_size[i], TRUE );
+        if(entry == -1){
+            DEBUG_MESSAGE("file \"%s\" not found.", palname );
+            if (i < 4){
+                fprintf(stderr, tmp);
+            }else{
+                printf("warning :\n%s\n", tmp);
             }
-            // save it for the next time
-            misc_save_pal_on_disk(i, glb_ds1edit.d2_pal[i]);
         }
 
         // palette loaded, either from disk of from mpq, reorder it
@@ -714,7 +696,6 @@ int main(int argc, char * argv[])
 
     char       *ininame = "./ds1edit.ini";
 
-    glb_map_test=0;
 
     // 程序初始化 {{{
     srand(time(NULL));
@@ -862,15 +843,12 @@ int main(int argc, char * argv[])
                     glb_ds1edit.cmd_line.resize_width,
                     glb_ds1edit.cmd_line.resize_height
                     );
-            printf("here==================fuck\n");
         }
     }else{
         // bug
         fprintf(stderr, "main(), error.\nBug : neither .DS1 nor a .INI in the command line.");
     }
 
-    // syntaxe of the command line
-    printf("============================================================\n");
     if (argc >= 4){
         // at least 3 arguments (ds1 name + ID + DEF + options)
     } else if (argc == 2) {
@@ -884,29 +862,10 @@ int main(int argc, char * argv[])
                 "   3 elements : <lvlTypes.txt Id> <lvlPrest.txt Def> <file.ds1>\n");
         exit(DS1ERR_CMDLINE);
     }
-    printf("============================================================\n");
 
-#if 0
-    // 上面load的是那地图和地图上的物品
-    // 下面开始要load人物了
-    // 没看懂这个函数
-    animdata_load();
-
-    // load necessary objects animation
-    printf("loading ds1 objects animations :\n");
-    fflush(stderr);
-    anim_update_gfx(TRUE); // TRUE is for "show dot progression"
-
-    printf("\n");
-    fflush(stdout);
-#endif
 
     // colormaps
-    printf("\ncolor maps...");
-    fprintf(stderr, "\ncolor maps");
     misc_make_cmaps();
-    printf("done\n");
-    fprintf(stderr, "done\n");
 
     // start
     fflush(stdout);

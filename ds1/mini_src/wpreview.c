@@ -3,7 +3,6 @@
 #include "structs.h"
 #include "gfx_custom.h"
 #include "misc.h"
-#include "editobj.h"
 #include "error.h"
 #include "wpreview.h"
 
