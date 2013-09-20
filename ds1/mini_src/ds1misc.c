@@ -94,12 +94,15 @@ void test_add_one_object(
 //    if is_tmp_file == TRUE, will save a file "*.tmp", else "*-nnn.ds1"
 void ds1_save(int ds1_idx, int is_tmp_file)
 {
+    uint32_t         out2_wall_count, out2_floor_count;
+
     CELL_W_S * w_ptr, *w_p;
     CELL_S_S * s_ptr, *s_p;
     CELL_F_S * f_ptr, *f_p;
     CELL_T_S * t_ptr, *t_p;
     int      i=0, x, y, t, cur_o=0, p, used, flen;
-    FILE     * out;
+    FILE     * out; 
+    FILE     * out2;
     long     n, npc = 0, file_count,
              save_wall_num, save_floor_num, save_shadow_num;
     char     tmp[512], tmp_name[256], * cptr;
@@ -147,10 +150,20 @@ void ds1_save(int ds1_idx, int is_tmp_file)
 
     // save the ds1, either with a .tmp or a .ds1 extension
     out = fopen(tmp_name, "wb");
+
     if (out == NULL) {
         FATAL_EXIT("ds1save(), can't write %s", tmp_name);
     }
 
+    out2 = fopen("./test.d2m", "wb");
+    if (out2 == NULL) {
+        FATAL_EXIT("ds1save(), can't write test.d2m\n");
+    }
+
+
+
+
+    fputs("D2MAP",out2);
 
 
 
@@ -159,17 +172,38 @@ void ds1_save(int ds1_idx, int is_tmp_file)
     n = 18;
     fwrite(& n, 4, 1, out);
 
+    {
+        uint32_t    t;
+        t=0;
+        fwrite(&t, 4, 1, out2);
+    }
+
     // width
     n = glb_ds1.width - 1;
     fwrite(& n, 4, 1, out);
+    {
+        uint32_t    t;
+        t = (uint32_t)n;
+        fwrite(&t, 4, 1, out2);
+    }
 
     // height
     n = glb_ds1.height - 1;
     fwrite(& n, 4, 1, out);
 
+    {
+        uint32_t    t;
+        t = (uint32_t)n;
+        fwrite(&t, 4, 1, out2);
+    }
     // act
     n = glb_ds1.act - 1;
     fwrite(& n, 4, 1, out);
+    {
+        uint32_t    t;
+        t = (uint32_t)n;
+        fwrite(&t, 4, 1, out2);
+    }
 
     // tag type
     fwrite(& glb_ds1.tag_type, 4, 1, out);
@@ -299,6 +333,9 @@ void ds1_save(int ds1_idx, int is_tmp_file)
     // minimize ds1 size
     save_wall_num  = glb_ds1.wall_num;
     save_floor_num = glb_ds1.floor_num;
+
+
+
     if (glb_config.minimize_ds1 == TRUE)
     {
         // how many wall layers are really used ?
@@ -358,6 +395,50 @@ void ds1_save(int ds1_idx, int is_tmp_file)
     }
 
 
+
+    //minize all tiles numbers for d2map
+    {
+        int x, y, i, t;
+
+        out2_wall_count = 0;
+        for (i = 0; i < glb_ds1.wall_num; i++ ){
+            for (y=0; y < glb_ds1.height; y++) {
+                for (x=0; x < glb_ds1.width; x++) {
+                    t = (y * glb_ds1.wall_line) + (x * glb_ds1.wall_num);
+                    w_ptr = glb_ds1.wall_buff + t + i;
+                    if ((w_ptr->prop1 | w_ptr->prop2 | w_ptr->prop3 | w_ptr->prop4 | w_ptr->orientation) != 0) {
+                        out2_wall_count++;
+                        goto _next_wall_num;
+                    }
+                }
+            }
+_next_wall_num:
+            ;
+        }
+        fwrite(&out2_wall_count,  4, 1, out2);
+    }
+
+    {
+        int x, y, i, t;
+
+        out2_floor_count = 0;
+        for (i = 0; i < glb_ds1.floor_num; i++ ){
+            for (y=0; y < glb_ds1.height; y++){
+                for (x=0; x < glb_ds1.width; x++){
+                    t = (y * glb_ds1.floor_line) + (x * glb_ds1.floor_num);
+                    f_ptr = glb_ds1.floor_buff + t + i;
+                    if ((f_ptr->prop1 | f_ptr->prop2 | f_ptr->prop3 | f_ptr->prop4) != 0){
+                        out2_floor_count++;
+                        goto _next_floor_num;
+                    }
+                }
+            }
+_next_floor_num:
+            ;
+        }
+        fwrite(&out2_floor_count, 4, 1, out2);
+    }
+
     // wall num
     fwrite(& save_wall_num,  4, 1, out);
 
@@ -378,6 +459,13 @@ void ds1_save(int ds1_idx, int is_tmp_file)
                 fputc(w_ptr->prop2, out);
                 fputc(w_ptr->prop3, out);
                 fputc(w_ptr->prop4, out);
+
+
+
+                fputc(w_ptr->prop1, out2);
+                fputc(w_ptr->prop2, out2);
+                fputc(w_ptr->prop3, out2);
+                fputc(w_ptr->prop4, out2);
             }
         }
 
@@ -392,6 +480,12 @@ void ds1_save(int ds1_idx, int is_tmp_file)
                 fputc(0, out);
                 fputc(0, out);
                 fputc(0, out);
+                
+
+
+
+                fputc(w_ptr->orientation, out2);
+
             }
         }
     }
@@ -410,6 +504,14 @@ void ds1_save(int ds1_idx, int is_tmp_file)
                 fputc(f_ptr->prop2, out);
                 fputc(f_ptr->prop3, out);
                 fputc(f_ptr->prop4, out);
+
+
+
+
+                fputc(f_ptr->prop1, out2);
+                fputc(f_ptr->prop2, out2);
+                fputc(f_ptr->prop3, out2);
+                fputc(f_ptr->prop4, out2);
             }
         }
     }
@@ -428,6 +530,14 @@ void ds1_save(int ds1_idx, int is_tmp_file)
                 fputc(s_ptr->prop2, out);
                 fputc(s_ptr->prop3, out);
                 fputc(s_ptr->prop4, out);
+
+
+
+
+                fputc(s_ptr->prop1, out2);
+                fputc(s_ptr->prop2, out2);
+                fputc(s_ptr->prop3, out2);
+                fputc(s_ptr->prop4, out2);
             }
         }
     }
@@ -506,6 +616,7 @@ void ds1_save(int ds1_idx, int is_tmp_file)
 
     // end
     fclose(out);
+    fclose(out2);
 }
 
 
