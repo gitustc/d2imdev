@@ -852,6 +852,7 @@ void misc_open_1_ds1(int ds1_idx, char * name, int type, int def, int new_width,
     DEBUG_MESSAGE("misc_open_1_ds1(\"%s\"):in\n", name );
 
     ds1_read(name, ds1_idx, new_width, new_height);
+    // ds1_read2();
 
     // lvl*.txt (and loading dt1 from mpq)
     DEBUG_MESSAGE("searching Dt1Mask...\n");
