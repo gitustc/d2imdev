@@ -2658,11 +2658,12 @@ int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)
 int ds1_read2()
 {
     FILE        * in;
-    CELL_F_S    * f_ptr[FLOOR_MAX_LAYER];
-    CELL_S_S    * s_ptr[SHADOW_MAX_LAYER];
-    CELL_T_S    * t_ptr[TAG_MAX_LAYER];
-    CELL_W_S    * w_ptr[WALL_MAX_LAYER];
-    CELL_W_S    * o_ptr[WALL_MAX_LAYER];
+
+    CELL_F_S    * f_ptr;
+    CELL_S_S    * s_ptr;
+    CELL_W_S    * w_ptr;
+    CELL_W_S    * o_ptr;
+
     OBJ_LABEL_S * label;
 
     int         o, x, y, nb_layer, size, n, p, ds1_len, done, cx, cy, dx, dy;
@@ -2707,6 +2708,12 @@ int ds1_read2()
     w_num = 0; // # of wall & orientation layers
     f_num = 0; // # of floor layer
     s_num = 1; // # of shadow layer, always here
+
+
+
+
+
+
     ptr   = (long *)ds1_buff;
 
 
@@ -2746,7 +2753,6 @@ int ds1_read2()
     glb_sense.height     = glb_ds1.height;
     glb_sense.wall_num   = w_num;
     glb_sense.floor_num  = f_num;
-    glb_sense.tag_num    = t_num;
 
     //以下是四组buffer
     // floor buffer
@@ -2774,16 +2780,6 @@ int ds1_read2()
     memset(glb_ds1.shadow_buff, 0, glb_ds1.shadow_buff_len);
 
 
-    // tag buffer
-    glb_ds1.tag_line     = new_width * glb_ds1.tag_num;
-    glb_ds1.tag_len      = glb_ds1.tag_line * new_height;
-    glb_ds1.tag_buff_len = glb_ds1.tag_len * sizeof(CELL_T_S);
-    glb_ds1.tag_buff     = (CELL_T_S *) malloc(glb_ds1.tag_buff_len);
-    if (glb_ds1.tag_buff == NULL) {
-        free(ds1_buff);
-        FATAL_EXIT("not enough mem (%i bytes) for tag buffer\n", glb_ds1.tag_buff_len);
-    }
-    memset(glb_ds1.tag_buff, 0, glb_ds1.tag_buff_len);
 
 
     // wall buffer
@@ -2801,207 +2797,48 @@ int ds1_read2()
     // read tiles of layers
 
     // set pointers
-    for (x=0; x<glb_ds1.floor_num; x++){
-        f_ptr[x] = glb_ds1.floor_buff + x;
-    }
+    f_ptr = glb_ds1.floor_buff;
 
-    for (x=0; x<glb_ds1.shadow_num; x++){
-        s_ptr[x] = glb_ds1.shadow_buff + x;
-    }
+    s_ptr = glb_ds1.shadow_buff;
 
 
-    for (x=0; x<glb_ds1.wall_num; x++){
-        o_ptr[x] = w_ptr[x] = glb_ds1.wall_buff + x;
-    }
+    o_ptr = w_ptr = glb_ds1.wall_buff;
 
     bptr  = (UBYTE *) ptr;
 
 
+    f_ptr = glb_ds1.floor_buff;
+    w_ptr = glb_ds1.wall_buff;
+
     for(y=0; y < glb_ds1.height; y++){
         for(x=0; x < glb_ds1.width; x++){
 
-            switch(lay_stream[n]){
-
-                // walls
-                case  1:
-                case  2:
-                case  3:
-                case  4:
-                    // 这里的1234源自于这一句~{{{
-                    //			 for (x=0; x<w_num; x++)
-                    //			 {
-                    //				 lay_stream[nb_layer++] = 1 + x; // wall x
-                    //				 lay_stream[nb_layer++] = 5 + x; // orientation x
-                    //			 }
-                    //
-                    //}}}
-
-                    // ptr = (long *)ds1_buff; ptr是指向的ds1直接读取到内存的数据 {{{
-                    // 每次指向一块cell_w_s, 最外层循环一次后, 4块cell_w_s都填满
-                    // 然后cell_w_s的前4个分量(如下)连续存放, 所以通过bptr++来访问到并填入
-                    // 然后w_ptr += w_num, 注意不是w_ptr++
-                    // 这是因为w_ptr是一个 cell_w_s *w_ptr[N], 也可以理解很cell_w_s**变量
-                    // 而每个tile有w_num(4)个cell_w_s, 这里最外层循环是n, 内层才是w和h
-                    // 相邻两次之间的wptr是跳了一个tile的, 这就需要跳w_num个cell_w_s, 才能到下一个tile的cell_w_s
-                    // 如果最内层循环是n, 就是wptr++
-                    //
-                    //        typedef struct CELL_W_S
-                    //        {
-                    //           UBYTE prop1;
-                    //           UBYTE prop2;
-                    //           UBYTE prop3;
-                    //           UBYTE prop4;
-                    //           ...
-                    //         }CELL_W_S;
-                    //   }}}
-                    if((x < new_width) && (y < new_height)){
-                        p                 =   lay_stream[n] - 1; // 1234->0123
-                        w_ptr[p]->prop1   =   * bptr;
-                        bptr++;
-                        w_ptr[p]->prop2   =   * bptr;
-                        bptr++;
-                        w_ptr[p]->prop3   =   * bptr;
-                        bptr++;
-                        w_ptr[p]->prop4   =   * bptr;
-                        bptr++;
-                        w_ptr[p]         +=   w_num;
-                    } else{
-                        bptr += 4;
-                    }
-                    break;
-
-                    // orientations
-                    // 这里5678也源自于这一句~{{{
-                    //			 for (x=0; x<w_num; x++)
-                    //			 {
-                    //				 lay_stream[nb_layer++] = 1 + x; // wall x
-                    //				 lay_stream[nb_layer++] = 5 + x; // orientation x
-                    //			 }
-                    //    lay_stream[0]  = 1
-                    //    lay_stream[1]  = 5
-                    //    lay_stream[2]  = 2
-                    //    lay_stream[3]  = 6
-                    //    lay_stream[4]  = 3
-                    //    lay_stream[5]  = 7
-                    //    lay_stream[6]  = 4
-                    //    lay_stream[7]  = 8
-                    //    lay_stream[8]  = 9
-                    //    lay_stream[9]  = 10
-                    //    lay_stream[10] = 11
-                    //    lay_stream[11] = N
-                    //    lay_stream[12] = N
-                    //    lay_stream[13] = N
-                    //    }}}
-                case  5:
-                case  6:
-                case  7:
-                case  8:
-                    if((x < new_width) && (y < new_height)){
-                        p = lay_stream[n] - 5;
-                        if (glb_ds1.version < 7){
-                            o_ptr[p]->orientation = dir_lookup[* bptr];
-                        }else{
-                            //执行的这里...
-                            o_ptr[p]->orientation = * bptr;
-                        }
-                        o_ptr[p] += w_num;
-                    }
-                    bptr += 4;
-                    break;
-
-                    // floors
-                    // 9 10是单独的赋值
-                case  9:
-                case 10:
-                    if((x < new_width) && (y < new_height)){
-                        p               = lay_stream[n] - 9;
-                        f_ptr[p]->prop1 = * bptr;
-                        bptr++;
-                        f_ptr[p]->prop2 = * bptr;
-                        bptr++;
-                        f_ptr[p]->prop3 = * bptr;
-                        bptr++;
-                        f_ptr[p]->prop4 = * bptr;
-                        bptr++;
-                        f_ptr[p]       += f_num;
-                    }else{
-                        bptr += 4;
-                    }
-                    break;
-
-                    // shadow
-                case 11:
-                    if((x < new_width) && (y < new_height)){
-                        p               = lay_stream[n] - 11;
-                        s_ptr[p]->prop1 = * bptr;
-                        bptr++;
-                        s_ptr[p]->prop2 = * bptr;
-                        bptr++;
-                        s_ptr[p]->prop3 = * bptr;
-                        bptr++;
-                        s_ptr[p]->prop4 = * bptr;
-                        bptr++;
-                        s_ptr[p]       += s_num;
-                    }else{
-                        bptr += 4;
-                    }
-                    break;
-
-                    // tag
-                case 12:
-                    if ((x < new_width) && (y < new_height)){
-                        p = lay_stream[n] - 12;
-                        t_ptr[p]->num = (UDWORD) * ((UDWORD *) bptr);
-                        t_ptr[p] += t_num;
-                    }
-                    bptr += 4;
-                    break;
+            for(i=0;i<glb_ds1.floor_num;i++){
+                f_ptr->prop1   =   * (bptr++);
+                f_ptr->prop2   =   * (bptr++);
+                f_ptr->prop3   =   * (bptr++);
+                f_ptr->prop4   =   * (bptr++);
+                f_ptr++;
             }
-        }
+            o_ptr->orientation = * (bptr++);
+            for(i=0;i<glb_ds1.wall_num;i++){
+                w_ptr->prop1   =   * (bptr++);
+                w_ptr->prop2   =   * (bptr++);
+                w_ptr->prop3   =   * (bptr++);
+                w_ptr->prop4   =   * (bptr++);
+                w_ptr++;
+            }
 
-        // in case of bigger width
-        p = new_width - glb_ds1.width;
-        //我调试的时候, 这里面从来没有执行过~
-        if(p > 0){
-            switch (lay_stream[n]){
-                // walls
-                case  1:
-                case  2:
-                case  3:
-                case  4:
-                    w_ptr[lay_stream[n] - 1] += p * w_num;
-                    break;
-
-                    // orientations
-                case  5:
-                case  6:
-                case  7:
-                case  8:
-                    o_ptr[lay_stream[n] - 5] += p * w_num;
-                    break;
-
-                    // floors
-                case  9:
-                case 10:
-                    f_ptr[lay_stream[n] - 9] += p * f_num;
-                    break;
-
-                    // shadow
-                case 11:
-                    s_ptr[lay_stream[n] - 11] += p * s_num;
-                    break;
-
-                    // tag
-                case 12:
-                    t_ptr[lay_stream[n] - 12] += p * t_num;
-                    break;
+            for(i=0;i<glb_ds1.shadow_num;i++){
+                s_ptr->prop1   =   * (bptr++);
+                s_ptr->prop2   =   * (bptr++);
+                s_ptr->prop3   =   * (bptr++);
+                s_ptr->prop4   =   * (bptr++);
+                s_ptr++;
             }
         }
     }
 
-    // update new size of the ds1
-    glb_ds1.width  = new_width;
-    glb_ds1.height = new_height;
 
     // internal
     glb_ds1.cur_zoom           = ZM_11;
@@ -3028,103 +2865,6 @@ int ds1_read2()
     change_zoom(ds1_idx, ZM_14); // start with zoom of 1:4 in this ds1
 
     // some inits
-    cptr   = glb_ds1.file_buff;
-    tile_x = tile_y = zoom = -1;
-
-    // workspace (user environment)
-    if(glb_config.workspace_enable){
-        // for all filenames
-        //这个双层循环没看明白~
-        for(x=0; x<glb_ds1.file_num; x++){
-            // 我调试的时候file_num为9
-            // for all workspace datas
-
-            for(y=0; y < WRKSPC_MAX; y++){
-                // check if it's one of our datas
-
-                // for all characters
-                o = 0;
-                // cptr指向ds1文件读入内存后的内存头部
-                //
-                // typedef struct WRKSPC_DATAS_S{
-                //    char * id;
-                // } WRKSPC_DATAS_S;
-                // 可见glb_wrkspc_datas就为一个字符串数组而已
-                //
-                //
-                // 这个wile的意思为: cptr不到file_buf的末尾
-                //             并且: glb_wrkspc_datas字符串数组部位当前不到某个字符串末尾
-                //             并且: cptr指向的字符和当前字符串中的字符相同
-                while( (cptr[o] != 0x00) && (glb_wrkspc_datas[y].id[o] != 0x00) && (cptr[o] == glb_wrkspc_datas[y].id[o]) ){
-                    // continue on next character
-                    o++;
-                }
-                if((glb_wrkspc_datas[y].id[o] == 0x00) && (cptr[o]== '=')){
-                    // this is our data, read its value
-                    // 如果当前glb_wrkspc_datas到结尾, 且cptr指向"="
-                    o++;
-                    if(cptr[o] != 0x00){
-                        switch(y){
-                            case WRKSPC_TILE_X:
-                                sscanf(cptr + o, "%li", & tile_x);
-                                break;
-                            case WRKSPC_TILE_Y:
-                                sscanf(cptr + o, "%li", & tile_y);
-                                break;
-                            case WRKSPC_ZOOM:
-                                sscanf(cptr + o, "%li", & zoom);
-                                break;
-                            case WRKSPC_VERSION:
-                                // just ignore it
-                                break;
-                            case WRKSPC_SAVE_COUNT:
-                                sscanf(cptr + o, "%lu", & glb_ds1.save_count);
-                                break;
-                        }
-                    }
-                }
-            }
-
-            // next filename
-            cptr += (strlen(cptr) + 1);
-        }
-
-
-
-
-        // update ds1 values with workspace datas
-        if(zoom != -1){
-            change_zoom(ds1_idx, zoom);
-        }
-        if((tile_x != -1) && (tile_y != -1)){
-            if(tile_x < 0){
-                tile_x = 0;
-            }
-            if(tile_x >= glb_ds1.width){
-                tile_x = glb_ds1.width - 1;
-            }
-            if(tile_y < 0){
-                tile_y = 0;
-            }
-            if (tile_y >= glb_ds1.height){
-                tile_y = glb_ds1.height - 1;
-            }
-
-            tile_x++;
-            dx = (tile_y * -glb_ds1.tile_w / 2) + (tile_x * glb_ds1.tile_w / 2);
-            dy = (tile_y *  glb_ds1.tile_h / 2) + (tile_x * glb_ds1.tile_h / 2);
-            tile_x--;
-
-            if(ds1_idx == 0){
-                glb_ds1edit.win_preview.x0 = dx - glb_ds1edit.win_preview.w / 2;
-                glb_ds1edit.win_preview.y0 = dy - glb_ds1edit.win_preview.h / 2;
-            }
-            glb_ds1.own_wpreview.x0 = dx - glb_ds1edit.win_preview.w / 2;
-            glb_ds1.own_wpreview.y0 = dy - glb_ds1edit.win_preview.h / 2;
-            glb_ds1.own_wpreview.w  = glb_ds1edit.win_preview.w;
-            glb_ds1.own_wpreview.h  = glb_ds1edit.win_preview.h;
-        }
-    }
 
     // end, some last init
     free(ds1_buff);
