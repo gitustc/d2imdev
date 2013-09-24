@@ -1229,19 +1229,6 @@ fclose(out2);
 
 
 
-typedef struct {
-    uint32_t    version;
-    int32_t     width;
-    int32_t     height;
-
-    int32_t     wall_num;
-    int32_t     floor_num;
-    int32_t     shadow_num;
-    int32_t     tag_num;
-}D2SENSE;
-
-D2SENSE     glb_sense;
-
 // ==========================================================================
 // memory free of a ds1 (with the dt1 it uses, and some other buffers)
 int ds1_free()
@@ -2664,7 +2651,6 @@ int ds1_read2()
     CELL_W_S    * w_ptr;
     CELL_W_S    * o_ptr;
 
-    OBJ_LABEL_S * label;
 
     int         o, x, y, nb_layer, size, n, p, ds1_len, done, cx, cy, dx, dy;
     int         current_valid_obj_idx=0;
@@ -2717,44 +2703,21 @@ int ds1_read2()
     ptr   = (long *)ds1_buff;
 
 
-    // version
-    glb_ds1.version = *ptr;
-    ptr++;
-
-    // widht
-    // width 和height都加了1, 为什吗
-    glb_ds1.width = (* ptr) + 1;
-    ptr++;
-
-    // height
-    glb_ds1.height = (* ptr) + 1;
-    ptr++;
-
-    glb_ds1.act = (* ptr) + 1;
-    ptr++;
+    glb_ds1.version = *(ptr++);
+    glb_ds1.width   = *(ptr++);
+    glb_ds1.height  = *(ptr++);
+    glb_ds1.act     = *(ptr++);
 
 
-    // filenames
-    glb_ds1.file_num = 0;
+    w_num = *(ptr++);
+    f_num = *(ptr++);
+    s_num = *(ptr++);
 
+    glb_ds1.floor_num  = f_num;
+    glb_ds1.shadow_num = s_num;
+    glb_ds1.wall_num   = w_num;
 
-    w_num = * ptr;
-    ptr++;
-
-    f_num = * ptr;
-    ptr++;
-
-    glb_ds1.floor_num  = f_num;    //2
-    glb_ds1.shadow_num = s_num;    //1
-    glb_ds1.wall_num   = w_num;    //4
-
-    glb_sense.version    = glb_ds1.version;
-    glb_sense.width      = glb_ds1.width;
-    glb_sense.height     = glb_ds1.height;
-    glb_sense.wall_num   = w_num;
-    glb_sense.floor_num  = f_num;
-
-    //以下是四组buffer
+    // {{{ malloc memory for all tiles buffers
     // floor buffer
     glb_ds1.floor_line     = glb_ds1.width * glb_ds1.floor_num;
     glb_ds1.floor_len      = glb_ds1.floor_line * glb_ds1.height;
@@ -2767,48 +2730,39 @@ int ds1_read2()
     }
     memset(glb_ds1.floor_buff, 0, glb_ds1.floor_buff_len);
 
-
     // shadow buffer
-    glb_ds1.shadow_line     = new_width * glb_ds1.shadow_num;
-    glb_ds1.shadow_len      = glb_ds1.shadow_line * new_height;
-    glb_ds1.shadow_buff_len = glb_ds1.shadow_len * sizeof(CELL_S_S);
-    glb_ds1.shadow_buff     = (CELL_S_S *) malloc(glb_ds1.shadow_buff_len);
+    glb_ds1.shadow_line     = glb_ds1.width * glb_ds1.shadow_num;
+    glb_ds1.shadow_len      = glb_ds1.shadow_line * glb_ds1.height;
+    glb_ds1.shadow_buff_len = glb_ds1.shadow_len * sizeof(CELL_F_S);
+    glb_ds1.shadow_buff     = (CELL_F_S *) malloc(glb_ds1.shadow_buff_len);
+
     if(glb_ds1.shadow_buff == NULL){
         free(ds1_buff);
         FATAL_EXIT("not enough mem (%i bytes) for shadow buffer\n", glb_ds1.shadow_buff_len);
     }
     memset(glb_ds1.shadow_buff, 0, glb_ds1.shadow_buff_len);
 
-
-
-
     // wall buffer
-    glb_ds1.wall_line     = new_width * glb_ds1.wall_num;
-    glb_ds1.wall_len      = glb_ds1.wall_line * new_height;
-    glb_ds1.wall_buff_len = glb_ds1.wall_len * sizeof(CELL_W_S);
-    glb_ds1.wall_buff     = (CELL_W_S *) malloc(glb_ds1.wall_buff_len);
+    glb_ds1.wall_line     = glb_ds1.width * glb_ds1.wall_num;
+    glb_ds1.wall_len      = glb_ds1.wall_line * glb_ds1.height;
+    glb_ds1.wall_buff_len = glb_ds1.wall_len * sizeof(CELL_F_S);
+    glb_ds1.wall_buff     = (CELL_F_S *) malloc(glb_ds1.wall_buff_len);
+
     if(glb_ds1.wall_buff == NULL){
         free(ds1_buff);
         FATAL_EXIT("not enough mem (%i bytes) for wall buffer\n", glb_ds1.wall_buff_len);
     }
     memset(glb_ds1.wall_buff, 0, glb_ds1.wall_buff_len);
 
+    // }}}
 
-    // read tiles of layers
 
-    // set pointers
     f_ptr = glb_ds1.floor_buff;
-
     s_ptr = glb_ds1.shadow_buff;
-
-
-    o_ptr = w_ptr = glb_ds1.wall_buff;
+    o_ptr = glb_ds1.wall_buff;
+    w_ptr = glb_ds1.wall_buff;
 
     bptr  = (UBYTE *) ptr;
-
-
-    f_ptr = glb_ds1.floor_buff;
-    w_ptr = glb_ds1.wall_buff;
 
     for(y=0; y < glb_ds1.height; y++){
         for(x=0; x < glb_ds1.width; x++){
