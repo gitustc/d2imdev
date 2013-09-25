@@ -95,6 +95,7 @@ void test_add_one_object(
 
 
 
+#if 0
 void ds1_save2(int ds1_idx, int is_tmp_file)
 {
     CELL_W_S * w_ptr, *w_p;
@@ -277,6 +278,7 @@ _next_floor_num:;
 
     fclose(out);
 }
+#endif
 void ds1_save(int ds1_idx, int is_tmp_file)
 {
     CELL_W_S * w_ptr, *w_p;
@@ -1771,12 +1773,14 @@ int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)
     glb_ds1.tag_num    = t_num;    //0
     glb_ds1.wall_num   = w_num;    //4
 
+#if 0
     glb_sense.version    = glb_ds1.version;
     glb_sense.width      = glb_ds1.width;
     glb_sense.height     = glb_ds1.height;
     glb_sense.wall_num   = w_num;
     glb_sense.floor_num  = f_num;
     glb_sense.tag_num    = t_num;
+#endif
 
     //以下是四组buffer
     // floor buffer
@@ -2629,7 +2633,7 @@ int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)
     glb_ds1.path_edit_win.obj_idx = -1;
 
     ds1_save(0,TRUE);
-    ds1_save2(0,TRUE);
+    //ds1_save2(0,TRUE);
 
 
     return 0;
@@ -2641,7 +2645,7 @@ int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)
 
 
 
-
+#if 0
 int ds1_read2()
 {
     FILE        * in;
@@ -2832,3 +2836,5 @@ int ds1_read2()
 
     return 0;
 }
+#endif
+

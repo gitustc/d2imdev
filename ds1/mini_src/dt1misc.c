@@ -162,6 +162,9 @@ void dt1_zoom(BITMAP * src, int i, int b, int z)
     int    w = src->w, h = src->h, d=1;
     char   tmp_str[100];
 
+    z = ZM_11;
+
+#if 0
     switch(z) {
         case ZM_11  : break;
         case ZM_12  : d =  2; break;
@@ -169,6 +172,8 @@ void dt1_zoom(BITMAP * src, int i, int b, int z)
         case ZM_18  : d =  8; break;
         case ZM_116 : d = 16; break;
     }
+#endif
+
     w /= d;
     h /= d;
     dst = create_bitmap(w, h);
@@ -315,12 +320,16 @@ void dt1_all_zoom_make(int i)
         }
 
         // make zoom from the bitmap, for each zoom
+        dt1_zoom(tmp_bmp, i, b, ZM_11);
+        //* (glb_dt1[i].block_zoom[z] + b) = tmp_bmp;//dst;
+#if 0
         for (z=0; z<ZM_MAX; z++){
             dt1_zoom(tmp_bmp, i, b, z);
         }
+#endif
 
         // destroy tmp bitmap
-        destroy_bitmap(tmp_bmp);
+       destroy_bitmap(tmp_bmp);
 
         // next block header
         b_ptr ++;
