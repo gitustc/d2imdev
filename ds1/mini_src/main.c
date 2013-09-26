@@ -710,7 +710,7 @@ int main(int argc, char * argv[])
 
     ds1edit_init();
 
-    get_desktop_resolution( &res_w, &res_h);
+    //get_desktop_resolution( &res_w, &res_h);
     set_window_title("D2IM-MAPEDITOR");
     // }}}
 
