@@ -89,13 +89,7 @@ void test_add_one_object(
 
 #endif
 
-// ==========================================================================
-// as expected, save the ds1
-//    if is_tmp_file == TRUE, will save a file "*.tmp", else "*-nnn.ds1"
 
-
-
-#if 0
 void ds1_save2(int ds1_idx, int is_tmp_file)
 {
     CELL_W_S * w_ptr, *w_p;
@@ -103,56 +97,18 @@ void ds1_save2(int ds1_idx, int is_tmp_file)
     CELL_F_S * f_ptr, *f_p;
     CELL_T_S * t_ptr, *t_p;
     int      i=0, x, y, t, cur_o=0, p, used, flen;
+
     FILE     * out;
-    long     n, npc = 0, file_count,
+    int32_t n;
+
+    long     npc = 0, file_count,
              save_wall_num, save_floor_num, save_shadow_num;
     char     tmp[512], tmp_name[256], * cptr;
     int      ax, ay, cx, cy, is_data;
 
-
-    // if no ds1 here, don't process it
-    if (strlen(glb_ds1.name) == 0)
-        return;
-
-    // file must have an extension
-    strcpy(tmp, glb_ds1.name);
-    if (strlen(tmp) < 4) {
-        FATAL_EXIT("ds1save(), glb_ds1.ds1_name < 4 chars : \"%s\" (is_tmp_file = %i)", ds1_idx, glb_ds1.name, is_tmp_file);
-    }
-
-    // set the .TMP or .DS1 extension
-    tmp[strlen(tmp)-4] = 0;
-    if (is_tmp_file)
-    {
-        // save a ds1 with the extension .tmp
-        sprintf(tmp_name, "%s.tmp", tmp);
-        if (file_exists(tmp_name, -1, NULL))
-            remove(tmp_name);
-    } else {
-        // save a ds1 with the extension .ds1
-        // 1st, rename the current .ds1 to an incremental name (for backup)
-
-        // find the 1st free slot
-        sprintf(tmp_name, "%s-%03i.ds1", tmp, i);
-        while (file_exists(tmp_name, -1, NULL))
-        {
-            i++;
-            sprintf(tmp_name, "%s-%03i.ds1", tmp, i);
-        }
-
-        // rename the original ds1 to that incremental name
-        if (rename(glb_ds1.name, tmp_name)) {
-            FATAL_EXIT( "ds1save(), couldn't rename %s to %s", glb_ds1.name, tmp_name);
-        }
-
-        // then, we can save the ds1
-        strcpy(tmp_name, glb_ds1.name);
-    }
-
-    // save the ds1, either with a .tmp or a .ds1 extension
     out = fopen("./test.d2m", "wb");
     if (out == NULL) {
-        FATAL_EXIT("ds1save(), can't write %s", tmp_name);
+        FATAL_EXIT("ds1save2(), can't write test.d2m");
     }
 
     fputs("D2MAP", out);
@@ -278,7 +234,9 @@ _next_floor_num:;
 
     fclose(out);
 }
-#endif
+
+
+
 void ds1_save(int ds1_idx, int is_tmp_file)
 {
     CELL_W_S * w_ptr, *w_p;
@@ -2635,7 +2593,8 @@ int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)
     glb_ds1.path_edit_win.obj_idx = -1;
 
     ds1_save(0,TRUE);
-    //ds1_save2(0,TRUE);
+    ds1_save2(0,TRUE);
+    //ds1_read2(0,TRUE);
 
 
     return 0;
@@ -2647,7 +2606,8 @@ int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)
 
 
 
-#if 0
+
+
 int ds1_read2()
 {
     FILE        * in;
@@ -2678,12 +2638,10 @@ int ds1_read2()
     long        incr;
 
 
-    strcpy(glb_ds1.name, "test.d2m");
-
 
     in = fopen("./test.d2m", "rb");
     if(in == NULL){
-        FATAL_EXIT("can't open %s\n", ds1name);
+        FATAL_EXIT("can't open test.d2m\n");
     }
     fseek(in, 0, SEEK_END);
     ds1_len = ftell(in);
@@ -2832,11 +2790,5 @@ int ds1_read2()
     glb_ds1.undo.cur_buf_num = -1;
     glb_ds1.path_edit_win.obj_idx = -1;
 
-    ds1_save(0,TRUE);
-    ds1_save2(0,TRUE);
-
-
     return 0;
 }
-#endif
-
