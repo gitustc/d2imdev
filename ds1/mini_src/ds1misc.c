@@ -118,15 +118,15 @@ void ds1_save2(int ds1_idx, int is_tmp_file)
     fwrite(& n, 4, 1, out);
 
     // width
-    n = glb_ds1.width - 1;
+    n = glb_ds1.width;
     fwrite(& n, 4, 1, out);
 
     // height
-    n = glb_ds1.height - 1;
+    n = glb_ds1.height;
     fwrite(& n, 4, 1, out);
 
     // act
-    n = glb_ds1.act - 1;
+    n = glb_ds1.act;
     fwrite(& n, 4, 1, out);
 
 
@@ -169,61 +169,33 @@ _next_floor_num:;
     }
 
 
+    // floor num
+    fwrite(& save_floor_num, 4, 1, out);
     // wall num
     fwrite(& save_wall_num,  4, 1, out);
 
-    // floor num
-    fwrite(& save_floor_num, 4, 1, out);
 
-    // walls
-    for (i=0; i < save_wall_num; i++) {
-        // props layer
-        for (y=0; y < glb_ds1.height; y++) {
-            for (x=0; x < glb_ds1.width; x++) {
-                t = (y * glb_ds1.wall_line) + (x * glb_ds1.wall_num);
-                w_ptr = glb_ds1.wall_buff + t + i;
-                fputc(w_ptr->prop1, out);
-                fputc(w_ptr->prop2, out);
-                fputc(w_ptr->prop3, out);
-                fputc(w_ptr->prop4, out);
-            }
-        }
+    for(y=0; y < glb_ds1.height; y++){
+        for(x=0; x < glb_ds1.width; x++){
 
-        // orientation layer
-        for (y=0; y < glb_ds1.height; y++) {
-            for (x=0; x < glb_ds1.width; x++) {
-                t = (y * glb_ds1.wall_line) + (x * glb_ds1.wall_num);
-                w_ptr = glb_ds1.wall_buff + t + i;
-                fputc(w_ptr->orientation, out);
-            }
-        }
-    }
-
-    // floors
-    for (i=0; i < save_floor_num; i++) {
-        // props layer
-        for (y=0; y < glb_ds1.height; y++) {
-            for (x=0; x < glb_ds1.width; x++) {
-                t = (y * glb_ds1.floor_line) + (x * glb_ds1.floor_num);
-                f_ptr = glb_ds1.floor_buff + t + i;
+            for(i=0;i<glb_ds1.floor_num;i++){
+                f_ptr = glb_ds1.floor_buff + glb_ds1.width * y + x + i;
                 fputc(f_ptr->prop1, out);
                 fputc(f_ptr->prop2, out);
                 fputc(f_ptr->prop3, out);
                 fputc(f_ptr->prop4, out);
             }
-        }
-    }
+            for(i=0;i<glb_ds1.wall_num;i++){
+                w_ptr = glb_ds1.wall_buff + glb_ds1.width * y + x + i;
+                fputc(w_ptr->prop1, out);
+                fputc(w_ptr->prop2, out);
+                fputc(w_ptr->prop3, out);
+                fputc(w_ptr->prop4, out);
+                fputc(w_ptr->orientation, out);
+            }
 
-    // shadows
-    for (i=0; i < glb_ds1.shadow_num; i++)
-    {
-        // props layer
-        for (y=0; y < glb_ds1.height; y++)
-        {
-            for (x=0; x < glb_ds1.width; x++)
             {
-                t = (y * glb_ds1.shadow_line) + (x * glb_ds1.shadow_num);
-                s_ptr = glb_ds1.shadow_buff + t + i;
+                s_ptr = glb_ds1.shadow_buff + glb_ds1.width * y + x;
                 fputc(s_ptr->prop1, out);
                 fputc(s_ptr->prop2, out);
                 fputc(s_ptr->prop3, out);
@@ -2618,6 +2590,9 @@ int ds1_read2()
     CELL_W_S    * o_ptr;
 
 
+    int         i;
+
+
     int         o, x, y, nb_layer, size, n, p, ds1_len, done, cx, cy, dx, dy;
     int         current_valid_obj_idx=0;
     int         max_subtile_width;
@@ -2638,6 +2613,7 @@ int ds1_read2()
     long        incr;
 
 
+    printf("in ds1_read2\n");
 
     in = fopen("./test.d2m", "rb");
     if(in == NULL){
@@ -2649,18 +2625,10 @@ int ds1_read2()
     ds1_buff = (void *) malloc(ds1_len);
     if(ds1_buff == NULL){
         fclose(in);
-        FATAL_EXIT("not enough mem (%i bytes) for %s\n", ds1_len, ds1name);
+        FATAL_EXIT("not enough mem (%i bytes) for test.d2m\n", ds1_len);
     }
     fread(ds1_buff, ds1_len, 1, in);
     fclose(in);
-
-    // inits
-    w_num = 0; // # of wall & orientation layers
-    f_num = 0; // # of floor layer
-    s_num = 1; // # of shadow layer, always here
-
-
-
 
 
 
@@ -2675,56 +2643,11 @@ int ds1_read2()
 
     w_num = *(ptr++);
     f_num = *(ptr++);
-    s_num = *(ptr++);
 
     glb_ds1.floor_num  = f_num;
-    glb_ds1.shadow_num = s_num;
+    //glb_ds1.shadow_num = s_num;
     glb_ds1.wall_num   = w_num;
 
-    // {{{ malloc memory for all tiles buffers
-    // floor buffer
-    glb_ds1.floor_line     = glb_ds1.width * glb_ds1.floor_num;
-    glb_ds1.floor_len      = glb_ds1.floor_line * glb_ds1.height;
-    glb_ds1.floor_buff_len = glb_ds1.floor_len * sizeof(CELL_F_S);
-    glb_ds1.floor_buff     = (CELL_F_S *) malloc(glb_ds1.floor_buff_len);
-
-    if(glb_ds1.floor_buff == NULL){
-        free(ds1_buff);
-        FATAL_EXIT("not enough mem (%i bytes) for floor buffer\n", glb_ds1.floor_buff_len);
-    }
-    memset(glb_ds1.floor_buff, 0, glb_ds1.floor_buff_len);
-
-    // shadow buffer
-    glb_ds1.shadow_line     = glb_ds1.width * glb_ds1.shadow_num;
-    glb_ds1.shadow_len      = glb_ds1.shadow_line * glb_ds1.height;
-    glb_ds1.shadow_buff_len = glb_ds1.shadow_len * sizeof(CELL_F_S);
-    glb_ds1.shadow_buff     = (CELL_F_S *) malloc(glb_ds1.shadow_buff_len);
-
-    if(glb_ds1.shadow_buff == NULL){
-        free(ds1_buff);
-        FATAL_EXIT("not enough mem (%i bytes) for shadow buffer\n", glb_ds1.shadow_buff_len);
-    }
-    memset(glb_ds1.shadow_buff, 0, glb_ds1.shadow_buff_len);
-
-    // wall buffer
-    glb_ds1.wall_line     = glb_ds1.width * glb_ds1.wall_num;
-    glb_ds1.wall_len      = glb_ds1.wall_line * glb_ds1.height;
-    glb_ds1.wall_buff_len = glb_ds1.wall_len * sizeof(CELL_F_S);
-    glb_ds1.wall_buff     = (CELL_F_S *) malloc(glb_ds1.wall_buff_len);
-
-    if(glb_ds1.wall_buff == NULL){
-        free(ds1_buff);
-        FATAL_EXIT("not enough mem (%i bytes) for wall buffer\n", glb_ds1.wall_buff_len);
-    }
-    memset(glb_ds1.wall_buff, 0, glb_ds1.wall_buff_len);
-
-    // }}}
-
-
-    f_ptr = glb_ds1.floor_buff;
-    s_ptr = glb_ds1.shadow_buff;
-    o_ptr = glb_ds1.wall_buff;
-    w_ptr = glb_ds1.wall_buff;
 
     bptr  = (UBYTE *) ptr;
 
@@ -2732,63 +2655,31 @@ int ds1_read2()
         for(x=0; x < glb_ds1.width; x++){
 
             for(i=0;i<glb_ds1.floor_num;i++){
+                f_ptr = glb_ds1.floor_buff + glb_ds1.width * y + x + i;
                 f_ptr->prop1   =   * (bptr++);
                 f_ptr->prop2   =   * (bptr++);
                 f_ptr->prop3   =   * (bptr++);
                 f_ptr->prop4   =   * (bptr++);
-                f_ptr++;
             }
-            o_ptr->orientation = * (bptr++);
             for(i=0;i<glb_ds1.wall_num;i++){
-                w_ptr->prop1   =   * (bptr++);
-                w_ptr->prop2   =   * (bptr++);
-                w_ptr->prop3   =   * (bptr++);
-                w_ptr->prop4   =   * (bptr++);
-                w_ptr++;
+                w_ptr = glb_ds1.wall_buff + glb_ds1.width * y + x + i;
+                w_ptr->prop1       = * (bptr++);
+                w_ptr->prop2       = * (bptr++);
+                w_ptr->prop3       = * (bptr++);
+                w_ptr->prop4       = * (bptr++);
+                w_ptr->orientation = * (bptr++);
             }
 
-            for(i=0;i<glb_ds1.shadow_num;i++){
+            {
+                s_ptr = glb_ds1.shadow_buff + glb_ds1.width * y + x;
                 s_ptr->prop1   =   * (bptr++);
                 s_ptr->prop2   =   * (bptr++);
                 s_ptr->prop3   =   * (bptr++);
                 s_ptr->prop4   =   * (bptr++);
-                s_ptr++;
             }
         }
     }
 
-
-    // internal
-    glb_ds1.cur_zoom           = ZM_11;
-    glb_ds1.tile_w             = 160;
-    glb_ds1.tile_h             = 80;
-    glb_ds1.height_mul         = 1;
-    glb_ds1.height_div         = 1;
-    glb_ds1.cur_scroll.keyb.x  = glb_config.scroll.keyb.x;
-    glb_ds1.cur_scroll.keyb.y  = glb_config.scroll.keyb.y;
-    glb_ds1.cur_scroll.mouse.x = glb_config.scroll.mouse.x;
-    glb_ds1.cur_scroll.mouse.y = glb_config.scroll.mouse.y;
-
-    // center it
-    cx = glb_ds1.width/2 + 1;
-    cy = glb_ds1.height/2;
-    dx = (cy * -glb_ds1.tile_w / 2) + (cx * glb_ds1.tile_w / 2);
-    dy = (cy *  glb_ds1.tile_h / 2) + (cx * glb_ds1.tile_h / 2);
-
-    glb_ds1.own_wpreview.x0 = dx - glb_config.screen.width  / 2;
-    glb_ds1.own_wpreview.y0 = dy - glb_config.screen.height / 2;
-    glb_ds1.own_wpreview.w  = glb_config.screen.width;
-    glb_ds1.own_wpreview.h  = glb_config.screen.height;
-
-    change_zoom(ds1_idx, ZM_14); // start with zoom of 1:4 in this ds1
-
-    // some inits
-
-    // end, some last init
-    free(ds1_buff);
-    strncpy(glb_ds1.undo.tag, "UNDO", sizeof(glb_ds1.undo.tag));
-    glb_ds1.undo.cur_buf_num = -1;
-    glb_ds1.path_edit_win.obj_idx = -1;
-
+    printf("out ds1_read2\n");
     return 0;
 }
