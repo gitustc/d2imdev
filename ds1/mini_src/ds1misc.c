@@ -168,6 +168,9 @@ _next_floor_num:;
         }
     }
 
+    printf("in ds1_save2\n");
+    printf("save_wall_num  = %d\n", save_wall_num);
+    printf("save_floor_num = %d\n", save_floor_num);
 
     // floor num
     fwrite(& save_floor_num, 4, 1, out);
@@ -178,14 +181,14 @@ _next_floor_num:;
     for(y=0; y < glb_ds1.height; y++){
         for(x=0; x < glb_ds1.width; x++){
 
-            for(i=0;i<glb_ds1.floor_num;i++){
+            for(i=0;i<save_floor_num;i++){
                 f_ptr = glb_ds1.floor_buff + glb_ds1.width * y + x + i;
                 fputc(f_ptr->prop1, out);
                 fputc(f_ptr->prop2, out);
                 fputc(f_ptr->prop3, out);
                 fputc(f_ptr->prop4, out);
             }
-            for(i=0;i<glb_ds1.wall_num;i++){
+            for(i=0;i<save_wall_num;i++){
                 w_ptr = glb_ds1.wall_buff + glb_ds1.width * y + x + i;
                 fputc(w_ptr->prop1, out);
                 fputc(w_ptr->prop2, out);
@@ -469,8 +472,9 @@ void ds1_save(int ds1_idx, int is_tmp_file)
     }
 
 
-    // wall num
-    fwrite(& save_wall_num,  4, 1, out);
+    printf("in ds1_save\n");
+    printf("save_wall_num  = %d\n", save_wall_num);
+    printf("save_floor_num = %d\n", save_floor_num);
 
     // floor num
     fwrite(& save_floor_num, 4, 1, out);
@@ -2566,7 +2570,7 @@ int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)
 
     ds1_save(0,TRUE);
     ds1_save2(0,TRUE);
-    //ds1_read2(0,TRUE);
+    ds1_read2(0,TRUE);
 
 
     return 0;
@@ -2632,7 +2636,18 @@ int ds1_read2()
 
 
 
-    ptr   = (long *)ds1_buff;
+    {
+        char *tmp;
+        tmp = (char*)ds1_buff;
+        tmp ++;
+        tmp ++;
+        tmp ++;
+        tmp ++;
+        tmp ++;
+        ptr = (long *)tmp;
+    }
+    //ptr   = (long *)ds1_buff;
+
 
 
     glb_ds1.version = *(ptr++);
@@ -2641,33 +2656,42 @@ int ds1_read2()
     glb_ds1.act     = *(ptr++);
 
 
+
     w_num = *(ptr++);
     f_num = *(ptr++);
 
-    glb_ds1.floor_num  = f_num;
+    printf("glb_ds1.floor_num = %d\n", glb_ds1.floor_num);
+    printf("glb_ds1.wall_num = %d\n", glb_ds1.wall_num);
+    printf("w_num = %d\n", w_num);
+    printf("f_num = %d\n", f_num);
+
+
+    //glb_ds1.floor_num  = f_num;
     //glb_ds1.shadow_num = s_num;
-    glb_ds1.wall_num   = w_num;
+    //glb_ds1.wall_num   = w_num;
 
 
     bptr  = (UBYTE *) ptr;
 
+
     for(y=0; y < glb_ds1.height; y++){
         for(x=0; x < glb_ds1.width; x++){
 
-            for(i=0;i<glb_ds1.floor_num;i++){
+            for(i=0;i<f_num;i++){
+            //for(i=0;i<glb_ds1.floor_num;i++){
                 f_ptr = glb_ds1.floor_buff + glb_ds1.width * y + x + i;
                 f_ptr->prop1   =   * (bptr++);
                 f_ptr->prop2   =   * (bptr++);
                 f_ptr->prop3   =   * (bptr++);
                 f_ptr->prop4   =   * (bptr++);
             }
-            for(i=0;i<glb_ds1.wall_num;i++){
+            for(i=0;i<w_num;i++){
                 w_ptr = glb_ds1.wall_buff + glb_ds1.width * y + x + i;
-                w_ptr->prop1       = * (bptr++);
-                w_ptr->prop2       = * (bptr++);
-                w_ptr->prop3       = * (bptr++);
-                w_ptr->prop4       = * (bptr++);
-                w_ptr->orientation = * (bptr++);
+                w_ptr->prop1       = *(bptr++);
+                w_ptr->prop2       = *(bptr++);
+                w_ptr->prop3       = *(bptr++);
+                w_ptr->prop4       = *(bptr++);
+                w_ptr->orientation = *(bptr++);
             }
 
             {
