@@ -127,12 +127,12 @@ void ds1_save2(int ds1_idx, int is_tmp_file)
     char     tmp[512], tmp_name[256], * cptr;
     int      ax, ay, cx, cy, is_data;
 
-    out = fopen("./test.d2m", "wb");
+    out = fopen("./test.d2s", "wb");
     if (out == NULL) {
-        FATAL_EXIT("ds1save2(), can't write test.d2m");
+        FATAL_EXIT("ds1save2(), can't write test.d2s");
     }
 
-    fputs("D2MAP", out);
+    fputs("D2S", out);
 
     // version
     n = 18;
@@ -707,9 +707,9 @@ if (out == NULL) {
 FATAL_EXIT("ds1save(), can't write %s", tmp_name);
 }
 
-out2 = fopen("./test.d2m", "wb");
+out2 = fopen("./test.d2s", "wb");
 if (out2 == NULL) {
-FATAL_EXIT("ds1save(), can't write test.d2m\n");
+FATAL_EXIT("ds1save(), can't write test.d2s\n");
 }
 
 
@@ -948,7 +948,7 @@ if (glb_config.minimize_ds1 == TRUE)
 
 
 
-//minize all tiles numbers for d2map
+//minize all tiles numbers for d2scene
 {
     int x, y, i, t;
 
@@ -2641,9 +2641,9 @@ int ds1_read2()
 
     printf("in ds1_read2\n");
 
-    in = fopen("./test.d2m", "rb");
+    in = fopen("./test.d2s", "rb");
     if(in == NULL){
-        FATAL_EXIT("can't open test.d2m\n");
+        FATAL_EXIT("can't open test.d2s\n");
     }
     fseek(in, 0, SEEK_END);
     ds1_len = ftell(in);
@@ -2651,7 +2651,7 @@ int ds1_read2()
     ds1_buff = (void *) malloc(ds1_len);
     if(ds1_buff == NULL){
         fclose(in);
-        FATAL_EXIT("not enough mem (%i bytes) for test.d2m\n", ds1_len);
+        FATAL_EXIT("not enough mem (%i bytes) for test.d2s\n", ds1_len);
     }
     fread(ds1_buff, ds1_len, 1, in);
     fclose(in);
@@ -2661,8 +2661,6 @@ int ds1_read2()
     {
         char *tmp;
         tmp = (char*)ds1_buff;
-        tmp ++;
-        tmp ++;
         tmp ++;
         tmp ++;
         tmp ++;

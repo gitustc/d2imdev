@@ -126,43 +126,43 @@ f_num = 2
 out ds1_read2
 , found
 struct data of glb_dt1[0] :
-name of glb_dt1[0] : ./res/data/ds1edit.dt1
+name of glb_dt1[0] : ._res_data_ds1edit.dt1
    x1        = 7
    x2        = 6
    block_num = 84
    bh_start  = 0x114
 struct data of glb_dt1[1] :
-name of glb_dt1[1] : data/global/tiles/act1/town/floor.dt1
+name of glb_dt1[1] : data_global_tiles_act1_town_floor.dt1
    x1        = 7
    x2        = 6
    block_num = 144
    bh_start  = 0x114
 struct data of glb_dt1[2] :
-name of glb_dt1[2] : data/global/tiles/act1/tristram/town.dt1
+name of glb_dt1[2] : data_global_tiles_act1_tristram_town.dt1
    x1        = 7
    x2        = 6
    block_num = 157
    bh_start  = 0x114
 struct data of glb_dt1[3] :
-name of glb_dt1[3] : data/global/tiles/act1/outdoors/stonewall.dt1
+name of glb_dt1[3] : data_global_tiles_act1_outdoors_stonewall.dt1
    x1        = 7
    x2        = 6
    block_num = 52
    bh_start  = 0x114
 struct data of glb_dt1[4] :
-name of glb_dt1[4] : data/global/tiles/act1/outdoors/river.dt1
+name of glb_dt1[4] : data_global_tiles_act1_outdoors_river.dt1
    x1        = 7
    x2        = 6
    block_num = 45
    bh_start  = 0x114
 struct data of glb_dt1[5] :
-name of glb_dt1[5] : data/global/tiles/act1/outdoors/objects.dt1
+name of glb_dt1[5] : data_global_tiles_act1_outdoors_objects.dt1
    x1        = 7
    x2        = 6
    block_num = 42
    bh_start  = 0x114
 struct data of glb_dt1[6] :
-name of glb_dt1[6] : data/global/tiles/act1/outdoors/treegroups.dt1
+name of glb_dt1[6] : data_global_tiles_act1_outdoors_treegroups.dt1
    x1        = 7
    x2        = 6
    block_num = 21
@@ -170,13 +170,13 @@ name of glb_dt1[6] : data/global/tiles/act1/outdoors/treegroups.dt1
 
 dt1_idx file
 ------- ---------------------------------------------------------------------
-      0 ./res/data/ds1edit.dt1
-      1 data/global/tiles/act1/town/floor.dt1
-      2 data/global/tiles/act1/tristram/town.dt1
-      3 data/global/tiles/act1/outdoors/stonewall.dt1
-      4 data/global/tiles/act1/outdoors/river.dt1
-      5 data/global/tiles/act1/outdoors/objects.dt1
-      6 data/global/tiles/act1/outdoors/treegroups.dt1
+      0 ._res_data_ds1edit.dt1
+      1 data_global_tiles_act1_town_floor.dt1
+      2 data_global_tiles_act1_tristram_town.dt1
+      3 data_global_tiles_act1_outdoors_stonewall.dt1
+      4 data_global_tiles_act1_outdoors_river.dt1
+      5 data_global_tiles_act1_outdoors_objects.dt1
+      6 data_global_tiles_act1_outdoors_treegroups.dt1
 
 sorted block_table of glb_ds1 (0 blocks) :
 block orientation main_idx sub_idx frame dt1_idx blk_idx roof_y type line0

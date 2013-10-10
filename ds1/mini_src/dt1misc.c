@@ -360,6 +360,7 @@ void dt1_struct_update(int i)
 
     // debug
     printf("struct data of glb_dt1[%i] :\n", i);
+    txt_convert_dash(glb_dt1[i].name);
     printf("name of glb_dt1[%i] : %s\n", i, glb_dt1[i].name);
     printf("   x1        = %li\n",    glb_dt1[i].x1);
     printf("   x2        = %li\n",    glb_dt1[i].x2);

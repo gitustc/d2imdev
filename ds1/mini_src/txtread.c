@@ -530,6 +530,18 @@ void * txt_read_in_mem(char * txtname)
     return buff;
 }
 
+// ==========================================================================
+void txt_convert_dash(char * str)
+{
+    int i, s = strlen(str);
+
+
+    for (i=0; i < s; i++) {
+        if (str[i] == '\\' || str[i] == '/'){
+            str[i] = '_';
+        }
+    }
+}
 
 // ==========================================================================
 void txt_convert_slash(char * str)
