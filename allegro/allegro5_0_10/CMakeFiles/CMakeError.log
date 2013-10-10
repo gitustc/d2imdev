@@ -1,0 +1,265 @@
+Determining if the system is big endian passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec4137067004/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4137067004.dir/build.make CMakeFiles/cmTryCompileExec4137067004.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4137067004.dir/TestEndianess.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec4137067004.dir/TestEndianess.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/TestEndianess.c
+Linking C executable cmTryCompileExec4137067004
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4137067004.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec4137067004.dir/TestEndianess.c.o  -o cmTryCompileExec4137067004 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+TestEndianess.c:
+/* A 16 bit integer is required. */
+typedef unsigned short cmakeint16;
+
+/* On a little endian machine, these 16bit ints will give "THIS IS LITTLE ENDIAN."
+   On a big endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_little[] =  {0x4854, 0x5349, 0x4920, 0x2053, 0x494c, 0x5454, 0x454c, 0x4520, 0x444e, 0x4149, 0x2e4e, 0x0000};
+
+/* on a big endian machine, these 16bit ints will give "THIS IS BIG ENDIAN."
+   On a little endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_big[] =     {0x5448, 0x4953, 0x2049, 0x5320, 0x4249, 0x4720, 0x454e, 0x4449, 0x414e, 0x2e2e, 0x0000};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_little[argc];
+  require += info_big[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if files soundcard.h exist failed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3041036820/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3041036820.dir/build.make CMakeFiles/cmTryCompileExec3041036820.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3041036820.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec3041036820.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:23: fatal error: soundcard.h: No such file or directory
+compilation terminated.
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTryCompileExec3041036820.dir/CheckIncludeFiles.c.o] Error 1
+make: *** [cmTryCompileExec3041036820/fast] Error 2
+
+Source:
+/* */
+#include <soundcard.h>
+
+
+int main(){return 0;}
+
+Determining if files machine/soundcard.h exist failed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec700712096/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec700712096.dir/build.make CMakeFiles/cmTryCompileExec700712096.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec700712096.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec700712096.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:31: fatal error: machine/soundcard.h: No such file or directory
+compilation terminated.
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTryCompileExec700712096.dir/CheckIncludeFiles.c.o] Error 1
+make: *** [cmTryCompileExec700712096/fast] Error 2
+
+Source:
+/* */
+#include <machine/soundcard.h>
+
+
+int main(){return 0;}
+
+Determining if files libkern/OSAtomic.h exist failed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3769101935/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3769101935.dir/build.make CMakeFiles/cmTryCompileExec3769101935.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3769101935.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec3769101935.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:30: fatal error: libkern/OSAtomic.h: No such file or directory
+compilation terminated.
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTryCompileExec3769101935.dir/CheckIncludeFiles.c.o] Error 1
+make: *** [cmTryCompileExec3769101935/fast] Error 2
+
+Source:
+/* */
+#include <libkern/OSAtomic.h>
+
+
+int main(){return 0;}
+
+Determining if the function getexecname exists failed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec956379072/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec956379072.dir/build.make CMakeFiles/cmTryCompileExec956379072.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec956379072.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=getexecname   -o CMakeFiles/cmTryCompileExec956379072.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec956379072
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec956379072.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=getexecname    CMakeFiles/cmTryCompileExec956379072.dir/CheckFunctionExists.c.o  -o cmTryCompileExec956379072 -rdynamic 
+CMakeFiles/cmTryCompileExec956379072.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x7): undefined reference to `getexecname'
+collect2: error: ld returned 1 exit status
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec956379072] Error 1
+make: *** [cmTryCompileExec956379072/fast] Error 2
+
+
+Performing C SOURCE FILE Test ALLEGRO_HAVE_PROCFS_ARGCV failed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1916916560/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1916916560.dir/build.make CMakeFiles/cmTryCompileExec1916916560.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1916916560.dir/src.c.o
+/usr/bin/gcc   -msse -W -Wall   -DALLEGRO_HAVE_PROCFS_ARGCV   -o CMakeFiles/cmTryCompileExec1916916560.dir/src.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/src.c
+/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/src.c:4:25: error: storage size of ‘psinfo’ isn’t known
+/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/src.c:4:25: warning: unused variable ‘psinfo’ [-Wunused-variable]
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTryCompileExec1916916560.dir/src.c.o] Error 1
+make: *** [cmTryCompileExec1916916560/fast] Error 2
+
+Source file was:
+
+    #include <sys/procfs.h>
+    int main(void) {
+        struct prpsinfo psinfo;
+        psinfo.pr_argc = 0;
+        return 0;
+    }
+Performing C SOURCE FILE Test ALLEGRO_HAVE_SV_PROCFS_H failed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3886961479/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3886961479.dir/build.make CMakeFiles/cmTryCompileExec3886961479.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3886961479.dir/src.c.o
+/usr/bin/gcc   -msse -W -Wall   -DALLEGRO_HAVE_SV_PROCFS_H   -o CMakeFiles/cmTryCompileExec3886961479.dir/src.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/src.c
+/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/src.c:5:25: error: storage size of ‘psinfo’ isn’t known
+/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/src.c:6:18: error: ‘PIOCPSINFO’ undeclared (first use in this function)
+/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/src.c:6:18: note: each undeclared identifier is reported only once for each function it appears in
+/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/src.c:5:25: warning: unused variable ‘psinfo’ [-Wunused-variable]
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTryCompileExec3886961479.dir/src.c.o] Error 1
+make: *** [cmTryCompileExec3886961479/fast] Error 2
+
+Source file was:
+
+    #include <sys/procfs.h>
+    #include <sys/ioctl.h>
+    int main(void) {
+        struct prpsinfo psinfo;
+        ioctl(0, PIOCPSINFO, &psinfo);
+        return 0;
+    }
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec275776644/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec275776644.dir/build.make CMakeFiles/cmTryCompileExec275776644.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec275776644.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec275776644.dir/CheckSymbolExists.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec275776644
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec275776644.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec275776644.dir/CheckSymbolExists.c.o  -o cmTryCompileExec275776644 -rdynamic 
+CMakeFiles/cmTryCompileExec275776644.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0xa): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec275776644] Error 1
+make: *** [cmTryCompileExec275776644/fast] Error 2
+
+File /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec240873940/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec240873940.dir/build.make CMakeFiles/cmTryCompileExec240873940.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec240873940.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec240873940.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec240873940
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec240873940.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec240873940.dir/CheckFunctionExists.c.o  -o cmTryCompileExec240873940 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec240873940] Error 1
+make: *** [cmTryCompileExec240873940/fast] Error 2
+
+
+Determining if the include file X11/extensions/xf86vmode.h exists failed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec711922275/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec711922275.dir/build.make CMakeFiles/cmTryCompileExec711922275.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec711922275.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec711922275.dir/CheckIncludeFile.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:38: fatal error: X11/extensions/xf86vmode.h: No such file or directory
+compilation terminated.
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTryCompileExec711922275.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec711922275/fast] Error 2
+
+
+Determining if the function XF86VidModeQueryExtension exists in the Xxf86vm failed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2120017782/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2120017782.dir/build.make CMakeFiles/cmTryCompileExec2120017782.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2120017782.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=XF86VidModeQueryExtension   -o CMakeFiles/cmTryCompileExec2120017782.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2120017782
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2120017782.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=XF86VidModeQueryExtension    CMakeFiles/cmTryCompileExec2120017782.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2120017782 -rdynamic -lXxf86vm -lSM -lICE -lX11 -lXext 
+/usr/bin/ld: cannot find -lXxf86vm
+collect2: error: ld returned 1 exit status
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec2120017782] Error 1
+make: *** [cmTryCompileExec2120017782/fast] Error 2
+
+

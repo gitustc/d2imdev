@@ -1,14 +1,12 @@
-CC		=	gcc -Wall
-CFLAGS  =   -I ../../allegro/allegro5/include -I./mpq -Wall -g
-LIBS    =   ../../allegro/allegro5/lib/*.a -lm -lpthread -lX11 -lXcursor -lXcursor -ldl -lGL
-OBJS    =   ./mpq/dcl_tbl.o ./mpq/explode.o ./mpq/mpqview.o ./mpq/wav_unp.o  ds1misc.o dt1_draw.o dt1misc.o gfx_custom.o inicreat.o iniread.o interfac.o main.o misc.o txtread.o wpreview.o
+CC     = gcc -Wall
+CFLAGS = -I ../../allegro/allegro5_0_10/include/allegro5/
+LIBS   = ../../allegro/allegro5/lib/*.a -lm -lpthread -lX11 -lXcursor -lXcursor -ldl -lGL
+OBJS   = main.o gewrp.o glb.o
 all:$(OBJS)
-	$(CC) $(OBJS)  $(CFLAGS) $(LIBS) -o ../bin/mapedit
+	$(CC) $(OBJS)  $(CFLAGS) $(LIBS) -o ../bin/d2im
 test:
-	make test -C ../bin
-debug:
-	make debug -C ../bin
+	make d2im_test -C ../bin
 clean:
-	rm  *.o ./mpq/*.o ../bin/mapedit -f
+	rm  *.o ../bin/d2im -f
 $(OBJS):%.o:%.c
 	$(CC) -c $(CFLAGS) $< -o $@

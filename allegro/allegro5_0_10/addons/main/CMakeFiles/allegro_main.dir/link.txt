@@ -1,0 +1,1 @@
+/usr/bin/gcc  -fPIC  -msse -W -Wall  -O2 -g   -shared -Wl,-soname,liballegro_main.so.5.0 -o ../../lib/liballegro_main.so.5.0.10 CMakeFiles/allegro_main.dir/generic_main.c.o ../../lib/liballegro.so.5.0.10 -lm -lpthread -lSM -lICE -lX11 -lXext -lXcursor -lXinerama -lXrandr -lGL -lGLU -Wl,-rpath,/home/anhong/Downloads/allegro/b/lib: 

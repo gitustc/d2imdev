@@ -1,26 +1,30 @@
 /*
  * =====================================================================================
  *
- *       Filename:  main.h
- *  Last Modified: 10/09/2013 02:04:50 AM
+ *       Filename: main.h
+ *        Created: 10/09/2013 10:16:06 PM
+ *  Last Modified: 10/09/2013 11:21:21 PM
  *
- *    Description:  as wanted
+ *    Description: program entry
  *
- *        Version:  1.0
- *        Created:  10/09/2013 02:03:38 AM
- *       Revision:  none
- *       Compiler:  gcc
+ *        Version: 1.0
+ *       Revision: none
+ *       Compiler: gcc
  *
- *         Author:  ANHONG
- *          Email:  anhonghe@gmail.com
- *   Organization:  USTC
+ *         Author: ANHONG
+ *          Email: anhonghe@gmail.com
+ *   Organization: USTC
  *
  * =====================================================================================
  */
 
 
-#ifndef  __main_inc__
-#define  __main_inc__
-#include "game.h"
+#ifndef  _included_main_inc__
+#define  _included_main_inc__
+
 #include <stdio.h>
-#endif   /* ----- #ifndef __main_inc__  ----- */
+#include <stdlib.h>
+#include <stdint.h>
+#include "gewrp.h"
+
+#endif   /* ----- #ifndef _included_main_inc__  ----- */

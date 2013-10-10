@@ -1,0 +1,932 @@
+The system is: Linux - 3.2.0-4-486 - i686
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/gcc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/anhong/Downloads/allegro/b/CMakeFiles/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/anhong/Downloads/allegro/b/CMakeFiles/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec273205412/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec273205412.dir/build.make CMakeFiles/cmTryCompileExec273205412.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec273205412.dir/testCCompiler.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec273205412.dir/testCCompiler.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec273205412
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec273205412.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec273205412.dir/testCCompiler.c.o  -o cmTryCompileExec273205412 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec997848185/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec997848185.dir/build.make CMakeFiles/cmTryCompileExec997848185.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec997848185.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec997848185.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec997848185
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec997848185.dir/link.txt --verbose=1
+/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec997848185.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec997848185 -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/usr/bin/gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/i486-linux-gnu/4.7/lto-wrapper
+Target: i486-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.7.2-5' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --enable-targets=all --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=i486-linux-gnu --host=i486-linux-gnu --target=i486-linux-gnu
+Thread model: posix
+gcc version 4.7.2 (Debian 4.7.2-5) 
+COMPILER_PATH=/usr/lib/gcc/i486-linux-gnu/4.7/:/usr/lib/gcc/i486-linux-gnu/4.7/:/usr/lib/gcc/i486-linux-gnu/:/usr/lib/gcc/i486-linux-gnu/4.7/:/usr/lib/gcc/i486-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/i486-linux-gnu/4.7/:/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/:/usr/lib/gcc/i486-linux-gnu/4.7/../../../../lib/:/lib/i386-linux-gnu/:/lib/../lib/:/usr/lib/i386-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/i486-linux-gnu/4.7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec997848185' '-rdynamic' '-mtune=generic' '-march=i586'
+ /usr/lib/gcc/i486-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --eh-frame-hdr -m elf_i386 --hash-style=both -export-dynamic -dynamic-linker /lib/ld-linux.so.2 -o cmTryCompileExec997848185 /usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crt1.o /usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crti.o /usr/lib/gcc/i486-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/i486-linux-gnu/4.7 -L/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu -L/usr/lib/gcc/i486-linux-gnu/4.7/../../../../lib -L/lib/i386-linux-gnu -L/lib/../lib -L/usr/lib/i386-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/i486-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec997848185.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/i486-linux-gnu/4.7/crtend.o /usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crtn.o
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec997848185/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec997848185.dir/build.make CMakeFiles/cmTryCompileExec997848185.dir/build]
+  ignore line: [make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec997848185.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec997848185.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec997848185]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec997848185.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec997848185.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec997848185 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/i486-linux-gnu/4.7/lto-wrapper]
+  ignore line: [Target: i486-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 4.7.2-5' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --enable-targets=all --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=i486-linux-gnu --host=i486-linux-gnu --target=i486-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.7.2 (Debian 4.7.2-5) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/i486-linux-gnu/4.7/:/usr/lib/gcc/i486-linux-gnu/4.7/:/usr/lib/gcc/i486-linux-gnu/:/usr/lib/gcc/i486-linux-gnu/4.7/:/usr/lib/gcc/i486-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/i486-linux-gnu/4.7/:/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/:/usr/lib/gcc/i486-linux-gnu/4.7/../../../../lib/:/lib/i386-linux-gnu/:/lib/../lib/:/usr/lib/i386-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/i486-linux-gnu/4.7/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec997848185' '-rdynamic' '-mtune=generic' '-march=i586']
+  link line: [ /usr/lib/gcc/i486-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --eh-frame-hdr -m elf_i386 --hash-style=both -export-dynamic -dynamic-linker /lib/ld-linux.so.2 -o cmTryCompileExec997848185 /usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crt1.o /usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crti.o /usr/lib/gcc/i486-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/i486-linux-gnu/4.7 -L/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu -L/usr/lib/gcc/i486-linux-gnu/4.7/../../../../lib -L/lib/i386-linux-gnu -L/lib/../lib -L/usr/lib/i386-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/i486-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec997848185.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/i486-linux-gnu/4.7/crtend.o /usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/i486-linux-gnu/4.7/collect2] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_i386] ==> ignore
+    arg [--hash-style=both] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib/ld-linux.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec997848185] ==> ignore
+    arg [/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/i486-linux-gnu/4.7/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/i486-linux-gnu/4.7] ==> dir [/usr/lib/gcc/i486-linux-gnu/4.7]
+    arg [-L/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu] ==> dir [/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu]
+    arg [-L/usr/lib/gcc/i486-linux-gnu/4.7/../../../../lib] ==> dir [/usr/lib/gcc/i486-linux-gnu/4.7/../../../../lib]
+    arg [-L/lib/i386-linux-gnu] ==> dir [/lib/i386-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/i386-linux-gnu] ==> dir [/usr/lib/i386-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/i486-linux-gnu/4.7/../../..] ==> dir [/usr/lib/gcc/i486-linux-gnu/4.7/../../..]
+    arg [CMakeFiles/cmTryCompileExec997848185.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/i486-linux-gnu/4.7/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse dir [/usr/lib/gcc/i486-linux-gnu/4.7] ==> [/usr/lib/gcc/i486-linux-gnu/4.7]
+  collapse dir [/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu] ==> [/usr/lib/i386-linux-gnu]
+  collapse dir [/usr/lib/gcc/i486-linux-gnu/4.7/../../../../lib] ==> [/usr/lib]
+  collapse dir [/lib/i386-linux-gnu] ==> [/lib/i386-linux-gnu]
+  collapse dir [/lib/../lib] ==> [/lib]
+  collapse dir [/usr/lib/i386-linux-gnu] ==> [/usr/lib/i386-linux-gnu]
+  collapse dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse dir [/usr/lib/gcc/i486-linux-gnu/4.7/../../..] ==> [/usr/lib]
+  implicit libs: [c]
+  implicit dirs: [/usr/lib/gcc/i486-linux-gnu/4.7;/usr/lib/i386-linux-gnu;/usr/lib;/lib/i386-linux-gnu;/lib]
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec50057235/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec50057235.dir/build.make CMakeFiles/cmTryCompileExec50057235.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec50057235.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec50057235.dir/testCXXCompiler.cxx.o -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec50057235
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec50057235.dir/link.txt --verbose=1
+/usr/bin/c++          CMakeFiles/cmTryCompileExec50057235.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec50057235 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2698965087/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2698965087.dir/build.make CMakeFiles/cmTryCompileExec2698965087.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2698965087.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec2698965087.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec2698965087
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2698965087.dir/link.txt --verbose=1
+/usr/bin/c++        -v CMakeFiles/cmTryCompileExec2698965087.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec2698965087 -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/i486-linux-gnu/4.7/lto-wrapper
+Target: i486-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.7.2-5' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --enable-targets=all --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=i486-linux-gnu --host=i486-linux-gnu --target=i486-linux-gnu
+Thread model: posix
+gcc version 4.7.2 (Debian 4.7.2-5) 
+COMPILER_PATH=/usr/lib/gcc/i486-linux-gnu/4.7/:/usr/lib/gcc/i486-linux-gnu/4.7/:/usr/lib/gcc/i486-linux-gnu/:/usr/lib/gcc/i486-linux-gnu/4.7/:/usr/lib/gcc/i486-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/i486-linux-gnu/4.7/:/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/:/usr/lib/gcc/i486-linux-gnu/4.7/../../../../lib/:/lib/i386-linux-gnu/:/lib/../lib/:/usr/lib/i386-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/i486-linux-gnu/4.7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2698965087' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=i586'
+ /usr/lib/gcc/i486-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --eh-frame-hdr -m elf_i386 --hash-style=both -export-dynamic -dynamic-linker /lib/ld-linux.so.2 -o cmTryCompileExec2698965087 /usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crt1.o /usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crti.o /usr/lib/gcc/i486-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/i486-linux-gnu/4.7 -L/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu -L/usr/lib/gcc/i486-linux-gnu/4.7/../../../../lib -L/lib/i386-linux-gnu -L/lib/../lib -L/usr/lib/i386-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/i486-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec2698965087.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/i486-linux-gnu/4.7/crtend.o /usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crtn.o
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec2698965087/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec2698965087.dir/build.make CMakeFiles/cmTryCompileExec2698965087.dir/build]
+  ignore line: [make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec2698965087.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec2698965087.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec2698965087]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2698965087.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++        -v CMakeFiles/cmTryCompileExec2698965087.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec2698965087 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/i486-linux-gnu/4.7/lto-wrapper]
+  ignore line: [Target: i486-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 4.7.2-5' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --enable-targets=all --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=i486-linux-gnu --host=i486-linux-gnu --target=i486-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.7.2 (Debian 4.7.2-5) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/i486-linux-gnu/4.7/:/usr/lib/gcc/i486-linux-gnu/4.7/:/usr/lib/gcc/i486-linux-gnu/:/usr/lib/gcc/i486-linux-gnu/4.7/:/usr/lib/gcc/i486-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/i486-linux-gnu/4.7/:/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/:/usr/lib/gcc/i486-linux-gnu/4.7/../../../../lib/:/lib/i386-linux-gnu/:/lib/../lib/:/usr/lib/i386-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/i486-linux-gnu/4.7/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2698965087' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=i586']
+  link line: [ /usr/lib/gcc/i486-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --eh-frame-hdr -m elf_i386 --hash-style=both -export-dynamic -dynamic-linker /lib/ld-linux.so.2 -o cmTryCompileExec2698965087 /usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crt1.o /usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crti.o /usr/lib/gcc/i486-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/i486-linux-gnu/4.7 -L/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu -L/usr/lib/gcc/i486-linux-gnu/4.7/../../../../lib -L/lib/i386-linux-gnu -L/lib/../lib -L/usr/lib/i386-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/i486-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec2698965087.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/i486-linux-gnu/4.7/crtend.o /usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/i486-linux-gnu/4.7/collect2] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_i386] ==> ignore
+    arg [--hash-style=both] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib/ld-linux.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec2698965087] ==> ignore
+    arg [/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/i486-linux-gnu/4.7/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/i486-linux-gnu/4.7] ==> dir [/usr/lib/gcc/i486-linux-gnu/4.7]
+    arg [-L/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu] ==> dir [/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu]
+    arg [-L/usr/lib/gcc/i486-linux-gnu/4.7/../../../../lib] ==> dir [/usr/lib/gcc/i486-linux-gnu/4.7/../../../../lib]
+    arg [-L/lib/i386-linux-gnu] ==> dir [/lib/i386-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/i386-linux-gnu] ==> dir [/usr/lib/i386-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/i486-linux-gnu/4.7/../../..] ==> dir [/usr/lib/gcc/i486-linux-gnu/4.7/../../..]
+    arg [CMakeFiles/cmTryCompileExec2698965087.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/i486-linux-gnu/4.7/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse dir [/usr/lib/gcc/i486-linux-gnu/4.7] ==> [/usr/lib/gcc/i486-linux-gnu/4.7]
+  collapse dir [/usr/lib/gcc/i486-linux-gnu/4.7/../../../i386-linux-gnu] ==> [/usr/lib/i386-linux-gnu]
+  collapse dir [/usr/lib/gcc/i486-linux-gnu/4.7/../../../../lib] ==> [/usr/lib]
+  collapse dir [/lib/i386-linux-gnu] ==> [/lib/i386-linux-gnu]
+  collapse dir [/lib/../lib] ==> [/lib]
+  collapse dir [/usr/lib/i386-linux-gnu] ==> [/usr/lib/i386-linux-gnu]
+  collapse dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse dir [/usr/lib/gcc/i486-linux-gnu/4.7/../../..] ==> [/usr/lib]
+  implicit libs: [stdc++;m;c]
+  implicit dirs: [/usr/lib/gcc/i486-linux-gnu/4.7;/usr/lib/i386-linux-gnu;/usr/lib;/lib/i386-linux-gnu;/lib]
+
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3250230549/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3250230549.dir/build.make CMakeFiles/cmTryCompileExec3250230549.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3250230549.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec3250230549.dir/CheckIncludeFile.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec3250230549
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3250230549.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec3250230549.dir/CheckIncludeFile.c.o  -o cmTryCompileExec3250230549 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1567923574/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1567923574.dir/build.make CMakeFiles/cmTryCompileExec1567923574.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1567923574.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec1567923574.dir/CheckIncludeFile.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec1567923574
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1567923574.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec1567923574.dir/CheckIncludeFile.c.o  -o cmTryCompileExec1567923574 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3908951563/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3908951563.dir/build.make CMakeFiles/cmTryCompileExec3908951563.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3908951563.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec3908951563.dir/CheckIncludeFile.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec3908951563
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3908951563.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec3908951563.dir/CheckIncludeFile.c.o  -o cmTryCompileExec3908951563 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining size of unsigned short passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1922024409/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1922024409.dir/build.make CMakeFiles/cmTryCompileExec1922024409.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1922024409.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec1922024409.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CheckTypeSize/CMAKE_SIZEOF_UNSIGNED_SHORT.c
+Linking C executable cmTryCompileExec1922024409
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1922024409.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec1922024409.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o  -o cmTryCompileExec1922024409 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if files dirent.h exist passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1758060837/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1758060837.dir/build.make CMakeFiles/cmTryCompileExec1758060837.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1758060837.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec1758060837.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec1758060837
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1758060837.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec1758060837.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec1758060837 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if files inttypes.h exist passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec359826638/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec359826638.dir/build.make CMakeFiles/cmTryCompileExec359826638.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec359826638.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec359826638.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec359826638
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec359826638.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec359826638.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec359826638 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if files sys/types.h;linux/joystick.h exist passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec4166713846/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4166713846.dir/build.make CMakeFiles/cmTryCompileExec4166713846.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4166713846.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec4166713846.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec4166713846
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4166713846.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec4166713846.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec4166713846 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if files stdbool.h exist passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2553154790/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2553154790.dir/build.make CMakeFiles/cmTryCompileExec2553154790.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2553154790.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec2553154790.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec2553154790
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2553154790.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec2553154790.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec2553154790 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if files stdint.h exist passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1199962319/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1199962319.dir/build.make CMakeFiles/cmTryCompileExec1199962319.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1199962319.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec1199962319.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec1199962319
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1199962319.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec1199962319.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec1199962319 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if files sys/io.h exist passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1511521341/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1511521341.dir/build.make CMakeFiles/cmTryCompileExec1511521341.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1511521341.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec1511521341.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec1511521341
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1511521341.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec1511521341.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec1511521341 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if files sys/stat.h exist passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3041987581/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3041987581.dir/build.make CMakeFiles/cmTryCompileExec3041987581.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3041987581.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec3041987581.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec3041987581
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3041987581.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec3041987581.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec3041987581 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if files sys/time.h exist passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3540613212/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3540613212.dir/build.make CMakeFiles/cmTryCompileExec3540613212.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3540613212.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec3540613212.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec3540613212
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3540613212.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec3540613212.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec3540613212 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if files time.h exist passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1671900417/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1671900417.dir/build.make CMakeFiles/cmTryCompileExec1671900417.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1671900417.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec1671900417.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec1671900417
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1671900417.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec1671900417.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec1671900417 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if files sys/utsname.h exist passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2389582805/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2389582805.dir/build.make CMakeFiles/cmTryCompileExec2389582805.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2389582805.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec2389582805.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec2389582805
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2389582805.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec2389582805.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec2389582805 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if files sys/types.h exist passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3749580375/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3749580375.dir/build.make CMakeFiles/cmTryCompileExec3749580375.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3749580375.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec3749580375.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec3749580375
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3749580375.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec3749580375.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec3749580375 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if files sys/soundcard.h exist passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3097956930/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3097956930.dir/build.make CMakeFiles/cmTryCompileExec3097956930.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3097956930.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec3097956930.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec3097956930
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3097956930.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec3097956930.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec3097956930 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if files linux/soundcard.h exist passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2900934503/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2900934503.dir/build.make CMakeFiles/cmTryCompileExec2900934503.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2900934503.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec2900934503.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec2900934503
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2900934503.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec2900934503.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec2900934503 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if files sys/inotify.h exist passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1689147208/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1689147208.dir/build.make CMakeFiles/cmTryCompileExec1689147208.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1689147208.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec1689147208.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec1689147208
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1689147208.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec1689147208.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec1689147208 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if files sys/timerfd.h exist passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3695123915/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3695123915.dir/build.make CMakeFiles/cmTryCompileExec3695123915.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3695123915.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec3695123915.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec3695123915
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3695123915.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec3695123915.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec3695123915 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the function mkstemp exists passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1116514481/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1116514481.dir/build.make CMakeFiles/cmTryCompileExec1116514481.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1116514481.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=mkstemp   -o CMakeFiles/cmTryCompileExec1116514481.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1116514481
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1116514481.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=mkstemp    CMakeFiles/cmTryCompileExec1116514481.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1116514481 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the function mmap exists passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1665472622/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1665472622.dir/build.make CMakeFiles/cmTryCompileExec1665472622.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1665472622.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=mmap   -o CMakeFiles/cmTryCompileExec1665472622.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1665472622
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1665472622.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=mmap    CMakeFiles/cmTryCompileExec1665472622.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1665472622 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the function mprotect exists passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec356851561/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec356851561.dir/build.make CMakeFiles/cmTryCompileExec356851561.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec356851561.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=mprotect   -o CMakeFiles/cmTryCompileExec356851561.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec356851561
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec356851561.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=mprotect    CMakeFiles/cmTryCompileExec356851561.dir/CheckFunctionExists.c.o  -o cmTryCompileExec356851561 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the function sched_yield exists passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1658229000/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1658229000.dir/build.make CMakeFiles/cmTryCompileExec1658229000.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1658229000.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=sched_yield   -o CMakeFiles/cmTryCompileExec1658229000.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1658229000
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1658229000.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=sched_yield    CMakeFiles/cmTryCompileExec1658229000.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1658229000 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the function sysconf exists passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3880091932/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3880091932.dir/build.make CMakeFiles/cmTryCompileExec3880091932.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3880091932.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=sysconf   -o CMakeFiles/cmTryCompileExec3880091932.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3880091932
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3880091932.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=sysconf    CMakeFiles/cmTryCompileExec3880091932.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3880091932 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the function fseeko exists passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec835619254/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec835619254.dir/build.make CMakeFiles/cmTryCompileExec835619254.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec835619254.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=fseeko   -o CMakeFiles/cmTryCompileExec835619254.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec835619254
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec835619254.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=fseeko    CMakeFiles/cmTryCompileExec835619254.dir/CheckFunctionExists.c.o  -o cmTryCompileExec835619254 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the function ftello exists passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3291252901/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3291252901.dir/build.make CMakeFiles/cmTryCompileExec3291252901.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3291252901.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=ftello   -o CMakeFiles/cmTryCompileExec3291252901.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3291252901
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3291252901.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=ftello    CMakeFiles/cmTryCompileExec3291252901.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3291252901 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining size of _Bool passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec4191496609/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4191496609.dir/build.make CMakeFiles/cmTryCompileExec4191496609.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4191496609.dir/ALLEGRO_HAVE__BOOL.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec4191496609.dir/ALLEGRO_HAVE__BOOL.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CheckTypeSize/ALLEGRO_HAVE__BOOL.c
+Linking C executable cmTryCompileExec4191496609
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4191496609.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec4191496609.dir/ALLEGRO_HAVE__BOOL.c.o  -o cmTryCompileExec4191496609 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Performing C SOURCE FILE Test ALLEGRO_HAVE_VA_COPY succeded with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1428618802/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1428618802.dir/build.make CMakeFiles/cmTryCompileExec1428618802.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1428618802.dir/src.c.o
+/usr/bin/gcc   -msse -W -Wall   -DALLEGRO_HAVE_VA_COPY   -o CMakeFiles/cmTryCompileExec1428618802.dir/src.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/src.c
+/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/src.c:5:9: warning: ‘b’ is used uninitialized in this function [-Wuninitialized]
+Linking C executable cmTryCompileExec1428618802
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1428618802.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DALLEGRO_HAVE_VA_COPY    CMakeFiles/cmTryCompileExec1428618802.dir/src.c.o  -o cmTryCompileExec1428618802 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+    #include <stdarg.h>
+    int main(void) {
+        va_list a, b;
+        va_copy(a, b);
+        return 0;
+    }
+Determining if the function XOpenDisplay exists in the /usr/lib/i386-linux-gnu/libX11.so;/usr/lib/i386-linux-gnu/libXext.so passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2376486521/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2376486521.dir/build.make CMakeFiles/cmTryCompileExec2376486521.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2376486521.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTryCompileExec2376486521.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2376486521
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2376486521.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTryCompileExec2376486521.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2376486521 -rdynamic -lX11 -lXext 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1505517488/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1505517488.dir/build.make CMakeFiles/cmTryCompileExec1505517488.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1505517488.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTryCompileExec1505517488.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1505517488
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1505517488.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTryCompileExec1505517488.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1505517488 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3923571385/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3923571385.dir/build.make CMakeFiles/cmTryCompileExec3923571385.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3923571385.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTryCompileExec3923571385.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3923571385
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3923571385.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTryCompileExec3923571385.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3923571385 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1369653531/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1369653531.dir/build.make CMakeFiles/cmTryCompileExec1369653531.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1369653531.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTryCompileExec1369653531.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1369653531
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1369653531.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTryCompileExec1369653531.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1369653531 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2091256884/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2091256884.dir/build.make CMakeFiles/cmTryCompileExec2091256884.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2091256884.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTryCompileExec2091256884.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2091256884
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2091256884.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTryCompileExec2091256884.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2091256884 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3634216893/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3634216893.dir/build.make CMakeFiles/cmTryCompileExec3634216893.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3634216893.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTryCompileExec3634216893.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3634216893
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3634216893.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTryCompileExec3634216893.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3634216893 -rdynamic -lICE 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1346905800/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1346905800.dir/build.make CMakeFiles/cmTryCompileExec1346905800.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1346905800.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec1346905800.dir/CheckIncludeFiles.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec1346905800
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1346905800.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec1346905800.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec1346905800 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2695457145/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2695457145.dir/build.make CMakeFiles/cmTryCompileExec2695457145.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2695457145.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2695457145.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2695457145
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2695457145.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2695457145.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2695457145 -rdynamic -lpthread 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the function XcursorImageCreate exists in the Xcursor passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec475550183/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec475550183.dir/build.make CMakeFiles/cmTryCompileExec475550183.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec475550183.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=XcursorImageCreate   -o CMakeFiles/cmTryCompileExec475550183.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec475550183
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec475550183.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=XcursorImageCreate    CMakeFiles/cmTryCompileExec475550183.dir/CheckFunctionExists.c.o  -o cmTryCompileExec475550183 -rdynamic -lXcursor -lSM -lICE -lX11 -lXext 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file X11/extensions/Xinerama.h exists passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec919427447/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec919427447.dir/build.make CMakeFiles/cmTryCompileExec919427447.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec919427447.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec919427447.dir/CheckIncludeFile.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec919427447
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec919427447.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec919427447.dir/CheckIncludeFile.c.o  -o cmTryCompileExec919427447 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the function XineramaQueryExtension exists in the Xinerama passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2064923429/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2064923429.dir/build.make CMakeFiles/cmTryCompileExec2064923429.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2064923429.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=XineramaQueryExtension   -o CMakeFiles/cmTryCompileExec2064923429.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2064923429
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2064923429.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=XineramaQueryExtension    CMakeFiles/cmTryCompileExec2064923429.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2064923429 -rdynamic -lXinerama -lSM -lICE -lX11 -lXext 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file X11/extensions/Xrandr.h exists passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1628251750/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1628251750.dir/build.make CMakeFiles/cmTryCompileExec1628251750.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1628251750.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -msse -W -Wall      -o CMakeFiles/cmTryCompileExec1628251750.dir/CheckIncludeFile.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec1628251750
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1628251750.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall       CMakeFiles/cmTryCompileExec1628251750.dir/CheckIncludeFile.c.o  -o cmTryCompileExec1628251750 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the function XRRQueryExtension exists in the Xrandr passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec989072364/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec989072364.dir/build.make CMakeFiles/cmTryCompileExec989072364.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec989072364.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=XRRQueryExtension   -o CMakeFiles/cmTryCompileExec989072364.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec989072364
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec989072364.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=XRRQueryExtension    CMakeFiles/cmTryCompileExec989072364.dir/CheckFunctionExists.c.o  -o cmTryCompileExec989072364 -rdynamic -lXrandr -lSM -lICE -lX11 -lXext 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Determining if the function XOpenIM exists in the X11 passed with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2093789798/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2093789798.dir/build.make CMakeFiles/cmTryCompileExec2093789798.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2093789798.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=XOpenIM   -o CMakeFiles/cmTryCompileExec2093789798.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2093789798
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2093789798.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DCHECK_FUNCTION_EXISTS=XOpenIM    CMakeFiles/cmTryCompileExec2093789798.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2093789798 -rdynamic -lX11 -lSM -lICE -lX11 -lXext 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+
+Performing C SOURCE FILE Test OSS_COMPILES succeded with the following output:
+Change Dir: /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2358786290/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2358786290.dir/build.make CMakeFiles/cmTryCompileExec2358786290.dir/build
+make[1]: Entering directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2358786290.dir/src.c.o
+/usr/bin/gcc  -DALLEGRO_HAVE_LINUX_SOUNDCARD_H -DALLEGRO_HAVE_SYS_SOUNDCARD_H -msse -W -Wall   -DOSS_COMPILES   -o CMakeFiles/cmTryCompileExec2358786290.dir/src.c.o   -c /home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/src.c
+/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp/src.c:15:28: warning: unused variable ‘abi’ [-Wunused-variable]
+Linking C executable cmTryCompileExec2358786290
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2358786290.dir/link.txt --verbose=1
+/usr/bin/gcc    -msse -W -Wall   -DOSS_COMPILES    CMakeFiles/cmTryCompileExec2358786290.dir/src.c.o  -o cmTryCompileExec2358786290 -rdynamic 
+make[1]: Leaving directory `/home/anhong/Downloads/allegro/b/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+        #ifdef ALLEGRO_HAVE_SOUNDCARD_H
+        #include <soundcard.h>
+        #endif
+        #ifdef ALLEGRO_HAVE_SYS_SOUNDCARD_H
+        #include <sys/soundcard.h>
+        #endif
+        #ifdef ALLEGRO_HAVE_LINUX_SOUNDCARD_H
+        #include <linux/soundcard.h>
+        #endif
+        #ifdef ALLEGRO_HAVE_MACHINE_SOUNDCARD_H
+        #include <machine/soundcard.h>
+        #endif
+        int main(void) {
+            audio_buf_info abi;
+            return 0;
+        }
