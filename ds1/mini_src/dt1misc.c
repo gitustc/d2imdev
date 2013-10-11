@@ -14,6 +14,8 @@ int dt1_already_loaded(char * dt1name, int * idx)
 {
     int i;
 
+
+
     for (i=0; i<DT1_MAX; i++) {
         if (stricmp(glb_dt1[i].name, dt1name) == 0) {
             * idx = i;
