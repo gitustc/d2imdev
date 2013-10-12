@@ -91,19 +91,6 @@ void test_add_one_object(
 
 
 
-/*
- * ===  FUNCTION  ======================================================================
- *         Name:  ds1_load_gfx2
- *  Description:  load gfx again, if success, then I am almost done with the map
- * =====================================================================================
- */
-int ds1_load_gfx2 ()
-{
-
-    return 0;
-}
-
-
 
 
 
@@ -2592,7 +2579,6 @@ int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)
     ds1_save(0,TRUE);
     ds1_save2(0,TRUE);
     ds1_read2(0,TRUE);
-    ds1_load_gfx2();
 
 
     return 0;

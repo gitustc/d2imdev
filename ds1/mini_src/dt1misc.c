@@ -95,6 +95,64 @@ int dt1_del(int i)
 }
 
 
+
+void dt1_bh_update2(int i, FILE *p)
+{
+    BLOCK_S * bh_ptr = glb_dt1[i].bh_buffer;
+    UBYTE   * ptr;
+    int     b, t, idxtable[25] = {20, 21, 22, 23, 24,
+        15, 16, 17, 18, 19,
+        10, 11, 12, 13, 14,
+        5,  6,  7,  8,  9,
+        0,  1,  2,  3,  4};
+
+    ptr = (UBYTE *) glb_dt1[i].buffer + glb_dt1[i].bh_start;
+    for (b=0; b < glb_dt1[i].block_num; b++) {
+        //bh_ptr->direction    = * (long *)  ptr;
+        fwrite(&(bh_ptr->direction), 4, 1, p);
+        //bh_ptr->roof_y       = * (WORD *)  (ptr +  4);
+        fwrite(&(bh_ptr->roof_y), 4, 1, p);
+        //bh_ptr->sound        = * (UBYTE *) (ptr +  6);
+        fwrite(&(bh_ptr->sound), 1, 1, p);
+        //bh_ptr->animated     = * (UBYTE *) (ptr +  7);
+        fwrite(&(bh_ptr->animated), 1, 1, p);
+        //bh_ptr->size_y       = * (long *)  (ptr +  8);
+        fwrite(&(bh_ptr->size_y), 4, 1, p);
+        //bh_ptr->size_x       = * (long *)  (ptr + 12);
+        fwrite(&(bh_ptr->size_x), 4, 1, p);
+        // skip 4 bytes : zeros1
+        //bh_ptr->orientation  = * (long *)  (ptr + 20);
+        fwrite(&(bh_ptr->orientation), 4, 1, p);
+        //bh_ptr->main_idx   = * (long *)  (ptr + 24);
+        fwrite(&(bh_ptr->main_idx), 4, 1, p);
+        //bh_ptr->sub_idx    = * (long *)  (ptr + 28);
+        fwrite(&(bh_ptr->sub_idx), 4, 1, p);
+        //bh_ptr->rarity       = * (long *)  (ptr + 32);
+        fwrite(&(bh_ptr->rarity), 4, 1, p);
+        // skip 4 bytes : unknown_a thru unknown_d
+        for (t=0; t<25; t++){
+            //bh_ptr->sub_tiles_flags[idxtable[t]] = * (UBYTE *) (ptr + 40 + t);
+            fwrite(&(bh_ptr->sub_tiles_flags[idxtable[t]]), 1, 1, p);
+        // skip 4 bytes : unknown_a thru unknown_d
+
+        }
+        // skip 7 bytes : zeros2
+        bh_ptr->tiles_ptr    = * (long *)  (ptr + 72);
+        bh_ptr->tiles_length = * (long *)  (ptr + 76);
+        bh_ptr->tiles_number = * (long *)  (ptr + 80);
+        // skip 12 bytes : zeros3
+
+        // next block header
+        bh_ptr++;
+        ptr += 96;
+    }
+}
+
+
+
+
+
+
 // ==========================================================================
 // fill the block header data of a dt1 with the data from the file
 void dt1_bh_update(int i)
@@ -187,6 +245,151 @@ void dt1_zoom(BITMAP * src, int i, int b, int z)
     * (glb_dt1[i].block_zoom[z] + b) = dst;
 }
 
+void dt1_all_zoom_make2(int i, FILE *p)
+{
+    BLOCK_S       * b_ptr, * my_b_ptr; // pointers to current block header
+    SUB_TILE_S    st_ptr;  // current sub-tile header
+    BITMAP        * tmp_bmp, * sprite;
+    int           b, w, h, s, x0, y0, length, y_add, z, mem_size;
+    UBYTE         * data;
+    WORD          format;
+    long          orientation;
+    char          tmp_str[100];
+    int           t_mi, t_si, my_idx;
+
+    b_ptr    = (BLOCK_S *) glb_dt1[i].bh_buffer;
+
+    fprintf(stderr, "making zoom for glb_dt1[%i] (%s) ", i, glb_dt1[i].name);
+    fflush(stderr);
+    // get mem for table of pointers
+    for (z=0; z<ZM_MAX; z++) {
+        //一个block就是一个tile???
+        mem_size = sizeof(BITMAP *) * glb_dt1[i].block_num;
+        glb_dt1[i].block_zoom[z] = (BITMAP **) malloc(mem_size);
+        if (glb_dt1[i].block_zoom[z] == NULL) {
+            FATAL_EXIT("dt1_all_zoom_make(%i), zoom %i, not enough mem for %i bytes\n", i, z, mem_size);
+        }
+        memset(glb_dt1[i].block_zoom[z], 0, mem_size);
+        glb_dt1[i].bz_size[z] = mem_size;
+    }
+
+    // make the bitmaps
+    for (b=0; b < glb_dt1[i].block_num; b++){
+        // for each blocks of a dt1
+        //从这里来看..貌似一个block就是一个tile
+        // get infos
+        orientation = b_ptr->orientation;
+
+        // prepare tmp bitmap size
+        w = b_ptr->size_x;
+        if ((orientation == 10) || (orientation == 11)){
+            // 10或者11是special layer
+            // set it to 160 because we'll draw infos over it later
+            w = 160; 
+        }
+        //这个地方...图片的高直接是个负值...
+        h = - b_ptr->size_y;
+
+        // adjustment (which y line in the bitmap is the zero line ?)
+
+        // by default, when orientation > 15 : lower wall
+        y_add = 96;
+        if ((orientation == 0) || (orientation == 15)){
+            // floor or roof
+            if (b_ptr->size_y) {
+                b_ptr->size_y = - 80;
+                h = 80;
+                y_add = 0;
+            }
+        } else if (orientation < 15){
+            // upper wall, shadow, special
+            if (b_ptr->size_y) {
+                b_ptr->size_y += 32;
+                h -= 32;
+                y_add = h;
+            }
+        }
+
+        // anti-bug (for empty block)
+        if ((w == 0) || (h == 0)) {
+            fprintf(stderr, "0");
+            fflush(stderr);
+            b_ptr ++;
+            continue;
+        }
+
+        // normal block (non-empty)
+        tmp_bmp = create_bitmap(w, h);
+        if (tmp_bmp == NULL) {
+            FATAL_EXIT("dt1_all_zoom_make(%i), can't make a bitmap of %i * %i pixels\n", i, w, h);
+        }
+        clear(tmp_bmp);
+
+        // draw sub-tiles in this bitmap
+        for (s=0; s < b_ptr->tiles_number; s++){
+            // for each sub-tiles
+            //一个tile由多个subtile构成的
+            // get the sub-tile info
+            dt1_fill_subt(& st_ptr, i, b_ptr->tiles_ptr, s);
+
+            // get infos
+            x0     = st_ptr.x_pos;
+            y0     = y_add + st_ptr.y_pos;
+            data   = (UBYTE *) ((UBYTE *)glb_dt1[i].buffer + b_ptr->tiles_ptr + st_ptr.data_offset);
+            length = st_ptr.length;
+            format = st_ptr.format;
+
+            // draw the sub-tile
+            if (format == 0x0001){
+                //这个画法我已经知道了
+                //参见dt1 tool的解析
+                draw_sub_tile_isometric(tmp_bmp, x0, y0, data, length);
+            }else{
+                draw_sub_tile_normal(tmp_bmp, x0, y0, data, length);
+            }
+        }
+
+        // if a game's special tile, draw my own info over it
+        if ( (glb_ds1edit.cmd_line.no_vis_debug == FALSE) && (i != 0) && ((orientation == 10) || (orientation == 11))) {
+            // get info
+            t_mi     = b_ptr->main_idx;
+            t_si     = b_ptr->sub_idx;
+            my_b_ptr = (BLOCK_S *) glb_dt1[0].bh_buffer;
+
+            // search same info in my dt1
+            for (my_idx=0; my_idx < glb_dt1[0].block_num; my_idx++) {
+                if ( (my_b_ptr[my_idx].orientation == orientation) && (my_b_ptr[my_idx].main_idx  == t_mi) && (my_b_ptr[my_idx].sub_idx   == t_si)) {
+                    // found it, draw that tile over the game's gfx
+                    sprite = * (glb_dt1[0].block_zoom[ZM_11] + my_idx);
+                    if (sprite != NULL){
+                        draw_sprite(tmp_bmp, sprite, 0, tmp_bmp->h - sprite->h);
+                    }
+                    // stop the search
+                    my_idx = glb_dt1[0].block_num;
+                }
+            }
+        }
+
+        // make zoom from the bitmap, for each zoom
+        dt1_zoom(tmp_bmp, i, b, ZM_11);
+        //* (glb_dt1[i].block_zoom[z] + b) = tmp_bmp;//dst;
+#if 0
+        for (z=0; z<ZM_MAX; z++){
+            dt1_zoom(tmp_bmp, i, b, z);
+        }
+#endif
+
+        // destroy tmp bitmap
+       destroy_bitmap(tmp_bmp);
+
+        // next block header
+        b_ptr ++;
+        fprintf(stderr, ".");
+        fflush(stderr);
+    }
+    fprintf(stderr, "\n");
+    fflush(stderr);
+}
 
 // ==========================================================================
 // make all bitmaps in all zoom of all tiles of 1 dt1
@@ -350,6 +553,9 @@ void dt1_struct_update(int i)
     void * ptr = glb_dt1[i].buffer;
     int  size;
     char tmp[100];
+    FILE *p;
+    char tname[256];
+    uint32_t  info;
 
     if (ptr == NULL)
         return;
@@ -369,6 +575,23 @@ void dt1_struct_update(int i)
     printf("   block_num = %li\n",    glb_dt1[i].block_num);
     printf("   bh_start  = 0x%0lX\n", glb_dt1[i].bh_start);
 
+
+
+    sprintf(tname, "./t/%s", glb_dt1[i].name);
+    printf ( "%s\n", tname );
+
+    p	= fopen( tname , "wb" );
+    if ( p == NULL ) {
+        fprintf ( stderr, "couldn't open file '%s'; %s\n", tname , strerror(errno) );
+        exit (0);
+    }
+
+    fputs("D2T", p);
+
+    info = (uint32_t) glb_dt1[i].block_num;
+
+    fwrite(&info, 4, 1, p );
+
     // blocks
     size = sizeof(BLOCK_S) * glb_dt1[i].block_num;
     glb_dt1[i].bh_buffer = (void *) malloc(size);
@@ -378,7 +601,10 @@ void dt1_struct_update(int i)
     glb_dt1[i].bh_buff_len = size;
     //nice~和dt1 tool的源码可以对应
     dt1_bh_update(i);
+    dt1_bh_update2(i,p);
     dt1_all_zoom_make(i);
+    //dt1_all_zoom_make2(i,p);
+    fclose(p);
 }
 
 

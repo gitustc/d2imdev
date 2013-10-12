@@ -93,27 +93,6 @@ CONFIG_S	structs.h	/^} CONFIG_S;$/;"	t	typeref:struct:CONFIG_S
 CT_NULL	structs.h	/^    CT_NULL,$/;"	e	enum:COL_TYPE_NM
 CT_NUM	structs.h	/^    CT_NUM$/;"	e	enum:COL_TYPE_NM
 CT_STR	structs.h	/^    CT_STR,$/;"	e	enum:COL_TYPE_NM
-D2SENSE	ds1misc.c	/^}D2SENSE;$/;"	t	typeref:struct:__anon1	file:
-DCCINFO_SAVE_PCX	dccinfo.c	7;"	d	file:
-DCC_BITSTREAM_S	dccinfo.h	/^typedef struct DCC_BITSTREAM_S$/;"	s
-DCC_BITSTREAM_S	dccinfo.h	/^} DCC_BITSTREAM_S;$/;"	t	typeref:struct:DCC_BITSTREAM_S
-DCC_BOX_S	dccinfo.h	/^typedef struct DCC_BOX_S$/;"	s
-DCC_BOX_S	dccinfo.h	/^} DCC_BOX_S;$/;"	t	typeref:struct:DCC_BOX_S
-DCC_CELL_S	dccinfo.h	/^typedef struct DCC_CELL_S$/;"	s
-DCC_CELL_S	dccinfo.h	/^} DCC_CELL_S; \/\/ maybe I'll make 2 kind of cells, 1 for frame-buffer cells,$/;"	t	typeref:struct:DCC_CELL_S
-DCC_DIRECTION_S	dccinfo.h	/^typedef struct DCC_DIRECTION_S$/;"	s
-DCC_DIRECTION_S	dccinfo.h	/^} DCC_DIRECTION_S;$/;"	t	typeref:struct:DCC_DIRECTION_S
-DCC_FRAME_S	dccinfo.h	/^typedef struct DCC_FRAME_S$/;"	s
-DCC_FRAME_S	dccinfo.h	/^} DCC_FRAME_S;$/;"	t	typeref:struct:DCC_FRAME_S
-DCC_HEADER_S	dccinfo.h	/^typedef struct DCC_HEADER_S$/;"	s
-DCC_HEADER_S	dccinfo.h	/^} DCC_HEADER_S;$/;"	t	typeref:struct:DCC_HEADER_S
-DCC_MAX_DIR	dccinfo.h	6;"	d
-DCC_MAX_FRAME	dccinfo.h	7;"	d
-DCC_MAX_PB_ENTRY	dccinfo.h	9;"	d
-DCC_PB_ENTRY_S	dccinfo.h	/^typedef struct DCC_PB_ENTRY_S$/;"	s
-DCC_PB_ENTRY_S	dccinfo.h	/^} DCC_PB_ENTRY_S;$/;"	t	typeref:struct:DCC_PB_ENTRY_S
-DCC_S	dccinfo.h	/^typedef struct DCC_S$/;"	s
-DCC_S	dccinfo.h	/^} DCC_S;$/;"	t	typeref:struct:DCC_S
 DEBUG_MESSAGE	error.h	7;"	d
 DEL_ACTIVATED	structs.h	66;"	d
 DEL_COPY_INFO	structs.h	62;"	d
@@ -233,7 +212,6 @@ IT_ENUM	structs.h	/^typedef enum IT_ENUM$/;"	g
 IT_ENUM	structs.h	/^} IT_ENUM; \/\/ Identical Type$/;"	t	typeref:enum:IT_ENUM
 IT_NEW	structs.h	/^    IT_NEW,$/;"	e	enum:IT_ENUM
 IT_NULL	structs.h	/^    IT_NULL,$/;"	e	enum:IT_ENUM
-KEY_STATE	interfac.c	44;"	d	file:
 LAY_INF_S	structs.h	/^typedef struct LAY_INF_S$/;"	s
 LAY_INF_S	structs.h	/^} LAY_INF_S;$/;"	t	typeref:struct:LAY_INF_S
 LIBS	Makefile	/^LIBS    =   ..\/..\/allegro\/allegro4\/lib\/*.a -lm -lpthread -lX11 -lXcursor -lXcursor -ldl -lGL$/;"	m
@@ -250,7 +228,7 @@ MOD_P	structs.h	/^    MOD_P, \/\/ Edit Paths$/;"	e	enum:MODE_E
 MOD_T	structs.h	/^    MOD_T, \/\/ Edit Tiles$/;"	e	enum:MODE_E
 MW_COMBINATION_KEY_NUM	structs.h	79;"	d
 MW_SHORTCUT_NUM	structs.h	78;"	d
-OBJS	Makefile	/^OBJS    =   .\/mpq\/dcl_tbl.o .\/mpq\/explode.o .\/mpq\/mpqview.o .\/mpq\/wav_unp.o anim.o animdata.o dc6info.o dccinfo.o ds1misc.o dt1_draw.o dt1misc.o editobj.o gfx_custom.o inicreat.o iniread.o interfac.o main.o misc.o txtread.o wpreview.o$/;"	m
+OBJS	Makefile	/^OBJS    =   .\/mpq\/dcl_tbl.o .\/mpq\/explode.o .\/mpq\/mpqview.o .\/mpq\/wav_unp.o  ds1misc.o dt1_draw.o dt1misc.o gfx_custom.o inicreat.o iniread.o interfac.o main.o misc.o txtread.o wpreview.o$/;"	m
 OBJ_DESC_S	structs.h	/^typedef struct OBJ_DESC_S$/;"	s
 OBJ_DESC_S	structs.h	/^} OBJ_DESC_S;$/;"	t	typeref:struct:OBJ_DESC_S
 OBJ_LABEL_S	structs.h	/^typedef struct OBJ_LABEL_S$/;"	s
@@ -291,7 +269,6 @@ PEM_E	structs.h	/^typedef enum PEM_E$/;"	g
 PEM_E	structs.h	/^} PEM_E; \/\/ Path Editing Mode enumeration$/;"	t	typeref:enum:PEM_E
 PEM_MAX	structs.h	/^    PEM_MAX$/;"	e	enum:PEM_E
 PEM_NONE	structs.h	/^    PEM_NONE,$/;"	e	enum:PEM_E
-RELEASE_KEY	interfac.c	43;"	d	file:
 RQ_ENUM	structs.h	/^typedef enum RQ_ENUM$/;"	g
 RQ_ENUM	structs.h	/^} RQ_ENUM;$/;"	t	typeref:enum:RQ_ENUM
 RQ_LVLPREST	structs.h	/^    RQ_LVLPREST,$/;"	e	enum:RQ_ENUM
@@ -392,14 +369,9 @@ ZM_18	structs.h	/^    ZM_18,$/;"	e	enum:ZOOM_E
 ZM_MAX	structs.h	/^    ZM_MAX$/;"	e	enum:ZOOM_E
 ZOOM_E	structs.h	/^typedef enum ZOOM_E$/;"	g
 ZOOM_E	structs.h	/^} ZOOM_E;$/;"	t	typeref:enum:ZOOM_E
-_ANIMDATA_H_	animdata.h	3;"	d
-_ANIM_H_	anim.h	3;"	d
-_DC6_INFO_H_	dc6info.h	3;"	d
-_DCC_INFO_H_	dccinfo.h	3;"	d
 _DS1MISC_H_	ds1misc.h	3;"	d
 _DT1MISC_H_	dt1misc.h	3;"	d
 _DT1_DRAW_H_	dt1_draw.h	3;"	d
-_EDITOBJ_H_	editobj.h	3;"	d
 _ERROR_H_	error.h	3;"	d
 _GFX_CUSTOM_H_	gfx_custom.h	3;"	d
 _INICREAT_H_	inicreat.h	3;"	d
@@ -418,21 +390,10 @@ act	structs.h	/^    int   act;$/;"	m	struct:OBJ_DESC_S
 act	structs.h	/^    long          act;      \/\/ from file, +1$/;"	m	struct:DS1_S
 action	structs.h	/^    long action;$/;"	m	struct:PATH_S
 active	structs.h	/^    int         active;$/;"	m	struct:BUTTON_S
-already_decoded	dccinfo.h	/^   int   already_decoded;$/;"	m	struct:DCC_HEADER_S
 always_max_layers	structs.h	/^    int      always_max_layers;$/;"	m	struct:CONFIG_S
 anim_data	structs.h	/^    ANIM_DATA_S   anim_data;$/;"	m	struct:GLB_DS1EDIT_S
-anim_destroy_cof	anim.c	/^int anim_destroy_cof(COF_S * cof)$/;"	f
-anim_exit	anim.c	/^int anim_exit(void)$/;"	f
-anim_load_cof	anim.c	/^COF_S * anim_load_cof(char * base, char * tok, char * mod, char * clas, long user_dir, int obj_line, int progress)$/;"	f
-anim_load_dc6	dc6info.c	/^int anim_load_dc6(char * name, COF_S * cof, int lay_idx, long user_dir, UBYTE * palshift)$/;"	f
-anim_load_dcc	anim.c	/^int anim_load_dcc( char  * name, COF_S * cof, int   lay_idx, long  user_dir, UBYTE * palshift )$/;"	f
-anim_load_desc_gfx	anim.c	/^COF_S * anim_load_desc_gfx(int i, int progress)$/;"	f
-anim_update_gfx	anim.c	/^void anim_update_gfx(int progress)$/;"	f
 animated	structs.h	/^    UBYTE      animated;$/;"	m	struct:BLOCK_S
 animations_layer_mask	structs.h	/^    UBYTE         animations_layer_mask;$/;"	m	struct:DS1_S
-animdata_get_cof_info	animdata.c	/^int animdata_get_cof_info(char * name, long * fpd, long * speed)$/;"	f
-animdata_hash_value	animdata.c	/^UBYTE animdata_hash_value(char * name)$/;"	f
-animdata_load	animdata.c	/^void animdata_load(void)$/;"	f
 b_x0	structs.h	/^    int        b_x0, b_y0; \/\/ upper-left corner, in the screen$/;"	m	struct:WIN_ELEMENT_S
 b_y0	structs.h	/^    int        b_x0, b_y0; \/\/ upper-left corner, in the screen$/;"	m	struct:WIN_ELEMENT_S
 bg	structs.h	/^    int bg;$/;"	m	struct:PATH_EDIT_BUT_COL_S
@@ -451,19 +412,12 @@ block_num	structs.h	/^    long       block_num;$/;"	m	struct:DT1_S
 block_pointer	structs.h	/^    ANIM_DATA_RECORD_S * block_pointer [256];$/;"	m	struct:ANIM_DATA_S
 block_table	structs.h	/^    BLOCK_TABLE_S * block_table;$/;"	m	struct:DS1_S
 block_zoom	structs.h	/^    BITMAP     ** block_zoom[ZM_MAX]; \/\/ ZM_MAX tables of table of pointers$/;"	m	struct:DT1_S
-bmp	dccinfo.h	/^   BITMAP          * bmp;        \/\/ frame buffer bitmap$/;"	m	struct:DCC_DIRECTION_S
-bmp	dccinfo.h	/^   BITMAP * bmp;   \/\/ sub-bitmap in the buffer bitmap$/;"	m	struct:DCC_CELL_S
-bmp	dccinfo.h	/^   BITMAP * bmp;$/;"	m	struct:DCC_FRAME_S
 bmp	structs.h	/^    BITMAP      * bmp[2];    \/\/ [0]=OFF, [1]=ON$/;"	m	struct:BUTTON_S
 bmp	structs.h	/^    BITMAP ** bmp;$/;"	m	struct:LAY_INF_S
 bmp_num	structs.h	/^    int    bmp_num;$/;"	m	struct:LAY_INF_S
 border	structs.h	/^    RLE_SPRITE * border;$/;"	m	struct:WIN_ELEMENT_S
 border	structs.h	/^    int border;$/;"	m	struct:PATH_EDIT_BUT_COL_S
 border	structs.h	/^    int border;$/;"	m	struct:WMSG_BUTCOL_S
-bottom_up	dccinfo.h	/^   UDWORD bottom_up;$/;"	m	struct:DCC_FRAME_S
-box	dccinfo.h	/^   DCC_BOX_S       box;$/;"	m	struct:DCC_DIRECTION_S
-box	dccinfo.h	/^   DCC_BOX_S       box;$/;"	m	struct:DCC_S
-box	dccinfo.h	/^   DCC_BOX_S box;$/;"	m	struct:DCC_FRAME_S
 box	structs.h	/^    BOX_S box;$/;"	m	struct:EDT_BUT_S
 bt_idx	structs.h	/^    int   bt_idx;$/;"	m	struct:CELL_F_S
 bt_idx	structs.h	/^    int   bt_idx;$/;"	m	struct:CELL_S_S
@@ -475,7 +429,6 @@ buf_num	structs.h	/^    long           buf_num;$/;"	m	struct:UNDO_S
 buff_len	structs.h	/^    long       buff_len;$/;"	m	struct:DT1_S
 buffer	structs.h	/^    void               * buffer;$/;"	m	struct:ANIM_DATA_S
 buffer	structs.h	/^    void       * buffer;$/;"	m	struct:DT1_S
-buffer_ptr	dccinfo.h	/^   DCC_CELL_S      * buffer_ptr; \/\/ frame buffer cells$/;"	m	struct:DCC_DIRECTION_S
 buffer_size	structs.h	/^    long               buffer_size;$/;"	m	struct:ANIM_DATA_S
 but_h	structs.h	/^    int but_w, but_h;    \/\/ dimensions in pixels$/;"	m	struct:PATH_EDIT_WIN_S
 but_w	structs.h	/^    int but_w, but_h;    \/\/ dimensions in pixels$/;"	m	struct:PATH_EDIT_WIN_S
@@ -494,7 +447,6 @@ c_green	structs.h	/^    int c_green;$/;"	m	struct:PATH_EDIT_WIN_S
 c_white	structs.h	/^    int c_white;$/;"	m	struct:PATH_EDIT_WIN_S
 c_yellow	structs.h	/^    int c_yellow;$/;"	m	struct:PATH_EDIT_WIN_S
 can_undo_obj	structs.h	/^    int           can_undo_obj;$/;"	m	struct:DS1_S
-cell	dccinfo.h	/^   DCC_CELL_S * cell;$/;"	m	struct:DCC_FRAME_S
 cell_num	structs.h	/^    UBYTE          cell_num;$/;"	m	struct:UNDO_S
 cell_offset	structs.h	/^    long           cell_offset;$/;"	m	struct:UNDO_S
 center_the_map	interfac.c	/^void center_the_map(int b)$/;"	f
@@ -502,8 +454,6 @@ center_zoom	structs.h	/^    int      center_zoom;$/;"	m	struct:CONFIG_S
 change_zoom	wpreview.c	/^void change_zoom(int ds1_idx, ZOOM_E z)$/;"	f
 cmap	structs.h	/^    COLOR_MAP     cmap[CM_MAX][ACT_MAX];$/;"	m	struct:GLB_DS1EDIT_S
 cmd_line	structs.h	/^    CMD_LINE_S    cmd_line;$/;"	m	struct:GLB_DS1EDIT_S
-coded_bytes	dccinfo.h	/^   UDWORD coded_bytes;$/;"	m	struct:DCC_FRAME_S
-coded_bytes_bits	dccinfo.h	/^   UDWORD          coded_bytes_bits;$/;"	m	struct:DCC_DIRECTION_S
 cof	structs.h	/^    COF_S * cof;$/;"	m	struct:OBJ_DESC_S
 cof_name	structs.h	/^    char  cof_name[8];$/;"	m	struct:ANIM_DATA_RECORD_S
 col	structs.h	/^    TXT_COL_S * col;            \/\/ pointer on a table of TXT_COL_S$/;"	m	struct:TXT_S
@@ -517,16 +467,12 @@ col_orderflag	structs.h	/^    int           col_orderflag[8];$/;"	m	struct:GLB_D
 col_text	structs.h	/^    WMSG_FGBG_S col_text;$/;"	m	struct:WMSG_S
 col_title	structs.h	/^    WMSG_FGBG_S col_title;$/;"	m	struct:WMSG_S
 col_win	structs.h	/^    WMSG_FGBG_S col_win;$/;"	m	struct:WMSG_S
-compression_flag	dccinfo.h	/^   UDWORD compression_flag;$/;"	m	struct:DCC_DIRECTION_S
 conflict	structs.h	/^    char      conflict;$/;"	m	struct:BLOCK_TABLE_S
 coord_to_tile	wpreview.c	/^void coord_to_tile(int ds1_idx, int ax, int ay, int * layer_x, int * layer_y)$/;"	f
 cur	structs.h	/^    int cur;        \/\/ current index, pointed by the mouse$/;"	m	struct:WIN_EDT_OBJ_S
 cur_act	structs.h	/^    int cur_act;$/;"	m	struct:WIN_EDT_OBJ_S
 cur_anim_floor_frame	structs.h	/^    int           cur_anim_floor_frame;$/;"	m	struct:DS1_S
-cur_bit	dccinfo.h	/^   UBYTE  cur_bit;     \/\/ bit cursor in the byte of current byte cursor$/;"	m	struct:DCC_BITSTREAM_S
-cur_bit_num	dccinfo.h	/^   UDWORD cur_bit_num; \/\/ bit cursor in the bitstream (not in the byte)$/;"	m	struct:DCC_BITSTREAM_S
 cur_buf_num	structs.h	/^    long           cur_buf_num;$/;"	m	struct:UNDO_S
-cur_byte	dccinfo.h	/^   UDWORD cur_byte;    \/\/ byte cursor$/;"	m	struct:DCC_BITSTREAM_S
 cur_dir	structs.h	/^    int       cur_dir;$/;"	m	struct:COF_S
 cur_frame	structs.h	/^    long      cur_frame;$/;"	m	struct:COF_S
 cur_gamma	structs.h	/^    GC_ENUM       cur_gamma;$/;"	m	struct:GLB_DS1EDIT_S
@@ -540,33 +486,8 @@ current_refresh_rate	structs.h	/^    int           current_refresh_rate;$/;"	m	s
 cut_saved	structs.h	/^    int cut_saved;$/;"	m	struct:PASTE_POS_S
 d2_pal	structs.h	/^    UBYTE         * d2_pal[ACT_MAX];$/;"	m	struct:GLB_DS1EDIT_S
 dat_flg	structs.h	/^    UNDO_DAT_FLG_S dat_flg;$/;"	m	struct:UNDO_S
-data	dccinfo.h	/^   UBYTE  * data;      \/\/ pointer to the start of the bitstream$/;"	m	struct:DCC_BITSTREAM_S
 data	structs.h	/^    char      * data;           \/\/ buffer having all lines$/;"	m	struct:TXT_S
 data_offset	structs.h	/^    long  data_offset;$/;"	m	struct:SUB_TILE_S
-dc6_decomp_cmap	dc6info.c	/^void dc6_decomp_cmap(void * src, BITMAP * dst, long size, int x0, int y0, UBYTE * cmap)$/;"	f
-dc6_decomp_norm	dc6info.c	/^void dc6_decomp_norm(void * src, BITMAP * dst, long size, int x0, int y0)$/;"	f
-dcc_bits_width_table	dccinfo.h	/^int dcc_bits_width_table[16]; \/\/ will be initialized by dcc_decode()$/;"	v
-dcc_debug	dccinfo.c	/^void dcc_debug(DCC_S * dcc)$/;"	f
-dcc_decode	dccinfo.c	/^int dcc_decode(DCC_S * dcc, long dir_bitfield)$/;"	f
-dcc_destroy	dccinfo.c	/^void dcc_destroy(DCC_S * dcc)$/;"	f
-dcc_dir_bitstream	dccinfo.c	/^int dcc_dir_bitstream(DCC_S * dcc, int d)$/;"	f
-dcc_disk_load	dccinfo.c	/^DCC_S * dcc_disk_load(char * dcc_name)$/;"	f
-dcc_error	dccinfo.h	/^char dcc_error[512]; \/\/ if an error is found while using a function of this$/;"	v
-dcc_file_header	dccinfo.c	/^int dcc_file_header(DCC_S * dcc)$/;"	f
-dcc_fill_pixel_buffer	dccinfo.c	/^int dcc_fill_pixel_buffer(DCC_S * dcc, int d)$/;"	f
-dcc_frame_header_bitstream	dccinfo.c	/^int dcc_frame_header_bitstream(DCC_S *dcc, DCC_BITSTREAM_S *bs, int d, int f)$/;"	f
-dcc_init	dccinfo.c	/^void dcc_init(void)$/;"	f
-dcc_init_dir_bitstream	dccinfo.c	/^void dcc_init_dir_bitstream(DCC_S * dcc, DCC_BITSTREAM_S * bs, int d)$/;"	f
-dcc_make_frames	dccinfo.c	/^int dcc_make_frames(DCC_S * dcc, int d)$/;"	f
-dcc_mem_load	dccinfo.c	/^DCC_S * dcc_mem_load(void * mem_ptr, int mem_size)$/;"	f
-dcc_optional_datas	dccinfo.c	/^int dcc_optional_datas(DCC_S * dcc, DCC_BITSTREAM_S * bs, int d)$/;"	f
-dcc_other_bitstream_size	dccinfo.c	/^int dcc_other_bitstream_size(DCC_S * dcc, DCC_BITSTREAM_S * bs, int d)$/;"	f
-dcc_pixel_values_key	dccinfo.c	/^int dcc_pixel_values_key(DCC_S * dcc, DCC_BITSTREAM_S * bs, int d)$/;"	f
-dcc_prepare_buffer_cells	dccinfo.c	/^int dcc_prepare_buffer_cells(DCC_S * dcc, int d)$/;"	f
-dcc_prepare_frame_cells	dccinfo.c	/^int dcc_prepare_frame_cells(DCC_S * dcc, int d, int f)$/;"	f
-dcc_read_bits	dccinfo.c	/^int dcc_read_bits(DCC_BITSTREAM_S * bs, int bits_number, int is_signed, UDWORD * dest )$/;"	f
-dcc_read_bytes	dccinfo.c	/^int dcc_read_bytes(DCC_BITSTREAM_S * bs, int bytes_number, void * dest)$/;"	f
-dcc_save_frame	dccinfo.c	/^int dcc_save_frame(DCC_S * dcc, int d, int f, BITMAP * frm_bmp) {$/;"	f
 debug_mode	structs.h	/^    int  debug_mode;$/;"	m	struct:CMD_LINE_S
 depth	structs.h	/^    int depth;$/;"	m	struct:SCREEN_S
 desc	structs.h	/^    char  * desc;$/;"	m	struct:OBJ_DESC_S
@@ -577,10 +498,7 @@ desc_idx	structs.h	/^    int         desc_idx;$/;"	m	struct:OBJ_S
 desc_num	structs.h	/^    int desc_num;   \/\/ number of description for this act$/;"	m	struct:WIN_EDT_OBJ_S
 desc_start	structs.h	/^    int desc_start; \/\/ starting index in glb_ds1edit.obj_desc[]$/;"	m	struct:WIN_EDT_OBJ_S
 dir	structs.h	/^    UBYTE     dir;$/;"	m	struct:COF_S
-dir_offset	dccinfo.h	/^   long  dir_offset [DCC_MAX_DIR];$/;"	m	struct:DCC_HEADER_S
-direction	dccinfo.h	/^   DCC_DIRECTION_S direction [DCC_MAX_DIR];$/;"	m	struct:DCC_S
 direction	structs.h	/^    long       direction;$/;"	m	struct:BLOCK_S
-directions	dccinfo.h	/^   UBYTE directions;$/;"	m	struct:DCC_HEADER_S
 display_tile_grid	structs.h	/^    TILEGRID_ENUM display_tile_grid;$/;"	m	struct:GLB_DS1EDIT_S
 draw_edit_obj	structs.h	/^    int           draw_edit_obj; \/\/ edit Type-Id of objects, FALSE \/ TRUE$/;"	m	struct:DS1_S
 draw_sub_tile_isometric	dt1_draw.c	/^void draw_sub_tile_isometric (BITMAP * dst, int x0, int y0, UBYTE * data, int length)$/;"	f
@@ -591,9 +509,12 @@ ds1_flags	structs.h	/^    long        ds1_flags;$/;"	m	struct:OBJ_S
 ds1_free	ds1misc.c	/^int ds1_free()$/;"	f
 ds1_group_idx	structs.h	/^    int           ds1_group_idx;$/;"	m	struct:GLB_DS1EDIT_S
 ds1_idx	interfac.c	/^int  ds1_idx;$/;"	v
+ds1_load_gfx2	ds1misc.c	/^int ds1_load_gfx2 ()$/;"	f
 ds1_make_prop_2_block	ds1misc.c	/^void ds1_make_prop_2_block(int i)$/;"	f
 ds1_read	ds1misc.c	/^int ds1_read(const char * ds1name, int ds1_idx, int new_width, int new_height)$/;"	f
+ds1_read2	ds1misc.c	/^int ds1_read2()$/;"	f
 ds1_save	ds1misc.c	/^void ds1_save(int ds1_idx, int is_tmp_file)$/;"	f
+ds1_save2	ds1misc.c	/^void ds1_save2(int ds1_idx, int is_tmp_file)$/;"	f
 ds1_usage	structs.h	/^    int        ds1_usage; \/\/ current number of ds1 using this dt1$/;"	m	struct:DT1_S
 ds1edit_counter_fps	main.c	/^void ds1edit_counter_fps(void)$/;"	f
 ds1edit_counter_tick	main.c	/^void ds1edit_counter_tick(void)$/;"	f
@@ -621,14 +542,6 @@ dt1_struct_update	dt1misc.c	/^void dt1_struct_update(int i)$/;"	f
 dt1_zoom	dt1misc.c	/^void dt1_zoom(BITMAP * src, int i, int b, int z)$/;"	f
 dummy_pal	structs.h	/^    PALETTE       dummy_pal;$/;"	m	struct:GLB_DS1EDIT_S
 edit	structs.h	/^    XY_S edit;$/;"	m	struct:SCROLL_S
-editobj_make_obj_desc	editobj.c	/^void editobj_make_obj_desc(int ds1_idx, int obj_idx)$/;"	f
-editobj_make_obj_label	editobj.c	/^void editobj_make_obj_label(int ds1_idx)$/;"	f
-editobj_qsort_helper_drawing_order	editobj.c	/^int editobj_qsort_helper_drawing_order(const void * e1, const void * e2)$/;"	f
-editobj_set_drawing_order	editobj.c	/^void editobj_set_drawing_order(int ds1_idx)$/;"	f
-encoding_type_bitstream	dccinfo.h	/^   DCC_BITSTREAM_S encoding_type_bitstream;$/;"	m	struct:DCC_DIRECTION_S
-encoding_type_bitstream_size	dccinfo.h	/^   UDWORD          encoding_type_bitstream_size;$/;"	m	struct:DCC_DIRECTION_S
-equal_cell_bitstream	dccinfo.h	/^   DCC_BITSTREAM_S equal_cell_bitstream;$/;"	m	struct:DCC_DIRECTION_S
-equal_cell_bitstream_size	dccinfo.h	/^   UDWORD          equal_cell_bitstream_size;$/;"	m	struct:DCC_DIRECTION_S
 f	structs.h	/^    UBYTE f [FLOOR_MAX_LAYER];$/;"	m	struct:UNDO_DAT_FLG_S
 fg	structs.h	/^    int fg;$/;"	m	struct:PATH_EDIT_BUT_COL_S
 fg	structs.h	/^    int fg;$/;"	m	struct:WMSG_BUTCOL_S
@@ -636,9 +549,7 @@ fg	structs.h	/^    int fg;$/;"	m	struct:WMSG_FGBG_S
 file_buff	structs.h	/^    char          * file_buff;$/;"	m	struct:DS1_S
 file_len	structs.h	/^    int           file_len;$/;"	m	struct:DS1_S
 file_num	structs.h	/^    long          file_num;$/;"	m	struct:DS1_S
-file_signature	dccinfo.h	/^   UBYTE file_signature;$/;"	m	struct:DCC_HEADER_S
 filename	structs.h	/^    char          filename[50]; \/\/ short filename$/;"	m	struct:DS1_S
-final_dc6_size	dccinfo.h	/^   long  final_dc6_size;$/;"	m	struct:DCC_HEADER_S
 flags	structs.h	/^    UBYTE  flags;$/;"	m	struct:CELL_T_S
 flags	structs.h	/^    UBYTE flags;$/;"	m	struct:CELL_F_S
 flags	structs.h	/^    UBYTE flags;$/;"	m	struct:CELL_S_S
@@ -654,7 +565,6 @@ floor_buff_len	structs.h	/^    int           floor_buff_len; \/\/ sizeof the flo
 floor_layer_mask	structs.h	/^    UBYTE         floor_layer_mask[FLOOR_MAX_LAYER];$/;"	m	struct:DS1_S
 floor_len	structs.h	/^    int           floor_len;      \/\/ floor_line * height$/;"	m	struct:DS1_S
 floor_line	structs.h	/^    int           floor_line;     \/\/ width * floor_num$/;"	m	struct:DS1_S
-floor_num	ds1misc.c	/^    int32_t     floor_num;$/;"	m	struct:__anon1	file:
 floor_num	structs.h	/^    int           floor_num;      \/\/ # of layers in floor buffer$/;"	m	struct:DS1_S
 font_height	structs.h	/^    int         font_height;$/;"	m	struct:WMSG_S
 font_width	structs.h	/^    int         font_width;$/;"	m	struct:WMSG_S
@@ -664,11 +574,7 @@ fpd	structs.h	/^    UBYTE     fpd; \/\/ frames per direction$/;"	m	struct:COF_S
 fprop_2_block	ds1misc.c	/^void fprop_2_block(int i, CELL_F_S * f_ptr)$/;"	f
 fps	structs.h	/^    volatile int  fps;$/;"	m	struct:GLB_DS1EDIT_S
 fptr	structs.h	/^    FILE           * fptr;$/;"	m	struct:UNDO_S
-frame	dccinfo.h	/^   DCC_FRAME_S     frame     [DCC_MAX_DIR] [DCC_MAX_FRAME];$/;"	m	struct:DCC_S
-frame	dccinfo.h	/^   int        frame;$/;"	m	struct:DCC_PB_ENTRY_S
-frame_cell_index	dccinfo.h	/^   int        frame_cell_index;$/;"	m	struct:DCC_PB_ENTRY_S
 frame_delta	structs.h	/^    UBYTE       frame_delta;$/;"	m	struct:OBJ_S
-frames_per_dir	dccinfo.h	/^   long  frames_per_dir;$/;"	m	struct:DCC_HEADER_S
 frames_per_dir	structs.h	/^    long  frames_per_dir;$/;"	m	struct:ANIM_DATA_RECORD_S
 fullscreen	structs.h	/^    int      fullscreen;$/;"	m	struct:CONFIG_S
 gamma	structs.h	/^    GC_ENUM  gamma;$/;"	m	struct:CONFIG_S
@@ -680,7 +586,6 @@ glb_ds1edit_data_dir	main.c	/^char          glb_ds1edit_data_dir  [] = ".\/res\/
 glb_ds1edit_tmp_dir	main.c	/^char          glb_ds1edit_tmp_dir   [] = "tmp"; \/\/ 前后光溜溜原则$/;"	v
 glb_dt1	main.c	/^DT1_S         * glb_dt1                = NULL; \/\/ dt1 datas 貌似这里是32个$/;"	v
 glb_gamma_str	main.c	/^GAMMA_S glb_gamma_str[GC_MAX] = {$/;"	v
-glb_map_test	main.c	/^int glb_map_test;$/;"	v
 glb_mpq_struct	main.c	/^GLB_MPQ_S     glb_mpq_struct [MAX_MPQ_FILE];  \/\/ global data of 1 mpq$/;"	v
 glb_path_lvlprest_def	main.c	/^char          * glb_path_lvlprest_def = "debug\/d2.lvlprest.headers.txt";$/;"	v
 glb_path_lvlprest_mem	main.c	/^char          * glb_path_lvlprest_mem = "debug\/editor.lvlprest.memory.bin";$/;"	v
@@ -690,29 +595,22 @@ glb_path_obj_def	main.c	/^char          * glb_path_obj_def      = "debug\/editor
 glb_path_obj_mem	main.c	/^char          * glb_path_obj_mem      = "debug\/editor.obj.memory.bin";$/;"	v
 glb_path_objects_def	main.c	/^char          * glb_path_objects_def  = "debug\/d2.objects.headers.txt";$/;"	v
 glb_path_objects_mem	main.c	/^char          * glb_path_objects_mem  = "debug\/editor.objects.memory.bin";$/;"	v
-glb_sense	ds1misc.c	/^D2SENSE     glb_sense;$/;"	v
 glb_tiles_path	main.c	/^char          glb_tiles_path        [] = "data\/global\/tiles\/";$/;"	v
 glb_txt_req_ptr	main.c	/^char ** glb_txt_req_ptr[RQ_MAX] = {NULL, NULL, NULL, NULL};$/;"	v
 glb_wrkspc_datas	main.c	/^WRKSPC_DATAS_S glb_wrkspc_datas[WRKSPC_MAX] = {$/;"	v
 group	structs.h	/^    GROUP_S       * group;$/;"	m	struct:DS1_S
 group_num	structs.h	/^    long          group_num;$/;"	m	struct:DS1_S
 group_size	structs.h	/^    int           group_size;$/;"	m	struct:DS1_S
-h	dccinfo.h	/^   int    w, h;$/;"	m	struct:DCC_CELL_S
 h	structs.h	/^    int                 x0, y0, w, h;$/;"	m	struct:PATH_EDIT_BUT_S
 h	structs.h	/^    int         w, h;$/;"	m	struct:BUTTON_S
 h	structs.h	/^    int h;$/;"	m	struct:WIN_PREVIEW_S
 h	structs.h	/^    int w, h;            \/\/ dimensions in pixels$/;"	m	struct:PATH_EDIT_WIN_S
 h	structs.h	/^    int w, h;   \/\/ width & height (pixels)$/;"	m	struct:OBJ_LABEL_S
 h	structs.h	/^    int w, h;$/;"	m	struct:WIN_EDT_OBJ_S
-header	dccinfo.h	/^   DCC_HEADER_S    header;$/;"	m	struct:DCC_S
-height	dccinfo.h	/^   UDWORD height;$/;"	m	struct:DCC_FRAME_S
-height	dccinfo.h	/^   long height;$/;"	m	struct:DCC_BOX_S
-height	ds1misc.c	/^    int32_t     height;$/;"	m	struct:__anon1	file:
 height	structs.h	/^    UDWORD height;$/;"	m	struct:GROUP_S
 height	structs.h	/^    int height;$/;"	m	struct:ORDER_DATA_S
 height	structs.h	/^    int height;$/;"	m	struct:SCREEN_S
 height	structs.h	/^    long          height;   \/\/ from file, +1$/;"	m	struct:DS1_S
-height_bits	dccinfo.h	/^   UDWORD          height_bits;$/;"	m	struct:DCC_DIRECTION_S
 height_div	structs.h	/^    int           height_div;$/;"	m	struct:DS1_S
 height_mul	structs.h	/^    int           height_mul;$/;"	m	struct:DS1_S
 i_x0	structs.h	/^    int        i_x0, i_y0; \/\/ upper-left corner, in the screen$/;"	m	struct:WIN_ELEMENT_S
@@ -730,13 +628,12 @@ interfac_user_handler	interfac.c	/^void interfac_user_handler(int start_ds1_idx)
 is_cut	structs.h	/^    int is_cut;$/;"	m	struct:PASTE_POS_S
 is_draw	structs.h	/^    int is_draw;$/;"	m	struct:SUB_ELM_S
 key	structs.h	/^    int key [MW_COMBINATION_KEY_NUM]; \/\/ scancodes of max X keys combination$/;"	m	struct:WMSG_BUTKEY_S
+key_value_to_ascii	interfac.c	/^char key_value_to_ascii(int key)$/;"	f
+key_value_to_cascii	interfac.c	/^char key_value_to_cascii(int key)$/;"	f
+key_value_to_keycode	interfac.c	/^int key_value_to_keycode(int key)$/;"	f
 keyb	structs.h	/^    XY_S keyb;$/;"	m	struct:SCROLL_S
 label	structs.h	/^    OBJ_LABEL_S label;$/;"	m	struct:OBJ_S
 last_good_frame	structs.h	/^    int    last_good_frame;$/;"	m	struct:LAY_INF_S
-last_h	dccinfo.h	/^   int    last_w, last_h;   \/\/ width & size of the last frame cell that used$/;"	m	struct:DCC_CELL_S
-last_w	dccinfo.h	/^   int    last_w, last_h;   \/\/ width & size of the last frame cell that used$/;"	m	struct:DCC_CELL_S
-last_x0	dccinfo.h	/^   int    last_x0, last_y0;$/;"	m	struct:DCC_CELL_S
-last_y0	dccinfo.h	/^   int    last_x0, last_y0;$/;"	m	struct:DCC_CELL_S
 lay	structs.h	/^    UBYTE     lay;$/;"	m	struct:COF_S
 lay_inf	structs.h	/^    LAY_INF_S lay_inf[COMPOSIT_NB];$/;"	m	struct:COF_S
 length	structs.h	/^    long  length;$/;"	m	struct:SUB_TILE_S
@@ -777,6 +674,7 @@ misc_read_gamma	misc.c	/^void misc_read_gamma(void)$/;"	f
 misc_save_pal_on_disk	misc.c	/^void misc_save_pal_on_disk(int pal_idx, UBYTE * d2_pal_ptr)$/;"	f
 misc_seach_block_or4	misc.c	/^int misc_seach_block_or4(int ds1_idx, BLOCK_TABLE_S * bt_ptr, int b,$/;"	f
 misc_search_name	misc.c	/^char * misc_search_name(char * tmp)$/;"	f
+misc_search_walk_infos	misc.c	/^void misc_search_walk_infos(int ds1_idx, int x, int y, UBYTE * dsttable)$/;"	f
 misc_update_pal_with_gamma	misc.c	/^void misc_update_pal_with_gamma(void)$/;"	f
 mix_f	structs.h	/^    CELL_F_S mix_f[FLOOR_MAX_LAYER];$/;"	m	struct:WBITSDATA_S
 mix_s	structs.h	/^    CELL_S_S mix_s[SHADOW_MAX_LAYER];$/;"	m	struct:WBITSDATA_S
@@ -798,10 +696,6 @@ name	structs.h	/^    char          name[256];    \/\/ long filename with paths$/
 name	structs.h	/^    char        name[TXT_COL_NAME_LENGTH]; \/\/ column header$/;"	m	struct:TXT_COL_S
 name	structs.h	/^    char       name[80];$/;"	m	struct:DT1_S
 name	structs.h	/^    char  name[10];$/;"	m	struct:EDT_BUT_S
-nb_cells_h	dccinfo.h	/^   int             nb_cells_h;$/;"	m	struct:DCC_DIRECTION_S
-nb_cells_h	dccinfo.h	/^   int        nb_cells_h;$/;"	m	struct:DCC_FRAME_S
-nb_cells_w	dccinfo.h	/^   int             nb_cells_w;$/;"	m	struct:DCC_DIRECTION_S
-nb_cells_w	dccinfo.h	/^   int        nb_cells_w;$/;"	m	struct:DCC_FRAME_S
 nb_records	structs.h	/^    int                nb_records      [256];$/;"	m	struct:ANIM_DATA_S
 nb_required_cols	structs.h	/^    int       nb_required_cols; \/\/ number of required columns$/;"	m	struct:TXT_S
 nb_type1_per_act	structs.h	/^    int      nb_type1_per_act;$/;"	m	struct:CONFIG_S
@@ -850,14 +744,10 @@ old_y	structs.h	/^    int start_x, start_y, old_x, old_y, old_ds1_idx;$/;"	m	str
 old_y	structs.h	/^    long         old_y;$/;"	m	struct:OBJ_S
 old_y2	structs.h	/^    int x1, y1, x2, y2, old_x2, old_y2;$/;"	m	struct:TMP_SEL_S
 on	structs.h	/^    WMSG_BUTCOL_S on;$/;"	m	struct:WMSG_BUT_S
-optional_bytes	dccinfo.h	/^   UDWORD optional_bytes;$/;"	m	struct:DCC_FRAME_S
-optional_bytes_bits	dccinfo.h	/^   UDWORD          optional_bytes_bits;$/;"	m	struct:DCC_DIRECTION_S
-optional_bytes_data	dccinfo.h	/^   UBYTE  * optional_bytes_data;$/;"	m	struct:DCC_FRAME_S
 orderflag	structs.h	/^    long      orderflag; \/\/ from data\\global\\excel\\objects.txt, 0 1 or 2$/;"	m	struct:COF_S
 orientation	structs.h	/^    UBYTE orientation;$/;"	m	struct:CELL_W_S
 orientation	structs.h	/^    long       orientation;$/;"	m	struct:BLOCK_S
 orientation	structs.h	/^    long      orientation;$/;"	m	struct:BLOCK_TABLE_S
-outsize_coded	dccinfo.h	/^   UDWORD outsize_coded;$/;"	m	struct:DCC_DIRECTION_S
 own_wpreview	structs.h	/^    WIN_PREVIEW_S own_wpreview;$/;"	m	struct:DS1_S
 pal_loaded	structs.h	/^    int           pal_loaded[ACT_MAX];$/;"	m	struct:GLB_DS1EDIT_S
 pal_size	structs.h	/^    long          pal_size[ACT_MAX];$/;"	m	struct:GLB_DS1EDIT_S
@@ -868,14 +758,9 @@ path_edit_win	structs.h	/^    PATH_EDIT_WIN_S path_edit_win;$/;"	m	struct:DS1_S
 path_num	structs.h	/^    long        path_num;$/;"	m	struct:OBJ_S
 path_start_idx	structs.h	/^    int path_start_idx;  \/\/ first path index displayed$/;"	m	struct:PATH_EDIT_WIN_S
 paths_layer_mask	structs.h	/^    UBYTE         paths_layer_mask;$/;"	m	struct:DS1_S
-pb_nb_entry	dccinfo.h	/^   int             pb_nb_entry;$/;"	m	struct:DCC_DIRECTION_S
-pixel_buffer	dccinfo.h	/^   DCC_PB_ENTRY_S  * pixel_buffer;$/;"	m	struct:DCC_DIRECTION_S
-pixel_code_and_displacment_bitstream	dccinfo.h	/^   DCC_BITSTREAM_S pixel_code_and_displacment_bitstream;$/;"	m	struct:DCC_DIRECTION_S
-pixel_mask_bitstream	dccinfo.h	/^   DCC_BITSTREAM_S pixel_mask_bitstream;$/;"	m	struct:DCC_DIRECTION_S
-pixel_mask_bitstream_size	dccinfo.h	/^   UDWORD          pixel_mask_bitstream_size;$/;"	m	struct:DCC_DIRECTION_S
-pixel_values	dccinfo.h	/^   UBYTE           pixel_values[256]; \/\/ for pixel code color conversion$/;"	m	struct:DCC_DIRECTION_S
 pos	structs.h	/^    int         pos;      \/\/ column index in the original file$/;"	m	struct:TXT_COL_S
 priority	structs.h	/^    UBYTE     * priority;$/;"	m	struct:COF_S
+process_input	interfac.c	/^int process_input()$/;"	f
 prop1	structs.h	/^    UBYTE prop1;$/;"	m	struct:CELL_F_S
 prop1	structs.h	/^    UBYTE prop1;$/;"	m	struct:CELL_S_S
 prop1	structs.h	/^    UBYTE prop1;$/;"	m	struct:CELL_W_S
@@ -888,12 +773,9 @@ prop3	structs.h	/^    UBYTE prop3;$/;"	m	struct:CELL_W_S
 prop4	structs.h	/^    UBYTE prop4;$/;"	m	struct:CELL_F_S
 prop4	structs.h	/^    UBYTE prop4;$/;"	m	struct:CELL_S_S
 prop4	structs.h	/^    UBYTE prop4;$/;"	m	struct:CELL_W_S
-ptr	dccinfo.h	/^   UBYTE           * ptr; \/\/ copy of the dcc in mem$/;"	m	struct:DCC_S
 qsort_helper_order_data	wpreview.c	/^int qsort_helper_order_data(const void *e1, const void *e2)$/;"	f
 rarity	structs.h	/^    long       rarity;$/;"	m	struct:BLOCK_S
 rarity	structs.h	/^    long      rarity;$/;"	m	struct:BLOCK_TABLE_S
-raw_pixel_bitstream	dccinfo.h	/^   DCC_BITSTREAM_S raw_pixel_bitstream;$/;"	m	struct:DCC_DIRECTION_S
-raw_pixel_bitstream_size	dccinfo.h	/^   UDWORD          raw_pixel_bitstream_size;$/;"	m	struct:DCC_DIRECTION_S
 read_lvlprest_txt	txtread.c	/^int read_lvlprest_txt(int ds1_idx, int def)$/;"	f
 read_lvltypes_txt	txtread.c	/^int read_lvltypes_txt(int ds1_idx, int type)$/;"	f
 read_obj_txt	txtread.c	/^int read_obj_txt(void)$/;"	f
@@ -923,14 +805,11 @@ shadow_buff_len	structs.h	/^    int           shadow_buff_len; \/\/ sizeof the s
 shadow_layer_mask	structs.h	/^    char          shadow_layer_mask[SHADOW_MAX_LAYER];$/;"	m	struct:DS1_S
 shadow_len	structs.h	/^    int           shadow_len;      \/\/ shadow_line * height$/;"	m	struct:DS1_S
 shadow_line	structs.h	/^    int           shadow_line;     \/\/ width * shadow_num$/;"	m	struct:DS1_S
-shadow_num	ds1misc.c	/^    int32_t     shadow_num;$/;"	m	struct:__anon1	file:
 shadow_num	structs.h	/^    int           shadow_num;      \/\/ # of layers in shadow buffer$/;"	m	struct:DS1_S
 shortcut	structs.h	/^    WMSG_BUTKEY_S shortcut[MW_SHORTCUT_NUM];$/;"	m	struct:WMSG_BUT_S
 show	structs.h	/^    int                 show;$/;"	m	struct:PATH_EDIT_BUT_S
 show_2nd_row	structs.h	/^    int           show_2nd_row;$/;"	m	struct:GLB_DS1EDIT_S
 show_all_layer	interfac.c	/^void show_all_layer(int b)$/;"	f
-size	dccinfo.h	/^   UDWORD size;        \/\/ size of the bitstream, in bits$/;"	m	struct:DCC_BITSTREAM_S
-size	dccinfo.h	/^   long            size;  \/\/ size of the dcc in mem (in bytes)$/;"	m	struct:DCC_S
 size	structs.h	/^    int         size;     \/\/ strlen()+1 or sizeof(long)$/;"	m	struct:TXT_COL_S
 size_x	structs.h	/^    long       size_x;$/;"	m	struct:BLOCK_S
 size_y	structs.h	/^    long       size_y;$/;"	m	struct:BLOCK_S
@@ -968,14 +847,12 @@ sx	structs.h	/^    long        sx; \/\/ sub-tile X$/;"	m	struct:OBJ_S
 sy	structs.h	/^    long        sy; \/\/ sub-tile Y$/;"	m	struct:OBJ_S
 tab	structs.h	/^    BUTTON_S      tab    [BT_MAX];$/;"	m	struct:WIN_EDIT_S
 tab_have_tiles	structs.h	/^    int         tab_have_tiles;$/;"	m	struct:BUTTON_S
-tag	dccinfo.h	/^   long  tag; \/\/ always 1. A data's presence bitfield maybe,$/;"	m	struct:DCC_HEADER_S
 tag	structs.h	/^    char           tag[4];$/;"	m	struct:UNDO_S
 tag_buff	structs.h	/^    CELL_T_S      * tag_buff,   \/\/ buffer for all unk layers$/;"	m	struct:DS1_S
 tag_buff2	structs.h	/^                  * tag_buff2;  \/\/ 2nd buffer, for copy\/paste$/;"	m	struct:DS1_S
 tag_buff_len	structs.h	/^    int           tag_buff_len; \/\/ sizeof the unk buffer (in bytes)$/;"	m	struct:DS1_S
 tag_len	structs.h	/^    int           tag_len;      \/\/ unk_line * height$/;"	m	struct:DS1_S
 tag_line	structs.h	/^    int           tag_line;     \/\/ width * unk_num$/;"	m	struct:DS1_S
-tag_num	ds1misc.c	/^    int32_t     tag_num;$/;"	m	struct:__anon1	file:
 tag_num	structs.h	/^    int           tag_num;      \/\/ # of layers in unk buffer$/;"	m	struct:DS1_S
 tag_type	structs.h	/^    long          tag_type;$/;"	m	struct:DS1_S
 text	structs.h	/^    char                * text;$/;"	m	struct:PATH_EDIT_BUT_S
@@ -998,6 +875,7 @@ tx	structs.h	/^    long        tx; \/\/ tile X$/;"	m	struct:OBJ_S
 txt	structs.h	/^    XY_S  txt;$/;"	m	struct:EDT_BUT_S
 txt_act	structs.h	/^    int           txt_act;$/;"	m	struct:DS1_S
 txt_check_type_and_size	txtread.c	/^int txt_check_type_and_size(char * cur_col, TXT_S * txt)$/;"	f
+txt_convert_dash	txtread.c	/^void txt_convert_dash(char * str)$/;"	f
 txt_convert_slash	txtread.c	/^void txt_convert_slash(char * str)$/;"	f
 txt_count_header_cols	txtread.c	/^void txt_count_header_cols(char * cur_col, int * col_count)$/;"	f
 txt_debug	txtread.c	/^void txt_debug(char * file_path_mem, char * file_path_def, TXT_S * txt)$/;"	f
@@ -1025,17 +903,11 @@ updated	structs.h	/^    int       updated;$/;"	m	struct:BLOCK_TABLE_S
 usage_count	structs.h	/^    int   usage_count;$/;"	m	struct:OBJ_DESC_S
 used_by_editor	structs.h	/^    char      used_by_editor; \/\/ True \/ False$/;"	m	struct:BLOCK_TABLE_S
 used_by_game	structs.h	/^    char      used_by_game;   \/\/ True \/ False$/;"	m	struct:BLOCK_TABLE_S
-val	dccinfo.h	/^   UBYTE      val[4];$/;"	m	struct:DCC_PB_ENTRY_S
 val	structs.h	/^    GC_ENUM val;$/;"	m	struct:GAMMA_S
-variable0	dccinfo.h	/^   UDWORD variable0;$/;"	m	struct:DCC_FRAME_S
-variable0_bits	dccinfo.h	/^   UDWORD          variable0_bits;$/;"	m	struct:DCC_DIRECTION_S
-version	dccinfo.h	/^   UBYTE version;$/;"	m	struct:DCC_HEADER_S
-version	ds1misc.c	/^    uint32_t    version;$/;"	m	struct:__anon1	file:
 version	structs.h	/^    long          version;$/;"	m	struct:DS1_S
 vga_pal	structs.h	/^    PALETTE       vga_pal[ACT_MAX];$/;"	m	struct:GLB_DS1EDIT_S
 video_page	structs.h	/^    BITMAP        * video_page;$/;"	m	struct:GLB_DS1EDIT_S
 video_page_num	structs.h	/^    int           video_page_num;$/;"	m	struct:GLB_DS1EDIT_S
-w	dccinfo.h	/^   int    w, h;$/;"	m	struct:DCC_CELL_S
 w	structs.h	/^    UBYTE w [WALL_MAX_LAYER];$/;"	m	struct:UNDO_DAT_FLG_S
 w	structs.h	/^    int                 x0, y0, w, h;$/;"	m	struct:PATH_EDIT_BUT_S
 w	structs.h	/^    int         w, h;$/;"	m	struct:BUTTON_S
@@ -1052,16 +924,11 @@ wall_buff_len	structs.h	/^    int           wall_buff_len;  \/\/ sizeof the wall
 wall_layer_mask	structs.h	/^    UBYTE         wall_layer_mask[WALL_MAX_LAYER];$/;"	m	struct:DS1_S
 wall_len	structs.h	/^    int           wall_len;       \/\/ wall_line * height$/;"	m	struct:DS1_S
 wall_line	structs.h	/^    int           wall_line;      \/\/ width * wall_num$/;"	m	struct:DS1_S
-wall_num	ds1misc.c	/^    int32_t     wall_num;$/;"	m	struct:__anon1	file:
 wall_num	structs.h	/^    int           wall_num;       \/\/ # of layers in wall buffer$/;"	m	struct:DS1_S
 wclass	structs.h	/^    char   wclass[4];               \/\/ weapon class$/;"	m	struct:LAY_INF_S
-width	dccinfo.h	/^   UDWORD width;$/;"	m	struct:DCC_FRAME_S
-width	dccinfo.h	/^   long width;$/;"	m	struct:DCC_BOX_S
-width	ds1misc.c	/^    int32_t     width;$/;"	m	struct:__anon1	file:
 width	structs.h	/^    UDWORD width;$/;"	m	struct:GROUP_S
 width	structs.h	/^    int width;$/;"	m	struct:SCREEN_S
 width	structs.h	/^    long          width;    \/\/ from file, +1$/;"	m	struct:DS1_S
-width_bits	dccinfo.h	/^   UDWORD          width_bits;$/;"	m	struct:DCC_DIRECTION_S
 win_edit	structs.h	/^    WIN_EDIT_S    win_edit;$/;"	m	struct:GLB_DS1EDIT_S
 win_edt_obj	structs.h	/^    WIN_EDT_OBJ_S win_edt_obj;$/;"	m	struct:DS1_S
 win_preview	structs.h	/^    WIN_PREVIEW_S win_preview;$/;"	m	struct:GLB_DS1EDIT_S
@@ -1086,7 +953,6 @@ wprop_2_block	ds1misc.c	/^void wprop_2_block(int i, CELL_W_S * w_ptr)$/;"	f
 x	structs.h	/^    int x;$/;"	m	struct:XY_S
 x	structs.h	/^    long        x;     \/\/ sub-cell X$/;"	m	struct:OBJ_S
 x	structs.h	/^    long x;$/;"	m	struct:PATH_S
-x0	dccinfo.h	/^   int    x0, y0;  \/\/ for frame cells in stage 2$/;"	m	struct:DCC_CELL_S
 x0	structs.h	/^    int                 x0, y0, w, h;$/;"	m	struct:PATH_EDIT_BUT_S
 x0	structs.h	/^    int         x0, y0;$/;"	m	struct:BUTTON_S
 x0	structs.h	/^    int x0, y0;          \/\/ screen position$/;"	m	struct:PATH_EDIT_WIN_S
@@ -1103,15 +969,10 @@ x2	structs.h	/^    int x2;$/;"	m	struct:SUB_ELM_S
 x2	structs.h	/^    long       x2; \/\/ signature (6)$/;"	m	struct:DT1_S
 x_grid	structs.h	/^    int   x_grid;$/;"	m	struct:SUB_TILE_S
 x_pos	structs.h	/^    WORD  x_pos;$/;"	m	struct:SUB_TILE_S
-xmax	dccinfo.h	/^   long xmax;$/;"	m	struct:DCC_BOX_S
-xmin	dccinfo.h	/^   long xmin;$/;"	m	struct:DCC_BOX_S
-xoffset	dccinfo.h	/^   long   xoffset;$/;"	m	struct:DCC_FRAME_S
 xoffset	structs.h	/^    long      xoffset;$/;"	m	struct:COF_S
-xoffset_bits	dccinfo.h	/^   UDWORD          xoffset_bits;$/;"	m	struct:DCC_DIRECTION_S
 y	structs.h	/^    int y;$/;"	m	struct:XY_S
 y	structs.h	/^    long        y;     \/\/ sub-cell Y$/;"	m	struct:OBJ_S
 y	structs.h	/^    long y;$/;"	m	struct:PATH_S
-y0	dccinfo.h	/^   int    x0, y0;  \/\/ for frame cells in stage 2$/;"	m	struct:DCC_CELL_S
 y0	structs.h	/^    int                 x0, y0, w, h;$/;"	m	struct:PATH_EDIT_BUT_S
 y0	structs.h	/^    int         x0, y0;$/;"	m	struct:BUTTON_S
 y0	structs.h	/^    int x0, y0;          \/\/ screen position$/;"	m	struct:PATH_EDIT_WIN_S
@@ -1126,9 +987,5 @@ y2	structs.h	/^    int x1, y1, x2, y2;$/;"	m	struct:BOX_S
 y2	structs.h	/^    int y2;$/;"	m	struct:SUB_ELM_S
 y_grid	structs.h	/^    int   y_grid;$/;"	m	struct:SUB_TILE_S
 y_pos	structs.h	/^    WORD  y_pos;$/;"	m	struct:SUB_TILE_S
-ymax	dccinfo.h	/^   long ymax;$/;"	m	struct:DCC_BOX_S
-ymin	dccinfo.h	/^   long ymin;$/;"	m	struct:DCC_BOX_S
-yoffset	dccinfo.h	/^   long   yoffset;$/;"	m	struct:DCC_FRAME_S
 yoffset	structs.h	/^    long      yoffset;$/;"	m	struct:COF_S
-yoffset_bits	dccinfo.h	/^   UDWORD          yoffset_bits;$/;"	m	struct:DCC_DIRECTION_S
 zero_line	structs.h	/^    int       zero_line;$/;"	m	struct:BLOCK_TABLE_S
