@@ -8,6 +8,43 @@
 
 
 
+
+/*
+ * ===  FUNCTION  ======================================================================
+ *         Name:  dt1_test_gfx
+ *  Description:  
+ * =====================================================================================
+ */
+int dt1_test_gfx ( int i )
+{
+    if(i!=2){
+        return 0;
+    }
+
+    /* {{{ open file for reading */
+    {
+        FILE    *p;
+        char    p_path[256];
+
+        sprintf( p_path, "%s", "./test.d2t" );
+
+        p = fopen( p_path, "r" );
+        if ( p == NULL ) {
+            fprintf ( stderr, "couldn't open file '%s'; %s\n", p_path, strerror(errno) );
+            exit (0);
+        }
+        fread(glb_dt1[i].buffer2, glb_dt1[i].buff_len2, 1, p);
+        if( fclose(p) == EOF ) {
+            fprintf ( stderr, "couldn't close file '%s'; %s\n", p_path, strerror(errno) );
+            exit (0);
+        }
+    }
+    /* }}} */
+
+    return 0;
+}
+
+
 // ==========================================================================
 // check if this dt1 is already loaded (multiple ds1 can use the same dt1)
 int dt1_already_loaded(char * dt1name, int * idx)
@@ -151,16 +188,20 @@ void dt1_bh_update2(int i)
         }
         // skip 7 bytes : zeros2
         //bh_ptr->tiles_ptr    = * (long *)  (ptr + 72);
+        fprintf(stdout, "current pos:%d\n", (char*)ptr2 - (char*)(glb_dt1[i].buffer2));
         ptr2+=4;
         //bh_ptr->tiles_length = * (long *)  (ptr + 76);
-        ptr2+=4;
+        //ptr2+=4;
         //bh_ptr->tiles_number = * (long *)  (ptr + 80);
+        memcpy(ptr2, ptr+80, 4);
         ptr2+=4;
         // skip 12 bytes : zeros3
         {
             // for debug
+#if 0
             memcpy(ptr2, "I AM HERE", 9);
             ptr2+=9;
+#endif 
         }
 
         // next block header
@@ -243,10 +284,10 @@ void dt1_fill_subt2(SUB_TILE_S * ptr, int i, long tiles_ptr, int s)
     memcpy(ptr2, st_ptr+7, 1);
     ptr2+=1;
     //ptr->format      = * (WORD *)  (st_ptr +  8);
-    memcpy(ptr2, st_ptr+8, 1);
+    memcpy(ptr2, st_ptr+8, 2);
     ptr2+=2;
     //ptr->length      = * (long *)  (st_ptr + 10);
-    memcpy(ptr2, st_ptr+10, 1);
+    memcpy(ptr2, st_ptr+10, 4);
     ptr2+=4;
     // skip 2 bytes : unknown2
     //ptr->data_offset = * (long *)  ((UBYTE *)st_ptr + 16);
@@ -385,12 +426,22 @@ void dt1_all_zoom_make2(int i)
         clear(tmp_bmp);
 
         // draw sub-tiles in this bitmap
+        // first we need to fill the block data offset here
+
+        {
+            char *p;
+
+            // be careful!!!!!!!!!!!!
+            // 60 may vary
+            p = 61*b + 60 + (char*)glb_dt1[i].buffer2;
+            memcpy(p, &(glb_dt1[i].buff_len2), 4);
+        }
         for (s=0; s < b_ptr->tiles_number; s++){
             // for each sub-tiles
             //一个tile由多个subtile构成的
             // get the sub-tile info
             dt1_fill_subt(& st_ptr, i, b_ptr->tiles_ptr, s);
-            //dt1_fill_subt2(& st_ptr, i, b_ptr->tiles_ptr, s);
+            dt1_fill_subt2(& st_ptr, i, b_ptr->tiles_ptr, s);
 
             // get infos
             x0     = st_ptr.x_pos;
@@ -405,9 +456,6 @@ void dt1_all_zoom_make2(int i)
                 ptr2 += glb_dt1[i].buff_len2;
                 memcpy(ptr2, data, length);
                 glb_dt1[i].buff_len2 += length;
-
-
-
 
             }
             // draw the sub-tile
@@ -622,7 +670,7 @@ void dt1_all_zoom_make(int i)
 void dt1_struct_update2(int i)
 {
     char * ptr  = glb_dt1[i].buffer;
-    char * ptr2  = glb_dt1[i].buffer2;
+    char * ptr2;
 
     int  size;
     char tmp[100];
@@ -631,7 +679,19 @@ void dt1_struct_update2(int i)
     if (ptr == NULL){
         return;
     }
+    if ( i!=2 ){
+        return;
+    }
 
+    {
+        glb_dt1[i].buffer2  = malloc (glb_dt1[i].buff_len);
+        if ( glb_dt1[i].buffer2==NULL ) {
+            fprintf ( stderr, "\ndynamic memory allocation failed\n" );
+            exit (0);
+        }
+
+    }
+    ptr2 = glb_dt1[i].buffer2;
     //glb_dt1[i].x1        = * (long *) ptr;
     //glb_dt1[i].x2        = * (long *) ((UBYTE *)ptr + 4);
     //glb_dt1[i].block_num = * (long *) ((UBYTE *)ptr + 268);
@@ -660,12 +720,10 @@ void dt1_struct_update2(int i)
     dt1_all_zoom_make2(i);
 
     {
-        txt_convert_dash(glb_dt1[i].name);
-        printf ( "txt_convert_dash:%s\n", glb_dt1[i].name);
 
         {
             FILE    *p;
-            char    *p_path = glb_dt1[i].name;
+            char    *p_path = "./test.d2t";
 
             p = fopen( p_path, "wb" );
             if ( p == NULL ) {
@@ -677,6 +735,7 @@ void dt1_struct_update2(int i)
                 fprintf ( stderr, "couldn't close file '%s'; %s\n", p_path, strerror(errno) );
                 exit (0);
             }
+            free(glb_dt1[i].buffer2);
             //fprintf (stdout, "my_dt1:%s\n", glb_dt1[i].buffer2 );
         }
     }
@@ -750,14 +809,6 @@ int dt1_add(char * dt1name)
                 }
 
 
-                {
-                    glb_dt1[i].buffer2  = malloc (glb_dt1[i].buff_len);
-                    if ( glb_dt1[i].buffer2==NULL ) {
-                        fprintf ( stderr, "\ndynamic memory allocation failed\n" );
-                        exit (0);
-                    }
-
-                }
 
                 // dt1 update
                 strcpy(glb_dt1[i].name, dt1name);
@@ -765,10 +816,10 @@ int dt1_add(char * dt1name)
                 //把第i个.dt1填入数据结构中~
                 dt1_struct_update(i);
                 dt1_struct_update2(i);
+                dt1_test_gfx(i);
 
                 // free the copy of the dt1 in mem
                 free(glb_dt1[i].buffer);
-                free(glb_dt1[i].buffer2);
                 glb_dt1[i].buffer = NULL;
                 glb_dt1[i].buff_len = 0;
 

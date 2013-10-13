@@ -1,0 +1,4 @@
+make test -C ../bin
+make[1]: Entering directory `/home/anhong/d2imdev/ds1/bin'
+./tristram.bat
+make[1]: Leaving directory `/home/anhong/d2imdev/ds1/bin'

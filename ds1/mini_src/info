@@ -137,58 +137,203 @@ name of glb_dt1[1] : data/global/tiles/act1/town/floor.dt1
    x2        = 6
    block_num = 144
    bh_start  = 0x114
-txt_convert_dash:data_global_tiles_act1_town_floor.dt1
-my_dt1:D2Tê
 struct data of glb_dt1[2] :
 name of glb_dt1[2] : data/global/tiles/act1/tristram/town.dt1
    x1        = 7
    x2        = 6
    block_num = 157
    bh_start  = 0x114
-txt_convert_dash:data_global_tiles_act1_tristram_town.dt1
-my_dt1:D2Tù
+current pos:60
+current pos:121
+current pos:182
+current pos:243
+current pos:304
+current pos:365
+current pos:426
+current pos:487
+current pos:548
+current pos:609
+current pos:670
+current pos:731
+current pos:792
+current pos:853
+current pos:914
+current pos:975
+current pos:1036
+current pos:1097
+current pos:1158
+current pos:1219
+current pos:1280
+current pos:1341
+current pos:1402
+current pos:1463
+current pos:1524
+current pos:1585
+current pos:1646
+current pos:1707
+current pos:1768
+current pos:1829
+current pos:1890
+current pos:1951
+current pos:2012
+current pos:2073
+current pos:2134
+current pos:2195
+current pos:2256
+current pos:2317
+current pos:2378
+current pos:2439
+current pos:2500
+current pos:2561
+current pos:2622
+current pos:2683
+current pos:2744
+current pos:2805
+current pos:2866
+current pos:2927
+current pos:2988
+current pos:3049
+current pos:3110
+current pos:3171
+current pos:3232
+current pos:3293
+current pos:3354
+current pos:3415
+current pos:3476
+current pos:3537
+current pos:3598
+current pos:3659
+current pos:3720
+current pos:3781
+current pos:3842
+current pos:3903
+current pos:3964
+current pos:4025
+current pos:4086
+current pos:4147
+current pos:4208
+current pos:4269
+current pos:4330
+current pos:4391
+current pos:4452
+current pos:4513
+current pos:4574
+current pos:4635
+current pos:4696
+current pos:4757
+current pos:4818
+current pos:4879
+current pos:4940
+current pos:5001
+current pos:5062
+current pos:5123
+current pos:5184
+current pos:5245
+current pos:5306
+current pos:5367
+current pos:5428
+current pos:5489
+current pos:5550
+current pos:5611
+current pos:5672
+current pos:5733
+current pos:5794
+current pos:5855
+current pos:5916
+current pos:5977
+current pos:6038
+current pos:6099
+current pos:6160
+current pos:6221
+current pos:6282
+current pos:6343
+current pos:6404
+current pos:6465
+current pos:6526
+current pos:6587
+current pos:6648
+current pos:6709
+current pos:6770
+current pos:6831
+current pos:6892
+current pos:6953
+current pos:7014
+current pos:7075
+current pos:7136
+current pos:7197
+current pos:7258
+current pos:7319
+current pos:7380
+current pos:7441
+current pos:7502
+current pos:7563
+current pos:7624
+current pos:7685
+current pos:7746
+current pos:7807
+current pos:7868
+current pos:7929
+current pos:7990
+current pos:8051
+current pos:8112
+current pos:8173
+current pos:8234
+current pos:8295
+current pos:8356
+current pos:8417
+current pos:8478
+current pos:8539
+current pos:8600
+current pos:8661
+current pos:8722
+current pos:8783
+current pos:8844
+current pos:8905
+current pos:8966
+current pos:9027
+current pos:9088
+current pos:9149
+current pos:9210
+current pos:9271
+current pos:9332
+current pos:9393
+current pos:9454
+current pos:9515
+current pos:9576
 struct data of glb_dt1[3] :
 name of glb_dt1[3] : data/global/tiles/act1/outdoors/stonewall.dt1
    x1        = 7
    x2        = 6
    block_num = 52
    bh_start  = 0x114
-txt_convert_dash:data_global_tiles_act1_outdoors_stonewall.dt1
-my_dt1:D2T4
 struct data of glb_dt1[4] :
 name of glb_dt1[4] : data/global/tiles/act1/outdoors/river.dt1
    x1        = 7
    x2        = 6
    block_num = 45
    bh_start  = 0x114
-txt_convert_dash:data_global_tiles_act1_outdoors_river.dt1
-my_dt1:D2T-
 struct data of glb_dt1[5] :
 name of glb_dt1[5] : data/global/tiles/act1/outdoors/objects.dt1
    x1        = 7
    x2        = 6
    block_num = 42
    bh_start  = 0x114
-txt_convert_dash:data_global_tiles_act1_outdoors_objects.dt1
-my_dt1:D2T*
 struct data of glb_dt1[6] :
 name of glb_dt1[6] : data/global/tiles/act1/outdoors/treegroups.dt1
    x1        = 7
    x2        = 6
    block_num = 21
    bh_start  = 0x114
-txt_convert_dash:data_global_tiles_act1_outdoors_treegroups.dt1
-my_dt1:D2T
 
 dt1_idx file
 ------- ---------------------------------------------------------------------
       0 ./res/data/ds1edit.dt1
-      1 data_global_tiles_act1_town_floor.dt1
-      2 data_global_tiles_act1_tristram_town.dt1
-      3 data_global_tiles_act1_outdoors_stonewall.dt1
-      4 data_global_tiles_act1_outdoors_river.dt1
-      5 data_global_tiles_act1_outdoors_objects.dt1
-      6 data_global_tiles_act1_outdoors_treegroups.dt1
+      1 data/global/tiles/act1/town/floor.dt1
+      2 data/global/tiles/act1/tristram/town.dt1
+      3 data/global/tiles/act1/outdoors/stonewall.dt1
+      4 data/global/tiles/act1/outdoors/river.dt1
+      5 data/global/tiles/act1/outdoors/objects.dt1
+      6 data/global/tiles/act1/outdoors/treegroups.dt1
 
 sorted block_table of glb_ds1 (0 blocks) :
 block orientation main_idx sub_idx frame dt1_idx blk_idx roof_y type line0
@@ -312,27 +457,27 @@ block orientation main_idx sub_idx frame dt1_idx blk_idx roof_y type line0
   116          11        0       2     0       0       8      0    6    96
   117          11        0       3     0       0       9      0    6    96
   118          11        0       4     0       0      10      0    6    96
-  119          14        0       0     0       6      20      0    3   384
-  120          14        0       1     0       6      19      0    3   384
-  121          14        0       2     0       6      18      0    3   352
-  122          14        0       4     0       6      17      0    3   320
-  123          14        0       5     0       6      16      0    3   352
-  124          14        0       6     0       6      15      0    3   288
-  125          14        0       8     0       6      14      0    3   320
-  126          14        0       9     0       6      13      0    3   352
-  127          14        0      10     0       6      12      0    3   320
-  128          14        0      12     0       6       9      0    3   320
-  129          14        0      13     0       6      10      0    3   320
-  130          14        0      14     0       6      11      0    3   320
-  131          14        0      16     0       6       8      0    3   384
-  132          14        0      17     0       6       7      0    3   416
-  133          14        0      18     0       6       6      0    3   320
-  134          14        0      20     0       6       5      0    3   256
-  135          14        0      21     0       6       4      0    3   288
-  136          14        0      22     0       6       3      0    3   288
-  137          14        0      24     0       6       2      0    3   256
-  138          14        0      25     0       6       1      0    3   320
-  139          14        0      26     0       6       0      0    3   288
+  119          14        0       0     0       6      20      0    3   416
+  120          14        0       1     0       6      19      0    3   416
+  121          14        0       2     0       6      18      0    3   384
+  122          14        0       4     0       6      17      0    3   352
+  123          14        0       5     0       6      16      0    3   384
+  124          14        0       6     0       6      15      0    3   320
+  125          14        0       8     0       6      14      0    3   352
+  126          14        0       9     0       6      13      0    3   384
+  127          14        0      10     0       6      12      0    3   352
+  128          14        0      12     0       6       9      0    3   352
+  129          14        0      13     0       6      10      0    3   352
+  130          14        0      14     0       6      11      0    3   352
+  131          14        0      16     0       6       8      0    3   416
+  132          14        0      17     0       6       7      0    3   448
+  133          14        0      18     0       6       6      0    3   352
+  134          14        0      20     0       6       5      0    3   288
+  135          14        0      21     0       6       4      0    3   320
+  136          14        0      22     0       6       3      0    3   320
+  137          14        0      24     0       6       2      0    3   288
+  138          14        0      25     0       6       1      0    3   352
+  139          14        0      26     0       6       0      0    3   320
   140           0        1       0     0       2     148      0    1     0
   141           0        1       1     1       2     138      0    1     0
   142           0        1       1     1       2     156      0    1     0
@@ -439,58 +584,58 @@ block orientation main_idx sub_idx frame dt1_idx blk_idx roof_y type line0
   243           0        2      24     1       4      32      0    1     0
   244           0        2      24     2       4      30      0    1     0
   245           0        2      24     2       4      31      0    1     0
-  246           1        2       0     1       3      26      0    3    96
-  247           1        2       0     1       3      27      0    3    96
-  248           1        2       0     2       3      28      0    3    96
-  249           1        2       0     2       3      29      0    3    96
-  250           1        2       0     2       3      36      0    3    96
-  251           1        2       0     2       3      37      0    3    96
-  252           1        2       0     4       3      42      0    3    96
-  253           1        2       0     4       3      43      0    3    96
-  254           1        2       1     0       3      51      0    3    96
-  255           1        2       2     0       3      48      0    3    96
-  256           1        2       3     0       3      46      0    3    64
-  257           1        2       4     0       3      41      0    3    96
-  258           1        2      14     1       3      19      0    3    96
-  259           1        2      15     1       3      18      0    3    96
-  260           1        2      16     1       3      17      0    3    96
-  261           1        2      17     1       3      16      0    3   128
-  262           1        2      18     1       3       9      0    3    96
-  263           1        2      19     1       3       8      0    3   160
-  264           1        2      20     1       3       7      0    3    96
-  265           1        2      21     1       3       6      0    3   128
-  266           1        2      22     1       3       1      0    3   128
-  267           1        2      23     1       3       0      0    3   160
-  268           2        2       0     1       3      24      0    3    96
-  269           2        2       0     1       3      25      0    3    96
-  270           2        2       0     2       3      30      0    3    96
-  271           2        2       0     2       3      31      0    3    96
-  272           2        2       0     2       3      34      0    3    96
-  273           2        2       0     2       3      35      0    3    96
-  274           2        2       0     4       3      39      0    3    96
-  275           2        2       0     4       3      40      0    3    96
-  276           2        2       1     0       3      50      0    3    96
-  277           2        2       2     0       3      49      0    3    96
-  278           2        2       3     0       3      47      0    3    96
-  279           2        2       4     0       3      38      0    3    96
-  280           2        2      14     1       3      21      0    3    96
-  281           2        2      15     1       3      20      0    3    96
-  282           2        2      16     1       3      15      0    3    96
-  283           2        2      17     1       3      14      0    3   160
-  284           2        2      18     1       3      11      0    3    96
-  285           2        2      19     1       3      10      0    3   128
-  286           2        2      20     1       3       5      0    3    96
-  287           2        2      21     1       3       4      0    3   128
-  288           2        2      22     1       3       3      0    3    96
-  289           2        2      23     1       3       2      0    3   128
-  290           3        2       0     1       3      44      0    3    96
-  291           3        2       1     1       3      22      0    3   128
-  292           3        2       2     0       3      12      0    3    96
-  293           3        2       3     1       3      32      0    3    96
-  294           4        2       0     1       3      45      0    3    96
-  295           4        2       1     1       3      23      0    3   128
-  296           4        2       2     0       3      13      0    3    96
-  297           4        2       3     1       3      33      0    3    96
+  246           1        2       0     1       3      26      0    3   128
+  247           1        2       0     1       3      27      0    3   128
+  248           1        2       0     2       3      28      0    3   128
+  249           1        2       0     2       3      29      0    3   128
+  250           1        2       0     2       3      36      0    3   128
+  251           1        2       0     2       3      37      0    3   128
+  252           1        2       0     4       3      42      0    3   128
+  253           1        2       0     4       3      43      0    3   128
+  254           1        2       1     0       3      51      0    3   128
+  255           1        2       2     0       3      48      0    3   128
+  256           1        2       3     0       3      46      0    3    96
+  257           1        2       4     0       3      41      0    3   128
+  258           1        2      14     1       3      19      0    3   128
+  259           1        2      15     1       3      18      0    3   128
+  260           1        2      16     1       3      17      0    3   128
+  261           1        2      17     1       3      16      0    3   160
+  262           1        2      18     1       3       9      0    3   128
+  263           1        2      19     1       3       8      0    3   192
+  264           1        2      20     1       3       7      0    3   128
+  265           1        2      21     1       3       6      0    3   160
+  266           1        2      22     1       3       1      0    3   160
+  267           1        2      23     1       3       0      0    3   192
+  268           2        2       0     1       3      24      0    3   128
+  269           2        2       0     1       3      25      0    3   128
+  270           2        2       0     2       3      30      0    3   128
+  271           2        2       0     2       3      31      0    3   128
+  272           2        2       0     2       3      34      0    3   128
+  273           2        2       0     2       3      35      0    3   128
+  274           2        2       0     4       3      39      0    3   128
+  275           2        2       0     4       3      40      0    3   128
+  276           2        2       1     0       3      50      0    3   128
+  277           2        2       2     0       3      49      0    3   128
+  278           2        2       3     0       3      47      0    3   128
+  279           2        2       4     0       3      38      0    3   128
+  280           2        2      14     1       3      21      0    3   128
+  281           2        2      15     1       3      20      0    3   128
+  282           2        2      16     1       3      15      0    3   128
+  283           2        2      17     1       3      14      0    3   192
+  284           2        2      18     1       3      11      0    3   128
+  285           2        2      19     1       3      10      0    3   160
+  286           2        2      20     1       3       5      0    3   128
+  287           2        2      21     1       3       4      0    3   160
+  288           2        2      22     1       3       3      0    3   128
+  289           2        2      23     1       3       2      0    3   160
+  290           3        2       0     1       3      44      0    3   128
+  291           3        2       1     1       3      22      0    3   160
+  292           3        2       2     0       3      12      0    3   128
+  293           3        2       3     1       3      32      0    3   128
+  294           4        2       0     1       3      45      0    3   128
+  295           4        2       1     1       3      23      0    3   160
+  296           4        2       2     0       3      13      0    3   128
+  297           4        2       3     1       3      33      0    3   128
   298          10        2       0     0       0      20      0    6    96
   299          10        2       1     0       0      21      0    6    96
   300          10        2       2     0       0      22      0    6    96
@@ -583,7 +728,7 @@ block orientation main_idx sub_idx frame dt1_idx blk_idx roof_y type line0
   387           0        5      32     0       1       6      0    1     0
   388           0        5      33     0       1       5      0    1     0
   389           0        5      34     0       1       4      0    1     0
-  390           1        5       0     0       4      28      0    3    64
+  390           1        5       0     0       4      28      0    3    96
   391           1        5       1     0       2      74      0    3   128
   392           1        5       2     0       2      73      0    3   128
   393           1        5       3     0       2      72      0    3   128
@@ -600,8 +745,8 @@ block orientation main_idx sub_idx frame dt1_idx blk_idx roof_y type line0
   404          10        5       0     0       0      81      0    6    96
   405          10        5      21     0       0      42      0    6    96
   406          11        5       0     0       0      43      0    6    96
-  407          12        5       0     0       5       9      0    3   128
-  408          12        5       1     0       5       8      0    3   128
+  407          12        5       0     0       5       9      0    3   160
+  408          12        5       1     0       5       8      0    3   160
   409           0        6       0     0       5      27      0    1     0
   410           0        6       1     0       5      26      0    1     0
   411           0        6       2     0       5      25      0    1     0
@@ -618,13 +763,13 @@ block orientation main_idx sub_idx frame dt1_idx blk_idx roof_y type line0
   422           1        6       5     0       2      56      0    3   128
   423           1        6       6     0       2      48      0    3   256
   424           2        6       0     0       2      62      0    3   160 *
-  425           2        6       0     0       5      41      0    3   160 *
+  425           2        6       0     0       5      41      0    3   192 *
   426           2        6       1     0       2      61      0    3   128 *
-  427           2        6       1     0       5      40      0    3   128 *
+  427           2        6       1     0       5      40      0    3   160 *
   428           2        6       2     0       2      60      0    3   128 *
-  429           2        6       2     0       5      38      0    3   128 *
+  429           2        6       2     0       5      38      0    3   160 *
   430           2        6       3     0       2      59      0    3   128 *
-  431           2        6       3     0       5      37      0    3   128 *
+  431           2        6       3     0       5      37      0    3   160 *
   432           2        6       4     0       2      58      0    3   128
   433           2        6       5     0       2      51      0    3   128
   434           2        6       6     0       2      50      0    3   160
@@ -639,7 +784,7 @@ block orientation main_idx sub_idx frame dt1_idx blk_idx roof_y type line0
   443          11        6       0     0       0      82      0    6    96
   444          12        6       0     0       2      55      0    3    64
   445          12        6       1     0       2      54      0    3    64
-  446          12        6       2     0       5      39      0    3    96
+  446          12        6       2     0       5      39      0    3   128
   447          12        6       3     0       2      53      0    3    64
   448          12        6       4     0       2     109      0    3    96
   449           0        7       0     0       5      33      0    1     0

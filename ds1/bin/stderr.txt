@@ -10,12 +10,12 @@ exit, memory free :
    * palettes...
    * DT1 files...
       . ./res/data/ds1edit.dt1
-      . data_global_tiles_act1_town_floor.dt1
-      . data_global_tiles_act1_tristram_town.dt1
-      . data_global_tiles_act1_outdoors_stonewall.dt1
-      . data_global_tiles_act1_outdoors_river.dt1
-      . data_global_tiles_act1_outdoors_objects.dt1
-      . data_global_tiles_act1_outdoors_treegroups.dt1
+      . data/global/tiles/act1/town/floor.dt1
+      . data/global/tiles/act1/tristram/town.dt1
+      . data/global/tiles/act1/outdoors/stonewall.dt1
+      . data/global/tiles/act1/outdoors/river.dt1
+      . data/global/tiles/act1/outdoors/objects.dt1
+      . data/global/tiles/act1/outdoors/treegroups.dt1
    * DS1 files...
       . tri_town4.ds1
          bytes free = 244479
