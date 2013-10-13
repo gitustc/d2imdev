@@ -915,8 +915,14 @@ typedef struct DT1_S
 {
     int        ds1_usage; // current number of ds1 using this dt1
     char       name[80];
+
     void       * buffer;
     long       buff_len;
+
+    void       * buffer2;
+    long       buff_len2;
+
+
     long       x1; // signature (7)
     long       x2; // signature (6)
     long       block_num;
@@ -925,6 +931,9 @@ typedef struct DT1_S
     // block headers : block_num structs of BLOCK_S
     void       * bh_buffer;
     int        bh_buff_len;
+
+    void       * bh_buffer2;
+    int        bh_buff_len2;
 
     // all blocks in differents zoom format
     BITMAP     ** block_zoom[ZM_MAX]; // ZM_MAX tables of table of pointers

@@ -96,56 +96,80 @@ int dt1_del(int i)
 
 
 
-void dt1_bh_update2(int i, FILE *p)
+void dt1_bh_update2(int i)
 {
-    BLOCK_S * bh_ptr = glb_dt1[i].bh_buffer;
-    UBYTE   * ptr;
-    int     b, t, idxtable[25] = {20, 21, 22, 23, 24,
-        15, 16, 17, 18, 19,
-        10, 11, 12, 13, 14,
-        5,  6,  7,  8,  9,
-        0,  1,  2,  3,  4};
 
-    ptr = (UBYTE *) glb_dt1[i].buffer + glb_dt1[i].bh_start;
+
+    //BLOCK_S * bh_ptr = glb_dt1[i].bh_buffer;
+    char    * ptr;
+    char    * ptr2 = glb_dt1[i].buffer2;
+    int     b, t;
+
+    ptr2 += (3+4);
+    ptr = (char *) glb_dt1[i].buffer + glb_dt1[i].bh_start;
     for (b=0; b < glb_dt1[i].block_num; b++) {
         //bh_ptr->direction    = * (long *)  ptr;
-        fwrite(&(bh_ptr->direction), 4, 1, p);
+        //do not copy it cause it's useless.
+        //memcpy(ptr2, ptr, 4);
+        //ptr2+=4;
+        //
         //bh_ptr->roof_y       = * (WORD *)  (ptr +  4);
-        fwrite(&(bh_ptr->roof_y), 4, 1, p);
+        memcpy(ptr2, ptr+4, 2);
+        ptr2+=2;
         //bh_ptr->sound        = * (UBYTE *) (ptr +  6);
-        fwrite(&(bh_ptr->sound), 1, 1, p);
+        memcpy(ptr2, ptr+6, 1);
+        ptr2+=1;
         //bh_ptr->animated     = * (UBYTE *) (ptr +  7);
-        fwrite(&(bh_ptr->animated), 1, 1, p);
+        memcpy(ptr2, ptr+7, 1);
+        ptr2+=1;
         //bh_ptr->size_y       = * (long *)  (ptr +  8);
-        fwrite(&(bh_ptr->size_y), 4, 1, p);
+        memcpy(ptr2, ptr+8, 4);
+        ptr2+=4;
         //bh_ptr->size_x       = * (long *)  (ptr + 12);
-        fwrite(&(bh_ptr->size_x), 4, 1, p);
+        memcpy(ptr2, ptr+12, 4);
+        ptr2+=4;
         // skip 4 bytes : zeros1
         //bh_ptr->orientation  = * (long *)  (ptr + 20);
-        fwrite(&(bh_ptr->orientation), 4, 1, p);
+        memcpy(ptr2, ptr+20, 4);
+        ptr2+=4;
         //bh_ptr->main_idx   = * (long *)  (ptr + 24);
-        fwrite(&(bh_ptr->main_idx), 4, 1, p);
+        memcpy(ptr2, ptr+24, 4);
+        ptr2+=4;
         //bh_ptr->sub_idx    = * (long *)  (ptr + 28);
-        fwrite(&(bh_ptr->sub_idx), 4, 1, p);
+        memcpy(ptr2, ptr+28, 4);
+        ptr2+=4;
         //bh_ptr->rarity       = * (long *)  (ptr + 32);
-        fwrite(&(bh_ptr->rarity), 4, 1, p);
+        memcpy(ptr2, ptr+32, 4);
+        ptr2+=4;
         // skip 4 bytes : unknown_a thru unknown_d
         for (t=0; t<25; t++){
             //bh_ptr->sub_tiles_flags[idxtable[t]] = * (UBYTE *) (ptr + 40 + t);
-            fwrite(&(bh_ptr->sub_tiles_flags[idxtable[t]]), 1, 1, p);
-        // skip 4 bytes : unknown_a thru unknown_d
+            // skip 4 bytes : unknown_a thru unknown_d
+            memcpy(ptr2, ptr+40+t, 1);
+            ptr2+=1;
 
         }
         // skip 7 bytes : zeros2
-        bh_ptr->tiles_ptr    = * (long *)  (ptr + 72);
-        bh_ptr->tiles_length = * (long *)  (ptr + 76);
-        bh_ptr->tiles_number = * (long *)  (ptr + 80);
+        //bh_ptr->tiles_ptr    = * (long *)  (ptr + 72);
+        ptr2+=4;
+        //bh_ptr->tiles_length = * (long *)  (ptr + 76);
+        ptr2+=4;
+        //bh_ptr->tiles_number = * (long *)  (ptr + 80);
+        ptr2+=4;
         // skip 12 bytes : zeros3
+        {
+            // for debug
+            memcpy(ptr2, "I AM HERE", 9);
+            ptr2+=9;
+        }
 
         // next block header
-        bh_ptr++;
+        //bh_ptr++;
         ptr += 96;
     }
+
+
+    glb_dt1[i].buff_len2 = ptr2-(char*)(glb_dt1[i].buffer2);
 }
 
 
@@ -194,6 +218,41 @@ void dt1_bh_update(int i)
     }
 }
 
+// ==========================================================================
+// fill the sub-tile structure with the right sub-header data from the file
+void dt1_fill_subt2(SUB_TILE_S * ptr, int i, long tiles_ptr, int s)
+{
+    char * st_ptr;
+
+    char *ptr2 = glb_dt1[i].buffer2;
+    ptr2 += glb_dt1[i].buff_len2;
+
+
+    st_ptr = (char *) glb_dt1[i].buffer + tiles_ptr + (20 * s);
+    //ptr->x_pos       = * (WORD *)  st_ptr;
+    memcpy(ptr2, st_ptr, 2);
+    ptr2+=2;
+    //ptr->y_pos       = * (WORD *)  (st_ptr +  2);
+    memcpy(ptr2, st_ptr+2, 2);
+    ptr2+=2;
+    // skip 2 bytes : unknown1
+    //ptr->x_grid      = * (UBYTE *) (st_ptr +  6);
+    memcpy(ptr2, st_ptr+6, 1);
+    ptr2+=1;
+    //ptr->y_grid      = * (UBYTE *) (st_ptr +  7);
+    memcpy(ptr2, st_ptr+7, 1);
+    ptr2+=1;
+    //ptr->format      = * (WORD *)  (st_ptr +  8);
+    memcpy(ptr2, st_ptr+8, 1);
+    ptr2+=2;
+    //ptr->length      = * (long *)  (st_ptr + 10);
+    memcpy(ptr2, st_ptr+10, 1);
+    ptr2+=4;
+    // skip 2 bytes : unknown2
+    //ptr->data_offset = * (long *)  ((UBYTE *)st_ptr + 16);
+
+    glb_dt1[i].buff_len2 = ptr2 - (char*)glb_dt1[i].buffer2;
+}
 
 // ==========================================================================
 // fill the sub-tile structure with the right sub-header data from the file
@@ -245,7 +304,7 @@ void dt1_zoom(BITMAP * src, int i, int b, int z)
     * (glb_dt1[i].block_zoom[z] + b) = dst;
 }
 
-void dt1_all_zoom_make2(int i, FILE *p)
+void dt1_all_zoom_make2(int i)
 {
     BLOCK_S       * b_ptr, * my_b_ptr; // pointers to current block header
     SUB_TILE_S    st_ptr;  // current sub-tile header
@@ -285,7 +344,7 @@ void dt1_all_zoom_make2(int i, FILE *p)
         if ((orientation == 10) || (orientation == 11)){
             // 10或者11是special layer
             // set it to 160 because we'll draw infos over it later
-            w = 160; 
+            w = 160;
         }
         //这个地方...图片的高直接是个负值...
         h = - b_ptr->size_y;
@@ -331,6 +390,7 @@ void dt1_all_zoom_make2(int i, FILE *p)
             //一个tile由多个subtile构成的
             // get the sub-tile info
             dt1_fill_subt(& st_ptr, i, b_ptr->tiles_ptr, s);
+            //dt1_fill_subt2(& st_ptr, i, b_ptr->tiles_ptr, s);
 
             // get infos
             x0     = st_ptr.x_pos;
@@ -339,6 +399,17 @@ void dt1_all_zoom_make2(int i, FILE *p)
             length = st_ptr.length;
             format = st_ptr.format;
 
+            //
+            {
+                char *ptr2 = glb_dt1[i].buffer2;
+                ptr2 += glb_dt1[i].buff_len2;
+                memcpy(ptr2, data, length);
+                glb_dt1[i].buff_len2 += length;
+
+
+
+
+            }
             // draw the sub-tile
             if (format == 0x0001){
                 //这个画法我已经知道了
@@ -380,7 +451,7 @@ void dt1_all_zoom_make2(int i, FILE *p)
 #endif
 
         // destroy tmp bitmap
-       destroy_bitmap(tmp_bmp);
+        destroy_bitmap(tmp_bmp);
 
         // next block header
         b_ptr ++;
@@ -439,7 +510,7 @@ void dt1_all_zoom_make(int i)
         if ((orientation == 10) || (orientation == 11)){
             // 10或者11是special layer
             // set it to 160 because we'll draw infos over it later
-            w = 160; 
+            w = 160;
         }
         //这个地方...图片的高直接是个负值...
         h = - b_ptr->size_y;
@@ -534,7 +605,7 @@ void dt1_all_zoom_make(int i)
 #endif
 
         // destroy tmp bitmap
-       destroy_bitmap(tmp_bmp);
+        destroy_bitmap(tmp_bmp);
 
         // next block header
         b_ptr ++;
@@ -548,19 +619,81 @@ void dt1_all_zoom_make(int i)
 
 // ==========================================================================
 // fill / make all the datas of 1 dt1
-void dt1_struct_update(int i)
+void dt1_struct_update2(int i)
 {
-    void * ptr = glb_dt1[i].buffer;
+    char * ptr  = glb_dt1[i].buffer;
+    char * ptr2  = glb_dt1[i].buffer2;
+
     int  size;
     char tmp[100];
-    FILE *p;
-    char tname[256];
     uint32_t  info;
 
-    if (ptr == NULL)
+    if (ptr == NULL){
         return;
-    //我勒个擦擦..好直接....
-    //和那个dt1 tool的源码对照着看
+    }
+
+    //glb_dt1[i].x1        = * (long *) ptr;
+    //glb_dt1[i].x2        = * (long *) ((UBYTE *)ptr + 4);
+    //glb_dt1[i].block_num = * (long *) ((UBYTE *)ptr + 268);
+    memcpy(ptr2, "D2T", 3);
+    ptr2 += 3;
+    memcpy(ptr2, ptr+268, 4);
+    //glb_dt1[i].bh_start  = * (long *) ((UBYTE *)ptr + 272);
+
+    // debug
+    //printf("struct data of glb_dt1[%i] :\n", i);
+    //printf("name of glb_dt1[%i] : %s\n", i, glb_dt1[i].name);
+    //printf("   x1        = %li\n",    glb_dt1[i].x1);
+    //printf("   x2        = %li\n",    glb_dt1[i].x2);
+    //printf("   block_num = %li\n",    glb_dt1[i].block_num);
+    //printf("   bh_start  = 0x%0lX\n", glb_dt1[i].bh_start);
+
+    // blocks
+    //size = sizeof(BLOCK_S) * glb_dt1[i].block_num;
+    //glb_dt1[i].bh_buffer = (void *) malloc(size);
+    //if (glb_dt1[i].bh_buffer == NULL) {
+    //    FATAL_EXIT("dt1_struct_update(%i), not enough memory for %i bytes\n", i, size);
+    //}
+    //glb_dt1[i].bh_buff_len = size;
+    //nice~和dt1 tool的源码可以对应
+    dt1_bh_update2(i);
+    dt1_all_zoom_make2(i);
+
+    {
+        txt_convert_dash(glb_dt1[i].name);
+        printf ( "txt_convert_dash:%s\n", glb_dt1[i].name);
+
+        {
+            FILE    *p;
+            char    *p_path = glb_dt1[i].name;
+
+            p = fopen( p_path, "wb" );
+            if ( p == NULL ) {
+                fprintf ( stderr, "couldn't open file '%s'; %s\n", p_path, strerror(errno) );
+                exit (0);
+            }
+            fwrite(glb_dt1[i].buffer2, glb_dt1[i].buff_len2, 1, p);
+            if( fclose(p) == EOF ) {
+                fprintf ( stderr, "couldn't close file '%s'; %s\n", p_path, strerror(errno) );
+                exit (0);
+            }
+            //fprintf (stdout, "my_dt1:%s\n", glb_dt1[i].buffer2 );
+        }
+    }
+}
+// ==========================================================================
+// fill / make all the datas of 1 dt1
+void dt1_struct_update(int i)
+{
+    void * ptr  = glb_dt1[i].buffer;
+    int  size;
+    char tmp[100];
+    uint32_t  info;
+
+    if (ptr == NULL){
+        return;
+    }
+
     glb_dt1[i].x1        = * (long *) ptr;
     glb_dt1[i].x2        = * (long *) ((UBYTE *)ptr + 4);
     glb_dt1[i].block_num = * (long *) ((UBYTE *)ptr + 268);
@@ -568,29 +701,11 @@ void dt1_struct_update(int i)
 
     // debug
     printf("struct data of glb_dt1[%i] :\n", i);
-    txt_convert_dash(glb_dt1[i].name);
     printf("name of glb_dt1[%i] : %s\n", i, glb_dt1[i].name);
     printf("   x1        = %li\n",    glb_dt1[i].x1);
     printf("   x2        = %li\n",    glb_dt1[i].x2);
     printf("   block_num = %li\n",    glb_dt1[i].block_num);
     printf("   bh_start  = 0x%0lX\n", glb_dt1[i].bh_start);
-
-
-
-    sprintf(tname, "./t/%s", glb_dt1[i].name);
-    printf ( "%s\n", tname );
-
-    p	= fopen( tname , "wb" );
-    if ( p == NULL ) {
-        fprintf ( stderr, "couldn't open file '%s'; %s\n", tname , strerror(errno) );
-        exit (0);
-    }
-
-    fputs("D2T", p);
-
-    info = (uint32_t) glb_dt1[i].block_num;
-
-    fwrite(&info, 4, 1, p );
 
     // blocks
     size = sizeof(BLOCK_S) * glb_dt1[i].block_num;
@@ -601,10 +716,7 @@ void dt1_struct_update(int i)
     glb_dt1[i].bh_buff_len = size;
     //nice~和dt1 tool的源码可以对应
     dt1_bh_update(i);
-    dt1_bh_update2(i,p);
     dt1_all_zoom_make(i);
-    //dt1_all_zoom_make2(i,p);
-    fclose(p);
 }
 
 
@@ -617,6 +729,7 @@ int dt1_add(char * dt1name)
 {
     int  i, idx, entry;
     char tmp[256];
+
 
     if (dt1_already_loaded(dt1name, & idx) == TRUE) {
         glb_dt1[idx].ds1_usage++;
@@ -636,14 +749,26 @@ int dt1_add(char * dt1name)
                     FATAL_EXIT("dt1_add() : file %s not found", dt1name);
                 }
 
+
+                {
+                    glb_dt1[i].buffer2  = malloc (glb_dt1[i].buff_len);
+                    if ( glb_dt1[i].buffer2==NULL ) {
+                        fprintf ( stderr, "\ndynamic memory allocation failed\n" );
+                        exit (0);
+                    }
+
+                }
+
                 // dt1 update
                 strcpy(glb_dt1[i].name, dt1name);
                 glb_dt1[i].ds1_usage = 1;
                 //把第i个.dt1填入数据结构中~
                 dt1_struct_update(i);
+                dt1_struct_update2(i);
 
                 // free the copy of the dt1 in mem
                 free(glb_dt1[i].buffer);
+                free(glb_dt1[i].buffer2);
                 glb_dt1[i].buffer = NULL;
                 glb_dt1[i].buff_len = 0;
 
