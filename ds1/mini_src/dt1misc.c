@@ -254,9 +254,6 @@ void dt1_bh_update3(int i, int *offset)
     }
 
 
-
-    ptr = (char *) glb_dt1[i].buffer + glb_dt1[i].bh_start;
-
     // for the "D2T" and # of block
     ptr2 += (3+4);
     p = ptr2;
@@ -377,19 +374,27 @@ int dt1_test_gfx ( int i )
     ptr = (char *) glb_dt1[i].buffer2;
 
     fprintf(stdout, "we try to test test.d2t now:\n" );
-    {
-        char t[10];
-        t[3]=0;
-        memcpy(t, ptr, 3);
-
-        fprintf(stdout, "D2T=%s\n", t );
-    }
     ptr += 3; // "D2T"
 
     glb_dt1[i].block_num = * (long *) ptr;
-    fprintf(stdout, "all ok to test test.d2t\n" );
     fprintf(stdout, "block num = %ld\n", glb_dt1[i].block_num );
     ptr += 4;
+
+
+
+
+    // blocks
+    {
+        int size;
+        size = sizeof(BLOCK_S) * glb_dt1[i].block_num;
+        glb_dt1[i].bh_buffer = (void *) malloc(size);
+        if (glb_dt1[i].bh_buffer == NULL) {
+            FATAL_EXIT("dt1_struct_update(%i), not enough memory for %i bytes\n", i, size);
+        }
+        glb_dt1[i].bh_buff_len = size;
+    }
+
+
 
     {
         int mark;
