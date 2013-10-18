@@ -3,7 +3,7 @@
  *
  *       Filename: main.h
  *        Created: 10/09/2013 10:16:06 PM
- *  Last Modified: 10/09/2013 11:21:21 PM
+ *  Last Modified: 10/18/2013 12:07:06 AM
  *
  *    Description: program entry
  *
@@ -27,4 +27,4 @@
 #include <stdint.h>
 #include "gewrp.h"
 
-#endif   /* ----- #ifndef _included_main_inc__  ----- */
+#endif

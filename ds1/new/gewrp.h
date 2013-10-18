@@ -3,7 +3,7 @@
  *
  *       Filename: gewrp.h
  *        Created: 10/09/2013 10:22:06 PM
- *  Last Modified: 10/15/2013 09:50:22 PM
+ *  Last Modified: 10/18/2013 12:11:03 AM
  *
  *    Description: wrap for game engine, to get a universe game api.
  *
@@ -35,7 +35,7 @@ typedef ALLEGRO_EVENT_QUEUE GEWRP_EVTQ;
 typedef ALLEGRO_EVENT       GEWRP_EVENT;
 
 
-struct GEWRP_GEINSTANCE {
+struct GEWRP_INST {
     GEWRP_DISP     *disp;
     GEWRP_EVTQ     *evtq;
     GEWRP_TIMER    *timer;
@@ -45,8 +45,4 @@ struct GEWRP_GEINSTANCE {
 typedef struct GEWRP_INST GEWRP_INST;
 
 extern  GEWRP_INST  glb_gewrp_inst;
-
-
-
-
 

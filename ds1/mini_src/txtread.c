@@ -727,6 +727,51 @@ int read_lvltypes_txt(int ds1_idx, int type)
 
 // ==========================================================================
 // load lvlPrest.txt into mem, then search the Dt1Mask, given the Def Id
+int read_lvlprest_txt2(int ds1_idx, int def)
+{
+
+
+
+    iks * p;
+
+    iks_load( "./res/demo/data/global/excel/lvlprest.xml", &p);
+
+
+    //运行的是这里~
+    for(i=0; i < txt->line_num; i++){
+        sptr = txt->data + (i * txt->line_size) + txt->col[misc_get_txt_column_num(RQ_LVLPREST, "Def")].offset;
+        // here because we have already load the text-based info into txt-structure,
+        // so we can use *lptr == def directly, otherwise we can not
+        lptr = (long *) sptr;
+        if((* lptr) == def){
+            // Def found
+            DEBUG_MESSAGE("Found DEF %i in LvlPrest.txt at row %i, col %i\n", def, i + 1, txt->col[misc_get_txt_column_num(RQ_LVLPREST, "Def")].pos);
+
+            // dt1mask
+            sptr = txt->data + (i * txt->line_size) + txt->col[misc_get_txt_column_num(RQ_LVLPREST, "Dt1Mask")].offset;
+            lptr = (long *) sptr;
+            mask = * lptr;
+
+            DEBUG_MESSAGE("DT1MASK = %li in LvlPrest.txt at row %i, col %i\n", mask, i + 1, txt->col[misc_get_txt_column_num(RQ_LVLPREST, "Dt1Mask")].pos);
+
+            for (b=0; b < DT1_IN_DS1_MAX; b++){
+                if (b == 0){
+                    glb_ds1.dt1_mask[b] = TRUE;
+                }else{
+                    glb_ds1.dt1_mask[b] = mask & (1 << (b-1)) ? TRUE : FALSE;
+                }
+            }
+
+            // end
+            return 0;
+        }
+    }
+}
+
+
+
+// ==========================================================================
+// load lvlPrest.txt into mem, then search the Dt1Mask, given the Def Id
 int read_lvlprest_txt(int ds1_idx, int def)
 {
     TXT_S       *txt;
@@ -863,6 +908,8 @@ int read_lvlprest_txt(int ds1_idx, int def)
         //运行的是这里~
         for(i=0; i < txt->line_num; i++){
             sptr = txt->data + (i * txt->line_size) + txt->col[misc_get_txt_column_num(RQ_LVLPREST, "Def")].offset;
+            // here because we have already load the text-based info into txt-structure,
+            // so we can use *lptr == def directly, otherwise we can not
             lptr = (long *) sptr;
             if((* lptr) == def){
                 // Def found
@@ -887,6 +934,11 @@ int read_lvlprest_txt(int ds1_idx, int def)
                 return 0;
             }
         }
+
+
+
+
+
     }
 
     // end

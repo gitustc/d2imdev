@@ -3,7 +3,7 @@
  *
  *       Filename: d2im.c
  *        Created: 10/10/2013 01:19:53 AM
- *  Last Modified: 10/10/2013 01:36:03 AM
+ *  Last Modified: 10/18/2013 12:21:05 AM
  *
  *    Description: game logic
  *
@@ -39,12 +39,6 @@ int d2im_init ()
 
 
 
-
-
-
-
-
-
 /* 
  * ===  FUNCTION  ======================================================================
  *         Name:  d2im_run
@@ -54,24 +48,38 @@ int d2im_init ()
 int d2im_run ()
 {
 
-    GEWRP_EVENT
+    GEWRP_EVENT     event;
+
     while (1) {
 
+        fprintf(stdout, "here\n" );
+#if 0
         al_wait_for_event(glb_gewrp.evtq, &event);
 
         switch (event.type) {
             case ALLEGRO_EVENT_DISPLAY_CLOSE:
-                return;
+                {
+                    break;
+                }
 
             case ALLEGRO_EVENT_KEY_DOWN:
-                if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE)
-                    return;
-                break;
+                {
+                    if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE)
+                        return;
+                    break;
+
+                }
 
             case ALLEGRO_EVENT_TIMER:
-                need_draw = true;
-                break;
+                {
+                    break;
+                }
+            default:
+                {
+                    fprintf(stdout, "here\n" );
+                }
         }
+#endif 
     }
     return 0;
 }

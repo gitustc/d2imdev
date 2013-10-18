@@ -3,7 +3,7 @@
  *
  *       Filename: glb.c
  *        Created: 10/10/2013 12:01:00 AM
- *  Last Modified: 10/15/2013 09:49:38 PM
+ *  Last Modified: 10/18/2013 12:11:31 AM
  *
  *    Description: global variables
  *
@@ -24,8 +24,8 @@
 #include "d2im.h"
 
 
-GEWRP          glb_gewrp;
-D2IM           glb_d2im;
+GEWRP_INST          glb_gewrp_inst;
+D2IM_INST           glb_d2im_inst;
 
 
 

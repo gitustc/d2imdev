@@ -3,7 +3,7 @@
  *
  *       Filename: d2im.h
  *        Created: 10/10/2013 01:14:52 AM
- *  Last Modified: 10/10/2013 01:34:39 AM
+ *  Last Modified: 10/18/2013 12:12:19 AM
  *
  *    Description: game logic
  *
@@ -23,10 +23,10 @@
 
 
 
-struct STRU_D2IM {
+struct D2IM_INST {
 };
-typedef struct STRU_D2IM STRU_D2IM;
-extern STRU_D2IM        glb_d2im;
+typedef struct D2IM_INST D2IM_INST;
+extern D2IM_INST        glb_d2im_inst;
 
 
 int d2im_init();
