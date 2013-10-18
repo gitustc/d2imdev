@@ -3,7 +3,7 @@
  *
  *       Filename: gewrp.c
  *        Created: 10/09/2013 10:39:22 PM
- *  Last Modified: 10/10/2013 01:43:10 AM
+ *  Last Modified: 10/15/2013 09:48:44 PM
  *
  *    Description: wrp for allegro
  *                 you can also wrp other game library
@@ -55,5 +55,8 @@ int gewrp_init ( uint32_t arg )
 
 
 
-    return EXIT_SUCCESS;
+    return 0;
 }
+
+
+

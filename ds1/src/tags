@@ -47,6 +47,7 @@ BU_WALL1	structs.h	/^    \/* walls     *\/ BU_WALL1,  BU_WALL2,  BU_WALL3,  BU_W
 BU_WALL2	structs.h	/^    \/* walls     *\/ BU_WALL1,  BU_WALL2,  BU_WALL3,  BU_WALL4,$/;"	e	enum:BUT_TYP_E
 BU_WALL3	structs.h	/^    \/* walls     *\/ BU_WALL1,  BU_WALL2,  BU_WALL3,  BU_WALL4,$/;"	e	enum:BUT_TYP_E
 BU_WALL4	structs.h	/^    \/* walls     *\/ BU_WALL1,  BU_WALL2,  BU_WALL3,  BU_WALL4,$/;"	e	enum:BUT_TYP_E
+BuildBaseMassive	mpq/mpqview.c	/^void BuildBaseMassive()$/;"	f
 CC	Makefile	/^CC		=	gcc -Wall$/;"	m
 CELL_F_S	structs.h	/^typedef struct CELL_F_S$/;"	s
 CELL_F_S	structs.h	/^} CELL_F_S;$/;"	t	typeref:struct:CELL_F_S
@@ -61,6 +62,9 @@ CMAP_E	structs.h	/^typedef enum CMAP_E$/;"	g
 CMAP_E	structs.h	/^} CMAP_E;$/;"	t	typeref:enum:CMAP_E
 CMD_LINE_S	structs.h	/^typedef struct CMD_LINE_S$/;"	s
 CMD_LINE_S	structs.h	/^} CMD_LINE_S;$/;"	t	typeref:struct:CMD_LINE_S
+CMP_ASCII	mpq/dclib.h	8;"	d
+CMP_BINARY	mpq/dclib.h	7;"	d
+CMP_BUFFER_SIZE	mpq/dclib.h	5;"	d
 CM_MAX	structs.h	/^    CM_MAX$/;"	e	enum:CMAP_E
 CM_SELECT	structs.h	/^    CM_SELECT,$/;"	e	enum:CMAP_E
 CM_SHADOW	structs.h	/^    CM_SHADOW,$/;"	e	enum:CMAP_E
@@ -93,6 +97,7 @@ CONFIG_S	structs.h	/^} CONFIG_S;$/;"	t	typeref:struct:CONFIG_S
 CT_NULL	structs.h	/^    CT_NULL,$/;"	e	enum:COL_TYPE_NM
 CT_NUM	structs.h	/^    CT_NUM$/;"	e	enum:COL_TYPE_NM
 CT_STR	structs.h	/^    CT_STR,$/;"	e	enum:COL_TYPE_NM
+Crc	mpq/mpqview.c	/^DWORD Crc(char *string,DWORD *massive_base,DWORD massive_base_offset)$/;"	f
 D2SENSE	ds1misc.c	/^}D2SENSE;$/;"	t	typeref:struct:__anon1	file:
 DCCINFO_SAVE_PCX	dccinfo.c	7;"	d	file:
 DCC_BITSTREAM_S	dccinfo.h	/^typedef struct DCC_BITSTREAM_S$/;"	s
@@ -114,6 +119,11 @@ DCC_PB_ENTRY_S	dccinfo.h	/^typedef struct DCC_PB_ENTRY_S$/;"	s
 DCC_PB_ENTRY_S	dccinfo.h	/^} DCC_PB_ENTRY_S;$/;"	t	typeref:struct:DCC_PB_ENTRY_S
 DCC_S	dccinfo.h	/^typedef struct DCC_S$/;"	s
 DCC_S	dccinfo.h	/^} DCC_S;$/;"	t	typeref:struct:DCC_S
+DCL_ERROR_1	mpq/dclib.h	14;"	d
+DCL_ERROR_2	mpq/dclib.h	15;"	d
+DCL_ERROR_3	mpq/dclib.h	16;"	d
+DCL_ERROR_4	mpq/dclib.h	17;"	d
+DCL_NO_ERROR	mpq/dclib.h	13;"	d
 DEBUG_MESSAGE	error.h	7;"	d
 DEL_ACTIVATED	structs.h	66;"	d
 DEL_COPY_INFO	structs.h	62;"	d
@@ -130,6 +140,9 @@ DF_P1	structs.h	69;"	d
 DF_P2	structs.h	70;"	d
 DF_P3	structs.h	71;"	d
 DF_P4	structs.h	72;"	d
+DICT_SIZE_1	mpq/dclib.h	9;"	d
+DICT_SIZE_2	mpq/dclib.h	10;"	d
+DICT_SIZE_4	mpq/dclib.h	11;"	d
 DS1ERR_CMDLINE	structs.h	/^    DS1ERR_CMDLINE   =   2,$/;"	e	enum:DS1ERR_ENUM
 DS1ERR_ENUM	structs.h	/^typedef enum DS1ERR_ENUM$/;"	g
 DS1ERR_ENUM	structs.h	/^} DS1ERR_ENUM;$/;"	t	typeref:enum:DS1ERR_ENUM
@@ -145,6 +158,8 @@ DT1_IN_DS1_MAX	structs.h	16;"	d
 DT1_MAX	structs.h	18;"	d
 DT1_S	structs.h	/^typedef struct DT1_S$/;"	s
 DT1_S	structs.h	/^} DT1_S;$/;"	t	typeref:struct:DT1_S
+DWORD	mpq/mpqtypes.h	13;"	d
+Decode	mpq/mpqview.c	/^void Decode(DWORD *data_in, DWORD *massive_base, DWORD crc, DWORD lenght)$/;"	f
 EB_ACT1	structs.h	/^    EB_ACT1, EB_ACT2, EB_ACT3, EB_ACT4, EB_ACT5,$/;"	e	enum:EDT_BUT_E
 EB_ACT2	structs.h	/^    EB_ACT1, EB_ACT2, EB_ACT3, EB_ACT4, EB_ACT5,$/;"	e	enum:EDT_BUT_E
 EB_ACT3	structs.h	/^    EB_ACT1, EB_ACT2, EB_ACT3, EB_ACT4, EB_ACT5,$/;"	e	enum:EDT_BUT_E
@@ -159,6 +174,12 @@ EDT_BUT_E	structs.h	/^typedef enum EDT_BUT_E$/;"	g
 EDT_BUT_E	structs.h	/^} EDT_BUT_E; \/\/ edit obj buttons$/;"	t	typeref:enum:EDT_BUT_E
 EDT_BUT_S	structs.h	/^typedef struct EDT_BUT_S$/;"	s
 EDT_BUT_S	structs.h	/^} EDT_BUT_S;$/;"	t	typeref:struct:EDT_BUT_S
+EXP_BUFFER_SIZE	mpq/dclib.h	6;"	d
+ExtWavUnp1	mpq/wav_unp.c	/^UInt32 ExtWavUnp1(UInt32 buf_in, UInt32 size_in, UInt32 buf_out, UInt32 size_out)$/;"	f
+ExtWavUnp2	mpq/wav_unp.c	/^UInt32 ExtWavUnp2(UInt32 buf_in,UInt32 size_in,UInt32 buf_out,UInt32 size_out)$/;"	f
+ExtWavUnp3	mpq/wav_unp.c	/^UInt32 ExtWavUnp3(UInt32 buf_in,UInt32 size_in,UInt32 buf_out,UInt32 size_out)$/;"	f
+ExtractTo	mpq/mpqview.c	/^int ExtractTo(FILE *fp_new,DWORD entry)$/;"	f
+ExtractToMem	mpq/mpqview.c	/^int ExtractToMem(void * mp_new, DWORD entry)$/;"	f
 FATAL_EXIT	error.h	6;"	d
 FLG_ACTIVATED	structs.h	39;"	d
 FLG_COPY_INFO	structs.h	33;"	d
@@ -169,6 +190,7 @@ FLG_MOVING	structs.h	38;"	d
 FLG_SELECTED	structs.h	30;"	d
 FLG_TMP_SELECT	structs.h	32;"	d
 FLOOR_MAX_LAYER	structs.h	20;"	d
+FreeLocals	mpq/mpqview.c	/^void FreeLocals()$/;"	f
 GAMMA_S	structs.h	/^typedef struct GAMMA_S$/;"	s
 GAMMA_S	structs.h	/^} GAMMA_S;$/;"	t	typeref:struct:GAMMA_S
 GC_060	structs.h	/^    GC_060, GC_062, GC_064, GC_066, GC_068,$/;"	e	enum:GC_ENUM
@@ -217,8 +239,11 @@ GC_ENUM	structs.h	/^} GC_ENUM;$/;"	t	typeref:enum:GC_ENUM
 GC_MAX	structs.h	/^    GC_MAX$/;"	e	enum:GC_ENUM
 GLB_DS1EDIT_S	structs.h	/^typedef struct GLB_DS1EDIT_S$/;"	s
 GLB_DS1EDIT_S	structs.h	/^} GLB_DS1EDIT_S;$/;"	t	typeref:struct:GLB_DS1EDIT_S
+GLB_MPQ_S	mpq/mpqtypes.h	/^typedef struct GLB_MPQ_S$/;"	s
+GLB_MPQ_S	mpq/mpqtypes.h	/^} GLB_MPQ_S;$/;"	t	typeref:struct:GLB_MPQ_S
 GROUP_S	structs.h	/^typedef struct GROUP_S$/;"	s
 GROUP_S	structs.h	/^} GROUP_S;$/;"	t	typeref:struct:GROUP_S
+GetUnknowCrc	mpq/mpqview.c	/^DWORD GetUnknowCrc(DWORD entry)$/;"	f
 IS_ACTIVATED	structs.h	48;"	d
 IS_COPY_INFO	structs.h	44;"	d
 IS_COPY_STATE	structs.h	45;"	d
@@ -233,7 +258,7 @@ IT_ENUM	structs.h	/^typedef enum IT_ENUM$/;"	g
 IT_ENUM	structs.h	/^} IT_ENUM; \/\/ Identical Type$/;"	t	typeref:enum:IT_ENUM
 IT_NEW	structs.h	/^    IT_NEW,$/;"	e	enum:IT_ENUM
 IT_NULL	structs.h	/^    IT_NULL,$/;"	e	enum:IT_ENUM
-KEY_STATE	interfac.c	44;"	d	file:
+InitializeLocals	mpq/mpqview.c	/^int InitializeLocals()$/;"	f
 LAY_INF_S	structs.h	/^typedef struct LAY_INF_S$/;"	s
 LAY_INF_S	structs.h	/^} LAY_INF_S;$/;"	t	typeref:struct:LAY_INF_S
 LIBS	Makefile	/^LIBS    =   ..\/..\/allegro\/allegro4\/lib\/*.a -lm -lpthread -lX11 -lXcursor -lXcursor -ldl -lGL$/;"	m
@@ -248,6 +273,7 @@ MOD_MAX	structs.h	/^    MOD_MAX$/;"	e	enum:MODE_E
 MOD_O	structs.h	/^    MOD_O, \/\/ Edit Objects$/;"	e	enum:MODE_E
 MOD_P	structs.h	/^    MOD_P, \/\/ Edit Paths$/;"	e	enum:MODE_E
 MOD_T	structs.h	/^    MOD_T, \/\/ Edit Tiles$/;"	e	enum:MODE_E
+MPQTYPES_MAX_PATH	mpq/mpqtypes.h	15;"	d
 MW_COMBINATION_KEY_NUM	structs.h	79;"	d
 MW_SHORTCUT_NUM	structs.h	78;"	d
 OBJS	Makefile	/^OBJS    =   .\/mpq\/dcl_tbl.o .\/mpq\/explode.o .\/mpq\/mpqview.o .\/mpq\/wav_unp.o anim.o animdata.o dc6info.o dccinfo.o ds1misc.o dt1_draw.o dt1misc.o editobj.o gfx_custom.o inicreat.o iniread.o interfac.o main.o misc.o txtread.o wpreview.o$/;"	m
@@ -291,7 +317,6 @@ PEM_E	structs.h	/^typedef enum PEM_E$/;"	g
 PEM_E	structs.h	/^} PEM_E; \/\/ Path Editing Mode enumeration$/;"	t	typeref:enum:PEM_E
 PEM_MAX	structs.h	/^    PEM_MAX$/;"	e	enum:PEM_E
 PEM_NONE	structs.h	/^    PEM_NONE,$/;"	e	enum:PEM_E
-RELEASE_KEY	interfac.c	43;"	d	file:
 RQ_ENUM	structs.h	/^typedef enum RQ_ENUM$/;"	g
 RQ_ENUM	structs.h	/^} RQ_ENUM;$/;"	t	typeref:enum:RQ_ENUM
 RQ_LVLPREST	structs.h	/^    RQ_LVLPREST,$/;"	e	enum:RQ_ENUM
@@ -312,10 +337,25 @@ SET_MOVING	structs.h	56;"	d
 SET_SELECTED	structs.h	50;"	d
 SET_TMP_SELECT	structs.h	52;"	d
 SHADOW_MAX_LAYER	structs.h	21;"	d
+SInt16	mpq/mpqtypes.h	9;"	d
+SInt32	mpq/mpqtypes.h	11;"	d
 SUB_ELM_S	structs.h	/^typedef struct SUB_ELM_S$/;"	s
 SUB_ELM_S	structs.h	/^} SUB_ELM_S;$/;"	t	typeref:struct:SUB_ELM_S
 SUB_TILE_S	structs.h	/^typedef struct SUB_TILE_S$/;"	s
 SUB_TILE_S	structs.h	/^} SUB_TILE_S;$/;"	t	typeref:struct:SUB_TILE_S
+Sub_WavUnp1	mpq/wav_unp.c	/^void Sub_WavUnp1(UInt32 arg1,UInt32 base)$/;"	f
+Sub_WavUnp10	mpq/wav_unp.c	/^void Sub_WavUnp10(UInt32 arg1,UInt32 arg2)$/;"	f
+Sub_WavUnp11	mpq/wav_unp.c	/^UInt32 Sub_WavUnp11(UInt32 buf_out,UInt32 size_out,UInt32 work_buff,UInt32 base)$/;"	f
+Sub_WavUnp12	mpq/wav_unp.c	/^void Sub_WavUnp12(UInt32 base)$/;"	f
+Sub_WavUnp13	mpq/wav_unp.c	/^UInt32 Sub_WavUnp13(UInt32 buf_in,UInt32 size_in,UInt32 flag,UInt32 buf_out,UInt32 size_out)$/;"	f
+Sub_WavUnp2	mpq/wav_unp.c	/^UInt32 Sub_WavUnp2(UInt32 arg1,UInt32 arg2,UInt32 arg3)$/;"	f
+Sub_WavUnp3	mpq/wav_unp.c	/^void Sub_WavUnp3(UInt32 ptr)  $/;"	f
+Sub_WavUnp4	mpq/wav_unp.c	/^void Sub_WavUnp4(UInt32 arg1,UInt32 arg2,UInt32 arg3,UInt32 arg4)$/;"	f
+Sub_WavUnp5	mpq/wav_unp.c	/^UInt32 Sub_WavUnp5(UInt32 arg1)$/;"	f
+Sub_WavUnp6	mpq/wav_unp.c	/^void Sub_WavUnp6(UInt32 ptr_base)$/;"	f
+Sub_WavUnp7	mpq/wav_unp.c	/^UInt32 Sub_WavUnp7(UInt32 arg1)$/;"	f
+Sub_WavUnp8	mpq/wav_unp.c	/^UInt32 Sub_WavUnp8(UInt32 arg1)$/;"	f
+Sub_WavUnp9	mpq/wav_unp.c	/^void Sub_WavUnp9(UInt32 arg1,UInt32 arg2)$/;"	f
 TAG_MAX_LAYER	structs.h	22;"	d
 TG_MAX	structs.h	/^    TG_MAX$/;"	e	enum:TILEGRID_ENUM
 TG_OFF	structs.h	/^    TG_OFF = 0,   \/\/ disable$/;"	e	enum:TILEGRID_ENUM
@@ -337,6 +377,9 @@ TXT_S	structs.h	/^typedef struct TXT_S$/;"	s
 TXT_S	structs.h	/^} TXT_S;$/;"	t	typeref:struct:TXT_S
 UBYTE	types.h	/^typedef unsigned char      UBYTE;$/;"	t
 UDWORD	types.h	/^typedef unsigned long      UDWORD;$/;"	t
+UInt16	mpq/mpqtypes.h	8;"	d
+UInt32	mpq/mpqtypes.h	10;"	d
+UInt8	mpq/mpqtypes.h	7;"	d
 UNDO_DAT_FLG_S	structs.h	/^typedef struct UNDO_DAT_FLG_S$/;"	s
 UNDO_DAT_FLG_S	structs.h	/^} UNDO_DAT_FLG_S;$/;"	t	typeref:struct:UNDO_DAT_FLG_S
 UNDO_S	structs.h	/^typedef struct UNDO_S$/;"	s
@@ -406,10 +449,19 @@ _INICREAT_H_	inicreat.h	3;"	d
 _INIREAD_H_	iniread.h	3;"	d
 _INTERFAC_H_	interfac.h	3;"	d
 _MISC_H_	misc.h	3;"	d
+_MPQTYPES_H_	mpq/mpqtypes.h	3;"	d
+_MPQVIEW_H_	mpq/mpqview.h	3;"	d
 _TXTREAD_H_	txtread.h	3;"	d
 _WINDS1EDIT_STRUCTS_H_	structs.h	3;"	d
 _WINDS1EDIT_TYPES_H_	types.h	3;"	d
 _WPREVIEW_H_	wpreview.h	3;"	d
+__explode_1	mpq/explode.c	/^UInt16 __explode_1(UInt8 *buf)$/;"	f
+__explode_2	mpq/explode.c	/^UInt16 __explode_2(UInt8 *buf)$/;"	f
+__explode_3	mpq/explode.c	/^UInt16 __explode_3(UInt8 *buf, UInt16 flag)$/;"	f
+__explode_4	mpq/explode.c	/^UInt16 __explode_4(UInt8 *buf, UInt32 flag)$/;"	f
+__explode_5	mpq/explode.c	/^void __explode_5(UInt16 count, UInt8 *buf_1, const UInt8 *table, UInt8 *buf_2)$/;"	f
+__explode_6	mpq/explode.c	/^void __explode_6(UInt8 *buf, const UInt8 *table)$/;"	f
+__explode_7	mpq/explode.c	/^void __explode_7(UInt8 *buf, const UInt8 *table, UInt32 count)$/;"	f
 _my_count	interfac.c	/^int             _my_count = 1;$/;"	v
 _my_delay	interfac.c	/^struct timeval  _my_delay;$/;"	v	typeref:struct:timeval
 _my_key_state	interfac.c	/^int _my_key_state(char *key)$/;"	f
@@ -433,6 +485,7 @@ animations_layer_mask	structs.h	/^    UBYTE         animations_layer_mask;$/;"	m
 animdata_get_cof_info	animdata.c	/^int animdata_get_cof_info(char * name, long * fpd, long * speed)$/;"	f
 animdata_hash_value	animdata.c	/^UBYTE animdata_hash_value(char * name)$/;"	f
 animdata_load	animdata.c	/^void animdata_load(void)$/;"	f
+avail_metods	mpq/mpqtypes.h	/^   DWORD	 avail_metods[4];\/\/={0x08,0x01,0x40,0x80};$/;"	m	struct:GLB_MPQ_S
 b_x0	structs.h	/^    int        b_x0, b_y0; \/\/ upper-left corner, in the screen$/;"	m	struct:WIN_ELEMENT_S
 b_y0	structs.h	/^    int        b_x0, b_y0; \/\/ upper-left corner, in the screen$/;"	m	struct:WIN_ELEMENT_S
 bg	structs.h	/^    int bg;$/;"	m	struct:PATH_EDIT_BUT_COL_S
@@ -449,6 +502,7 @@ bit_type_w	structs.h	/^    WBITSTYPE_ENUM bit_type_w[WALL_MAX_LAYER  ][ 5][8];$/
 block_idx	structs.h	/^    int       block_idx;$/;"	m	struct:BLOCK_TABLE_S
 block_num	structs.h	/^    long       block_num;$/;"	m	struct:DT1_S
 block_pointer	structs.h	/^    ANIM_DATA_RECORD_S * block_pointer [256];$/;"	m	struct:ANIM_DATA_S
+block_table	mpq/mpqtypes.h	/^   DWORD	*block_table;		\/\/ Block table$/;"	m	struct:GLB_MPQ_S
 block_table	structs.h	/^    BLOCK_TABLE_S * block_table;$/;"	m	struct:DS1_S
 block_zoom	structs.h	/^    BITMAP     ** block_zoom[ZM_MAX]; \/\/ ZM_MAX tables of table of pointers$/;"	m	struct:DT1_S
 bmp	dccinfo.h	/^   BITMAP          * bmp;        \/\/ frame buffer bitmap$/;"	m	struct:DCC_DIRECTION_S
@@ -471,7 +525,9 @@ bt_idx	structs.h	/^    int   bt_idx;$/;"	m	struct:CELL_W_S
 bt_idx_num	structs.h	/^    int       bt_idx_num;   \/\/ # of elements in * bt_idx_tab$/;"	m	struct:MAIN_LINE_S
 bt_idx_tab	structs.h	/^    int bt_idx_tab;$/;"	m	struct:SUB_ELM_S
 bt_num	structs.h	/^    int           bt_num;$/;"	m	struct:DS1_S
+buf_in	mpq/mpqview.c	/^    char * buf_in;$/;"	m	struct:params	file:
 buf_num	structs.h	/^    long           buf_num;$/;"	m	struct:UNDO_S
+buf_out	mpq/mpqview.c	/^    char * buf_out;$/;"	m	struct:params	file:
 buff_len	structs.h	/^    long       buff_len;$/;"	m	struct:DT1_S
 buffer	structs.h	/^    void               * buffer;$/;"	m	struct:ANIM_DATA_S
 buffer	structs.h	/^    void       * buffer;$/;"	m	struct:DT1_S
@@ -520,6 +576,7 @@ col_win	structs.h	/^    WMSG_FGBG_S col_win;$/;"	m	struct:WMSG_S
 compression_flag	dccinfo.h	/^   UDWORD compression_flag;$/;"	m	struct:DCC_DIRECTION_S
 conflict	structs.h	/^    char      conflict;$/;"	m	struct:BLOCK_TABLE_S
 coord_to_tile	wpreview.c	/^void coord_to_tile(int ds1_idx, int ax, int ay, int * layer_x, int * layer_y)$/;"	f
+count_files	mpq/mpqtypes.h	/^   DWORD	count_files;		\/\/ Number of files in MPQ (calculated from size of block_table)$/;"	m	struct:GLB_MPQ_S
 cur	structs.h	/^    int cur;        \/\/ current index, pointed by the mouse$/;"	m	struct:WIN_EDT_OBJ_S
 cur_act	structs.h	/^    int cur_act;$/;"	m	struct:WIN_EDT_OBJ_S
 cur_anim_floor_frame	structs.h	/^    int           cur_anim_floor_frame;$/;"	m	struct:DS1_S
@@ -567,7 +624,9 @@ dcc_prepare_frame_cells	dccinfo.c	/^int dcc_prepare_frame_cells(DCC_S * dcc, int
 dcc_read_bits	dccinfo.c	/^int dcc_read_bits(DCC_BITSTREAM_S * bs, int bits_number, int is_signed, UDWORD * dest )$/;"	f
 dcc_read_bytes	dccinfo.c	/^int dcc_read_bytes(DCC_BITSTREAM_S * bs, int bytes_number, void * dest)$/;"	f
 dcc_save_frame	dccinfo.c	/^int dcc_save_frame(DCC_S * dcc, int d, int f, BITMAP * frm_bmp) {$/;"	f
+dcl_table	mpq/dcl_tbl.c	/^const UInt8 dcl_table[] =$/;"	v
 debug_mode	structs.h	/^    int  debug_mode;$/;"	m	struct:CMD_LINE_S
+default_list	mpq/mpqtypes.h	/^   char	default_list[MPQTYPES_MAX_PATH];\/\/ Path to list file$/;"	m	struct:GLB_MPQ_S
 depth	structs.h	/^    int depth;$/;"	m	struct:SCREEN_S
 desc	structs.h	/^    char  * desc;$/;"	m	struct:OBJ_DESC_S
 desc_char	structs.h	/^    int desc_char;  \/\/ max chars of description$/;"	m	struct:WIN_EDT_OBJ_S
@@ -629,15 +688,20 @@ encoding_type_bitstream	dccinfo.h	/^   DCC_BITSTREAM_S encoding_type_bitstream;$
 encoding_type_bitstream_size	dccinfo.h	/^   UDWORD          encoding_type_bitstream_size;$/;"	m	struct:DCC_DIRECTION_S
 equal_cell_bitstream	dccinfo.h	/^   DCC_BITSTREAM_S equal_cell_bitstream;$/;"	m	struct:DCC_DIRECTION_S
 equal_cell_bitstream_size	dccinfo.h	/^   UDWORD          equal_cell_bitstream_size;$/;"	m	struct:DCC_DIRECTION_S
+explode	mpq/explode.c	/^UInt32 explode(read_data_proc read_data, write_data_proc write_data, void * param)$/;"	f
+explode_buffer	mpq/mpqtypes.h	/^   UInt8  * global_buffer, * read_buffer_start, * write_buffer_start, * explode_buffer;$/;"	m	struct:GLB_MPQ_S
 f	structs.h	/^    UBYTE f [FLOOR_MAX_LAYER];$/;"	m	struct:UNDO_DAT_FLG_S
 fg	structs.h	/^    int fg;$/;"	m	struct:PATH_EDIT_BUT_COL_S
 fg	structs.h	/^    int fg;$/;"	m	struct:WMSG_BUTCOL_S
 fg	structs.h	/^    int fg;$/;"	m	struct:WMSG_FGBG_S
 file_buff	structs.h	/^    char          * file_buff;$/;"	m	struct:DS1_S
+file_header	mpq/mpqtypes.h	/^   UInt32 * file_header;$/;"	m	struct:GLB_MPQ_S
 file_len	structs.h	/^    int           file_len;$/;"	m	struct:DS1_S
+file_name	mpq/mpqtypes.h	/^   char	file_name[257];		\/\/ Name of archive$/;"	m	struct:GLB_MPQ_S
 file_num	structs.h	/^    long          file_num;$/;"	m	struct:DS1_S
 file_signature	dccinfo.h	/^   UBYTE file_signature;$/;"	m	struct:DCC_HEADER_S
 filename	structs.h	/^    char          filename[50]; \/\/ short filename$/;"	m	struct:DS1_S
+filename_table	mpq/mpqtypes.h	/^   char	*filename_table;	\/\/ Array of MPQ filenames$/;"	m	struct:GLB_MPQ_S
 final_dc6_size	dccinfo.h	/^   long  final_dc6_size;$/;"	m	struct:DCC_HEADER_S
 flags	structs.h	/^    UBYTE  flags;$/;"	m	struct:CELL_T_S
 flags	structs.h	/^    UBYTE flags;$/;"	m	struct:CELL_F_S
@@ -660,6 +724,7 @@ font_height	structs.h	/^    int         font_height;$/;"	m	struct:WMSG_S
 font_width	structs.h	/^    int         font_width;$/;"	m	struct:WMSG_S
 force_pal_num	structs.h	/^    int  force_pal_num;$/;"	m	struct:CMD_LINE_S
 format	structs.h	/^    WORD  format;$/;"	m	struct:SUB_TILE_S
+fpMpq	mpq/mpqtypes.h	/^   FILE	*fpMpq;$/;"	m	struct:GLB_MPQ_S
 fpd	structs.h	/^    UBYTE     fpd; \/\/ frames per direction$/;"	m	struct:COF_S
 fprop_2_block	ds1misc.c	/^void fprop_2_block(int i, CELL_F_S * f_ptr)$/;"	f
 fps	structs.h	/^    volatile int  fps;$/;"	m	struct:GLB_DS1EDIT_S
@@ -681,6 +746,7 @@ glb_ds1edit_tmp_dir	main.c	/^char          glb_ds1edit_tmp_dir   [] = "tmp"; \/\
 glb_dt1	main.c	/^DT1_S         * glb_dt1                = NULL; \/\/ dt1 datas 貌似这里是32个$/;"	v
 glb_gamma_str	main.c	/^GAMMA_S glb_gamma_str[GC_MAX] = {$/;"	v
 glb_map_test	main.c	/^int glb_map_test;$/;"	v
+glb_mpq	mpq/mpqview.c	/^GLB_MPQ_S * glb_mpq = NULL; \/\/ pointer to current mpq file structure$/;"	v
 glb_mpq_struct	main.c	/^GLB_MPQ_S     glb_mpq_struct [MAX_MPQ_FILE];  \/\/ global data of 1 mpq$/;"	v
 glb_path_lvlprest_def	main.c	/^char          * glb_path_lvlprest_def = "debug\/d2.lvlprest.headers.txt";$/;"	v
 glb_path_lvlprest_mem	main.c	/^char          * glb_path_lvlprest_mem = "debug\/editor.lvlprest.memory.bin";$/;"	v
@@ -694,6 +760,7 @@ glb_sense	ds1misc.c	/^D2SENSE     glb_sense;$/;"	v
 glb_tiles_path	main.c	/^char          glb_tiles_path        [] = "data\/global\/tiles\/";$/;"	v
 glb_txt_req_ptr	main.c	/^char ** glb_txt_req_ptr[RQ_MAX] = {NULL, NULL, NULL, NULL};$/;"	v
 glb_wrkspc_datas	main.c	/^WRKSPC_DATAS_S glb_wrkspc_datas[WRKSPC_MAX] = {$/;"	v
+global_buffer	mpq/mpqtypes.h	/^   UInt8  * global_buffer, * read_buffer_start, * write_buffer_start, * explode_buffer;$/;"	m	struct:GLB_MPQ_S
 group	structs.h	/^    GROUP_S       * group;$/;"	m	struct:DS1_S
 group_num	structs.h	/^    long          group_num;$/;"	m	struct:DS1_S
 group_size	structs.h	/^    int           group_size;$/;"	m	struct:DS1_S
@@ -704,6 +771,7 @@ h	structs.h	/^    int h;$/;"	m	struct:WIN_PREVIEW_S
 h	structs.h	/^    int w, h;            \/\/ dimensions in pixels$/;"	m	struct:PATH_EDIT_WIN_S
 h	structs.h	/^    int w, h;   \/\/ width & height (pixels)$/;"	m	struct:OBJ_LABEL_S
 h	structs.h	/^    int w, h;$/;"	m	struct:WIN_EDT_OBJ_S
+hash_table	mpq/mpqtypes.h	/^   DWORD	*hash_table;		\/\/ Hash table$/;"	m	struct:GLB_MPQ_S
 header	dccinfo.h	/^   DCC_HEADER_S    header;$/;"	m	struct:DCC_S
 height	dccinfo.h	/^   UDWORD height;$/;"	m	struct:DCC_FRAME_S
 height	dccinfo.h	/^   long height;$/;"	m	struct:DCC_BOX_S
@@ -720,6 +788,7 @@ i_y0	structs.h	/^    int        i_x0, i_y0; \/\/ upper-left corner, in the scree
 id	structs.h	/^    char * id;$/;"	m	struct:WRKSPC_DATAS_S
 id	structs.h	/^    int   id;$/;"	m	struct:OBJ_DESC_S
 id	structs.h	/^    long        id;$/;"	m	struct:OBJ_S
+identify_table	mpq/mpqtypes.h	/^   char	*identify_table;	\/\/ Bitmap table of MPQ filenames 1 - if file name for this entry is known, 0 - if is not$/;"	m	struct:GLB_MPQ_S
 idx	structs.h	/^    int idx;$/;"	m	struct:ORDER_DATA_S
 in_seg	structs.h	/^    int            in_seg;$/;"	m	struct:UNDO_S
 ini_create	inicreat.c	/^void ini_create(char * ininame)$/;"	f
@@ -729,7 +798,11 @@ inside	structs.h	/^    BITMAP     * inside;$/;"	m	struct:WIN_ELEMENT_S
 interfac_user_handler	interfac.c	/^void interfac_user_handler(int start_ds1_idx)$/;"	f
 is_cut	structs.h	/^    int is_cut;$/;"	m	struct:PASTE_POS_S
 is_draw	structs.h	/^    int is_draw;$/;"	m	struct:SUB_ELM_S
+is_open	mpq/mpqtypes.h	/^   int   is_open;          \/\/ FALSE \/ TRUE$/;"	m	struct:GLB_MPQ_S
 key	structs.h	/^    int key [MW_COMBINATION_KEY_NUM]; \/\/ scancodes of max X keys combination$/;"	m	struct:WMSG_BUTKEY_S
+key_value_to_ascii	interfac.c	/^char key_value_to_ascii(int key)$/;"	f
+key_value_to_cascii	interfac.c	/^char key_value_to_cascii(int key)$/;"	f
+key_value_to_keycode	interfac.c	/^int key_value_to_keycode(int key)$/;"	f
 keyb	structs.h	/^    XY_S keyb;$/;"	m	struct:SCROLL_S
 label	structs.h	/^    OBJ_LABEL_S label;$/;"	m	struct:OBJ_S
 last_good_frame	structs.h	/^    int    last_good_frame;$/;"	m	struct:LAY_INF_S
@@ -739,6 +812,10 @@ last_x0	dccinfo.h	/^   int    last_x0, last_y0;$/;"	m	struct:DCC_CELL_S
 last_y0	dccinfo.h	/^   int    last_x0, last_y0;$/;"	m	struct:DCC_CELL_S
 lay	structs.h	/^    UBYTE     lay;$/;"	m	struct:COF_S
 lay_inf	structs.h	/^    LAY_INF_S lay_inf[COMPOSIT_NB];$/;"	m	struct:COF_S
+lenght_btbl	mpq/mpqtypes.h	/^   DWORD	lenght_btbl;		\/\/ Lenght of block table$/;"	m	struct:GLB_MPQ_S
+lenght_htbl	mpq/mpqtypes.h	/^   DWORD	lenght_htbl;		\/\/ Lenght of hash table$/;"	m	struct:GLB_MPQ_S
+lenght_mpq_part	mpq/mpqtypes.h	/^   DWORD	lenght_mpq_part;	\/\/ Lenght of MPQ file data$/;"	m	struct:GLB_MPQ_S
+lenght_write	mpq/mpqtypes.h	/^   DWORD	 lenght_write;$/;"	m	struct:GLB_MPQ_S
 length	structs.h	/^    long  length;$/;"	m	struct:SUB_TILE_S
 line_num	structs.h	/^    int       line_num;         \/\/ number of lines$/;"	m	struct:TXT_S
 line_size	structs.h	/^    int       line_size;        \/\/ size of 1 line (in bytes)$/;"	m	struct:TXT_S
@@ -752,6 +829,7 @@ main_idx	structs.h	/^    long       main_idx;$/;"	m	struct:BLOCK_S
 main_idx	structs.h	/^    long      main_idx;$/;"	m	struct:BLOCK_TABLE_S
 main_line_num	structs.h	/^    int           main_line_num[BT_MAX];$/;"	m	struct:WIN_EDIT_S
 main_line_tab	structs.h	/^    MAIN_LINE_S   * main_line_tab[BT_MAX];$/;"	m	struct:WIN_EDIT_S
+massive_base	mpq/mpqtypes.h	/^   DWORD	massive_base[0x500];\/\/ This massive is used to calculate crc and decode files, $/;"	m	struct:GLB_MPQ_S
 max_height	structs.h	/^    int       max_height;   \/\/ max height (in pixels) for this line$/;"	m	struct:MAIN_LINE_S
 mb	structs.h	/^    int mb; \/\/ mouse buttons$/;"	m	struct:WMSG_BUTKEY_S
 minimize_ds1	structs.h	/^    int      minimize_ds1;$/;"	m	struct:CONFIG_S
@@ -777,12 +855,14 @@ misc_read_gamma	misc.c	/^void misc_read_gamma(void)$/;"	f
 misc_save_pal_on_disk	misc.c	/^void misc_save_pal_on_disk(int pal_idx, UBYTE * d2_pal_ptr)$/;"	f
 misc_seach_block_or4	misc.c	/^int misc_seach_block_or4(int ds1_idx, BLOCK_TABLE_S * bt_ptr, int b,$/;"	f
 misc_search_name	misc.c	/^char * misc_search_name(char * tmp)$/;"	f
+misc_search_walk_infos	misc.c	/^void misc_search_walk_infos(int ds1_idx, int x, int y, UBYTE * dsttable)$/;"	f
 misc_update_pal_with_gamma	misc.c	/^void misc_update_pal_with_gamma(void)$/;"	f
 mix_f	structs.h	/^    CELL_F_S mix_f[FLOOR_MAX_LAYER];$/;"	m	struct:WBITSDATA_S
 mix_s	structs.h	/^    CELL_S_S mix_s[SHADOW_MAX_LAYER];$/;"	m	struct:WBITSDATA_S
 mix_t	structs.h	/^    CELL_T_S mix_t[TAG_MAX_LAYER];$/;"	m	struct:WBITSDATA_S
 mix_w	structs.h	/^    CELL_W_S mix_w[WALL_MAX_LAYER];$/;"	m	struct:WBITSDATA_S
 mod_dir	structs.h	/^    char     * mod_dir[MAX_MOD_DIR];$/;"	m	struct:CONFIG_S
+mod_load_in_mem	mpq/mpqview.c	/^int mod_load_in_mem( char *moddir, char *filename, void **buffer, long *buf_len, int output )$/;"	f
 mode	structs.h	/^    MODE_E        mode;$/;"	m	struct:GLB_DS1EDIT_S
 mode	structs.h	/^    PEM_E mode;$/;"	m	struct:PATH_EDIT_WIN_S
 monstats_line	structs.h	/^    int   monstats_line;$/;"	m	struct:OBJ_DESC_S
@@ -791,6 +871,9 @@ mouse_cursor	structs.h	/^    BITMAP        * mouse_cursor[MOD_MAX];$/;"	m	struct
 mouse_over	structs.h	/^    int         mouse_over;  \/\/ TRUE \/ FALSE$/;"	m	struct:BUTTON_S
 mouse_speed	structs.h	/^    XY_S     mouse_speed;$/;"	m	struct:CONFIG_S
 mouse_to_tile	wpreview.c	/^void mouse_to_tile(int ds1_idx, int * layer_x, int * layer_y)$/;"	f
+mpq_batch_close	mpq/mpqview.c	/^void mpq_batch_close()$/;"	f
+mpq_batch_load_in_mem	mpq/mpqview.c	/^int mpq_batch_load_in_mem(char * filename, void ** buffer, long * buf_len, int output)$/;"	f
+mpq_batch_open	mpq/mpqview.c	/^void mpq_batch_open(char * mpqname)$/;"	f
 mpq_file	structs.h	/^    char     * mpq_file[MAX_MPQ_FILE];$/;"	m	struct:CONFIG_S
 my_set_fps	interfac.c	/^void my_set_fps(){$/;"	f
 name	structs.h	/^    char           name[150];$/;"	m	struct:UNDO_S
@@ -837,6 +920,9 @@ off	structs.h	/^    WMSG_BUTCOL_S off;$/;"	m	struct:WMSG_BUT_S
 off_x	structs.h	/^    int    off_x;$/;"	m	struct:LAY_INF_S
 off_y	structs.h	/^    int    off_y;$/;"	m	struct:LAY_INF_S
 offset	structs.h	/^    int         offset;   \/\/ offset in a line to get the data$/;"	m	struct:TXT_COL_S
+offset_btbl	mpq/mpqtypes.h	/^   DWORD	offset_btbl;		\/\/ Offset to block_table of MPQ$/;"	m	struct:GLB_MPQ_S
+offset_htbl	mpq/mpqtypes.h	/^   DWORD	offset_htbl;		\/\/ Offset to hash_table of MPQ$/;"	m	struct:GLB_MPQ_S
+offset_mpq	mpq/mpqtypes.h	/^   DWORD	offset_mpq;			\/\/ Offset to MPQ file data$/;"	m	struct:GLB_MPQ_S
 old_ds1_idx	structs.h	/^    int start_x, start_y, old_x, old_y, old_ds1_idx;$/;"	m	struct:PASTE_POS_S
 old_fps	structs.h	/^    volatile int  old_fps;$/;"	m	struct:GLB_DS1EDIT_S
 old_rx	structs.h	/^    int old_rx;$/;"	m	struct:OBJ_LABEL_S
@@ -861,6 +947,8 @@ outsize_coded	dccinfo.h	/^   UDWORD outsize_coded;$/;"	m	struct:DCC_DIRECTION_S
 own_wpreview	structs.h	/^    WIN_PREVIEW_S own_wpreview;$/;"	m	struct:DS1_S
 pal_loaded	structs.h	/^    int           pal_loaded[ACT_MAX];$/;"	m	struct:GLB_DS1EDIT_S
 pal_size	structs.h	/^    long          pal_size[ACT_MAX];$/;"	m	struct:GLB_DS1EDIT_S
+params	mpq/mpqview.c	/^typedef struct params$/;"	s	file:
+params	mpq/mpqview.c	/^} params;$/;"	t	typeref:struct:params	file:
 path	structs.h	/^    PATH_S      path[WINDS1EDIT_PATH_MAX];$/;"	m	struct:OBJ_S
 path_copy	structs.h	/^    PATH_S path_copy[WINDS1EDIT_PATH_MAX];$/;"	m	struct:PATH_EDIT_WIN_S
 path_copy_num	structs.h	/^    int    path_copy_num;$/;"	m	struct:PATH_EDIT_WIN_S
@@ -876,6 +964,8 @@ pixel_mask_bitstream_size	dccinfo.h	/^   UDWORD          pixel_mask_bitstream_si
 pixel_values	dccinfo.h	/^   UBYTE           pixel_values[256]; \/\/ for pixel code color conversion$/;"	m	struct:DCC_DIRECTION_S
 pos	structs.h	/^    int         pos;      \/\/ column index in the original file$/;"	m	struct:TXT_COL_S
 priority	structs.h	/^    UBYTE     * priority;$/;"	m	struct:COF_S
+prnbuf	mpq/mpqtypes.h	/^   char	prnbuf[MPQTYPES_MAX_PATH+100];	\/\/ Buffer$/;"	m	struct:GLB_MPQ_S
+process_input	interfac.c	/^int process_input()$/;"	f
 prop1	structs.h	/^    UBYTE prop1;$/;"	m	struct:CELL_F_S
 prop1	structs.h	/^    UBYTE prop1;$/;"	m	struct:CELL_S_S
 prop1	structs.h	/^    UBYTE prop1;$/;"	m	struct:CELL_W_S
@@ -894,6 +984,9 @@ rarity	structs.h	/^    long       rarity;$/;"	m	struct:BLOCK_S
 rarity	structs.h	/^    long      rarity;$/;"	m	struct:BLOCK_TABLE_S
 raw_pixel_bitstream	dccinfo.h	/^   DCC_BITSTREAM_S raw_pixel_bitstream;$/;"	m	struct:DCC_DIRECTION_S
 raw_pixel_bitstream_size	dccinfo.h	/^   UDWORD          raw_pixel_bitstream_size;$/;"	m	struct:DCC_DIRECTION_S
+read_buffer_start	mpq/mpqtypes.h	/^   UInt8  * global_buffer, * read_buffer_start, * write_buffer_start, * explode_buffer;$/;"	m	struct:GLB_MPQ_S
+read_data	mpq/mpqview.c	/^UInt16 read_data(UInt8 *buffer,UInt16 size,void *crap)$/;"	f
+read_data_proc	mpq/dclib.h	/^typedef UInt16 read_data_proc  (UInt8 * buffer, UInt16 size, void * param);$/;"	t
 read_lvlprest_txt	txtread.c	/^int read_lvlprest_txt(int ds1_idx, int def)$/;"	f
 read_lvltypes_txt	txtread.c	/^int read_lvltypes_txt(int ds1_idx, int type)$/;"	f
 read_obj_txt	txtread.c	/^int read_obj_txt(void)$/;"	f
@@ -934,6 +1027,8 @@ size	dccinfo.h	/^   long            size;  \/\/ size of the dcc in mem (in bytes
 size	structs.h	/^    int         size;     \/\/ strlen()+1 or sizeof(long)$/;"	m	struct:TXT_COL_S
 size_x	structs.h	/^    long       size_x;$/;"	m	struct:BLOCK_S
 size_y	structs.h	/^    long       size_y;$/;"	m	struct:BLOCK_S
+small_tbl1	mpq/wav_unp.h	/^UInt32 small_tbl1[90] =$/;"	v
+small_tbl2	mpq/wav_unp.h	/^UInt32 small_tbl2[32] =$/;"	v
 sound	structs.h	/^    UBYTE      sound;$/;"	m	struct:BLOCK_S
 spd_div	structs.h	/^    long      spd_div;$/;"	m	struct:COF_S
 spd_mod	structs.h	/^    long      spd_mod; \/\/ = is (mul % div), for extra precision$/;"	m	struct:COF_S
@@ -978,6 +1073,10 @@ tag_line	structs.h	/^    int           tag_line;     \/\/ width * unk_num$/;"	m	
 tag_num	ds1misc.c	/^    int32_t     tag_num;$/;"	m	struct:__anon1	file:
 tag_num	structs.h	/^    int           tag_num;      \/\/ # of layers in unk buffer$/;"	m	struct:DS1_S
 tag_type	structs.h	/^    long          tag_type;$/;"	m	struct:DS1_S
+test_add_objects	ds1misc.c	/^void test_add_objects(){$/;"	f
+test_add_one_object	ds1misc.c	/^void test_add_one_object($/;"	f
+test_prepare_archive	mpq/mpqview.c	/^int test_prepare_archive(void)$/;"	f
+test_tell_entry	mpq/mpqview.c	/^DWORD test_tell_entry(char * filename)$/;"	f
 text	structs.h	/^    char                * text;$/;"	m	struct:PATH_EDIT_BUT_S
 text	structs.h	/^    char          * text;$/;"	m	struct:WMSG_BUT_S
 text	structs.h	/^    char        * text;$/;"	m	struct:WMSG_S
@@ -1054,6 +1153,7 @@ wall_len	structs.h	/^    int           wall_len;       \/\/ wall_line * height$/
 wall_line	structs.h	/^    int           wall_line;      \/\/ width * wall_num$/;"	m	struct:DS1_S
 wall_num	ds1misc.c	/^    int32_t     wall_num;$/;"	m	struct:__anon1	file:
 wall_num	structs.h	/^    int           wall_num;       \/\/ # of layers in wall buffer$/;"	m	struct:DS1_S
+wav_table	mpq/wav_unp.h	/^UInt8 wav_table[2512] =$/;"	v
 wclass	structs.h	/^    char   wclass[4];               \/\/ weapon class$/;"	m	struct:LAY_INF_S
 width	dccinfo.h	/^   UDWORD width;$/;"	m	struct:DCC_FRAME_S
 width	dccinfo.h	/^   long width;$/;"	m	struct:DCC_BOX_S
@@ -1067,6 +1167,7 @@ win_edt_obj	structs.h	/^    WIN_EDT_OBJ_S win_edt_obj;$/;"	m	struct:DS1_S
 win_preview	structs.h	/^    WIN_PREVIEW_S win_preview;$/;"	m	struct:GLB_DS1EDIT_S
 winobj_scroll_keyb	structs.h	/^    int      winobj_scroll_keyb;$/;"	m	struct:CONFIG_S
 winobj_scroll_mouse	structs.h	/^    int      winobj_scroll_mouse;$/;"	m	struct:CONFIG_S
+work_dir	mpq/mpqtypes.h	/^   char	work_dir[MPQTYPES_MAX_PATH];	\/\/ Work directory$/;"	m	struct:GLB_MPQ_S
 workspace_enable	structs.h	/^    int      workspace_enable;$/;"	m	struct:CONFIG_S
 wpreview_draw_an_object	wpreview.c	/^void wpreview_draw_an_object(int ds1_idx, int o)$/;"	f
 wpreview_draw_an_object_shad	wpreview.c	/^void wpreview_draw_an_object_shad(int ds1_idx, int o)$/;"	f
@@ -1083,6 +1184,9 @@ wpreview_obj_animate	wpreview.c	/^void wpreview_obj_animate(void)$/;"	f
 wpreview_reiinit_animated_floor	wpreview.c	/^void wpreview_reiinit_animated_floor(int ds1_idx)$/;"	f
 wpreview_shape	wpreview.c	/^void wpreview_shape(BITMAP * tmp_bmp, int x0, int y0, int ds1_idx, COL_E col_idx)$/;"	f
 wprop_2_block	ds1misc.c	/^void wprop_2_block(int i, CELL_W_S * w_ptr)$/;"	f
+write_buffer_start	mpq/mpqtypes.h	/^   UInt8  * global_buffer, * read_buffer_start, * write_buffer_start, * explode_buffer;$/;"	m	struct:GLB_MPQ_S
+write_data	mpq/mpqview.c	/^void write_data(UInt8 *buffer,UInt16 size,void *crap)$/;"	f
+write_data_proc	mpq/dclib.h	/^typedef void   write_data_proc (UInt8 * buffer, UInt16 size, void * param);$/;"	t
 x	structs.h	/^    int x;$/;"	m	struct:XY_S
 x	structs.h	/^    long        x;     \/\/ sub-cell X$/;"	m	struct:OBJ_S
 x	structs.h	/^    long x;$/;"	m	struct:PATH_S
