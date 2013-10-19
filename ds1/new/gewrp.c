@@ -3,7 +3,7 @@
  *
  *       Filename: gewrp.c
  *        Created: 10/09/2013 10:39:22 PM
- *  Last Modified: 10/19/2013 04:10:15 PM
+ *  Last Modified: 10/19/2013 04:42:03 PM
  *
  *    Description: wrp for allegro
  *                 you can also wrp other game library
@@ -22,6 +22,42 @@
 #include "gewrp.h"
 
 
+/*
+ * ===  FUNCTION  ======================================================================
+ *         Name:  ptr_tag
+ *  Description:  
+ * =====================================================================================
+ */
+static int ptr_tag ( void *udata, char *name, char **attr, int type )
+{
+
+    switch ( type ){
+        case IKS_OPEN:
+            {
+                if( !strcmp(name, "width") ){
+
+                    fprintf(stdout, "width\n" );
+            }
+        default:
+    }
+    return 0;
+}
+
+
+
+
+
+
+/*
+ * ===  FUNCTION  ======================================================================
+ *         Name:  ptr_cdata
+ *  Description:  
+ * =====================================================================================
+ */
+static enum ikserror ptr_cdata ( void *udata, char *data, size_t len )
+{
+    return 0;
+}
 
 /*
  * ===  FUNCTION  ======================================================================
@@ -31,6 +67,9 @@
  */
 static int gewrp_read_config ()
 {
+    iksparser   *parser;
+
+    parser = iks_sax_new(NULL, ptr_tag, ptr_cdata);
     
 
     return 0;
