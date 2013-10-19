@@ -1,9 +1,9 @@
 CC     = gcc -Wall -g
 CFLAGS = -I ../../allegro/allegro5/include/allegro5/
 LIBS   = ../../allegro/allegro5/lib/*.a -lm -lpthread -lX11 -lXcursor -lXcursor -ldl -lGL
-OBJS   = main.o gewrp.o glb.o
+OBJS   = main.o gewrp.o glb.o d2im.o
 all:$(OBJS)
-	$(CC) $(OBJS)  $(CFLAGS) $(LIBS) -o d2im
+	$(CC) $(OBJS)  $(CFLAGS) $(LIBS) -o ../bin/d2im
 test:
 	make d2im_test -C ../bin
 clean:

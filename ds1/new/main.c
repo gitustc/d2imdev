@@ -3,7 +3,7 @@
  *
  *       Filename: main.c
  *        Created: 10/09/2013 10:28:40 PM
- *  Last Modified: 10/10/2013 01:26:47 AM
+ *  Last Modified: 10/19/2013 03:40:12 PM
  *
  *    Description: entry of game
  *
@@ -21,10 +21,8 @@
 
 
 #include "main.h"
-
-
-#include	<stdlib.h>
-
+#include <stdlib.h>
+#include <stdio.h>
 /* 
  * ===  FUNCTION  ======================================================================
  *         Name:  main

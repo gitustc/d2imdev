@@ -3,7 +3,7 @@
  *
  *       Filename: d2im.c
  *        Created: 10/10/2013 01:19:53 AM
- *  Last Modified: 10/18/2013 12:21:05 AM
+ *  Last Modified: 10/19/2013 04:00:41 PM
  *
  *    Description: game logic
  *
@@ -19,6 +19,7 @@
  */
 
 #include "d2im.h"
+#include "gewrp.h"
 
 
 /* 
@@ -33,7 +34,7 @@
 
 int d2im_init ()
 {
-    gewrp_init();
+    gewrp_init(0);
     return 0;
 }
 
@@ -53,8 +54,8 @@ int d2im_run ()
     while (1) {
 
         fprintf(stdout, "here\n" );
-#if 0
-        al_wait_for_event(glb_gewrp.evtq, &event);
+
+        gewrp_poll_event( gewrp_get_evtq(), (&event) );
 
         switch (event.type) {
             case ALLEGRO_EVENT_DISPLAY_CLOSE:
@@ -76,10 +77,8 @@ int d2im_run ()
                 }
             default:
                 {
-                    fprintf(stdout, "here\n" );
                 }
         }
-#endif 
     }
     return 0;
 }

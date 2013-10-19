@@ -4,8 +4,8 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-CC	Makefile	/^CC     = gcc -Wall$/;"	m
-CFLAGS	Makefile	/^CFLAGS = -I ..\/..\/allegro\/allegro5_0_10\/include\/allegro5\/$/;"	m
+CC	Makefile	/^CC     = gcc -Wall -g$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -I ..\/..\/allegro\/allegro5\/include\/allegro5\/$/;"	m
 D2IM_INST	d2im.h	/^struct D2IM_INST {$/;"	s
 D2IM_INST	d2im.h	/^typedef struct D2IM_INST D2IM_INST;$/;"	t	typeref:struct:D2IM_INST
 D2IM_SCENE	scene.h	/^struct D2IM_SCENE {$/;"	s
@@ -17,6 +17,7 @@ FPS	ex_blit.c	/^    int FPS;$/;"	m	struct:Example	file:
 GEWRP_BITMAP	gewrp.h	/^typedef ALLEGRO_BITMAP      GEWRP_BITMAP;$/;"	t
 GEWRP_DISP	gewrp.h	/^typedef ALLEGRO_DISPLAY     GEWRP_DISP;$/;"	t
 GEWRP_EVENT	gewrp.h	/^typedef ALLEGRO_EVENT       GEWRP_EVENT;$/;"	t
+GEWRP_EVENT_DISPLAY_CLOSE	gewrp.h	71;"	d
 GEWRP_EVTQ	gewrp.h	/^typedef ALLEGRO_EVENT_QUEUE GEWRP_EVTQ;$/;"	t
 GEWRP_INST	gewrp.h	/^struct GEWRP_INST {$/;"	s
 GEWRP_INST	gewrp.h	/^typedef struct GEWRP_INST GEWRP_INST;$/;"	t	typeref:struct:GEWRP_INST
@@ -24,7 +25,7 @@ GEWRP_TIMER	gewrp.h	/^typedef ALLEGRO_TIMER       GEWRP_TIMER;$/;"	t
 HEIGHT	ex_drawpixels.c	7;"	d	file:
 LIBS	Makefile	/^LIBS   = ..\/..\/allegro\/allegro5\/lib\/*.a -lm -lpthread -lX11 -lXcursor -lXcursor -ldl -lGL$/;"	m
 NUM_STARS	ex_drawpixels.c	8;"	d	file:
-OBJS	Makefile	/^OBJS   = main.o gewrp.o glb.o$/;"	m
+OBJS	Makefile	/^OBJS   = main.o gewrp.o glb.o d2im.o$/;"	m
 Point	ex_drawpixels.c	/^typedef struct Point$/;"	s	file:
 Point	ex_drawpixels.c	/^} Point;$/;"	t	typeref:struct:Point	file:
 TARGET_FPS	ex_drawpixels.c	9;"	d	file:
@@ -36,6 +37,7 @@ background	ex_blit.c	/^    ALLEGRO_COLOR background, text, white;$/;"	m	struct:E
 capacity	d2lib/d2p/d2p.h	/^    uint32_t        capacity;$/;"	m	struct:D2P
 counter	ex_blit.c	/^    double timer[4], counter[4];$/;"	m	struct:Example	file:
 d2im_init	d2im.c	/^int d2im_init ()$/;"	f
+d2im_inst	d2im.h	31;"	d
 d2im_quit	d2im.c	/^int d2im_quit ()$/;"	f
 d2im_run	d2im.c	/^int d2im_run ()$/;"	f
 disp	gewrp.h	/^    GEWRP_DISP     *disp;$/;"	m	struct:GEWRP_INST
@@ -48,7 +50,13 @@ font	ex_blit.c	/^    ALLEGRO_FONT *font;$/;"	m	struct:Example	file:
 fps	gewrp.h	/^    int32_t         fps;$/;"	m	struct:GEWRP_INST
 get_fps	ex_blit.c	/^static double get_fps(int i)$/;"	f	file:
 get_xy	ex_blit.c	/^static void get_xy(float *x, float *y)$/;"	f	file:
+gewrp_get_disp	gewrp.h	60;"	d
+gewrp_get_evtq	gewrp.h	61;"	d
+gewrp_get_fps	gewrp.h	63;"	d
+gewrp_get_timer	gewrp.h	62;"	d
 gewrp_init	gewrp.c	/^int gewrp_init ( uint32_t arg )$/;"	f
+gewrp_inst	gewrp.h	59;"	d
+gewrp_poll_event	gewrp.h	66;"	d
 glb_d2im_inst	glb.c	/^D2IM_INST           glb_d2im_inst;$/;"	v
 glb_gewrp_inst	glb.c	/^GEWRP_INST          glb_gewrp_inst;$/;"	v
 height	scene.h	/^    UINT32          height;$/;"	m	struct:D2IM_SCENE

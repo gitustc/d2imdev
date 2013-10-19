@@ -1,57 +1,65 @@
-cscope 15 $HOME/d2imdev/ds1/new -q 0000001715 0000118823
+cscope 15 $HOME/d2imdev/ds1/new -q 0000001723 0000119372
 	@d2im.c
 
 21 
 	~"d2im.h
 "
 
-34 
+22 
+	~"gew½.h
+"
+
+35 
 	$d2im_š™
  ()
 
-36 
+37 
 	`gew½_š™
-();
+(0);
 
-38 
+39 
 	}
 }
 
-48 
+49 
 	$d2im_run
  ()
 
-51 
+52 
 GEWRP_EVENT
  
 ev’t
 ;
 
-54 
-	`®_wa™_fÜ_ev’t
+56 
+	`årštf
 (
-glb_gew½
-.
-evtq
-, &
-ev’t
-);
+¡dout
+, "here\n" );
 
-56 
+58 
+	`gew½_pÞl_ev’t
+Ð
+	`gew½_g‘_evtq
+(), &
+ev’t
+ );
+
+60 
 ev’t
 .
 ty³
 ) {
 
-57 
+61 
 ALLEGRO_EVENT_DISPLAY_CLOSE
 :
 
-62 
+66 
 ALLEGRO_EVENT_KEY_DOWN
 :
 
-64 ià(
+68 ià(
 ev’t
 .
 keybßrd
@@ -61,25 +69,19 @@ keycode
 ALLEGRO_KEY_ESCAPE
 )
 
-70 
+74 
 ALLEGRO_EVENT_TIMER
 :
 
-76 
-	`årštf
-(
-¡dout
-, "here\n" );
-
-81 
+84 
 	}
 }
 
-92 
+95 
 	$d2im_qu™
  ()
 
-96 
+99 
 	}
 }
 
@@ -105,17 +107,25 @@ D2IM_INST
 	tD2IM_INST
 ;
 
-29 
+30 
 D2IM_INST
  
 glb_d2im_š¡
 ;
 
-32 
+31 
+	#d2im_š¡
+(è(
+glb_d2im_š¡
+);
+
+	)
+
+37 
 d2im_š™
 ();
 
-33 
+38 
 d2im_ä“
 ();
 
@@ -2043,13 +2053,13 @@ NULL
 	`ex™
 (0);
 
-48 
+49 
 glb_gew½_š¡
 .
 ås
  = 60;
 
-49 
+50 
 glb_gew½_š¡
 .
 tim”
@@ -2059,7 +2069,7 @@ tim”
 ås
 );
 
-50 
+51 
 glb_gew½_š¡
 .
 evtq
@@ -2067,7 +2077,7 @@ evtq
 	`®_ü—‹_ev’t_queue
 ();
 
-51 
+52 
 	`®_»gi¡”_ev’t_sourû
 (
 glb_gew½_š¡
@@ -2077,7 +2087,7 @@ evtq
 	`®_g‘_keybßrd_ev’t_sourû
 ());
 
-52 
+53 
 	`®_»gi¡”_ev’t_sourû
 (
 glb_gew½_š¡
@@ -2087,7 +2097,7 @@ evtq
 	`®_g‘_mou£_ev’t_sourû
 ());
 
-53 
+54 
 	`®_»gi¡”_ev’t_sourû
 (
 glb_gew½_š¡
@@ -2099,7 +2109,7 @@ evtq
 di¥
 ));
 
-54 
+55 
 	`®_»gi¡”_ev’t_sourû
 (
 glb_gew½_š¡
@@ -2111,7 +2121,13 @@ evtq
 tim”
 ));
 
-59 
+57 
+	`årštf
+(
+¡dout
+, "here!!!!!!!!!!!!\n" );
+
+60 
 	}
 }
 
@@ -2133,75 +2149,153 @@ tim”
 	~<®Ëgro.h
 >
 
-31 
+28 
+	~"d2im.h
+"
+
+32 
 ALLEGRO_DISPLAY
  
 	tGEWRP_DISP
 ;
 
-32 
+33 
 ALLEGRO_TIMER
  
 	tGEWRP_TIMER
 ;
 
-33 
+34 
 ALLEGRO_BITMAP
  
 	tGEWRP_BITMAP
 ;
 
-34 
+35 
 ALLEGRO_EVENT_QUEUE
  
 	tGEWRP_EVTQ
 ;
 
-35 
+36 
 ALLEGRO_EVENT
  
 	tGEWRP_EVENT
 ;
 
-38 
+39 
 	sGEWRP_INST
  {
 
-39 
+40 
 GEWRP_DISP
  *
 	mdi¥
 ;
 
-40 
+41 
 GEWRP_EVTQ
  *
 	mevtq
 ;
 
-41 
+42 
 GEWRP_TIMER
  *
 	mtim”
 ;
 
-42 
+43 
 št32_t
  
 	mås
 ;
 
-45 
+46 
 GEWRP_INST
  
 	tGEWRP_INST
 ;
 
-47 
+48 
 GEWRP_INST
  
 glb_gew½_š¡
 ;
+
+51 
+gew½_š™
+(
+ušt32_t
+);
+
+59 
+	#gew½_š¡
+(è(
+glb_gew½_š¡
+);
+
+	)
+
+60 
+	#gew½_g‘_di¥
+(è(
+glb_gew½_š¡
+.
+di¥
+);
+
+	)
+
+61 
+	#gew½_g‘_evtq
+(è(
+glb_gew½_š¡
+.
+evtq
+);
+
+	)
+
+62 
+	#gew½_g‘_tim”
+(è(
+glb_gew½_š¡
+.
+tim”
+);
+
+	)
+
+63 
+	#gew½_g‘_ås
+(è(
+glb_gew½_š¡
+.
+ås
+);
+
+	)
+
+66 
+	#gew½_pÞl_ev’t
+(
+evtq
+, 
+³vt
+è
+	`®_wa™_fÜ_ev’t
+ÐÓvtq), (³vt))
+
+	)
+
+71 
+	#GEWRP_EVENT_DISPLAY_CLOSE
+ 
+ALLEGRO_EVENT_DISPLAY_CLOSE
+
+
+	)
 
 	@glb.c
 
@@ -2231,11 +2325,15 @@ D2IM_INST
 	~"maš.h
 "
 
-26 
+24 
 	~<¡dlib.h
 >
 
-34 
+25 
+	~<¡dio.h
+>
+
+32 
 	$maš
  ( 
 ¬gc
@@ -2243,19 +2341,19 @@ D2IM_INST
 ¬gv
 [] )
 
-36 
+34 
 	`d2im_š™
 ();
 
-37 
+35 
 	`d2im_run
 ();
 
-38 
+36 
 	`d2im_qu™
 ();
 
-40 
+38 
 	}
 }
 

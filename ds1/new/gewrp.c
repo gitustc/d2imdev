@@ -3,7 +3,7 @@
  *
  *       Filename: gewrp.c
  *        Created: 10/09/2013 10:39:22 PM
- *  Last Modified: 10/18/2013 12:21:19 AM
+ *  Last Modified: 10/19/2013 04:10:15 PM
  *
  *    Description: wrp for allegro
  *                 you can also wrp other game library
@@ -22,6 +22,28 @@
 #include "gewrp.h"
 
 
+
+/*
+ * ===  FUNCTION  ======================================================================
+ *         Name:  gewrp_read_config
+ *  Description:  
+ * =====================================================================================
+ */
+static int gewrp_read_config ()
+{
+    
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
 /* 
  * ===  FUNCTION  ======================================================================
  *         Name:  gewrp_init
@@ -30,6 +52,10 @@
  */
 int gewrp_init ( uint32_t arg )
 {
+
+
+    gewrp_read_config();
+
     if( !al_init() ){
         fprintf ( stderr, "fatal error: open allegro library failed...\n" );
         exit(0);
