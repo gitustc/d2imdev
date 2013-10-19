@@ -1,0 +1,76 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	Makefile	/^CC     = gcc -Wall$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -I ..\/..\/allegro\/allegro5_0_10\/include\/allegro5\/$/;"	m
+D2IM_INST	d2im.h	/^struct D2IM_INST {$/;"	s
+D2IM_INST	d2im.h	/^typedef struct D2IM_INST D2IM_INST;$/;"	t	typeref:struct:D2IM_INST
+D2IM_SCENE	scene.h	/^struct D2IM_SCENE {$/;"	s
+D2IM_SCENE	scene.h	/^typedef struct D2IM_SCENE D2IM_SCENE;$/;"	t	typeref:struct:D2IM_SCENE
+D2P	d2lib/d2p/d2p.h	/^struct D2P {$/;"	s
+D2P	d2lib/d2p/d2p.h	/^typedef struct D2P D2P;$/;"	t	typeref:struct:D2P
+Example	ex_blit.c	/^struct Example$/;"	s	file:
+FPS	ex_blit.c	/^    int FPS;$/;"	m	struct:Example	file:
+GEWRP_BITMAP	gewrp.h	/^typedef ALLEGRO_BITMAP      GEWRP_BITMAP;$/;"	t
+GEWRP_DISP	gewrp.h	/^typedef ALLEGRO_DISPLAY     GEWRP_DISP;$/;"	t
+GEWRP_EVENT	gewrp.h	/^typedef ALLEGRO_EVENT       GEWRP_EVENT;$/;"	t
+GEWRP_EVTQ	gewrp.h	/^typedef ALLEGRO_EVENT_QUEUE GEWRP_EVTQ;$/;"	t
+GEWRP_INST	gewrp.h	/^struct GEWRP_INST {$/;"	s
+GEWRP_INST	gewrp.h	/^typedef struct GEWRP_INST GEWRP_INST;$/;"	t	typeref:struct:GEWRP_INST
+GEWRP_TIMER	gewrp.h	/^typedef ALLEGRO_TIMER       GEWRP_TIMER;$/;"	t
+HEIGHT	ex_drawpixels.c	7;"	d	file:
+LIBS	Makefile	/^LIBS   = ..\/..\/allegro\/allegro5\/lib\/*.a -lm -lpthread -lX11 -lXcursor -lXcursor -ldl -lGL$/;"	m
+NUM_STARS	ex_drawpixels.c	8;"	d	file:
+OBJS	Makefile	/^OBJS   = main.o gewrp.o glb.o$/;"	m
+Point	ex_drawpixels.c	/^typedef struct Point$/;"	s	file:
+Point	ex_drawpixels.c	/^} Point;$/;"	t	typeref:struct:Point	file:
+TARGET_FPS	ex_drawpixels.c	9;"	d	file:
+WIDTH	ex_drawpixels.c	6;"	d	file:
+_included_d2im_inc__	d2im.h	22;"	d
+_included_d2p_inc__	d2lib/d2p/d2p.h	23;"	d
+_included_main_inc__	main.h	23;"	d
+background	ex_blit.c	/^    ALLEGRO_COLOR background, text, white;$/;"	m	struct:Example	file:
+capacity	d2lib/d2p/d2p.h	/^    uint32_t        capacity;$/;"	m	struct:D2P
+counter	ex_blit.c	/^    double timer[4], counter[4];$/;"	m	struct:Example	file:
+d2im_init	d2im.c	/^int d2im_init ()$/;"	f
+d2im_quit	d2im.c	/^int d2im_quit ()$/;"	f
+d2im_run	d2im.c	/^int d2im_run ()$/;"	f
+disp	gewrp.h	/^    GEWRP_DISP     *disp;$/;"	m	struct:GEWRP_INST
+draw	ex_blit.c	/^static void draw(void)$/;"	f	file:
+evtq	gewrp.h	/^    GEWRP_EVTQ     *evtq;$/;"	m	struct:GEWRP_INST
+ex	ex_blit.c	/^} ex;$/;"	v	typeref:struct:Example
+example_bitmap	ex_blit.c	/^static ALLEGRO_BITMAP *example_bitmap(int w, int h)$/;"	f	file:
+f_num	scene.h	/^    UINT32          f_num;$/;"	m	struct:D2IM_SCENE
+font	ex_blit.c	/^    ALLEGRO_FONT *font;$/;"	m	struct:Example	file:
+fps	gewrp.h	/^    int32_t         fps;$/;"	m	struct:GEWRP_INST
+get_fps	ex_blit.c	/^static double get_fps(int i)$/;"	f	file:
+get_xy	ex_blit.c	/^static void get_xy(float *x, float *y)$/;"	f	file:
+gewrp_init	gewrp.c	/^int gewrp_init ( uint32_t arg )$/;"	f
+glb_d2im_inst	glb.c	/^D2IM_INST           glb_d2im_inst;$/;"	v
+glb_gewrp_inst	glb.c	/^GEWRP_INST          glb_gewrp_inst;$/;"	v
+height	scene.h	/^    UINT32          height;$/;"	m	struct:D2IM_SCENE
+init	ex_blit.c	/^static void init(void)$/;"	f	file:
+main	ex_blit.c	/^int main(void)$/;"	f
+main	ex_drawpixels.c	/^int main(void)$/;"	f
+main	main.c	/^int main ( int argc, char *argv[] )$/;"	f
+pattern	ex_blit.c	/^    ALLEGRO_BITMAP *pattern;$/;"	m	struct:Example	file:
+print	ex_blit.c	/^static void print(char const *format, ...)$/;"	f	file:
+queue	ex_blit.c	/^    ALLEGRO_EVENT_QUEUE *queue;$/;"	m	struct:Example	file:
+run	ex_blit.c	/^static void run(void)$/;"	f	file:
+set_xy	ex_blit.c	/^static void set_xy(float x, float y)$/;"	f	file:
+start_timer	ex_blit.c	/^static void start_timer(int i)$/;"	f	file:
+stop_timer	ex_blit.c	/^static void stop_timer(int i)$/;"	f	file:
+text	ex_blit.c	/^    ALLEGRO_COLOR background, text, white;$/;"	m	struct:Example	file:
+text_x	ex_blit.c	/^    float text_x, text_y;$/;"	m	struct:Example	file:
+text_y	ex_blit.c	/^    float text_x, text_y;$/;"	m	struct:Example	file:
+tick	ex_blit.c	/^static void tick(void)$/;"	f	file:
+timer	ex_blit.c	/^    double timer[4], counter[4];$/;"	m	struct:Example	file:
+timer	gewrp.h	/^    GEWRP_TIMER    *timer;$/;"	m	struct:GEWRP_INST
+w_num	scene.h	/^    UINT32          w_num;$/;"	m	struct:D2IM_SCENE
+white	ex_blit.c	/^    ALLEGRO_COLOR background, text, white;$/;"	m	struct:Example	file:
+width	scene.h	/^    UINT32          width;$/;"	m	struct:D2IM_SCENE
+x	ex_drawpixels.c	/^   float x, y;$/;"	m	struct:Point	file:
+y	ex_drawpixels.c	/^   float x, y;$/;"	m	struct:Point	file:
