@@ -3,7 +3,7 @@
  *
  *       Filename: d2im.h
  *        Created: 10/10/2013 01:14:52 AM
- *  Last Modified: 10/19/2013 08:08:29 PM
+ *  Last Modified: 10/20/2013 06:48:32 AM
  *
  *    Description: game logic
  *
@@ -27,6 +27,7 @@
 
 
 struct D2IM_INST {
+    iks * config;
 };
 typedef struct D2IM_INST D2IM_INST;
 

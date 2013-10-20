@@ -3,7 +3,7 @@
  *
  *       Filename: d2im.c
  *        Created: 10/10/2013 01:19:53 AM
- *  Last Modified: 10/19/2013 09:11:08 PM
+ *  Last Modified: 10/20/2013 07:10:03 AM
  *
  *    Description: game logic
  *
@@ -54,13 +54,17 @@ static int d2im_read_config ()
 
         /* other test */
         if ( iks_type( t ) == IKS_TAG && !strcmp( iks_name( t ), "utf8" ) ){
+            glb_d2im_inst.config = t;
             fprintf(stdout, "info: %s\n", iks_find_cdata(t, "chinese") );
+            break;
         }
 
         t = iks_next(t);
     }
 
+#if 0
     iks_delete(p);
+#endif
 
     return 0;
 }
@@ -100,7 +104,10 @@ int d2im_run ()
     GEWRP_FONT     *font;
     GEWRP_EVENT     event;
 
-    font = gewrp_load_font("./wqy-microhei.ttf", 24);
+    font = gewrp_load_font("./wqy-microhei.ttf", 12);
+#if 0
+    font = gewrp_load_font("simsun.ttf", 12);
+#endif 
     if( font == NULL ){
         fprintf(stdout, "can not load font.\n" );
         exit(0);
@@ -114,7 +121,7 @@ int d2im_run ()
         gewrp_clear(gewrp_map_rgb(0, 0, 0));
 
         gewrp_set_target_bitmap(gewrp_get_backbuff(gewrp_get_disp()));
-        gewrp_draw_text(font, gewrp_map_rgb(10,240,50), 12, 12, 0, "你好");
+        gewrp_draw_text(font, gewrp_map_rgb(250,250,50), 12, 12, 0, iks_find_cdata(glb_d2im_inst.config, "chinese")) ;
 
         gewrp_poll_event( gewrp_get_evtq(), (&event) );
 
