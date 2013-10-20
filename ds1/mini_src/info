@@ -124,6 +124,2191 @@ glb_ds1.wall_num = 4
 w_num = 2
 f_num = 2
 out ds1_read2
+I am here, in read_lvlprest_txt2
+ def: 0
+mask: 0
+ def: 1
+mask: 959
+ def: 2
+mask: 16765
+ def: 3
+mask: 8405373
+ def: 4
+mask: 16405
+ def: 5
+mask: 16405
+ def: 6
+mask: 16405
+ def: 7
+mask: 16405
+ def: 8
+mask: 16405
+ def: 9
+mask: 16405
+ def: 10
+mask: 16405
+ def: 11
+mask: 16405
+ def: 12
+mask: 16405
+ def: 13
+mask: 16405
+ def: 14
+mask: 16405
+ def: 15
+mask: 16405
+ def: 16
+mask: 1025
+ def: 17
+mask: 513
+ def: 18
+mask: 1029
+ def: 19
+mask: 5633
+ def: 20
+mask: 1029
+ def: 21
+mask: 517
+ def: 22
+mask: 517
+ def: 23
+mask: 5633
+ def: 24
+mask: 513
+ def: 25
+mask: 1025
+ def: 26
+mask: 53
+ def: 27
+mask: 53
+ def: 28
+mask: 101
+ def: 29
+mask: 278529
+ def: 30
+mask: 278529
+ def: 31
+mask: 262153
+ def: 32
+mask: 16405
+ def: 33
+mask: 16405
+ def: 34
+mask: 16409
+ def: 35
+mask: 16409
+ def: 36
+mask: 16409
+ def: 37
+mask: 16409
+ def: 38
+mask: 4194305
+ def: 39
+mask: 4194305
+ def: 40
+mask: 3
+ def: 41
+mask: 286991
+ def: 42
+mask: 344323
+ def: 43
+mask: 344323
+ def: 44
+mask: 344323
+ def: 45
+mask: 278787
+ def: 46
+mask: 410371
+ def: 47
+mask: 16777217
+ def: 48
+mask: 16777217
+ def: 49
+mask: 16777217
+ def: 50
+mask: 41943297
+ def: 51
+mask: 1048835
+ def: 52
+mask: 1048835
+ def: 53
+mask: 1
+ def: 54
+mask: 1
+ def: 55
+mask: 1
+ def: 56
+mask: 1
+ def: 57
+mask: 1
+ def: 58
+mask: 1
+ def: 59
+mask: 1
+ def: 60
+mask: 1
+ def: 61
+mask: 1
+ def: 62
+mask: 1
+ def: 63
+mask: 1
+ def: 64
+mask: 1
+ def: 65
+mask: 1
+ def: 66
+mask: 1
+ def: 67
+mask: 1
+ def: 68
+mask: 1
+ def: 69
+mask: 1
+ def: 70
+mask: 1
+ def: 71
+mask: 1
+ def: 72
+mask: 1
+ def: 73
+mask: 1
+ def: 74
+mask: 1
+ def: 75
+mask: 1
+ def: 76
+mask: 1
+ def: 77
+mask: 1
+ def: 78
+mask: 1
+ def: 79
+mask: 1
+ def: 80
+mask: 1
+ def: 81
+mask: 1
+ def: 82
+mask: 1
+ def: 83
+mask: 1
+ def: 84
+mask: 1
+ def: 85
+mask: 1
+ def: 86
+mask: 1
+ def: 87
+mask: 1
+ def: 88
+mask: 1
+ def: 89
+mask: 1
+ def: 90
+mask: 1
+ def: 91
+mask: 1
+ def: 92
+mask: 1
+ def: 93
+mask: 1
+ def: 94
+mask: 1
+ def: 95
+mask: 1
+ def: 96
+mask: 1
+ def: 97
+mask: 1
+ def: 98
+mask: 1
+ def: 99
+mask: 1
+ def: 100
+mask: 1
+ def: 101
+mask: 1
+ def: 102
+mask: 1
+ def: 103
+mask: 1
+ def: 104
+mask: 1
+ def: 105
+mask: 1
+ def: 106
+mask: 1
+ def: 107
+mask: 1
+ def: 108
+mask: 2319
+ def: 109
+mask: 3
+ def: 110
+mask: 3
+ def: 111
+mask: 3
+ def: 112
+mask: 3
+ def: 113
+mask: 3
+ def: 114
+mask: 3
+ def: 115
+mask: 3
+ def: 116
+mask: 3
+ def: 117
+mask: 3
+ def: 118
+mask: 3
+ def: 119
+mask: 3
+ def: 120
+mask: 3
+ def: 121
+mask: 3
+ def: 122
+mask: 3
+ def: 123
+mask: 3
+ def: 124
+mask: 3
+ def: 125
+mask: 3
+ def: 126
+mask: 3
+ def: 127
+mask: 3
+ def: 128
+mask: 3
+ def: 129
+mask: 3
+ def: 130
+mask: 3
+ def: 131
+mask: 3
+ def: 132
+mask: 3
+ def: 133
+mask: 3
+ def: 134
+mask: 3
+ def: 135
+mask: 3
+ def: 136
+mask: 3
+ def: 137
+mask: 3
+ def: 138
+mask: 3
+ def: 139
+mask: 3
+ def: 140
+mask: 3
+ def: 141
+mask: 3
+ def: 142
+mask: 3
+ def: 143
+mask: 3
+ def: 144
+mask: 3
+ def: 145
+mask: 3
+ def: 146
+mask: 3
+ def: 147
+mask: 3
+ def: 148
+mask: 3
+ def: 149
+mask: 3
+ def: 150
+mask: 3
+ def: 151
+mask: 3
+ def: 152
+mask: 3
+ def: 153
+mask: 3
+ def: 154
+mask: 3
+ def: 155
+mask: 3
+ def: 156
+mask: 3
+ def: 157
+mask: 3
+ def: 158
+mask: 3
+ def: 159
+mask: 3
+ def: 160
+mask: 278915
+ def: 161
+mask: 278787
+ def: 162
+mask: 2375939
+ def: 163
+mask: 32769
+ def: 164
+mask: 524288
+ def: 165
+mask: 383
+ def: 166
+mask: 127
+ def: 167
+mask: 219
+ def: 168
+mask: 75
+ def: 169
+mask: 75
+ def: 170
+mask: 75
+ def: 171
+mask: 75
+ def: 172
+mask: 75
+ def: 173
+mask: 75
+ def: 174
+mask: 75
+ def: 175
+mask: 75
+ def: 176
+mask: 75
+ def: 177
+mask: 75
+ def: 178
+mask: 75
+ def: 179
+mask: 75
+ def: 180
+mask: 75
+ def: 181
+mask: 75
+ def: 182
+mask: 75
+ def: 183
+mask: 75
+ def: 184
+mask: 75
+ def: 185
+mask: 75
+ def: 186
+mask: 75
+ def: 187
+mask: 75
+ def: 188
+mask: 75
+ def: 189
+mask: 75
+ def: 190
+mask: 75
+ def: 191
+mask: 75
+ def: 192
+mask: 75
+ def: 193
+mask: 75
+ def: 194
+mask: 75
+ def: 195
+mask: 75
+ def: 196
+mask: 75
+ def: 197
+mask: 75
+ def: 198
+mask: 79
+ def: 199
+mask: 79
+ def: 200
+mask: 79
+ def: 201
+mask: 79
+ def: 202
+mask: 75
+ def: 203
+mask: 75
+ def: 204
+mask: 75
+ def: 205
+mask: 75
+ def: 206
+mask: 107
+ def: 207
+mask: 107
+ def: 208
+mask: 107
+ def: 209
+mask: 107
+ def: 210
+mask: 107
+ def: 211
+mask: 107
+ def: 212
+mask: 107
+ def: 213
+mask: 107
+ def: 214
+mask: 107
+ def: 215
+mask: 107
+ def: 216
+mask: 107
+ def: 217
+mask: 107
+ def: 218
+mask: 107
+ def: 219
+mask: 107
+ def: 220
+mask: 107
+ def: 221
+mask: 107
+ def: 222
+mask: 107
+ def: 223
+mask: 107
+ def: 224
+mask: 107
+ def: 225
+mask: 107
+ def: 226
+mask: 107
+ def: 227
+mask: 107
+ def: 228
+mask: 107
+ def: 229
+mask: 107
+ def: 230
+mask: 107
+ def: 231
+mask: 107
+ def: 232
+mask: 107
+ def: 233
+mask: 107
+ def: 234
+mask: 107
+ def: 235
+mask: 107
+ def: 236
+mask: 367
+ def: 237
+mask: 367
+ def: 238
+mask: 367
+ def: 239
+mask: 367
+ def: 240
+mask: 367
+ def: 241
+mask: 367
+ def: 242
+mask: 367
+ def: 243
+mask: 367
+ def: 244
+mask: 367
+ def: 245
+mask: 367
+ def: 246
+mask: 367
+ def: 247
+mask: 367
+ def: 248
+mask: 107
+ def: 249
+mask: 107
+ def: 250
+mask: 107
+ def: 251
+mask: 107
+ def: 252
+mask: 107
+ def: 253
+mask: 107
+ def: 254
+mask: 107
+ def: 255
+mask: 107
+ def: 256
+mask: 783
+ def: 257
+mask: 511
+ def: 258
+mask: 17
+ def: 259
+mask: 17
+ def: 260
+mask: 17
+ def: 261
+mask: 17
+ def: 262
+mask: 17
+ def: 263
+mask: 17
+ def: 264
+mask: 17
+ def: 265
+mask: 17
+ def: 266
+mask: 17
+ def: 267
+mask: 17
+ def: 268
+mask: 17
+ def: 269
+mask: 17
+ def: 270
+mask: 17
+ def: 271
+mask: 17
+ def: 272
+mask: 17
+ def: 273
+mask: 17
+ def: 274
+mask: 17
+ def: 275
+mask: 17
+ def: 276
+mask: 17
+ def: 277
+mask: 17
+ def: 278
+mask: 17
+ def: 279
+mask: 17
+ def: 280
+mask: 17
+ def: 281
+mask: 17
+ def: 282
+mask: 17
+ def: 283
+mask: 17
+ def: 284
+mask: 17
+ def: 285
+mask: 17
+ def: 286
+mask: 17
+ def: 287
+mask: 17
+ def: 288
+mask: 25
+ def: 289
+mask: 25
+ def: 290
+mask: 19
+ def: 291
+mask: 21
+ def: 292
+mask: 21
+ def: 293
+mask: 21
+ def: 294
+mask: 21
+ def: 295
+mask: 17
+ def: 296
+mask: 17
+ def: 297
+mask: 17
+ def: 298
+mask: 17
+ def: 299
+mask: 57
+ def: 300
+mask: 63
+ def: 301
+mask: 8191
+ def: 302
+mask: 3
+ def: 303
+mask: 3
+ def: 304
+mask: 3
+ def: 305
+mask: 3
+ def: 306
+mask: 3
+ def: 307
+mask: 3
+ def: 308
+mask: 3
+ def: 309
+mask: 3
+ def: 310
+mask: 3
+ def: 311
+mask: 3
+ def: 312
+mask: 3
+ def: 313
+mask: 3
+ def: 314
+mask: 3
+ def: 315
+mask: 3
+ def: 316
+mask: 3
+ def: 317
+mask: 11
+ def: 318
+mask: 11
+ def: 319
+mask: 11
+ def: 320
+mask: 11
+ def: 321
+mask: 11
+ def: 322
+mask: 11
+ def: 323
+mask: 11
+ def: 324
+mask: 11
+ def: 325
+mask: 11
+ def: 326
+mask: 11
+ def: 327
+mask: 11
+ def: 328
+mask: 11
+ def: 329
+mask: 11
+ def: 330
+mask: 11
+ def: 331
+mask: 11
+ def: 332
+mask: 3
+ def: 333
+mask: 3
+ def: 334
+mask: 3
+ def: 335
+mask: 3
+ def: 336
+mask: 3
+ def: 337
+mask: 3
+ def: 338
+mask: 3
+ def: 339
+mask: 3
+ def: 340
+mask: 3
+ def: 341
+mask: 15
+ def: 342
+mask: 15
+ def: 343
+mask: 15
+ def: 344
+mask: 15
+ def: 345
+mask: 15
+ def: 346
+mask: 15
+ def: 347
+mask: 15
+ def: 348
+mask: 15
+ def: 349
+mask: 3
+ def: 350
+mask: 3
+ def: 351
+mask: 3
+ def: 352
+mask: 3
+ def: 353
+mask: 79
+ def: 354
+mask: 121
+ def: 355
+mask: 121
+ def: 356
+mask: 121
+ def: 357
+mask: 121
+ def: 358
+mask: 67
+ def: 359
+mask: 67
+ def: 360
+mask: 67
+ def: 361
+mask: 67
+ def: 362
+mask: 1577217
+ def: 363
+mask: 1577217
+ def: 364
+mask: 1573123
+ def: 365
+mask: 1573123
+ def: 366
+mask: 1573123
+ def: 367
+mask: 1573123
+ def: 368
+mask: 1573123
+ def: 369
+mask: 1573123
+ def: 370
+mask: 1573123
+ def: 371
+mask: 1573123
+ def: 372
+mask: 1573123
+ def: 373
+mask: 1573123
+ def: 374
+mask: 1573123
+ def: 375
+mask: 1573123
+ def: 376
+mask: 43
+ def: 377
+mask: 11
+ def: 378
+mask: 523
+ def: 379
+mask: 51
+ def: 380
+mask: 19
+ def: 381
+mask: 531
+ def: 382
+mask: 131099
+ def: 383
+mask: 2059
+ def: 384
+mask: 43
+ def: 385
+mask: 8211
+ def: 386
+mask: 51
+ def: 387
+mask: 32799
+ def: 388
+mask: 67108871
+ def: 389
+mask: 151322631
+ def: 390
+mask: 6291457
+ def: 391
+mask: 6291457
+ def: 392
+mask: 16842753
+ def: 393
+mask: 16842753
+ def: 394
+mask: 268435456
+ def: 395
+mask: 278529
+ def: 396
+mask: 33832965
+ def: 397
+mask: 33832965
+ def: 398
+mask: 257
+ def: 399
+mask: 69
+ def: 400
+mask: 69
+ def: 401
+mask: 129
+ def: 402
+mask: 129
+ def: 403
+mask: 8388609
+ def: 404
+mask: 263169
+ def: 405
+mask: 263169
+ def: 406
+mask: 787459
+ def: 407
+mask: 787459
+ def: 408
+mask: 51975171
+ def: 409
+mask: 51975171
+ def: 410
+mask: 51975171
+ def: 411
+mask: 51975171
+ def: 412
+mask: 51975171
+ def: 413
+mask: 51975171
+ def: 414
+mask: 191
+ def: 415
+mask: 191
+ def: 416
+mask: 191
+ def: 417
+mask: 191
+ def: 418
+mask: 191
+ def: 419
+mask: 191
+ def: 420
+mask: 191
+ def: 421
+mask: 191
+ def: 422
+mask: 191
+ def: 423
+mask: 191
+ def: 424
+mask: 191
+ def: 425
+mask: 191
+ def: 426
+mask: 191
+ def: 427
+mask: 191
+ def: 428
+mask: 191
+ def: 429
+mask: 191
+ def: 430
+mask: 191
+ def: 431
+mask: 191
+ def: 432
+mask: 191
+ def: 433
+mask: 191
+ def: 434
+mask: 191
+ def: 435
+mask: 191
+ def: 436
+mask: 191
+ def: 437
+mask: 191
+ def: 438
+mask: 191
+ def: 439
+mask: 191
+ def: 440
+mask: 191
+ def: 441
+mask: 191
+ def: 442
+mask: 191
+ def: 443
+mask: 191
+ def: 444
+mask: 191
+ def: 445
+mask: 191
+ def: 446
+mask: 191
+ def: 447
+mask: 191
+ def: 448
+mask: 191
+ def: 449
+mask: 191
+ def: 450
+mask: 191
+ def: 451
+mask: 191
+ def: 452
+mask: 191
+ def: 453
+mask: 191
+ def: 454
+mask: 191
+ def: 455
+mask: 191
+ def: 456
+mask: 191
+ def: 457
+mask: 191
+ def: 458
+mask: 191
+ def: 459
+mask: 191
+ def: 460
+mask: 447
+ def: 461
+mask: 447
+ def: 462
+mask: 447
+ def: 463
+mask: 447
+ def: 464
+mask: 191
+ def: 465
+mask: 191
+ def: 466
+mask: 191
+ def: 467
+mask: 191
+ def: 468
+mask: 191
+ def: 469
+mask: 191
+ def: 470
+mask: 191
+ def: 471
+mask: 191
+ def: 472
+mask: 191
+ def: 473
+mask: 191
+ def: 474
+mask: 191
+ def: 475
+mask: 191
+ def: 476
+mask: 191
+ def: 477
+mask: 191
+ def: 478
+mask: 191
+ def: 479
+mask: 191
+ def: 480
+mask: 1057
+ def: 481
+mask: 639
+ def: 482
+mask: 3
+ def: 483
+mask: 3
+ def: 484
+mask: 3
+ def: 485
+mask: 3
+ def: 486
+mask: 3
+ def: 487
+mask: 3
+ def: 488
+mask: 3
+ def: 489
+mask: 3
+ def: 490
+mask: 3
+ def: 491
+mask: 3
+ def: 492
+mask: 3
+ def: 493
+mask: 3
+ def: 494
+mask: 3
+ def: 495
+mask: 3
+ def: 496
+mask: 3
+ def: 497
+mask: 7
+ def: 498
+mask: 7
+ def: 499
+mask: 7
+ def: 500
+mask: 7
+ def: 501
+mask: 7
+ def: 502
+mask: 7
+ def: 503
+mask: 7
+ def: 504
+mask: 7
+ def: 505
+mask: 3
+ def: 506
+mask: 3
+ def: 507
+mask: 3
+ def: 508
+mask: 3
+ def: 509
+mask: 7
+ def: 510
+mask: 1
+ def: 511
+mask: 1
+ def: 512
+mask: 1
+ def: 513
+mask: 1
+ def: 514
+mask: 1
+ def: 515
+mask: 1
+ def: 516
+mask: 1
+ def: 517
+mask: 1
+ def: 518
+mask: 1
+ def: 519
+mask: 1
+ def: 520
+mask: 1
+ def: 521
+mask: 1
+ def: 522
+mask: 1
+ def: 523
+mask: 1
+ def: 524
+mask: 1
+ def: 525
+mask: 1
+ def: 526
+mask: 1
+ def: 527
+mask: 1
+ def: 528
+mask: 1
+ def: 529
+mask: 1023
+ def: 530
+mask: 255
+ def: 531
+mask: 255
+ def: 532
+mask: 255
+ def: 533
+mask: 255
+ def: 534
+mask: 255
+ def: 535
+mask: 255
+ def: 536
+mask: 255
+ def: 537
+mask: 255
+ def: 538
+mask: 255
+ def: 539
+mask: 255
+ def: 540
+mask: 255
+ def: 541
+mask: 255
+ def: 542
+mask: 255
+ def: 543
+mask: 255
+ def: 544
+mask: 255
+ def: 545
+mask: 255
+ def: 546
+mask: 255
+ def: 547
+mask: 255
+ def: 548
+mask: 255
+ def: 549
+mask: 255
+ def: 550
+mask: 255
+ def: 551
+mask: 255
+ def: 552
+mask: 255
+ def: 553
+mask: 255
+ def: 554
+mask: 255
+ def: 555
+mask: 255
+ def: 556
+mask: 255
+ def: 557
+mask: 255
+ def: 558
+mask: 255
+ def: 559
+mask: 255
+ def: 560
+mask: 255
+ def: 561
+mask: 255
+ def: 562
+mask: 255
+ def: 563
+mask: 255
+ def: 564
+mask: 255
+ def: 565
+mask: 255
+ def: 566
+mask: 255
+ def: 567
+mask: 255
+ def: 568
+mask: 255
+ def: 569
+mask: 255
+ def: 570
+mask: 255
+ def: 571
+mask: 255
+ def: 572
+mask: 255
+ def: 573
+mask: 1023
+ def: 574
+mask: 1023
+ def: 575
+mask: 1636
+ def: 576
+mask: 1636
+ def: 577
+mask: 1636
+ def: 578
+mask: 1636
+ def: 579
+mask: 1636
+ def: 580
+mask: 1636
+ def: 581
+mask: 1636
+ def: 582
+mask: 1636
+ def: 583
+mask: 1636
+ def: 584
+mask: 1636
+ def: 585
+mask: 4838
+ def: 586
+mask: 4838
+ def: 587
+mask: 4838
+ def: 588
+mask: 4838
+ def: 589
+mask: 4838
+ def: 590
+mask: 4838
+ def: 591
+mask: 4838
+ def: 592
+mask: 4838
+ def: 593
+mask: 4838
+ def: 594
+mask: 4838
+ def: 595
+mask: 15078
+ def: 596
+mask: 15078
+ def: 597
+mask: 15078
+ def: 598
+mask: 15078
+ def: 599
+mask: 15078
+ def: 600
+mask: 15078
+ def: 601
+mask: 15078
+ def: 602
+mask: 15078
+ def: 603
+mask: 15078
+ def: 604
+mask: 15078
+ def: 605
+mask: 4095
+ def: 606
+mask: 4095
+ def: 607
+mask: 4095
+ def: 608
+mask: 4095
+ def: 609
+mask: 4095
+ def: 610
+mask: 4095
+ def: 611
+mask: 4095
+ def: 612
+mask: 4095
+ def: 613
+mask: 4095
+ def: 614
+mask: 4095
+ def: 615
+mask: 4095
+ def: 616
+mask: 4095
+ def: 617
+mask: 4095
+ def: 618
+mask: 4095
+ def: 619
+mask: 4095
+ def: 620
+mask: 4095
+ def: 621
+mask: 4095
+ def: 622
+mask: 4095
+ def: 623
+mask: 4095
+ def: 624
+mask: 4095
+ def: 625
+mask: 4095
+ def: 626
+mask: 4095
+ def: 627
+mask: 4095
+ def: 628
+mask: 4095
+ def: 629
+mask: 4095
+ def: 630
+mask: 4095
+ def: 631
+mask: 4095
+ def: 632
+mask: 4095
+ def: 633
+mask: 4095
+ def: 634
+mask: 4095
+ def: 635
+mask: 4095
+ def: 636
+mask: 4095
+ def: 637
+mask: 4095
+ def: 638
+mask: 4095
+ def: 639
+mask: 4095
+ def: 640
+mask: 4095
+ def: 641
+mask: 4095
+ def: 642
+mask: 4095
+ def: 643
+mask: 4095
+ def: 644
+mask: 12287
+ def: 645
+mask: 4095
+ def: 646
+mask: 4095
+ def: 647
+mask: 4095
+ def: 648
+mask: 4095
+ def: 649
+mask: 4095
+ def: 650
+mask: 4095
+ def: 651
+mask: 4095
+ def: 652
+mask: 18415
+ def: 653
+mask: 65513
+ def: 654
+mask: 65513
+ def: 655
+mask: 65513
+ def: 656
+mask: 65515
+ def: 657
+mask: 65513
+ def: 658
+mask: 65513
+ def: 659
+mask: 1
+ def: 660
+mask: 1
+ def: 661
+mask: 1
+ def: 662
+mask: 1
+ def: 663
+mask: 1
+ def: 664
+mask: 1
+ def: 665
+mask: 1
+ def: 666
+mask: 1
+ def: 667
+mask: 1
+ def: 668
+mask: 1
+ def: 669
+mask: 1
+ def: 670
+mask: 1
+ def: 671
+mask: 1
+ def: 672
+mask: 1
+ def: 673
+mask: 1
+ def: 674
+mask: 1
+ def: 675
+mask: 1
+ def: 676
+mask: 1
+ def: 677
+mask: 1
+ def: 678
+mask: 1
+ def: 679
+mask: 1
+ def: 680
+mask: 1
+ def: 681
+mask: 1
+ def: 682
+mask: 1
+ def: 683
+mask: 1
+ def: 684
+mask: 1
+ def: 685
+mask: 1
+ def: 686
+mask: 1
+ def: 687
+mask: 1
+ def: 688
+mask: 1
+ def: 689
+mask: 1
+ def: 690
+mask: 1
+ def: 691
+mask: 1
+ def: 692
+mask: 1
+ def: 693
+mask: 1
+ def: 694
+mask: 1
+ def: 695
+mask: 1
+ def: 696
+mask: 1
+ def: 697
+mask: 1
+ def: 698
+mask: 1
+ def: 699
+mask: 1
+ def: 700
+mask: 1
+ def: 701
+mask: 1
+ def: 702
+mask: 1
+ def: 703
+mask: 1
+ def: 704
+mask: 1
+ def: 705
+mask: 7
+ def: 706
+mask: 7
+ def: 707
+mask: 7
+ def: 708
+mask: 7
+ def: 709
+mask: 7
+ def: 710
+mask: 7
+ def: 711
+mask: 7
+ def: 712
+mask: 7
+ def: 713
+mask: 7
+ def: 714
+mask: 7
+ def: 715
+mask: 7
+ def: 716
+mask: 7
+ def: 717
+mask: 7
+ def: 718
+mask: 7
+ def: 719
+mask: 7
+ def: 720
+mask: 7
+ def: 721
+mask: 7
+ def: 722
+mask: 7
+ def: 723
+mask: 7
+ def: 724
+mask: 7
+ def: 725
+mask: 7
+ def: 726
+mask: 7
+ def: 727
+mask: 7
+ def: 728
+mask: 7
+ def: 729
+mask: 7
+ def: 730
+mask: 7
+ def: 731
+mask: 7
+ def: 732
+mask: 7
+ def: 733
+mask: 7
+ def: 734
+mask: 7
+ def: 735
+mask: 7
+ def: 736
+mask: 7
+ def: 737
+mask: 7
+ def: 738
+mask: 7
+ def: 739
+mask: 7
+ def: 740
+mask: 7
+ def: 741
+mask: 7
+ def: 742
+mask: 7
+ def: 743
+mask: 7
+ def: 744
+mask: 7
+ def: 745
+mask: 7
+ def: 746
+mask: 7
+ def: 747
+mask: 7
+ def: 748
+mask: 4136
+ def: 749
+mask: 4136
+ def: 750
+mask: 4136
+ def: 751
+mask: 4136
+ def: 752
+mask: 4136
+ def: 753
+mask: 4136
+ def: 754
+mask: 53256
+ def: 755
+mask: 53256
+ def: 756
+mask: 53256
+ def: 757
+mask: 53256
+ def: 758
+mask: 53256
+ def: 759
+mask: 53256
+ def: 760
+mask: 53256
+ def: 761
+mask: 53256
+ def: 762
+mask: 53256
+ def: 763
+mask: 53256
+ def: 764
+mask: 53256
+ def: 765
+mask: 53256
+ def: 766
+mask: 53256
+ def: 767
+mask: 53256
+ def: 768
+mask: 53256
+ def: 769
+mask: 53256
+ def: 770
+mask: 53256
+ def: 771
+mask: 53256
+ def: 772
+mask: 53256
+ def: 773
+mask: 53256
+ def: 774
+mask: 53256
+ def: 775
+mask: 53256
+ def: 776
+mask: 53256
+ def: 777
+mask: 53256
+ def: 778
+mask: 53256
+ def: 779
+mask: 53256
+ def: 780
+mask: 53256
+ def: 781
+mask: 53256
+ def: 782
+mask: 53256
+ def: 783
+mask: 53256
+ def: 784
+mask: 53256
+ def: 785
+mask: 53256
+ def: 786
+mask: 53256
+ def: 787
+mask: 53256
+ def: 788
+mask: 53256
+ def: 789
+mask: 53256
+ def: 790
+mask: 53256
+ def: 791
+mask: 53256
+ def: 792
+mask: 53256
+ def: 793
+mask: 53256
+ def: 794
+mask: 53256
+ def: 795
+mask: 53256
+ def: 796
+mask: 53256
+ def: 797
+mask: 127
+ def: 798
+mask: 511
+ def: 799
+mask: 511
+ def: 800
+mask: 511
+ def: 801
+mask: 511
+ def: 802
+mask: 511
+ def: 803
+mask: 511
+ def: 804
+mask: 511
+ def: 805
+mask: 511
+ def: 806
+mask: 511
+ def: 807
+mask: 511
+ def: 808
+mask: 511
+ def: 809
+mask: 511
+ def: 810
+mask: 511
+ def: 811
+mask: 511
+ def: 812
+mask: 511
+ def: 813
+mask: 511
+ def: 814
+mask: 511
+ def: 815
+mask: 511
+ def: 816
+mask: 511
+ def: 817
+mask: 511
+ def: 818
+mask: 511
+ def: 819
+mask: 511
+ def: 820
+mask: 511
+ def: 821
+mask: 511
+ def: 822
+mask: 511
+ def: 823
+mask: 511
+ def: 824
+mask: 511
+ def: 825
+mask: 511
+ def: 826
+mask: 511
+ def: 827
+mask: 511
+ def: 828
+mask: 511
+ def: 829
+mask: 511
+ def: 830
+mask: 511
+ def: 831
+mask: 511
+ def: 832
+mask: 511
+ def: 833
+mask: 511
+ def: 834
+mask: 511
+ def: 835
+mask: 511
+ def: 836
+mask: 2047
+ def: 837
+mask: 2047
+ def: 838
+mask: 2047
+ def: 839
+mask: 2047
+ def: 840
+mask: 2047
+ def: 841
+mask: 2047
+ def: 842
+mask: 2047
+ def: 843
+mask: 2047
+ def: 844
+mask: 2047
+ def: 845
+mask: 2047
+ def: 846
+mask: 2047
+ def: 847
+mask: 2047
+ def: 848
+mask: 2047
+ def: 849
+mask: 2047
+ def: 850
+mask: 2047
+ def: 851
+mask: 2047
+ def: 852
+mask: 2047
+ def: 853
+mask: 2047
+ def: 854
+mask: 2047
+ def: 855
+mask: 2047
+ def: 856
+mask: 2047
+ def: 857
+mask: 1567
+ def: 858
+mask: 1567
+ def: 859
+mask: 1567
+ def: 860
+mask: 1567
+ def: 861
+mask: 1567
+ def: 862
+mask: 1567
+ def: (null)
+mask: (null)
+ def: 863
+mask: 1048575
+ def: 864
+mask: 1
+ def: 865
+mask: 2047
+ def: 866
+mask: 2047
+ def: 867
+mask: 2047
+ def: 868
+mask: 2047
+ def: 869
+mask: 2047
+ def: 870
+mask: 2047
+ def: 871
+mask: 2047
+ def: 872
+mask: 2047
+ def: 873
+mask: 2047
+ def: 874
+mask: 2047
+ def: 875
+mask: 2047
+ def: 876
+mask: 2047
+ def: 877
+mask: 2047
+ def: 878
+mask: 2047
+ def: 879
+mask: 2047
+ def: 880
+mask: 1679925
+ def: 881
+mask: 1944631
+ def: 882
+mask: 1944631
+ def: 883
+mask: 1944631
+ def: 884
+mask: 1944631
+ def: 885
+mask: 1944631
+ def: 886
+mask: 1944631
+ def: 887
+mask: 1944631
+ def: 888
+mask: 1944631
+ def: 889
+mask: 1944631
+ def: 890
+mask: 1944631
+ def: 891
+mask: 1944631
+ def: 892
+mask: 1944631
+ def: 893
+mask: 1944631
+ def: 894
+mask: 1944631
+ def: 895
+mask: 1944631
+ def: 896
+mask: 1944631
+ def: 897
+mask: 1944631
+ def: 898
+mask: 1944631
+ def: 899
+mask: 1944631
+ def: 900
+mask: 1944631
+ def: 901
+mask: 1944631
+ def: 902
+mask: 1944631
+ def: 903
+mask: 1944631
+ def: 904
+mask: 1944631
+ def: 905
+mask: 1944631
+ def: 906
+mask: 1944631
+ def: 907
+mask: 1943603
+ def: 908
+mask: 1948727
+ def: 909
+mask: 1965111
+ def: 910
+mask: 1965111
+ def: 911
+mask: 102607927
+ def: 912
+mask: 102607927
+ def: 913
+mask: 102607927
+ def: 914
+mask: 102607927
+ def: 915
+mask: 2079795
+ def: 916
+mask: 2079795
+ def: 917
+mask: 2079795
+ def: 918
+mask: 2079795
+ def: 919
+mask: 2079795
+ def: 920
+mask: 2079795
+ def: 921
+mask: 2079795
+ def: 922
+mask: 2079795
+ def: 923
+mask: 2079799
+ def: 924
+mask: 2079799
+ def: 925
+mask: 2079799
+ def: 926
+mask: 2079799
+ def: 927
+mask: 2079799
+ def: 928
+mask: 2079799
+ def: 929
+mask: 2079799
+ def: 930
+mask: 2079799
+ def: 931
+mask: 538950707
+ def: 932
+mask: 538950707
+ def: 933
+mask: 538950707
+ def: 934
+mask: 538950707
+ def: 935
+mask: 538950707
+ def: 936
+mask: 538950707
+ def: 937
+mask: 538950707
+ def: 938
+mask: 538950707
+ def: 939
+mask: 2080119
+ def: 940
+mask: 2080119
+ def: 941
+mask: 2080119
+ def: 942
+mask: 404596787
+ def: 943
+mask: 404596787
+ def: 944
+mask: 404596787
+ def: 945
+mask: 404596787
+ def: 946
+mask: 404596787
+ def: 947
+mask: 404596787
+ def: 948
+mask: 787474
+ def: 949
+mask: 787474
+ def: 950
+mask: 787474
+ def: 951
+mask: 787474
+ def: 952
+mask: 1944631
+ def: 953
+mask: 789011
+ def: 954
+mask: 789011
+ def: 955
+mask: 1074003987
+ def: 956
+mask: 1074003987
+ def: 957
+mask: 1944631
+ def: 958
+mask: 1944631
+ def: 959
+mask: 1944631
+ def: 960
+mask: 1944631
+ def: 961
+mask: 1944631
+ def: 962
+mask: 1944631
+ def: 963
+mask: 1944631
+ def: 964
+mask: 1944631
+ def: 965
+mask: 1944631
+ def: 966
+mask: 1944631
+ def: 967
+mask: 1944631
+ def: 968
+mask: 1944631
+ def: 969
+mask: 1944631
+ def: 970
+mask: 1944631
+ def: 971
+mask: 1944631
+ def: 972
+mask: 1944631
+ def: 973
+mask: 1944631
+ def: 974
+mask: 1944631
+ def: 975
+mask: 1944631
+ def: 976
+mask: 1944631
+ def: 977
+mask: 1944631
+ def: 978
+mask: 1944631
+ def: 979
+mask: 1944631
+ def: 980
+mask: 1944631
+ def: 981
+mask: 1944631
+ def: 982
+mask: 1944631
+ def: 983
+mask: 102607927
+ def: 984
+mask: 102607927
+ def: 985
+mask: 102607927
+ def: 986
+mask: 102607927
+ def: 987
+mask: 2079795
+ def: 988
+mask: 2079795
+ def: 989
+mask: 2079795
+ def: 990
+mask: 2079795
+ def: 991
+mask: 2079795
+ def: 992
+mask: 2079795
+ def: 993
+mask: 2079795
+ def: 994
+mask: 2079795
+ def: 995
+mask: 2079799
+ def: 996
+mask: 2079799
+ def: 997
+mask: 2079799
+ def: 998
+mask: 2079799
+ def: 999
+mask: 2079799
+ def: 1000
+mask: 2079799
+ def: 1001
+mask: 2079799
+ def: 1002
+mask: 2079799
+ def: 1003
+mask: 1
+ def: 1004
+mask: 1
+ def: 1005
+mask: 1
+ def: 1006
+mask: 1
+ def: 1007
+mask: 1
+ def: 1008
+mask: 1
+ def: 1009
+mask: 1
+ def: 1010
+mask: 1
+ def: 1011
+mask: 1
+ def: 1012
+mask: 1
+ def: 1013
+mask: 1
+ def: 1014
+mask: 1
+ def: 1015
+mask: 1
+ def: 1016
+mask: 1
+ def: 1017
+mask: 1
+ def: 1018
+mask: 1
+ def: 1019
+mask: 1
+ def: 1020
+mask: 1
+ def: 1021
+mask: 1
+ def: 1022
+mask: 1
+ def: 1023
+mask: 1
+ def: 1024
+mask: 1
+ def: 1025
+mask: 1
+ def: 1026
+mask: 1
+ def: 1027
+mask: 1
+ def: 1028
+mask: 1
+ def: 1029
+mask: 1
+ def: 1030
+mask: 1
+ def: 1031
+mask: 1
+ def: 1032
+mask: 1
+ def: 1033
+mask: 1
+ def: 1034
+mask: 1
+ def: 1035
+mask: 1
+ def: 1036
+mask: 1
+ def: 1037
+mask: 1
+ def: 1038
+mask: 1
+ def: 1039
+mask: 1
+ def: 1040
+mask: 1
+ def: 1041
+mask: 1
+ def: 1042
+mask: 1
+ def: 1043
+mask: 1
+ def: 1044
+mask: 1
+ def: 1045
+mask: 1
+ def: 1046
+mask: 1
+ def: 1047
+mask: 1
+ def: 1048
+mask: 1
+ def: 1049
+mask: 1
+ def: 1050
+mask: 1
+ def: 1051
+mask: 1
+ def: 1052
+mask: 1
+ def: 1053
+mask: 4095
+ def: 1054
+mask: 4095
+ def: 1055
+mask: 4095
+ def: 1056
+mask: 4095
+ def: 1057
+mask: 4095
+ def: 1058
+mask: 4095
+ def: 1059
+mask: 3
+ def: 1060
+mask: 3
+ def: 1061
+mask: 3
+ def: 1062
+mask: 3
+ def: 1063
+mask: 3
+ def: 1064
+mask: 3
+ def: 1065
+mask: 3
+ def: 1066
+mask: 3
+ def: 1067
+mask: 3
+ def: 1068
+mask: 3
+ def: 1069
+mask: 3
+ def: 1070
+mask: 3
+ def: 1071
+mask: 3
+ def: 1072
+mask: 3
+ def: 1073
+mask: 3
+ def: 1074
+mask: 3
+ def: 1075
+mask: 3
+ def: 1076
+mask: 3
+ def: 1077
+mask: 3
+ def: 1078
+mask: 3
+ def: 1079
+mask: 3
+ def: 1080
+mask: 3
+ def: 1081
+mask: 3
+ def: 1082
+mask: 3
+ def: 1083
+mask: 3
+ def: 1084
+mask: 3
+ def: 1085
+mask: 3
+ def: 1086
+mask: 44
+ def: 1087
+mask: 60
+ def: 1088
+mask: 3711029
+ def: 1089
+mask: 29360148
+ def: 1090
+mask: 63
 , found
 struct data of glb_dt1[0] :
 name of glb_dt1[0] : ./res/data/ds1edit.dt1
@@ -140,5 +2325,591 @@ name of glb_dt1[1] : data/global/tiles/act1/town/floor.dt1
 in dt1_test_gfx
 we try to test test.d2t now:
 block num = 157
-in update3
+end of test to test.d2t now:
+struct data of glb_dt1[3] :
+name of glb_dt1[3] : data/global/tiles/act1/outdoors/stonewall.dt1
+   x1        = 7
+   x2        = 6
+   block_num = 52
+   bh_start  = 0x114
+struct data of glb_dt1[4] :
+name of glb_dt1[4] : data/global/tiles/act1/outdoors/river.dt1
+   x1        = 7
+   x2        = 6
+   block_num = 45
+   bh_start  = 0x114
+struct data of glb_dt1[5] :
+name of glb_dt1[5] : data/global/tiles/act1/outdoors/objects.dt1
+   x1        = 7
+   x2        = 6
+   block_num = 42
+   bh_start  = 0x114
+struct data of glb_dt1[6] :
+name of glb_dt1[6] : data/global/tiles/act1/outdoors/treegroups.dt1
+   x1        = 7
+   x2        = 6
+   block_num = 21
+   bh_start  = 0x114
+
+dt1_idx file
+------- ---------------------------------------------------------------------
+      0 ./res/data/ds1edit.dt1
+      1 data/global/tiles/act1/town/floor.dt1
+      2 data/global/tiles/act1/tristram/town.dt1
+      3 data/global/tiles/act1/outdoors/stonewall.dt1
+      4 data/global/tiles/act1/outdoors/river.dt1
+      5 data/global/tiles/act1/outdoors/objects.dt1
+      6 data/global/tiles/act1/outdoors/treegroups.dt1
+
+sorted block_table of glb_ds1 (0 blocks) :
+block orientation main_idx sub_idx frame dt1_idx blk_idx roof_y type line0
+----- ----------- -------- ------- ----- ------- ------- ------ ---- -----
+    0          -1       -1      -1    -1      -1      -1     -1   -1    -1
+    1           0        0       0     1       1      35      0    1     0
+    2           0        0       0     1       1      36      0    1     0
+    3           0        0       0     1       1      37      0    1     0
+    4           0        0       0     1       1      38      0    1     0
+    5           0        0       0     1       1      39      0    1     0
+    6           0        0       0     1       1      40      0    1     0
+    7           0        0       0     1       1      41      0    1     0
+    8           0        0       0     1       1      42      0    1     0
+    9           0        0       0     1       1      43      0    1     0
+   10           0        0       0     1       1      44      0    1     0
+   11           0        0       0     1       1     132      0    1     0
+   12           0        0       0     1       1     133      0    1     0
+   13           0        0       1     1       1      55      0    1     0
+   14           0        0       1     1       1     125      0    1     0
+   15           0        0       1     1       1     135      0    1     0
+   16           0        0       2     1       1      68      0    1     0
+   17           0        0       3     1       1      47      0    1     0
+   18           0        0       3     1       1      82      0    1     0
+   19           0        0       4     1       1      50      0    1     0
+   20           0        0       4     1       1      88      0    1     0
+   21           0        0       5     1       1      48      0    1     0
+   22           0        0       5     1       1      84      0    1     0
+   23           0        0       6     1       1      49      0    1     0
+   24           0        0       6     1       1      86      0    1     0
+   25           0        0       7     1       1      45      0    1     0
+   26           0        0       7     1       1      74      0    1     0
+   27           0        0       7     1       1      75      0    1     0
+   28           0        0       7     1       1      76      0    1     0
+   29           0        0       7     1       1     115      0    1     0
+   30           0        0       8     1       1      46      0    1     0
+   31           0        0       8     1       1      77      0    1     0
+   32           0        0       8     1       1      78      0    1     0
+   33           0        0       8     1       1      79      0    1     0
+   34           0        0       8     1       1      80      0    1     0
+   35           0        0       8     1       1     114      0    1     0
+   36           0        0       9     1       1      67      0    1     0
+   37           0        0       9     1       1     100      0    1     0
+   38           0        0      10     1       1      65      0    1     0
+   39           0        0      10     1       1     101      0    1     0
+   40           0        0      11     1       1      66      0    1     0
+   41           0        0      11     1       1     103      0    1     0
+   42           0        0      12     1       1      64      0    1     0
+   43           0        0      12     1       1     102      0    1     0
+   44           0        0      13     1       1      71      0    1     0
+   45           0        0      13     1       1      81      0    1     0
+   46           0        0      14     1       1      72      0    1     0
+   47           0        0      14     1       1      87      0    1     0
+   48           0        0      15     1       1      69      0    1     0
+   49           0        0      15     1       1      83      0    1     0
+   50           0        0      16     1       1      70      0    1     0
+   51           0        0      16     1       1      85      0    1     0
+   52           0        0      17     1       1      54      0    1     0
+   53           0        0      17     1       1      58      0    1     0
+   54           0        0      17     1       1      98      0    1     0
+   55           0        0      18     1       1      60      0    1     0
+   56           0        0      18     1       1     143      0    1     0
+   57           0        0      19     1       1      62      0    1     0
+   58           0        0      19     1       1      97      0    1     0
+   59           0        0      20     1       1      53      0    1     0
+   60           0        0      20     1       1      57      0    1     0
+   61           0        0      20     1       1      95      0    1     0
+   62           0        0      21     1       1      61      0    1     0
+   63           0        0      21     1       1     113      0    1     0
+   64           0        0      21     1       1     141      0    1     0
+   65           0        0      22     1       1      52      0    1     0
+   66           0        0      22     1       1      56      0    1     0
+   67           0        0      22     1       1      73      0    1     0
+   68           0        0      22     1       1     142      0    1     0
+   69           0        0      23     1       1      63      0    1     0
+   70           0        0      23     1       1      99      0    1     0
+   71           0        0      23     1       1     112      0    1     0
+   72           0        0      24     1       1      51      0    1     0
+   73           0        0      24     1       1      59      0    1     0
+   74           0        0      24     1       1      96      0    1     0
+   75           0        0      24     1       1     122      0    1     0
+   76           0        0      25     1       1     139      0    1     0
+   77           0        0      26     1       1     138      0    1     0
+   78           0        0      27     1       1     136      0    1     0
+   79           0        0      28     1       1     137      0    1     0
+   80           0        0      29     1       1     128      0    1     0
+   81           0        0      30     1       1     131      0    1     0
+   82           0        0      31     1       1     129      0    1     0
+   83           0        0      32     1       1     130      0    1     0
+   84           0        0      33     1       1     124      0    1     0
+   85           0        0      34     1       1     123      0    1     0
+   86           0        0      35     1       1     110      0    1     0
+   87           0        0      36     1       1     108      0    1     0
+   88           0        0      37     1       1     111      0    1     0
+   89           0        0      38     1       1     120      0    1     0
+   90           0        0      39     1       1     109      0    1     0
+   91           0        0      40     1       1     118      0    1     0
+   92           0        0      41     1       1     119      0    1     0
+   93           0        0      42     1       1     117      0    1     0
+   94           0        0      43     1       1     105      0    1     0
+   95           0        0      44     1       1     107      0    1     0
+   96           0        0      45     1       1     106      0    1     0
+   97           0        0      46     1       1     104      0    1     0
+   98           0        0      47     1       1     127      0    1     0
+   99           0        0      48     1       1     121      0    1     0
+  100           0        0      49     1       1     126      0    1     0
+  101           0        0      52     0       1       3      0    1     0
+  102           0        0      53     0       1       2      0    1     0
+  103           0        0      54     0       1       1      0    1     0
+  104           0        0      55     0       1       0      0    1     0
+  105           0        0      56     1       1     116      0    1     0
+  106           0        0      56     1       1     134      0    1     0
+  107           0        0      56     1       1     140      0    1     0
+  108          10        0       0     0       0       0      0    6    96
+  109          10        0       1     0       0       1      0    6    96
+  110          10        0      17     0       0       2      0    6    96
+  111          10        0      21     0       0       3      0    6    96
+  112          10        0      23     0       0       4      0    6    96
+  113          10        0      32     0       0       5      0    6    96
+  114          11        0       0     0       0       6      0    6    96
+  115          11        0       1     0       0       7      0    6    96
+  116          11        0       2     0       0       8      0    6    96
+  117          11        0       3     0       0       9      0    6    96
+  118          11        0       4     0       0      10      0    6    96
+  119          14        0       0     0       6      20      0    3   416
+  120          14        0       1     0       6      19      0    3   416
+  121          14        0       2     0       6      18      0    3   384
+  122          14        0       4     0       6      17      0    3   352
+  123          14        0       5     0       6      16      0    3   384
+  124          14        0       6     0       6      15      0    3   320
+  125          14        0       8     0       6      14      0    3   352
+  126          14        0       9     0       6      13      0    3   384
+  127          14        0      10     0       6      12      0    3   352
+  128          14        0      12     0       6       9      0    3   352
+  129          14        0      13     0       6      10      0    3   352
+  130          14        0      14     0       6      11      0    3   352
+  131          14        0      16     0       6       8      0    3   416
+  132          14        0      17     0       6       7      0    3   448
+  133          14        0      18     0       6       6      0    3   352
+  134          14        0      20     0       6       5      0    3   288
+  135          14        0      21     0       6       4      0    3   320
+  136          14        0      22     0       6       3      0    3   320
+  137          14        0      24     0       6       2      0    3   288
+  138          14        0      25     0       6       1      0    3   352
+  139          14        0      26     0       6       0      0    3   320
+  140           0        1       0     0       2     148      0    1     0
+  141           0        1       1     1       2     138      0    1     0
+  142           0        1       1     1       2     156      0    1     0
+  143           0        1       2     1       2     137      0    1     0
+  144           0        1       2     1       2     155      0    1     0
+  145           0        1       3     1       2     136      0    1     0
+  146           0        1       3     1       2     154      0    1     0
+  147           0        1       4     1       2     135      0    1     0
+  148           0        1       4     1       2     153      0    1     0
+  149           0        1       5     1       2     134      0    1     0
+  150           0        1       5     1       2     152      0    1     0
+  151           0        1       6     1       2     133      0    1     0
+  152           0        1       6     1       2     151      0    1     0
+  153           0        1       7     1       2     132      0    1     0
+  154           0        1       7     1       2     150      0    1     0
+  155           0        1       8     1       2     131      0    1     0
+  156           0        1       8     1       2     149      0    1     0
+  157           0        1       9     1       2     130      0    1     0
+  158           0        1       9     1       2     147      0    1     0
+  159           0        1      10     1       2     129      0    1     0
+  160           0        1      10     1       2     146      0    1     0
+  161           0        1      11     1       2     128      0    1     0
+  162           0        1      11     1       2     145      0    1     0
+  163           0        1      12     1       2     127      0    1     0
+  164           0        1      12     1       2     144      0    1     0
+  165           0        1      13     1       2     126      0    1     0
+  166           0        1      13     1       2     143      0    1     0
+  167           0        1      14     1       2     125      0    1     0
+  168           0        1      14     1       2     142      0    1     0
+  169           0        1      15     1       2     124      0    1     0
+  170           0        1      15     1       2     141      0    1     0
+  171           0        1      16     1       2     123      0    1     0
+  172           0        1      16     1       2     140      0    1     0
+  173           0        1      17     1       2     119      0    1     0
+  174           0        1      17     1       2     120      0    1     0
+  175           0        1      17     1       2     121      0    1     0
+  176           0        1      17     1       2     122      0    1     0
+  177           0        1      18     1       2     115      0    1     0
+  178           0        1      18     2       2     116      0    1     0
+  179           0        1      18     2       2     117      0    1     0
+  180           0        1      18     2       2     118      0    1     0
+  181           0        1      20     0       2      11      0    1     0
+  182           0        1      21     0       2      10      0    1     0
+  183           0        1      22     0       2       9      0    1     0
+  184           0        1      23     0       2       8      0    1     0
+  185           0        1      24     0       2       7      0    1     0
+  186           0        1      25     0       2       6      0    1     0
+  187           1        1       0     0       2     106      0    3   192
+  188           1        1       1     0       2     105      0    3   224
+  189           1        1       2     0       2     101      0    3   224
+  190           1        1       7     0       2      90      0    3   224
+  191           1        1       8     0       2      94      0    3   224
+  192           1        1       9     0       2      93      0    3   224
+  193           1        1      10     0       2      92      0    3   224
+  194           1        1      12     0       2      13      0    3    96
+  195           2        1       0     0       2     104      0    3   224
+  196           2        1       1     0       2     103      0    3   224
+  197           2        1       2     0       2     102      0    3   224
+  198           2        1       3     0       2      91      0    3   224
+  199           2        1       4     0       2      97      0    3   224
+  200           2        1       5     0       2      96      0    3   224
+  201           2        1       6     0       2      95      0    3   224
+  202           2        1       8     0       2      12      0    3    96
+  203           3        1       0     0       2     107      0    3   224
+  204           4        1       0     0       2     108      0    3   224
+  205           7        1       0     0       2      89      0    3    96
+  206          10        1       0     0       0      11      0    6    96
+  207          10        1       1     0       0      12      0    6    96
+  208          10        1      17     0       0      13      0    6    96
+  209          10        1      18     0       0      14      0    6    96
+  210          10        1      21     0       0      15      0    6    96
+  211          10        1      22     0       0      16      0    6    96
+  212          10        1      32     0       0      17      0    6    96
+  213          11        1       0     0       0      18      0    6    96
+  214          11        1       1     0       0      19      0    6    96
+  215          12        1       0     0       2     100      0    3    96
+  216          12        1       1     0       2      99      0    3    64
+  217          12        1       2     0       2      98      0    3    96
+  218           0        2       0     1       4      44      0    1     0
+  219           0        2       1     1       4      43      0    1     0
+  220           0        2       2     1       4      42      0    1     0
+  221           0        2       3     1       4      41      0    1     0
+  222           0        2       4     1       4      40      0    1     0
+  223           0        2       5     1       4      39      0    1     0
+  224           0        2       6     1       4      38      0    1     0
+  225           0        2       7     1       4      37      0    1     0
+  226           0        2       8     1       4      36      0    1     0
+  227           0        2       9     1       4      35      0    1     0
+  228           0        2      10     1       4      34      0    1     0
+  229           0        2      11     1       4      33      0    1     0
+  230           0        2      12     1       4      27      0    1     0
+  231           0        2      13     1       4      26      0    1     0
+  232           0        2      14     1       4      25      0    1     0
+  233           0        2      15     1       4      24      0    1     0
+  234           0        2      16     1       4      23      0    1     0
+  235           0        2      17     1       4      22      0    1     0
+  236           0        2      18     1       4      21      0    1     0
+  237           0        2      19     1       4      20      0    1     0
+  238           0        2      20     1       4      19      0    1     0
+  239           0        2      21     1       4      18      0    1     0
+  240           0        2      22     1       4      17      0    1     0
+  241           0        2      23     1       4      16      0    1     0
+  242           0        2      24     1       4      29      0    1     0
+  243           0        2      24     1       4      32      0    1     0
+  244           0        2      24     2       4      30      0    1     0
+  245           0        2      24     2       4      31      0    1     0
+  246           1        2       0     1       3      26      0    3   128
+  247           1        2       0     1       3      27      0    3   128
+  248           1        2       0     2       3      28      0    3   128
+  249           1        2       0     2       3      29      0    3   128
+  250           1        2       0     2       3      36      0    3   128
+  251           1        2       0     2       3      37      0    3   128
+  252           1        2       0     4       3      42      0    3   128
+  253           1        2       0     4       3      43      0    3   128
+  254           1        2       1     0       3      51      0    3   128
+  255           1        2       2     0       3      48      0    3   128
+  256           1        2       3     0       3      46      0    3    96
+  257           1        2       4     0       3      41      0    3   128
+  258           1        2      14     1       3      19      0    3   128
+  259           1        2      15     1       3      18      0    3   128
+  260           1        2      16     1       3      17      0    3   128
+  261           1        2      17     1       3      16      0    3   160
+  262           1        2      18     1       3       9      0    3   128
+  263           1        2      19     1       3       8      0    3   192
+  264           1        2      20     1       3       7      0    3   128
+  265           1        2      21     1       3       6      0    3   160
+  266           1        2      22     1       3       1      0    3   160
+  267           1        2      23     1       3       0      0    3   192
+  268           2        2       0     1       3      24      0    3   128
+  269           2        2       0     1       3      25      0    3   128
+  270           2        2       0     2       3      30      0    3   128
+  271           2        2       0     2       3      31      0    3   128
+  272           2        2       0     2       3      34      0    3   128
+  273           2        2       0     2       3      35      0    3   128
+  274           2        2       0     4       3      39      0    3   128
+  275           2        2       0     4       3      40      0    3   128
+  276           2        2       1     0       3      50      0    3   128
+  277           2        2       2     0       3      49      0    3   128
+  278           2        2       3     0       3      47      0    3   128
+  279           2        2       4     0       3      38      0    3   128
+  280           2        2      14     1       3      21      0    3   128
+  281           2        2      15     1       3      20      0    3   128
+  282           2        2      16     1       3      15      0    3   128
+  283           2        2      17     1       3      14      0    3   192
+  284           2        2      18     1       3      11      0    3   128
+  285           2        2      19     1       3      10      0    3   160
+  286           2        2      20     1       3       5      0    3   128
+  287           2        2      21     1       3       4      0    3   160
+  288           2        2      22     1       3       3      0    3   128
+  289           2        2      23     1       3       2      0    3   160
+  290           3        2       0     1       3      44      0    3   128
+  291           3        2       1     1       3      22      0    3   160
+  292           3        2       2     0       3      12      0    3   128
+  293           3        2       3     1       3      32      0    3   128
+  294           4        2       0     1       3      45      0    3   128
+  295           4        2       1     1       3      23      0    3   160
+  296           4        2       2     0       3      13      0    3   128
+  297           4        2       3     1       3      33      0    3   128
+  298          10        2       0     0       0      20      0    6    96
+  299          10        2       1     0       0      21      0    6    96
+  300          10        2       2     0       0      22      0    6    96
+  301          10        2      21     0       0      23      0    6    96
+  302          10        2      23     0       0      24      0    6    96
+  303          10        2      25     0       0      25      0    6    96
+  304          11        2       0     0       0      26      0    6    96
+  305          11        2       1     0       0      27      0    6    96
+  306          11        2       2     0       0      28      0    6    96
+  307          11        2       5     0       0      29      0    6    96
+  308           0        3       0     1       4      15      0    1     0
+  309           0        3       1     1       4      14      0    1     0
+  310           0        3       2     1       4      13      0    1     0
+  311           0        3       3     1       4      12      0    1     0
+  312           0        3       4     1       4      11      0    1     0
+  313           0        3       5     1       4      10      0    1     0
+  314           0        3       6     1       4       9      0    1     0
+  315           0        3       7     1       4       8      0    1     0
+  316           0        3       8     1       4       7      0    1     0
+  317           0        3       9     1       4       6      0    1     0
+  318           0        3      10     1       4       5      0    1     0
+  319           0        3      11     1       4       4      0    1     0
+  320           0        3      12     1       4       3      0    1     0
+  321           0        3      13     1       4       2      0    1     0
+  322           0        3      14     1       4       1      0    1     0
+  323           0        3      15     1       4       0      0    1     0
+  324          10        3       0     0       0      30      0    6    96
+  325          10        3       1     0       0      31      0    6    96
+  326          10        3       5     0       0      32      0    6    96
+  327          10        3      22     0       0      33      0    6    96
+  328          10        3      24     0       0      34      0    6    96
+  329          11        3       0     0       0      35      0    6    96
+  330          11        3       1     0       0      36      0    6    96
+  331           0        4       0     1       2     111      0    1     0
+  332           0        4       0     1       2     112      0    1     0
+  333           0        4       0     1       2     113      0    1     0
+  334           0        4       0     1       2     114      0    1     0
+  335           0        4       0     1       2     139      0    1     0
+  336           0        4       8     0       2     110      0    1     0
+  337           1        4       0     0       2      88      0    3   288
+  338           1        4       1     0       2      81      0    3   256
+  339           1        4       2     0       2      80      0    3   288
+  340           2        4       0     0       2      85      0    3   160
+  341           2        4       1     0       2      84      0    3   160
+  342           2        4       2     0       2      79      0    3   160
+  343           2        4       3     0       2      83      0    3   160
+  344           2        4       4     0       2      82      0    3   160
+  345           3        4       0     0       2      86      0    3   160
+  346           4        4       0     0       2      87      0    3   256
+  347           7        4       0     0       2      78      0    3    96
+  348          10        4       0     0       0      37      0    6    96
+  349          10        4       4     0       0      38      0    6    96
+  350          10        4      47     0       0      39      0    6    96
+  351          11        4       0     0       0      40      0    6    96
+  352          11        4       1     0       0      41      0    6    96
+  353           0        5       0     1       1      29      0    1     0
+  354           0        5       0     1       1      30      0    1     0
+  355           0        5       0     1       1      31      0    1     0
+  356           0        5       0     1       1      32      0    1     0
+  357           0        5       0     1       1      33      0    1     0
+  358           0        5       0     2       1      28      0    1     0
+  359           0        5       0     2       1      34      0    1     0
+  360           0        5       1     0       1      23      0    1     0
+  361           0        5       2     0       1      22      0    1     0
+  362           0        5       3     1       1      21      0    1     0
+  363           0        5       4     1       1      20      0    1     0
+  364           0        5       5     1       1      19      0    1     0
+  365           0        5       6     1       1      18      0    1     0
+  366           0        5       7     1       1      17      0    1     0
+  367           0        5       8     0       1      16      0    1     0
+  368           0        5       9     0       1      11      0    1     0
+  369           0        5      10     0       1      12      0    1     0
+  370           0        5      11     0       1      13      0    1     0
+  371           0        5      12     0       1      14      0    1     0
+  372           0        5      13     0       1      15      0    1     0
+  373           0        5      14     0       1      10      0    1     0
+  374           0        5      15     0       1       9      0    1     0
+  375           0        5      16     0       1       8      0    1     0
+  376           0        5      17     1       1      90      0    1     0
+  377           0        5      18     1       1      89      0    1     0
+  378           0        5      20     1       1      93      0    1     0
+  379           0        5      20     1       1      94      0    1     0
+  380           0        5      21     1       1      91      0    1     0
+  381           0        5      21     1       1      92      0    1     0
+  382           0        5      27     0       1      27      0    1     0
+  383           0        5      28     0       1      26      0    1     0
+  384           0        5      29     0       1      25      0    1     0
+  385           0        5      30     0       1      24      0    1     0
+  386           0        5      31     0       1       7      0    1     0
+  387           0        5      32     0       1       6      0    1     0
+  388           0        5      33     0       1       5      0    1     0
+  389           0        5      34     0       1       4      0    1     0
+  390           1        5       0     0       4      28      0    3    96
+  391           1        5       1     0       2      74      0    3   160
+  392           1        5       2     0       2      73      0    3   160
+  393           1        5       3     0       2      72      0    3   160
+  394           1        5       4     0       2      67      0    3   192
+  395           1        5       5     0       2      66      0    3   192
+  396           1        5       7     0       2      69      0    3   192
+  397           1        5       8     0       2      68      0    3   192
+  398           2        5       0     0       2      75      0    3   288
+  399           2        5       2     0       2      70      0    3   288
+  400           3        5       0     0       2      76      0    3   256
+  401           4        5       0     0       2      77      0    3   160
+  402           6        5       0     0       2      71      0    3   256
+  403           7        5       0     0       2      65      0    3    96
+  404          10        5       0     0       0      81      0    6    96
+  405          10        5      21     0       0      42      0    6    96
+  406          11        5       0     0       0      43      0    6    96
+  407          12        5       0     0       5       9      0    3   160
+  408          12        5       1     0       5       8      0    3   160
+  409           0        6       0     0       5      27      0    1     0
+  410           0        6       1     0       5      26      0    1     0
+  411           0        6       2     0       5      25      0    1     0
+  412           0        6       3     0       5      24      0    1     0
+  413           0        6       4     0       5      23      0    1     0
+  414           0        6       5     0       5      22      0    1     0
+  415           0        6       8     0       5      15      0    1     0
+  416           0        6       9     0       5      14      0    1     0
+  417           0        6      10     0       5      13      0    1     0
+  418           0        6      11     0       5      12      0    1     0
+  419           0        6      12     0       5      11      0    1     0
+  420           0        6      13     0       5      10      0    1     0
+  421           1        6       4     0       2      57      0    3   256
+  422           1        6       5     0       2      56      0    3   160
+  423           1        6       6     0       2      48      0    3   288
+  424           2        6       0     0       2      62      0    3   192 *
+  425           2        6       0     0       5      41      0    3   192 *
+  426           2        6       1     0       2      61      0    3   160 *
+  427           2        6       1     0       5      40      0    3   160 *
+  428           2        6       2     0       2      60      0    3   160 *
+  429           2        6       2     0       5      38      0    3   160 *
+  430           2        6       3     0       2      59      0    3   160 *
+  431           2        6       3     0       5      37      0    3   160 *
+  432           2        6       4     0       2      58      0    3   160
+  433           2        6       5     0       2      51      0    3   160
+  434           2        6       6     0       2      50      0    3   192
+  435           2        6       7     0       2      49      0    3   160
+  436           3        6       0     0       2      63      0    3   160
+  437           4        6       0     0       2      64      0    3   224
+  438           5        6       0     0       2      47      0    3   256
+  439           6        6       0     0       2      52      0    3   192
+  440           7        6       0     0       2      46      0    3    96
+  441          10        6       0     0       0      44      0    6    96
+  442          10        6      24     0       0      45      0    6    96
+  443          11        6       0     0       0      82      0    6    96
+  444          12        6       0     0       2      55      0    3    96
+  445          12        6       1     0       2      54      0    3    96
+  446          12        6       2     0       5      39      0    3   128
+  447          12        6       3     0       2      53      0    3    96
+  448          12        6       4     0       2     109      0    3   128
+  449           0        7       0     0       5      33      0    1     0
+  450           0        7       1     0       5      30      0    1     0
+  451           0        7       2     0       5      32      0    1     0
+  452           0        7       3     0       5      29      0    1     0
+  453           0        7       4     0       5      31      0    1     0
+  454           0        7       5     0       5      28      0    1     0
+  455           0        7       8     0       5      21      0    1     0
+  456           0        7       9     0       5      20      0    1     0
+  457           0        7      10     0       5      19      0    1     0
+  458           0        7      11     0       5      18      0    1     0
+  459           0        7      12     0       5      17      0    1     0
+  460           0        7      13     0       5      16      0    1     0
+  461           1        7       4     0       2      32      0    3   384
+  462           1        7      10     0       2      28      0    3   224
+  463           2        7       4     0       2      30      0    3   192
+  464           2        7       5     0       2      27      0    3   384
+  465           2        7      10     0       2      24      0    3   192
+  466           3        7       1     0       2      29      0    3     0
+  467           5        7       0     0       2      33      0    3   320
+  468           6        7       0     0       2      26      0    3   352
+  469           7        7       0     0       2      31      0    3   288
+  470           7        7       2     0       2      25      0    3    96
+  471          10        7       0     0       0      46      0    6    96
+  472          11        7       0     0       0      83      0    6    96
+  473           0        8       0     0       2       5      0    1     0
+  474           0        8       1     0       2       4      0    1     0
+  475           0        8       2     0       2       3      0    1     0
+  476           0        8       3     0       2       2      0    1     0
+  477           0        8       4     0       2       1      0    1     0
+  478           0        8       5     0       2       0      0    1     0
+  479          10        8       2     0       0      47      0    6    96
+  480          10        8       7     0       0      48      0    6    96
+  481          10        8       8     0       0      49      0    6    96
+  482          10        8      12     0       0      50      0    6    96
+  483          10        8      14     0       0      51      0    6    96
+  484          10        8      16     0       0      52      0    6    96
+  485          10        8      22     0       0      53      0    6    96
+  486          10        8      23     0       0      54      0    6    96
+  487          10        8      31     0       0      55      0    6    96
+  488          10        8      40     0       0      56      0    6    96
+  489          10        8      41     0       0      57      0    6    96
+  490          10        8      42     0       0      58      0    6    96
+  491          10        8      46     0       0      59      0    6    96
+  492          10        9      23     0       0      60      0    6    96
+  493          10        9      40     0       0      61      0    6    96
+  494          10        9      46     0       0      62      0    6    96
+  495           1       10       0     0       2      16      0    3   320
+  496           1       10       1     0       2      15      0    3   352
+  497           1       10       2     0       2      14      0    3   288
+  498           1       10       5     0       2      45      0    3   192
+  499           1       10       6     0       2      44      0    3   224
+  500           1       10       7     0       2      43      0    3   224
+  501           1       10       8     0       2      42      0    3   192
+  502           2       10       0     0       2      21      0    3   320
+  503           2       10       1     0       2      20      0    3   320
+  504           2       10       2     0       2      19      0    3   256
+  505           2       10       3     0       2      18      0    3   224
+  506           2       10       5     0       2      39      0    3   288
+  507           2       10       6     0       2      38      0    3   352
+  508           2       10       7     0       2      37      0    3   192
+  509           3       10       0     0       2      22      0    3   224
+  510           3       10       5     0       2      40      0    3   224
+  511           4       10       0     0       2      23      0    3   224
+  512           4       10       5     0       2      41      0    3   192
+  513           7       10       0     0       2      17      0    3    96
+  514          10       10      23     0       0      63      0    6    96
+  515          12       10       5     0       2      36      0    3    96
+  516          12       10       6     0       2      35      0    3    96
+  517          12       10       7     0       2      34      0    3    96
+  518           0       11       0     0       5      34      0    1     0
+  519           0       11       1     0       5       2      0    1     0
+  520           0       11       2     0       5      35      0    1     0
+  521           0       11       3     0       5       1      0    1     0
+  522           0       11       4     0       5       0      0    1     0
+  523           0       12       1     0       5      36      0    1     0
+  524           0       12       3     0       5       7      0    1     0
+  525           0       12       4     0       5       6      0    1     0
+  526           0       12       5     0       5       5      0    1     0
+  527           0       12       6     0       5       4      0    1     0
+  528           0       12       7     0       5       3      0    1     0
+  529          10       12      13     0       0      64      0    6    96
+  530          10       12      14     0       0      65      0    6    96
+  531          10       12      23     0       0      66      0    6    96
+  532          10       12      24     0       0      67      0    6    96
+  533          10       12      41     0       0      68      0    6    96
+  534          10       13      13     0       0      69      0    6    96
+  535          10       16      25     0       0      70      0    6    96
+  536          10       16      40     0       0      71      0    6    96
+  537          10       16      41     0       0      72      0    6    96
+  538          10       16      42     0       0      73      0    6    96
+  539          10       20      23     0       0      74      0    6    96
+  540          10       30       0     0       0      75      0    6    96
+  541          10       30      11     0       0      76      0    6    96
+  542          10       31       0     0       0      77      0    6    96
+  543          10       32       0     0       0      78      0    6    96
+  544          10       33       0     0       0      79      0    6    96
+  545          10       34       0     0       0      80      0    6    96
+
+ds1edit_exit()
 make[1]: Leaving directory `/home/anhong/d2imdev/ds1/bin'

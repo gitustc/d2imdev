@@ -1,6 +1,7 @@
-CC     = gcc -Wall -g
-CFLAGS = -I ../../allegro/allegro5/include/allegro5/
-LIBS   = ../../allegro/allegro5/lib/*.a -lm -lpthread -lX11 -lXcursor -lXcursor -ldl -lGL
+CC     = gcc -Wall -g -std=c89 -pedantic -O2
+CFLAGS = -I/usr/local/include
+LIBS   = -L/usr/local/lib -lm -lpthread -lX11 -lXcursor -lXcursor -ldl -lGL -lallegro -lallegro_font -lallegro_ttf -liksemel
+
 OBJS   = main.o gewrp.o glb.o d2im.o
 all:$(OBJS)
 	$(CC) $(OBJS)  $(CFLAGS) $(LIBS) -o ../bin/d2im
@@ -10,3 +11,9 @@ clean:
 	rm  *.o ../bin/d2im -f
 $(OBJS):%.o:%.c
 	$(CC) -c $(CFLAGS) $< -o $@
+
+
+
+
+
+

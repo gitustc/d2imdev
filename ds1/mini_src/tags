@@ -57,7 +57,7 @@ CELL_T_S	structs.h	/^typedef struct CELL_T_S$/;"	s
 CELL_T_S	structs.h	/^} CELL_T_S;$/;"	t	typeref:struct:CELL_T_S
 CELL_W_S	structs.h	/^typedef struct CELL_W_S$/;"	s
 CELL_W_S	structs.h	/^} CELL_W_S;$/;"	t	typeref:struct:CELL_W_S
-CFLAGS	Makefile	/^CFLAGS  =   -I ..\/..\/allegro\/allegro4\/include -I.\/mpq -Wall -g$/;"	m
+CFLAGS	Makefile	/^CFLAGS  =   -I..\/..\/allegro\/allegro4\/include -I.\/mpq -Wall -g  -I\/usr\/local\/include$/;"	m
 CMAP_E	structs.h	/^typedef enum CMAP_E$/;"	g
 CMAP_E	structs.h	/^} CMAP_E;$/;"	t	typeref:enum:CMAP_E
 CMD_LINE_S	structs.h	/^typedef struct CMD_LINE_S$/;"	s
@@ -240,7 +240,7 @@ IT_NULL	structs.h	/^    IT_NULL,$/;"	e	enum:IT_ENUM
 InitializeLocals	mpq/mpqview.c	/^int InitializeLocals()$/;"	f
 LAY_INF_S	structs.h	/^typedef struct LAY_INF_S$/;"	s
 LAY_INF_S	structs.h	/^} LAY_INF_S;$/;"	t	typeref:struct:LAY_INF_S
-LIBS	Makefile	/^LIBS    =   ..\/..\/allegro\/allegro4\/lib\/*.a -lm -lpthread -lX11 -lXcursor -lXcursor -ldl -lGL$/;"	m
+LIBS	Makefile	/^LIBS    =   \/usr\/local\/lib\/libiksemel.a ..\/..\/allegro\/allegro4\/lib\/*.a -lm -lpthread -lX11 -lXcursor -lXcursor -ldl -lGL -L\/usr\/local\/lib$/;"	m
 MAIN_LINE_S	structs.h	/^typedef struct MAIN_LINE_S$/;"	s
 MAIN_LINE_S	structs.h	/^} MAIN_LINE_S;$/;"	t	typeref:struct:MAIN_LINE_S
 MAX_MOD_DIR	structs.h	15;"	d
@@ -878,6 +878,7 @@ read_buffer_start	mpq/mpqtypes.h	/^   UInt8  * global_buffer, * read_buffer_star
 read_data	mpq/mpqview.c	/^UInt16 read_data(UInt8 *buffer,UInt16 size,void *crap)$/;"	f
 read_data_proc	mpq/dclib.h	/^typedef UInt16 read_data_proc  (UInt8 * buffer, UInt16 size, void * param);$/;"	t
 read_lvlprest_txt	txtread.c	/^int read_lvlprest_txt(int ds1_idx, int def)$/;"	f
+read_lvlprest_txt2	txtread.c	/^int read_lvlprest_txt2(int ds1_idx, int def)$/;"	f
 read_lvltypes_txt	txtread.c	/^int read_lvltypes_txt(int ds1_idx, int type)$/;"	f
 read_obj_txt	txtread.c	/^int read_obj_txt(void)$/;"	f
 read_objects_txt	txtread.c	/^int read_objects_txt(void)$/;"	f

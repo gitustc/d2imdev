@@ -6,6 +6,8 @@
 #include "mpqview.h"
 #include "txtread.h"
 
+#include "iksemel.h"
+
 
 // ==========================================================================
 // prepare the reading of a col value
@@ -732,40 +734,32 @@ int read_lvlprest_txt2(int ds1_idx, int def)
 
 
 
-    iks * p;
+    iks    *p;
+    iks    *t;
+    int     e;
 
-    iks_load( "./res/demo/data/global/excel/lvlprest.xml", &p);
-
-
-    //运行的是这里~
-    for(i=0; i < txt->line_num; i++){
-        sptr = txt->data + (i * txt->line_size) + txt->col[misc_get_txt_column_num(RQ_LVLPREST, "Def")].offset;
-        // here because we have already load the text-based info into txt-structure,
-        // so we can use *lptr == def directly, otherwise we can not
-        lptr = (long *) sptr;
-        if((* lptr) == def){
-            // Def found
-            DEBUG_MESSAGE("Found DEF %i in LvlPrest.txt at row %i, col %i\n", def, i + 1, txt->col[misc_get_txt_column_num(RQ_LVLPREST, "Def")].pos);
-
-            // dt1mask
-            sptr = txt->data + (i * txt->line_size) + txt->col[misc_get_txt_column_num(RQ_LVLPREST, "Dt1Mask")].offset;
-            lptr = (long *) sptr;
-            mask = * lptr;
-
-            DEBUG_MESSAGE("DT1MASK = %li in LvlPrest.txt at row %i, col %i\n", mask, i + 1, txt->col[misc_get_txt_column_num(RQ_LVLPREST, "Dt1Mask")].pos);
-
-            for (b=0; b < DT1_IN_DS1_MAX; b++){
-                if (b == 0){
-                    glb_ds1.dt1_mask[b] = TRUE;
-                }else{
-                    glb_ds1.dt1_mask[b] = mask & (1 << (b-1)) ? TRUE : FALSE;
-                }
-            }
-
-            // end
-            return 0;
-        }
+    e = iks_load( "./res/demo/data/global/excel/lvlprest.xml", &p);
+    if(e != IKS_OK ){
+        fprintf(stderr, "open lvlprest.xml failed \n" );
+        exit(0);
     }
+
+    fprintf(stdout, "I am here, in read_lvlprest_txt2\n" );
+
+    t = iks_child(p);
+
+    while ( t ){
+
+        if ( iks_type( t ) == IKS_TAG && !strcmp( iks_name( t ), "desc" ) ){
+            fprintf(stdout, " def: %s\n", iks_find_cdata(t, "def") );
+            fprintf(stdout, "mask: %s\n", iks_find_cdata(t, "mask") );
+        }
+        t = iks_next(t);
+    }
+
+    iks_delete(p);
+
+
 }
 
 

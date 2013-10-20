@@ -3,7 +3,7 @@
  *
  *       Filename: d2im.c
  *        Created: 10/10/2013 01:19:53 AM
- *  Last Modified: 10/19/2013 04:00:41 PM
+ *  Last Modified: 10/19/2013 09:11:08 PM
  *
  *    Description: game logic
  *
@@ -22,6 +22,49 @@
 #include "gewrp.h"
 
 
+
+/*
+ * ===  FUNCTION  ======================================================================
+ *         Name:  d2im_read_config
+ *  Description:  
+ * =====================================================================================
+ */
+static int d2im_read_config ()
+{
+
+    iks    *p;
+    iks    *t;
+    int     e;
+
+    e = iks_load( "./d2im.xml", &p);
+    if(e != IKS_OK ){
+        fprintf(stderr, "can not open d2im.xml.\n" );
+        exit(0);
+    }
+
+    t = iks_child(p);
+
+    while ( t ){
+
+        /* window size */
+        if ( iks_type( t ) == IKS_TAG && !strcmp( iks_name( t ), "win" ) ){
+            fprintf(stdout, "width: %s\n", iks_find_cdata(t, "width") );
+            fprintf(stdout, "height: %s\n", iks_find_cdata(t, "height") );
+        }
+
+        /* other test */
+        if ( iks_type( t ) == IKS_TAG && !strcmp( iks_name( t ), "utf8" ) ){
+            fprintf(stdout, "info: %s\n", iks_find_cdata(t, "chinese") );
+        }
+
+        t = iks_next(t);
+    }
+
+    iks_delete(p);
+
+    return 0;
+}
+
 /* 
  * ===  FUNCTION  ======================================================================
  *         Name:  d2im_init
@@ -30,11 +73,16 @@
  */
 
 
-
-
 int d2im_init ()
 {
+
+
+
+    d2im_read_config();
     gewrp_init(0);
+
+
+
     return 0;
 }
 
@@ -49,11 +97,24 @@ int d2im_init ()
 int d2im_run ()
 {
 
+    GEWRP_FONT     *font;
     GEWRP_EVENT     event;
+
+    font = gewrp_load_font("./wqy-microhei.ttf", 24);
+    if( font == NULL ){
+        fprintf(stdout, "can not load font.\n" );
+        exit(0);
+    }
+
+    gewrp_start_timer();
 
     while (1) {
 
-        fprintf(stdout, "here\n" );
+
+        gewrp_clear(gewrp_map_rgb(0, 0, 0));
+
+        gewrp_set_target_bitmap(gewrp_get_backbuff(gewrp_get_disp()));
+        gewrp_draw_text(font, gewrp_map_rgb(10,240,50), 12, 12, 0, "你好");
 
         gewrp_poll_event( gewrp_get_evtq(), (&event) );
 
@@ -66,7 +127,7 @@ int d2im_run ()
             case ALLEGRO_EVENT_KEY_DOWN:
                 {
                     if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE)
-                        return;
+                        return 0;
                     break;
 
                 }
@@ -79,6 +140,8 @@ int d2im_run ()
                 {
                 }
         }
+
+        gewrp_flip();
     }
     return 0;
 }

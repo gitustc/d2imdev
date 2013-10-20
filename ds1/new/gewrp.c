@@ -3,7 +3,7 @@
  *
  *       Filename: gewrp.c
  *        Created: 10/09/2013 10:39:22 PM
- *  Last Modified: 10/19/2013 04:42:03 PM
+ *  Last Modified: 10/19/2013 09:06:09 PM
  *
  *    Description: wrp for allegro
  *                 you can also wrp other game library
@@ -20,6 +20,9 @@
  */
 
 #include "gewrp.h"
+#include <iksemel.h>
+
+#if 0
 
 
 /*
@@ -70,12 +73,12 @@ static int gewrp_read_config ()
     iksparser   *parser;
 
     parser = iks_sax_new(NULL, ptr_tag, ptr_cdata);
-    
 
     return 0;
 }
 
 
+#endif
 
 
 
@@ -93,14 +96,15 @@ int gewrp_init ( uint32_t arg )
 {
 
 
-    gewrp_read_config();
-
     if( !al_init() ){
         fprintf ( stderr, "fatal error: open allegro library failed...\n" );
         exit(0);
     }
     al_install_keyboard();
     al_install_mouse();
+
+    al_init_font_addon();
+    al_init_ttf_addon();
 
 
     glb_gewrp_inst.disp = al_create_display(640, 480);
@@ -119,10 +123,21 @@ int gewrp_init ( uint32_t arg )
     al_register_event_source(glb_gewrp_inst.evtq, al_get_display_event_source(glb_gewrp_inst.disp));
     al_register_event_source(glb_gewrp_inst.evtq, al_get_timer_event_source(glb_gewrp_inst.timer));
 
-    fprintf(stdout, "here!!!!!!!!!!!!\n" );
 
     return 0;
 }
 
 
 
+
+/*
+ * ===  FUNCTION  ======================================================================
+ *         Name:  gewrp_quit
+ *  Description:  
+ * =====================================================================================
+ */
+int gewrp_quit (  )
+{
+
+    return 0;
+}

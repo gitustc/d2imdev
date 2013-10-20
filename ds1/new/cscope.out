@@ -1,4 +1,4 @@
-cscope 15 $HOME/d2imdev/ds1/new -q 0000001723 0000119372
+cscope 15 $HOME/d2imdev/ds1/new -q 0000001767 0000121455
 	@d2im.c
 
 21 
@@ -9,57 +9,217 @@ cscope 15 $HOME/d2imdev/ds1/new -q 0000001723 0000119372
 	~"gewΩ.h
 "
 
-35 
-	$d2im_öô
+32 
+	$d2im_ªad_c⁄fig
  ()
 
-37 
-	`gewΩ_öô
-(0);
+35 
+iks
+ *
+p
+;
+
+36 
+iks
+ *
+t
+;
+
+37 
+e
+;
 
 39 
+e
+ = 
+	`iks_lﬂd
+–"./d2im.xml", &
+p
+);
+
+40 if(
+e
+ !
+IKS_OK
+ ){
+
+41 
+	`Ârötf
+(
+°dîr
+, "canÇot open d2im.xml.\n" );
+
+42 
+	`exô
+(0);
+
+45 
+t
+ = 
+	`iks_chûd
+(
+p
+);
+
+47  
+t
+ ){
+
+50 i‡–
+	`iks_ty≥
+–
+t
+ ) =
+IKS_TAG
+ && !
+	`°rcmp
+–
+	`iks_«me
+(Å ), "win" ) ){
+
+51 
+	`Ârötf
+(
+°dout
+, "width: %s\n", 
+	`iks_föd_cd©a
+(
+t
+, "width") );
+
+52 
+	`Ârötf
+(
+°dout
+, "height: %s\n", 
+	`iks_föd_cd©a
+(
+t
+, "height") );
+
+56 i‡–
+	`iks_ty≥
+–
+t
+ ) =
+IKS_TAG
+ && !
+	`°rcmp
+–
+	`iks_«me
+(Å ), "utf8" ) ){
+
+57 
+	`Ârötf
+(
+°dout
+, "öfo: %s\n", 
+	`iks_föd_cd©a
+(
+t
+, "chinese") );
+
+60 
+t
+ = 
+	`iks_√xt
+(t);
+
+63 
+	`iks_dñëe
+(
+p
+);
+
+66 
 	}
 }
 
-49 
+76 
+	$d2im_öô
+ ()
+
+81 
+	`d2im_ªad_c⁄fig
+();
+
+82 
+	`gewΩ_öô
+(0);
+
+87 
+	}
+}
+
+97 
 	$d2im_run
  ()
 
-52 
+100 
+GEWRP_FONT
+ *
+f⁄t
+;
+
+101 
 GEWRP_EVENT
  
 evít
 ;
 
-56 
+103 
+f⁄t
+ = 
+	`gewΩ_lﬂd_f⁄t
+("./wqy-microhei.ttf", 12);
+
+104 if–
+f⁄t
+ =
+NULL
+ ){
+
+105 
 	`Ârötf
 (
 °dout
-, "here\n" );
+, "canÇotÜoad font.\n" );
 
-58 
+106 
+	`exô
+(0);
+
+111 
+	`gewΩ_døw_ãxt
+(
+f⁄t
+, 
+	`gewΩ_m≠_rgb
+(10,240,50), 12, 12, 0, "hello");
+
+113 
 	`gewΩ_pﬁl_evít
 –
 	`gewΩ_gë_evtq
-(), &
+(), (&
 evít
- );
+) );
 
-60 
+115 
 evít
 .
 ty≥
 ) {
 
-61 
+116 
 ALLEGRO_EVENT_DISPLAY_CLOSE
 :
 
-66 
+121 
 ALLEGRO_EVENT_KEY_DOWN
 :
 
-68 i‡(
+123 i‡(
 evít
 .
 keybﬂrd
@@ -69,19 +229,23 @@ keycode
 ALLEGRO_KEY_ESCAPE
 )
 
-74 
+129 
 ALLEGRO_EVENT_TIMER
 :
 
-84 
+138 
+	`gewΩ_Êù
+();
+
+141 
 	}
 }
 
-95 
+152 
 	$d2im_quô
  ()
 
-99 
+156 
 	}
 }
 
@@ -97,23 +261,35 @@ _ö˛uded_d2im_öc__
 
 	)
 
-26 
+24 
+	~<ik£mñ.h
+>
+
+25 
+	~<ÆÀgro5/ÆÀgro.h
+>
+
+26 
+	~<ÆÀgro5/ÆÀgro_f⁄t.h
+>
+
+29 
 	sD2IM_INST
  {
 
-28 
+31 
 D2IM_INST
  
 	tD2IM_INST
 ;
 
-30 
+33 
 D2IM_INST
  
 glb_d2im_ö°
 ;
 
-31 
+34 
 	#d2im_ö°
 (Ë(
 glb_d2im_ö°
@@ -121,12 +297,16 @@ glb_d2im_ö°
 
 	)
 
-37 
+40 
 d2im_öô
 ();
 
-38 
-d2im_‰ì
+41 
+d2im_run
+();
+
+42 
+d2im_quô
 ();
 
 	@d2lib/d2p/d2p.c
@@ -172,6 +352,42 @@ d2p_˛o£
 (
 D2P
  *);
+
+	@d2scene.h
+
+23 
+	sD2IM_SCENE
+ {
+
+24 
+UINT32
+ 
+	mwidth
+;
+
+25 
+UINT32
+ 
+	mheight
+;
+
+27 
+UINT32
+ 
+	mf_num
+;
+
+28 
+UINT32
+ 
+	mw_num
+;
+
+31 
+D2IM_SCENE
+ 
+	tD2IM_SCENE
+;
 
 	@ex_blit.c
 
@@ -1997,37 +2213,117 @@ di•œy
 	~"gewΩ.h
 "
 
-31 
-	$gewΩ_öô
+23 
+	~<ik£mñ.h
+>
+
+34 
+	$±r_èg
+ ( *
+ud©a
+, *
+«me
+, **
+©å
+, 
+ty≥
+ )
+
+37  
+ty≥
+ ){
+
+38 
+IKS_OPEN
+:
+
+40 if–!
+	`°rcmp
+(
+«me
+, "width") ){
+
+42 
+	`Ârötf
+(
+°dout
+, "width\n" );
+
+60 
+ik£º‹
+ 
+	`±r_cd©a
+ ( *
+ud©a
+, *
+d©a
+, 
+size_t
+ 
+Àn
+ )
+
+71 
+	`gewΩ_ªad_c⁄fig
+ ()
+
+73 
+ik•¨£r
+ *
+∑r£r
+;
+
+75 
+∑r£r
+ = 
+	`iks_ßx_√w
+(
+NULL
+, 
+±r_èg
+, 
+±r_cd©a
+);
+
+95 
+	`gewΩ_öô
  ( 
 uöt32_t
  
 ¨g
  )
 
-33 if–!
+99 if–!
 	`Æ_öô
 () ){
 
-34 
+100 
 	`Ârötf
  ( 
 °dîr
 , "fatalÉrror: openállegroÜibrary failed...\n" );
 
-35 
+101 
 	`exô
 (0);
 
-37 
+103 
 	`Æ_ö°Æl_keybﬂrd
 ();
 
-38 
+104 
 	`Æ_ö°Æl_mou£
 ();
 
-41 
+106 
+	`Æ_öô_f⁄t_add⁄
+();
+
+107 
+	`Æ_öô_âf_add⁄
+();
+
+110 
 glb_gewΩ_ö°
 .
 di•
@@ -2035,7 +2331,7 @@ di•
 	`Æ_¸óã_di•œy
 (640, 480);
 
-43 i‡–
+112 i‡–
 glb_gewΩ_ö°
 .
 di•
@@ -2043,23 +2339,23 @@ di•
 NULL
  ) {
 
-44 
+113 
 	`Ârötf
  ( 
 °dîr
 , "fatalÉrror: open display failed...\n" );
 
-45 
+114 
 	`exô
 (0);
 
-49 
+118 
 glb_gewΩ_ö°
 .
 Âs
  = 60;
 
-50 
+119 
 glb_gewΩ_ö°
 .
 timî
@@ -2069,7 +2365,7 @@ timî
 Âs
 );
 
-51 
+120 
 glb_gewΩ_ö°
 .
 evtq
@@ -2077,7 +2373,7 @@ evtq
 	`Æ_¸óã_evít_queue
 ();
 
-52 
+121 
 	`Æ_ªgi°î_evít_sour˚
 (
 glb_gewΩ_ö°
@@ -2087,7 +2383,7 @@ evtq
 	`Æ_gë_keybﬂrd_evít_sour˚
 ());
 
-53 
+122 
 	`Æ_ªgi°î_evít_sour˚
 (
 glb_gewΩ_ö°
@@ -2097,7 +2393,7 @@ evtq
 	`Æ_gë_mou£_evít_sour˚
 ());
 
-54 
+123 
 	`Æ_ªgi°î_evít_sour˚
 (
 glb_gewΩ_ö°
@@ -2109,7 +2405,7 @@ evtq
 di•
 ));
 
-55 
+124 
 	`Æ_ªgi°î_evít_sour˚
 (
 glb_gewΩ_ö°
@@ -2121,15 +2417,9 @@ evtq
 timî
 ));
 
-57 
-	`Ârötf
-(
-°dout
-, "here!!!!!!!!!!!!\n" );
-
-60 
-	}
-}
+138 
+	`gewΩ_quô
+ ( )
 
 	@gewrp.h
 
@@ -2146,154 +2436,260 @@ timî
 >
 
 27 
-	~<ÆÀgro.h
+	~<ÆÀgro5/ÆÀgro.h
 >
 
 28 
+	~<ÆÀgro5/ÆÀgro_f⁄t.h
+>
+
+29 
+	~<ÆÀgro5/ÆÀgro_cﬁ‹.h
+>
+
+30 
+	~<ÆÀgro5/ÆÀgro_âf.h
+>
+
+31 
 	~"d2im.h
 "
 
-32 
+35 
 ALLEGRO_DISPLAY
  
 	tGEWRP_DISP
 ;
 
-33 
+36 
 ALLEGRO_TIMER
  
 	tGEWRP_TIMER
 ;
 
-34 
+37 
 ALLEGRO_BITMAP
  
 	tGEWRP_BITMAP
 ;
 
-35 
+38 
 ALLEGRO_EVENT_QUEUE
  
 	tGEWRP_EVTQ
 ;
 
-36 
+39 
 ALLEGRO_EVENT
  
 	tGEWRP_EVENT
 ;
 
-39 
+42 
 	sGEWRP_INST
  {
 
-40 
+43 
 GEWRP_DISP
  *
 	mdi•
 ;
 
-41 
+44 
 GEWRP_EVTQ
  *
 	mevtq
 ;
 
-42 
+45 
 GEWRP_TIMER
  *
 	mtimî
 ;
 
-43 
+46 
 öt32_t
  
 	mÂs
 ;
 
-46 
+49 
 GEWRP_INST
  
 	tGEWRP_INST
 ;
 
-48 
+51 
 GEWRP_INST
  
 glb_gewΩ_ö°
 ;
 
-51 
+55 
 gewΩ_öô
 (
 uöt32_t
 );
 
-59 
-	#gewΩ_ö°
-(Ë(
-glb_gewΩ_ö°
-);
+56 
+gewΩ_quô
+();
+
+59 
+ALLEGRO_FONT
+ 
+	tGEWRP_FONT
+;
+
+60 
+	#gewΩ_lﬂd_f⁄t
+(
+∑th
+, 
+size
+Ë(
+	`Æ_lﬂd_f⁄t
+(’©h), (size), 0))
 
 	)
 
-60 
+63 
+ALLEGRO_COLOR
+ 
+	tGEWRP_COLOR
+;
+
+64 
+	#gewΩ_m≠_rgb
+(
+r
+, 
+g
+, 
+b
+Ë
+	`Æ_m≠_rgb
+(‘), (g), (b))
+
+	)
+
+67 
+	#GEWRP_ALIGN_LEFT
+ 
+ALLEGRO_ALIGN_LEFT
+
+
+	)
+
+68 
+	#GEWRP_ALIGN_RIGHT
+ 
+ALLEGRO_ALIGN_RIGHT
+
+
+	)
+
+69 
+	#GEWRP_ALIGN_CENTRE
+ 
+ALLEGRO_ALIGN_CENTRE
+
+
+	)
+
+70 
+	#gewΩ_døw_ãxt
+(
+f⁄t
+, 
+cﬁ‹
+, 
+x
+, 
+y
+, 
+Êag
+, 
+ãxt
+Ë(
+	`Æ_døw_ãxt
+((f⁄t), (cﬁ‹), (x)*1.0, (y)*1.0, (Êag), (ãxt)))
+
+	)
+
+73 
+	#gewΩ_ö°
+(Ë(
+glb_gewΩ_ö°
+)
+
+	)
+
+74 
 	#gewΩ_gë_di•
 (Ë(
 glb_gewΩ_ö°
 .
 di•
-);
+)
 
 	)
 
-61 
+75 
 	#gewΩ_gë_evtq
 (Ë(
 glb_gewΩ_ö°
 .
 evtq
-);
+)
 
 	)
 
-62 
+76 
 	#gewΩ_gë_timî
 (Ë(
 glb_gewΩ_ö°
 .
 timî
-);
+)
 
 	)
 
-63 
+77 
 	#gewΩ_gë_Âs
 (Ë(
 glb_gewΩ_ö°
 .
 Âs
-);
+)
 
 	)
 
-66 
+80 
 	#gewΩ_pﬁl_evít
 (
 evtq
 , 
 ≥vt
-Ë
+Ë(
 	`Æ_waô_f‹_evít
-–”vtq), (≥vt))
+–”vtq), (≥vt)))
 
 	)
 
-71 
+85 
 	#GEWRP_EVENT_DISPLAY_CLOSE
  
 ALLEGRO_EVENT_DISPLAY_CLOSE
 
+
+	)
+
+88 
+	#gewΩ_Êù
+(Ë
+	`Æ_Êù_di•œy
+()
 
 	)
 
@@ -2382,44 +2778,8 @@ _ö˛uded_maö_öc__
 >
 
 28 
-	~"gewΩ.h
+	~"d2im.h
 "
-
-	@scene.h
-
-23 
-	sD2IM_SCENE
- {
-
-24 
-UINT32
- 
-	mwidth
-;
-
-25 
-UINT32
- 
-	mheight
-;
-
-27 
-UINT32
- 
-	mf_num
-;
-
-28 
-UINT32
- 
-	mw_num
-;
-
-31 
-D2IM_SCENE
- 
-	tD2IM_SCENE
-;
 
 	@/usr/include/math.h
 
@@ -21841,11 +22201,12 @@ __END_DECLS
 1
 /usr/include
 27
-445
+447
 d2im.c
 d2im.h
 d2lib/d2p/d2p.c
 d2lib/d2p/d2p.h
+d2scene.h
 ex_blit.c
 ex_drawpixels.c
 gewrp.c
@@ -21853,7 +22214,6 @@ gewrp.h
 glb.c
 main.c
 main.h
-scene.h
 /usr/include/math.h
 /usr/include/stdint.h
 /usr/include/stdio.h
