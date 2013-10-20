@@ -737,28 +737,46 @@ int read_lvlprest_txt2(int ds1_idx, int def)
     iks    *p;
     iks    *t;
     int     e;
+    int     b;
+
+    long           d;
+    long        mask;
+
+
 
     e = iks_load( "./res/demo/data/global/excel/lvlprest.xml", &p);
+
     if(e != IKS_OK ){
         fprintf(stderr, "open lvlprest.xml failed \n" );
         exit(0);
     }
 
-    fprintf(stdout, "I am here, in read_lvlprest_txt2\n" );
+    fprintf(stdout, "I am here, in read_lvlprest_txt2, def=%ld\n", def );
 
     t = iks_child(p);
 
     while ( t ){
 
         if ( iks_type( t ) == IKS_TAG && !strcmp( iks_name( t ), "desc" ) ){
-            fprintf(stdout, " def: %s\n", iks_find_cdata(t, "def") );
-            fprintf(stdout, "mask: %s\n", iks_find_cdata(t, "mask") );
+            d       = atol(iks_find_cdata(t, "def"));
+            mask    = atol(iks_find_cdata(t, "mask"));
+            if( d == def){
+                fprintf(stdout, "def: %ld, mask: %ld\n.", def, mask );
+                break;
+            }
         }
         t = iks_next(t);
     }
 
     iks_delete(p);
 
+    for (b=0; b < DT1_IN_DS1_MAX; b++) {
+        if (b == 0){
+            glb_ds1.dt1_mask[b] = TRUE;
+        }else{
+            glb_ds1.dt1_mask[b] = mask & (1 << (b-1)) ? TRUE : FALSE;
+        }
+    }
 
 }
 
@@ -1109,7 +1127,7 @@ int read_objects_txt(void)
         speed (in 256th) of 25 fps
 #endif
 
-    glb_ds1edit.col_frame_delta[0] = misc_get_txt_column_num(RQ_OBJECTS, "FrameDelta0");
+        glb_ds1edit.col_frame_delta[0] = misc_get_txt_column_num(RQ_OBJECTS, "FrameDelta0");
     glb_ds1edit.col_frame_delta[1] = misc_get_txt_column_num(RQ_OBJECTS, "FrameDelta1");
     glb_ds1edit.col_frame_delta[2] = misc_get_txt_column_num(RQ_OBJECTS, "FrameDelta2");
     glb_ds1edit.col_frame_delta[3] = misc_get_txt_column_num(RQ_OBJECTS, "FrameDelta3");

@@ -860,7 +860,7 @@ void misc_open_1_ds1(int ds1_idx, char * name, int type, int def, int new_width,
     // 貌似这个函数最重要的就是关于dt1mask的问题和def的问题
     // dt1mask好像我在哪里看过关于它的解释
     read_lvlprest_txt(ds1_idx, def);
-    read_lvlprest_txt2(ds1_idx, def);
+    //read_lvlprest_txt2(ds1_idx, def);
 
     DEBUG_MESSAGE("loading dt1 from mpq...\n");
     // read_lvltypes_txt()是正真读入dt1文件的地方哦
