@@ -10,19 +10,15 @@ exit, memory free :
    * palettes...
    * DT1 files...
       . ./res/data/ds1edit.dt1
-      . data/global/tiles/act3/docktown/boat.dt1
-      . data/global/tiles/act3/docktown/bridge.dt1
-      . data/global/tiles/act3/docktown/docks.dt1
-      . data/global/tiles/act3/docktown/huts.dt1
-      . data/global/tiles/act3/docktown/market.dt1
-      . data/global/tiles/act3/docktown/pyramid.dt1
-      . data/global/tiles/act3/docktown/ruinflr.dt1
-      . data/global/tiles/act3/docktown/ruinwall.dt1
-      . data/global/tiles/act3/docktown/shack.dt1
-      . data/global/tiles/act3/jungle/trees.dt1
+      . data/global/tiles/act1/town/floor.dt1
+      . data/global/tiles/act1/tristram/town.dt1
+      . data/global/tiles/act1/outdoors/stonewall.dt1
+      . data/global/tiles/act1/outdoors/river.dt1
+      . data/global/tiles/act1/outdoors/objects.dt1
+      . data/global/tiles/act1/outdoors/treegroups.dt1
    * DS1 files...
-      . docktown3.ds1
-         bytes free = 372592
+      . tri_town4.ds1
+         bytes free = 244479
    * objects descriptions...
    * walkable info tiles...
    * walkable info tiles combinations...

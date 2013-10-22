@@ -3,7 +3,7 @@
  *
  *       Filename: gewrp.h
  *        Created: 10/09/2013 10:22:06 PM
- *  Last Modified: 10/19/2013 09:08:43 PM
+ *  Last Modified: 10/21/2013 08:14:27 PM
  *
  *    Description: wrap for game engine, to get a universe game api.
  *
@@ -39,16 +39,16 @@ typedef ALLEGRO_EVENT_QUEUE GEWRP_EVTQ;
 typedef ALLEGRO_EVENT       GEWRP_EVENT;
 
 
-struct GEWRP_INST {
+struct D2GE_INST {
     GEWRP_DISP     *disp;
     GEWRP_EVTQ     *evtq;
     GEWRP_TIMER    *timer;
     int32_t         fps;
 
 };
-typedef struct GEWRP_INST GEWRP_INST;
+typedef struct D2GE_INST D2GE_INST;
 
-extern  GEWRP_INST  glb_gewrp_inst;
+extern  D2GE_INST  glb_gewrp_inst;
 
 
 
@@ -56,11 +56,11 @@ int gewrp_init(uint32_t);
 int gewrp_quit();
 
 
-typedef ALLEGRO_FONT            GEWRP_FONT;
+typedef ALLEGRO_FONT            D2FONT;
 #define gewrp_load_font(path, size)     (al_load_font((path), (size), 0))
 
 
-typedef ALLEGRO_COLOR           GEWRP_COLOR;
+typedef ALLEGRO_COLOR           D2COLOR;
 #define gewrp_map_rgb(r, g, b)  al_map_rgb((r), (g), (b))
 
 

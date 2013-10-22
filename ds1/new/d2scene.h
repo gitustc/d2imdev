@@ -3,7 +3,7 @@
  *
  *       Filename: scene.h
  *        Created: 10/10/2013 01:43:50 AM
- *  Last Modified: 10/10/2013 01:46:29 AM
+ *  Last Modified: 10/21/2013 08:13:28 PM
  *
  *    Description: to discripe a scene, we may use many scenes at the same time.
  *
@@ -20,7 +20,7 @@
 
 
 
-struct D2IM_SCENE {
+struct D2SCENE {
     UINT32          width;
     UINT32          height;
 
@@ -28,4 +28,4 @@ struct D2IM_SCENE {
     UINT32          w_num;
 
 };
-typedef struct D2IM_SCENE D2IM_SCENE;
+typedef struct D2SCENE D2SCENE;

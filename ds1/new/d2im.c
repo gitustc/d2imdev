@@ -3,7 +3,7 @@
  *
  *       Filename: d2im.c
  *        Created: 10/10/2013 01:19:53 AM
- *  Last Modified: 10/20/2013 07:10:03 AM
+ *  Last Modified: 10/21/2013 08:31:15 PM
  *
  *    Description: game logic
  *
@@ -101,8 +101,8 @@ int d2im_init ()
 int d2im_run ()
 {
 
-    GEWRP_FONT     *font;
-    GEWRP_EVENT     event;
+    D2FONT     *font;
+    D2EVENT     event;
 
     font = gewrp_load_font("./wqy-microhei.ttf", 12);
 #if 0
