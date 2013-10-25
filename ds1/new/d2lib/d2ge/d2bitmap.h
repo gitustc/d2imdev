@@ -24,6 +24,8 @@
 #define  _included_d2bitmap_inc__
 
 
+typedef ALLGERO_BITMAP      D2BITMAP;
+
 
 
 
