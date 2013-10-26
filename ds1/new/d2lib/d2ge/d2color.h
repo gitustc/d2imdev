@@ -1,11 +1,11 @@
 /*
  * =====================================================================================
  *
- *       Filename: d2event.h
- *        Created: 10/25/2013 07:58:29 PM
- *  Last Modified: 10/25/2013 08:05:40 PM
+ *       Filename: d2color.h
+ *        Created: 10/25/2013 08:08:14 PM
+ *  Last Modified: 10/25/2013 08:10:37 PM
  *
- *    Description: event handle for d2ge
+ *    Description: color access by allegro
  *
  *        Version: 1.0
  *       Revision: none
@@ -19,14 +19,12 @@
  */
 
 
-
-#ifndef  _included_d2event_inc__
-#define  _included_d2event_inc__
-
-
-typedef ALLEGRO_EVENT   D2EVENT;
+#ifndef  _included_d2color_inc__
+#define  _included_d2color_inc__
 
 
+
+typedef ALLGERO_COLOR       D2COLOR;
 
 
 
