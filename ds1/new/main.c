@@ -3,7 +3,7 @@
  *
  *       Filename: main.c
  *        Created: 10/09/2013 10:28:40 PM
- *  Last Modified: 10/19/2013 08:08:34 PM
+ *  Last Modified: 10/26/2013 09:09:51 PM
  *
  *    Description: entry of game
  *
@@ -26,7 +26,7 @@
 /* 
  * ===  FUNCTION  ======================================================================
  *         Name:  main
- *  Description:  
+ *  Description:  entry
  * =====================================================================================
  */
 int main ( int argc, char *argv[] )

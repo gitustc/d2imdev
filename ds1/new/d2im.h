@@ -3,7 +3,7 @@
  *
  *       Filename: d2im.h
  *        Created: 10/10/2013 01:14:52 AM
- *  Last Modified: 10/20/2013 06:48:32 AM
+ *  Last Modified: 10/26/2013 09:19:15 PM
  *
  *    Description: game logic
  *
@@ -21,18 +21,22 @@
 #ifndef  _included_d2im_inc__
 #define  _included_d2im_inc__
 
+#include <stdio.h>
 #include <iksemel.h>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_font.h>
 
 
 struct D2IM_INST {
-    iks * config;
+    iks                 *xml_conf;
+    float               fps;
+
+    ALLEGRO_DISPLAY     *display;
+    ALLEGRO_TIMER       *timer;
+    ALLEGRO_EVENT_QUEUE *event_queue;
 };
 typedef struct D2IM_INST D2IM_INST;
-
-extern D2IM_INST        glb_d2im_inst;
-#define d2im_inst()                 (glb_d2im_inst);
+extern D2IM_INST        glb_d2im;
 
 
 

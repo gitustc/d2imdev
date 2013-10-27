@@ -1,0 +1,5 @@
+mkdir -p obj/release
+mkdir -p obj/debug	
+mkdir -p lib/release
+mkdir -p lib/debug
+gcc -W -Wall -O2 -I/usr/local/include/allegro5 -c -o obj/release/agup.o agup.c

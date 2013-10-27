@@ -1,6 +1,0 @@
-any basic function from allegro
-
-call it d2ge_***
-
-
-like d2ge_set_pixel(D2BITMAP, D2COLOR, int32_t, int32_t)
