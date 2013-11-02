@@ -1,0 +1,638 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ABEOS_CHECK_BUTTON	abeos.c	/^  ABEOS_CHECK_BUTTON,$/;"	e	enum:ABEOS_WIDGET_TYPE	file:
+ABEOS_EDITBOX_FRAME	abeos.c	/^  ABEOS_EDITBOX_FRAME,$/;"	e	enum:ABEOS_WIDGET_TYPE	file:
+ABEOS_FRAME	abeos.c	/^  ABEOS_FRAME,                  \/* list\/textbox frame, with auto-scrollbar *\/$/;"	e	enum:ABEOS_WIDGET_TYPE	file:
+ABEOS_MENUBAR	abeos.c	/^  ABEOS_MENUBAR,$/;"	e	enum:ABEOS_WIDGET_TYPE	file:
+ABEOS_MENU_FRAME	abeos.c	/^  ABEOS_MENU_FRAME,$/;"	e	enum:ABEOS_WIDGET_TYPE	file:
+ABEOS_PUSH_BUTTON	abeos.c	/^  ABEOS_PUSH_BUTTON,$/;"	e	enum:ABEOS_WIDGET_TYPE	file:
+ABEOS_RADIO_BUTTON	abeos.c	/^  ABEOS_RADIO_BUTTON,$/;"	e	enum:ABEOS_WIDGET_TYPE	file:
+ABEOS_SCROLLBAR_BACK	abeos.c	/^  ABEOS_SCROLLBAR_BACK,$/;"	e	enum:ABEOS_WIDGET_TYPE	file:
+ABEOS_SCROLLBAR_HANDLE	abeos.c	/^  ABEOS_SCROLLBAR_HANDLE,$/;"	e	enum:ABEOS_WIDGET_TYPE	file:
+ABEOS_SLIDER	abeos.c	/^  ABEOS_SLIDER,$/;"	e	enum:ABEOS_WIDGET_TYPE	file:
+ABEOS_WIDGET_TYPE	abeos.c	/^enum ABEOS_WIDGET_TYPE$/;"	g	file:
+ABEOS_WINDOW_FRAME	abeos.c	/^  ABEOS_WINDOW_FRAME$/;"	e	enum:ABEOS_WIDGET_TYPE	file:
+ABMAP	abitmap.c	/^struct ABMAP$/;"	s	file:
+ABMAP_ALIGN_H	abitmap.c	/^        ABMAP_ALIGN_H = 16,$/;"	e	enum:ABMAP::__anon2	file:
+ABMAP_ALIGN_V	abitmap.c	/^        ABMAP_ALIGN_V = 32$/;"	e	enum:ABMAP::__anon2	file:
+ABMAP_CENTER_H	abitmap.c	/^        ABMAP_CENTER_H = 4,$/;"	e	enum:ABMAP::__anon2	file:
+ABMAP_CENTER_V	abitmap.c	/^        ABMAP_CENTER_V = 8,$/;"	e	enum:ABMAP::__anon2	file:
+ABMAP_STRETCH_H	abitmap.c	/^        ABMAP_STRETCH_H = 1,$/;"	e	enum:ABMAP::__anon2	file:
+ABMAP_STRETCH_V	abitmap.c	/^        ABMAP_STRETCH_V = 2,$/;"	e	enum:ABMAP::__anon2	file:
+ABMAP_TILE_H	abitmap.c	/^        ABMAP_TILE_H = 0,$/;"	e	enum:ABMAP::__anon2	file:
+ABMAP_TILE_V	abitmap.c	/^        ABMAP_TILE_V = 0,$/;"	e	enum:ABMAP::__anon2	file:
+AGUP_BITMAP_THEME	abitmap.c	/^struct AGUP_BITMAP_THEME$/;"	s	file:
+AGUP_BITMAP_THEME_LIST	abitmap.c	/^struct AGUP_BITMAP_THEME_LIST$/;"	s	file:
+AGUP_LIB	Makefile	/^AGUP_LIB := libagup.a$/;"	m
+AGUP_LIB	Makefile	/^AGUP_LIB := libagupd.a$/;"	m
+AGUP_OBJS	Makefile	/^AGUP_OBJS := $(addprefix obj\/$(SUB_DIR)\/, \\$/;"	m
+AGUP_THEME	agup.h	/^typedef struct AGUP_THEME AGUP_THEME;$/;"	t	typeref:struct:AGUP_THEME
+AGUP_THEME	agupitrn.h	/^struct AGUP_THEME {$/;"	s
+AGUP_VERSION	agup.h	8;"	d
+ALLEGRO	Makefile	/^   ALLEGRO = allegro-config$/;"	m
+AR	Makefile	/^    AR := $(XPREFIX)ar$/;"	m
+AR	Makefile	/^    AR := ar$/;"	m
+ARFLAGS	Makefile	/^ARFLAGS := rucs$/;"	m
+BDATA	abeos.c	/^struct BDATA$/;"	s	file:
+BLOAD	abitmap.c	/^struct BLOAD$/;"	s	file:
+BSCROLL	abeos.c	/^    struct BSCROLL$/;"	s	union:BDATA::__anon1	file:
+B_BOX	abitmap.c	/^    B_BOX,$/;"	e	enum:B_ELEMENT	file:
+B_BUTTON	abitmap.c	/^    B_BUTTON,$/;"	e	enum:B_ELEMENT	file:
+B_BUTTON_DOWN	abitmap.c	/^    B_BUTTON_DOWN,$/;"	e	enum:B_ELEMENT	file:
+B_CHECK	abitmap.c	/^    B_CHECK,$/;"	e	enum:B_ELEMENT	file:
+B_CHECK_DOWN	abitmap.c	/^    B_CHECK_DOWN,$/;"	e	enum:B_ELEMENT	file:
+B_CHECK_ITEM	abitmap.c	/^    B_CHECK_ITEM,$/;"	e	enum:B_ELEMENT	file:
+B_CHECK_ITEM_DOWN	abitmap.c	/^    B_CHECK_ITEM_DOWN,$/;"	e	enum:B_ELEMENT	file:
+B_CLEAR	abitmap.c	/^    B_CLEAR,$/;"	e	enum:B_ELEMENT	file:
+B_CURSOR	abitmap.c	/^    B_CURSOR,$/;"	e	enum:B_ELEMENT	file:
+B_EDIT	abitmap.c	/^    B_EDIT,$/;"	e	enum:B_ELEMENT	file:
+B_ELEMENT	abitmap.c	/^enum B_ELEMENT$/;"	g	file:
+B_ELEMENTS_COUNT	abitmap.c	/^    B_ELEMENTS_COUNT$/;"	e	enum:B_ELEMENT	file:
+B_ICON	abitmap.c	/^    B_ICON,$/;"	e	enum:B_ELEMENT	file:
+B_ICON_DOWN	abitmap.c	/^    B_ICON_DOWN,$/;"	e	enum:B_ELEMENT	file:
+B_LIST	abitmap.c	/^    B_LIST,$/;"	e	enum:B_ELEMENT	file:
+B_LIST_ITEM	abitmap.c	/^    B_LIST_ITEM,$/;"	e	enum:B_ELEMENT	file:
+B_MENU	abitmap.c	/^    B_MENU,$/;"	e	enum:B_ELEMENT	file:
+B_MENUBAR	abitmap.c	/^    B_MENUBAR,$/;"	e	enum:B_ELEMENT	file:
+B_MENUBAR_ITEM	abitmap.c	/^    B_MENUBAR_ITEM,$/;"	e	enum:B_ELEMENT	file:
+B_MENU_CHECK	abitmap.c	/^    B_MENU_CHECK,$/;"	e	enum:B_ELEMENT	file:
+B_MENU_ITEM	abitmap.c	/^    B_MENU_ITEM,$/;"	e	enum:B_ELEMENT	file:
+B_MENU_SEP	abitmap.c	/^    B_MENU_SEP,$/;"	e	enum:B_ELEMENT	file:
+B_MENU_SUB	abitmap.c	/^    B_MENU_SUB,$/;"	e	enum:B_ELEMENT	file:
+B_RADIO	abitmap.c	/^    B_RADIO,$/;"	e	enum:B_ELEMENT	file:
+B_RADIO_DOWN	abitmap.c	/^    B_RADIO_DOWN,$/;"	e	enum:B_ELEMENT	file:
+B_RADIO_ITEM	abitmap.c	/^    B_RADIO_ITEM,$/;"	e	enum:B_ELEMENT	file:
+B_RADIO_ITEM_DOWN	abitmap.c	/^    B_RADIO_ITEM_DOWN,$/;"	e	enum:B_ELEMENT	file:
+B_SCROLLER	abitmap.c	/^    B_SCROLLER,$/;"	e	enum:B_ELEMENT	file:
+B_SCROLLER_HANDLE	abitmap.c	/^    B_SCROLLER_HANDLE,$/;"	e	enum:B_ELEMENT	file:
+B_SLIDERH	abitmap.c	/^    B_SLIDERH,$/;"	e	enum:B_ELEMENT	file:
+B_SLIDERH_HANDLE	abitmap.c	/^    B_SLIDERH_HANDLE,$/;"	e	enum:B_ELEMENT	file:
+B_SLIDERV	abitmap.c	/^    B_SLIDERV,$/;"	e	enum:B_ELEMENT	file:
+B_SLIDERV_HANDLE	abitmap.c	/^    B_SLIDERV_HANDLE,$/;"	e	enum:B_ELEMENT	file:
+B_TEXT	abitmap.c	/^    B_TEXT,$/;"	e	enum:B_ELEMENT	file:
+B_TEXTBOX	abitmap.c	/^    B_TEXTBOX,$/;"	e	enum:B_ELEMENT	file:
+B_WINDOW	abitmap.c	/^    B_WINDOW,$/;"	e	enum:B_ELEMENT	file:
+CC	Makefile	/^    CC := $(XPREFIX)gcc$/;"	m
+CC	Makefile	/^    CC := gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS := -W -Wall$/;"	m
+COLUMN_CENTER	abitmap.c	/^    COLUMN_CENTER = 1,$/;"	e	enum:COLUMN_TYPE	file:
+COLUMN_LEFT	abitmap.c	/^    COLUMN_LEFT,$/;"	e	enum:COLUMN_TYPE	file:
+COLUMN_MIDDLE	abitmap.c	/^    COLUMN_MIDDLE,$/;"	e	enum:COLUMN_TYPE	file:
+COLUMN_RIGHT	abitmap.c	/^    COLUMN_RIGHT$/;"	e	enum:COLUMN_TYPE	file:
+COLUMN_STRETCH	abitmap.c	/^    COLUMN_STRETCH,$/;"	e	enum:COLUMN_TYPE	file:
+COLUMN_TYPE	abitmap.c	/^enum COLUMN_TYPE$/;"	g	file:
+DIS	examp.c	240;"	d	file:
+EXAMP	Makefile	/^EXAMP := examp$(EXE)$/;"	m
+EXE	Makefile	/^    EXE := .exe$/;"	m
+EXLIBS	Makefile	/^	EXLIBS := -L\/usr\/local\/lib -lm -lpthread -lX11 -lXcursor -lXcursor -ldl -lGL -lallegro -lallegro_font -lallegro_ttf$/;"	m
+EXLIBS	Makefile	/^	EXLIBS := `$(ALLEGRO) --libs debug`$/;"	m
+EXLIBS	Makefile	/^    EXLIBS := -lalld$/;"	m
+EXLIBS	Makefile	/^    EXLIBS := -lalleg$/;"	m
+GOURAUD_RANGE	aphoton.c	/^typedef struct GOURAUD_RANGE$/;"	s	file:
+GOURAUD_RANGE	aphoton.c	/^} GOURAUD_RANGE;$/;"	t	typeref:struct:GOURAUD_RANGE	file:
+HHEIGHT	aphoton.c	653;"	d	file:
+ICON_DIALOG	examp.c	265;"	d	file:
+INSTALL	Makefile	/^    INSTALL := copy$/;"	m
+INSTALL	Makefile	/^    INSTALL := cp$/;"	m
+INSTALL_PATH	Makefile	/^	INSTALL_PATH := \/usr\/local$/;"	m
+INSTALL_PATH	Makefile	/^    INSTALL_PATH := $(DJDIR)$/;"	m
+INSTALL_PATH	Makefile	/^    INSTALL_PATH := $(MINGDIR)$/;"	m
+MAKECOL_RANGE_FROM	aphoton.c	950;"	d	file:
+MAKECOL_RANGE_TO	aphoton.c	954;"	d	file:
+MAKE_GRAY_RANGE	aphoton.c	939;"	d	file:
+MAKE_WRAPPER	agup.c	163;"	d	file:
+MAX_THEMES	agup.c	15;"	d	file:
+MKDIR	Makefile	/^    MKDIR := mkdir -p$/;"	m
+MKDIR	Makefile	/^    MKDIR := mkdir$/;"	m
+MSPACE	aphoton.c	654;"	d	file:
+REDRAW	agtk.c	34;"	d	file:
+REDRAW	ans.c	33;"	d	file:
+REDRAW	aphoton.c	59;"	d	file:
+REDRAW	awin95.c	40;"	d	file:
+RM	Makefile	/^	RM := rm -f$/;"	m
+RM	Makefile	/^    RM := del$/;"	m
+RMDIR	Makefile	/^	RMDIR := rm -r$/;"	m
+RMDIR	Makefile	/^    RMDIR := del$/;"	m
+SEL	examp.c	241;"	d	file:
+SUB_DIR	Makefile	/^SUB_DIR := debug$/;"	m
+SUB_DIR	Makefile	/^SUB_DIR := release$/;"	m
+UNIXTOOLS	Makefile	/^    UNIXTOOLS=1$/;"	m
+_agup_included_aalg_h	aalg.h	2;"	d
+_agup_included_aase_h	aase.h	7;"	d
+_agup_included_abeos_h	abeos.h	7;"	d
+_agup_included_agtk_h	agtk.h	7;"	d
+_agup_included_agup_h	agup.h	6;"	d
+_agup_included_agupitrn_h	agupitrn.h	6;"	d
+_agup_included_ans_h	ans.h	7;"	d
+_agup_included_aphoton_h	aphoton.h	7;"	d
+_agup_included_awin95_h	awin95.h	7;"	d
+aalg_init	aalg.c	/^void aalg_init(void)$/;"	f
+aalg_shutdown	aalg.c	/^void aalg_shutdown(void)$/;"	f
+aalg_theme	aalg.c	/^AL_CONST struct AGUP_THEME *aalg_theme = &the_theme;$/;"	v	typeref:struct:AGUP_THEME
+aase_bg_color	aase.c	/^int aase_bg_color;$/;"	v
+aase_fg_color	aase.c	/^int aase_fg_color;$/;"	v
+aase_init	aase.c	/^void aase_init(void)$/;"	f
+aase_mg_color	aase.c	/^int aase_mg_color;$/;"	v
+aase_shutdown	aase.c	/^void aase_shutdown(void)$/;"	f
+aase_theme	aase.c	/^AL_CONST struct AGUP_THEME *aase_theme = &the_theme;$/;"	v	typeref:struct:AGUP_THEME
+abeos_bg_color	abeos.c	/^int abeos_bg_color;$/;"	v
+abeos_draw_menu	abeos.c	/^abeos_draw_menu (int x, int y, int w, int h)$/;"	f	file:
+abeos_draw_menu_item	abeos.c	/^abeos_draw_menu_item (MENU * m, int x, int y, int w, int h, int bar, int sel)$/;"	f	file:
+abeos_fg_color	abeos.c	/^int abeos_fg_color;$/;"	v
+abeos_init	abeos.c	/^abeos_init (void)$/;"	f
+abeos_mg_color	abeos.c	/^int abeos_mg_color;$/;"	v
+abeos_shutdown	abeos.c	/^abeos_shutdown (void)$/;"	f
+abeos_theme	abeos.c	/^AL_CONST struct AGUP_THEME *abeos_theme = &the_theme;$/;"	v	typeref:struct:AGUP_THEME
+abeos_time_toggle	abeos.c	/^static volatile int abeos_time_toggle = 0;$/;"	v	file:
+abeos_timer	abeos.c	/^END_OF_STATIC_FUNCTION (abeos_timer);$/;"	v
+abeos_timer	abeos.c	/^abeos_timer (void)$/;"	f	file:
+abitmap_draw_area	abitmap.c	/^abitmap_draw_area (DIALOG *d, int what, int offx, int offy, int aw, int ah,$/;"	f	file:
+abitmap_draw_bmp	abitmap.c	/^abitmap_draw_bmp (BITMAP *bmp, struct ABMAP *pat, int x, int y, int w, int h)$/;"	f	file:
+abitmap_draw_box	abitmap.c	/^abitmap_draw_box (DIALOG *d, int what)$/;"	f	file:
+abitmap_draw_menu	abitmap.c	/^abitmap_draw_menu (int x, int y, int w, int h)$/;"	f	file:
+abitmap_draw_menu_item	abitmap.c	/^abitmap_draw_menu_item (MENU * m, int x, int y, int w, int h, int bar,$/;"	f	file:
+abitmap_draw_scroller	abitmap.c	/^abitmap_draw_scroller (DIALOG *d, int pos, int total, int visible)$/;"	f	file:
+abitmap_draw_slider	abitmap.c	/^abitmap_draw_slider (DIALOG *d)$/;"	f	file:
+abitmap_draw_text	abitmap.c	/^abitmap_draw_text (DIALOG *d, int what, int offx, int offy, int push,$/;"	f	file:
+abitmap_init	abitmap.c	/^abitmap_init (char const *path, DATAFILE *datafile)$/;"	f
+abitmap_shutdown	abitmap.c	/^abitmap_shutdown (void)$/;"	f
+agtk_bg_color	agtk.c	/^int agtk_bg_color;$/;"	v
+agtk_fg_color	agtk.c	/^int agtk_fg_color;$/;"	v
+agtk_init	agtk.c	/^void agtk_init(void)$/;"	f
+agtk_mg_color	agtk.c	/^int agtk_mg_color;$/;"	v
+agtk_shutdown	agtk.c	/^void agtk_shutdown(void)$/;"	f
+agtk_theme	agtk.c	/^AL_CONST struct AGUP_THEME *agtk_theme = &the_theme;$/;"	v	typeref:struct:AGUP_THEME
+agup_bg_color	agup.c	/^int agup_bg_color;$/;"	v
+agup_edit_adjust_position	agup.c	/^void agup_edit_adjust_position (DIALOG *d)$/;"	f
+agup_edit_recursive	agup.c	/^static int agup_edit_recursive = 0;$/;"	v	file:
+agup_edit_restore_position	agup.c	/^void agup_edit_restore_position (DIALOG *d)$/;"	f
+agup_fg_color	agup.c	/^int agup_fg_color;$/;"	v
+agup_init	agup.c	/^void agup_init(AL_CONST AGUP_THEME *thm)$/;"	f
+agup_load_bitmap_theme	abitmap.c	/^struct AGUP_THEME *agup_load_bitmap_theme (char const *path, DATAFILE *datafile)$/;"	f
+agup_mg_color	agup.c	/^int agup_mg_color;$/;"	v
+agup_shutdown	agup.c	/^void agup_shutdown(void)$/;"	f
+agup_theme	agup.c	/^AL_CONST struct AGUP_THEME *agup_theme;$/;"	v	typeref:struct:AGUP_THEME
+agup_theme_by_name	agup.c	/^AGUP_THEME const *agup_theme_by_name (char const *name)$/;"	f
+agup_themes_count	agup.c	/^int agup_themes_count = 0;$/;"	v
+agup_themes_list	agup.c	/^struct AGUP_THEME const *agup_themes_list[MAX_THEMES];$/;"	v
+agup_themes_list_init	agup.c	/^agup_themes_list_init (void)$/;"	f	file:
+ans_bg_color	ans.c	/^int ans_bg_color;$/;"	v
+ans_fg_color	ans.c	/^int ans_fg_color;$/;"	v
+ans_init	ans.c	/^void ans_init(void)$/;"	f
+ans_mg_color	ans.c	/^int ans_mg_color;$/;"	v
+ans_shutdown	ans.c	/^void ans_shutdown(void)$/;"	f
+ans_theme	ans.c	/^AL_CONST struct AGUP_THEME *ans_theme = &the_theme;$/;"	v	typeref:struct:AGUP_THEME
+aphoton_bg_color	aphoton.c	/^int aphoton_bg_color;$/;"	v
+aphoton_fg_color	aphoton.c	/^int aphoton_fg_color;$/;"	v
+aphoton_init	aphoton.c	/^void aphoton_init(void)$/;"	f
+aphoton_mg_color	aphoton.c	/^int aphoton_mg_color;$/;"	v
+aphoton_shutdown	aphoton.c	/^void aphoton_shutdown(void)$/;"	f
+aphoton_theme	aphoton.c	/^AL_CONST struct AGUP_THEME *aphoton_theme = &the_theme;$/;"	v	typeref:struct:AGUP_THEME
+arrow	abeos.c	/^static BITMAP *arrow[2];$/;"	v	file:
+arrowdata	abeos.c	/^char arrowdata[13][14] = {$/;"	v
+ase_rectbox	aase.c	/^static void ase_rectbox(BITMAP *bmp, int x1, int y1, int x2, int y2, int flags)$/;"	f	file:
+ase_rectdotted	aase.c	/^static void ase_rectdotted(BITMAP *bmp, int x1, int y1, int x2, int y2, int fg, int bg)$/;"	f	file:
+ase_rectedge	aase.c	/^static void ase_rectedge(BITMAP *bmp, int x1, int y1, int x2, int y2, int fg, int bg)$/;"	f	file:
+ase_rectgouraud	aase.c	/^static void ase_rectgouraud(BITMAP *bmp, int x1, int y1, int x2, int y2, int top, int bottom)$/;"	f	file:
+awin95_bg_color	awin95.c	/^int awin95_bg_color;$/;"	v
+awin95_fg_color	awin95.c	/^int awin95_fg_color;$/;"	v
+awin95_init	awin95.c	/^void awin95_init(void)$/;"	f
+awin95_mg_color	awin95.c	/^int awin95_mg_color;$/;"	v
+awin95_shutdown	awin95.c	/^void awin95_shutdown(void)$/;"	f
+awin95_theme	awin95.c	/^AL_CONST struct AGUP_THEME *awin95_theme = &the_theme;$/;"	v	typeref:struct:AGUP_THEME
+awin95_time_toggle	awin95.c	/^static volatile int awin95_time_toggle = 0;$/;"	v	file:
+awin95_timer	awin95.c	/^END_OF_STATIC_FUNCTION(awin95_timer);$/;"	v
+awin95_timer	awin95.c	/^static void awin95_timer(void)$/;"	f	file:
+b	abeos.c	/^  int r, g, b;$/;"	m	struct:datapal	file:
+b	aphoton.c	/^    int r,g,b;$/;"	m	struct:iRGB	file:
+backup_gui_bg_color	agup.c	/^static int backup_gui_bg_color;$/;"	v	file:
+backup_gui_fg_color	agup.c	/^static int backup_gui_fg_color;$/;"	v	file:
+backup_gui_mg_color	agup.c	/^static int backup_gui_mg_color;$/;"	v	file:
+bb	abitmap.c	/^    int bl, bt, br, bb;$/;"	m	struct:ABMAP	file:
+beos_box	abeos.c	/^beos_box (BITMAP * bmp, int x, int y, int w, int h, int flags,$/;"	f
+bg_color	abitmap.c	/^    int fg_color, bg_color, mg_color;$/;"	m	struct:AGUP_BITMAP_THEME	file:
+bg_color	agupitrn.h	/^    int *bg_color;$/;"	m	struct:AGUP_THEME
+bitmaps	abitmap.c	/^    struct ABMAP bitmaps[B_ELEMENTS_COUNT][3];$/;"	m	struct:AGUP_BITMAP_THEME	typeref:struct:AGUP_BITMAP_THEME::ABMAP	file:
+bl	abitmap.c	/^    int bl, bt, br, bb;$/;"	m	struct:ABMAP	file:
+black	agtk.c	/^static int white, highlight, normal, pressed, hshadow, nshadow, black;$/;"	v	file:
+black	ans.c	/^static int white, lgrey, dgrey, black, disabled;$/;"	v	file:
+black	aphoton.c	/^static int black, white, normal, highlight, shadow;$/;"	v	file:
+black	awin95.c	/^static int white, highlight, normal, gray, black;$/;"	v	file:
+blit_column	abitmap.c	/^blit_column (BITMAP *bmp, struct ABMAP *pat, int x, int y, int w, int h, enum COLUMN_TYPE f)$/;"	f	file:
+bload	abitmap.c	/^struct BLOAD bload[] = {$/;"	v	typeref:struct:BLOAD
+blue	agtk.c	/^static int blue, yellow;$/;"	v	file:
+blue	awin95.c	/^static int hshadow, nshadow, blue;$/;"	v	file:
+bmp	abitmap.c	/^    BITMAP *bmp;$/;"	m	struct:ABMAP	file:
+border_thickness	awin95.c	/^    border_thickness = 3,$/;"	e	enum:__anon3	file:
+box_proc	agupitrn.h	/^    int (*box_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+br	abitmap.c	/^    int bl, bt, br, bb;$/;"	m	struct:ABMAP	file:
+bt	abitmap.c	/^    int bl, bt, br, bb;$/;"	m	struct:ABMAP	file:
+buf	examp.c	/^char buf[101] = "101";$/;"	v
+buf2	examp.c	/^char buf2[101] = "dalmations";$/;"	v
+buf3	examp.c	/^char buf3[1024] = "   AGUP\\n"$/;"	v
+button_border_gray	aphoton.c	/^static int button_border_gray;$/;"	v	file:
+button_gray_range	aphoton.c	/^static struct GOURAUD_RANGE button_gray_range, scrollbar_gray_range,$/;"	v	typeref:struct:GOURAUD_RANGE	file:
+button_proc	agupitrn.h	/^    int (*button_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+c	abeos.c	/^  char c;$/;"	m	struct:datapal	file:
+centered_offset	abitmap.c	/^centered_offset (int size1, int size2)$/;"	f	file:
+check	abeos.c	/^static BITMAP *check[6];$/;"	v	file:
+check_black	aphoton.c	/^static int check_black, check_gray1, check_gray2;$/;"	v	file:
+check_gray1	aphoton.c	/^static int check_black, check_gray1, check_gray2;$/;"	v	file:
+check_gray2	aphoton.c	/^static int check_black, check_gray1, check_gray2;$/;"	v	file:
+check_proc	agupitrn.h	/^    int (*check_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+checkdata	abeos.c	/^char checkdata[13][14] = {$/;"	v
+checked	awin95.c	/^static AL_CONST char *checked[] =$/;"	v	file:
+checked_bmp	awin95.c	/^static BITMAP *checked_bmp = NULL;$/;"	v	file:
+checked_gray	aphoton.c	/^static int checked_gray;$/;"	v	file:
+checkoverlay	abeos.c	/^char checkoverlay[13][14] = {$/;"	v
+checkoverlay2	abeos.c	/^char checkoverlay2[13][14] = {$/;"	v
+clear_proc	agupitrn.h	/^    int (*clear_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+closebutton	examp.c	/^void closebutton (void)$/;"	f
+color	abitmap.c	/^    int color;$/;"	m	struct:ABMAP	file:
+container_black	aphoton.c	/^static int container_black, container_gray1, container_gray2;$/;"	v	file:
+container_gray1	aphoton.c	/^static int container_black, container_gray1, container_gray2;$/;"	v	file:
+container_gray2	aphoton.c	/^static int container_black, container_gray1, container_gray2;$/;"	v	file:
+ctext_proc	agupitrn.h	/^    int (*ctext_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+d_aalg_push_proc	aalg.c	/^int d_aalg_push_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aalg_window_proc	aalg.c	/^int d_aalg_window_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aase_box_proc	aase.c	/^int d_aase_box_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aase_button_proc	aase.c	/^int d_aase_button_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aase_check_proc	aase.c	/^int d_aase_check_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aase_clear_proc	aase.c	/^d_aase_clear_proc (int msg, DIALOG *d, int c)$/;"	f
+d_aase_edit_proc	aase.c	/^int d_aase_edit_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aase_icon_proc	aase.c	/^int d_aase_icon_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aase_list_proc	aase.c	/^int d_aase_list_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aase_menu_proc	aase.c	/^int d_aase_menu_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aase_push_proc	aase.c	/^int d_aase_push_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aase_radio_proc	aase.c	/^int d_aase_radio_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aase_shadow_box_proc	aase.c	/^int d_aase_shadow_box_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aase_slider_proc	aase.c	/^int d_aase_slider_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aase_text_list_proc	aase.c	/^int d_aase_text_list_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aase_textbox_proc	aase.c	/^int d_aase_textbox_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aase_window_proc	aase.c	/^int d_aase_window_proc(int msg, DIALOG *d, int c)$/;"	f
+d_abeos_box_proc	abeos.c	/^d_abeos_box_proc (int msg, DIALOG * d, int c)$/;"	f
+d_abeos_button_proc	abeos.c	/^d_abeos_button_proc (int msg, DIALOG * d, int c)$/;"	f
+d_abeos_check_proc	abeos.c	/^d_abeos_check_proc (int msg, DIALOG * d, int c)$/;"	f
+d_abeos_clear_proc	abeos.c	/^d_abeos_clear_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abeos_edit_proc	abeos.c	/^d_abeos_edit_proc (int msg, DIALOG * d, int c)$/;"	f
+d_abeos_icon_proc	abeos.c	/^d_abeos_icon_proc (int msg, DIALOG * d, int c)$/;"	f
+d_abeos_list_proc	abeos.c	/^d_abeos_list_proc (int msg, DIALOG * d, int c)$/;"	f
+d_abeos_menu_proc	abeos.c	/^d_abeos_menu_proc (int msg, DIALOG * d, int c)$/;"	f
+d_abeos_push_proc	abeos.c	/^d_abeos_push_proc (int msg, DIALOG * d, int c)$/;"	f
+d_abeos_radio_proc	abeos.c	/^d_abeos_radio_proc (int msg, DIALOG * d, int c)$/;"	f
+d_abeos_shadow_box_proc	abeos.c	/^d_abeos_shadow_box_proc (int msg, DIALOG * d, int c)$/;"	f
+d_abeos_slider_proc	abeos.c	/^d_abeos_slider_proc (int msg, DIALOG * d, int c)$/;"	f
+d_abeos_text_list_proc	abeos.c	/^d_abeos_text_list_proc (int msg, DIALOG * d, int c)$/;"	f
+d_abeos_textbox_proc	abeos.c	/^d_abeos_textbox_proc (int msg, DIALOG * d, int c)$/;"	f
+d_abeos_window_proc	abeos.c	/^d_abeos_window_proc (int msg, DIALOG * d, int c)$/;"	f
+d_abitmap_box_proc	abitmap.c	/^d_abitmap_box_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abitmap_button_proc	abitmap.c	/^d_abitmap_button_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abitmap_check_proc	abitmap.c	/^d_abitmap_check_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abitmap_clear_proc	abitmap.c	/^d_abitmap_clear_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abitmap_ctext_proc	abitmap.c	/^d_abitmap_ctext_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abitmap_edit_proc	abitmap.c	/^d_abitmap_edit_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abitmap_icon_proc	abitmap.c	/^d_abitmap_icon_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abitmap_list_proc	abitmap.c	/^d_abitmap_list_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abitmap_menu_proc	abitmap.c	/^d_abitmap_menu_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abitmap_push_proc	abitmap.c	/^d_abitmap_push_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abitmap_radio_proc	abitmap.c	/^d_abitmap_radio_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abitmap_rtext_proc	abitmap.c	/^d_abitmap_rtext_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abitmap_shadow_box_proc	abitmap.c	/^d_abitmap_shadow_box_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abitmap_slider_proc	abitmap.c	/^d_abitmap_slider_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abitmap_text_list_proc	abitmap.c	/^d_abitmap_text_list_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abitmap_text_proc	abitmap.c	/^d_abitmap_text_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abitmap_textbox_proc	abitmap.c	/^d_abitmap_textbox_proc (int msg, DIALOG *d, int c)$/;"	f
+d_abitmap_window_proc	abitmap.c	/^d_abitmap_window_proc (int msg, DIALOG *d, int c)$/;"	f
+d_agtk_box_proc	agtk.c	/^int d_agtk_box_proc(int msg, DIALOG *d, int c)$/;"	f
+d_agtk_button_proc	agtk.c	/^int d_agtk_button_proc(int msg, DIALOG *d, int c)$/;"	f
+d_agtk_check_proc	agtk.c	/^int d_agtk_check_proc(int msg, DIALOG *d, int c)$/;"	f
+d_agtk_clear_proc	agtk.c	/^d_agtk_clear_proc (int msg, DIALOG *d, int c)$/;"	f
+d_agtk_edit_proc	agtk.c	/^int d_agtk_edit_proc(int msg, DIALOG *d, int c)$/;"	f
+d_agtk_icon_proc	agtk.c	/^int d_agtk_icon_proc(int msg, DIALOG *d, int c)$/;"	f
+d_agtk_list_proc	agtk.c	/^int d_agtk_list_proc(int msg, DIALOG *d, int c)$/;"	f
+d_agtk_menu_proc	agtk.c	/^int d_agtk_menu_proc(int msg, DIALOG *d, int c)$/;"	f
+d_agtk_push_proc	agtk.c	/^int d_agtk_push_proc(int msg, DIALOG *d, int c)$/;"	f
+d_agtk_radio_proc	agtk.c	/^int d_agtk_radio_proc(int msg, DIALOG *d, int c)$/;"	f
+d_agtk_shadow_box_proc	agtk.c	/^int d_agtk_shadow_box_proc(int msg, DIALOG *d, int c)$/;"	f
+d_agtk_slider_proc	agtk.c	/^int d_agtk_slider_proc(int msg, DIALOG *d, int c)$/;"	f
+d_agtk_text_list_proc	agtk.c	/^int d_agtk_text_list_proc(int msg, DIALOG *d, int c)$/;"	f
+d_agtk_textbox_proc	agtk.c	/^int d_agtk_textbox_proc(int msg, DIALOG *d, int c)$/;"	f
+d_agtk_window_proc	agtk.c	/^int d_agtk_window_proc(int msg, DIALOG *d, int c)$/;"	f
+d_agup_adjusted_edit_proc	agup.c	/^int d_agup_adjusted_edit_proc(int msg, DIALOG *d, int c)$/;"	f
+d_agup_common_ctext_proc	agup.c	/^d_agup_common_ctext_proc (int msg, DIALOG *d, int c)$/;"	f
+d_agup_common_rtext_proc	agup.c	/^d_agup_common_rtext_proc (int msg, DIALOG *d, int c)$/;"	f
+d_agup_common_text_proc	agup.c	/^d_agup_common_text_proc (int msg, DIALOG *d, int c)$/;"	f
+d_ans_box_proc	ans.c	/^int d_ans_box_proc(int msg, DIALOG *d, int c)$/;"	f
+d_ans_button_proc	ans.c	/^int d_ans_button_proc(int msg, DIALOG *d, int c)$/;"	f
+d_ans_check_proc	ans.c	/^int d_ans_check_proc(int msg, DIALOG *d, int c)$/;"	f
+d_ans_clear_proc	ans.c	/^d_ans_clear_proc (int msg, DIALOG *d, int c)$/;"	f
+d_ans_edit_proc	ans.c	/^int d_ans_edit_proc(int msg, DIALOG *d, int c)$/;"	f
+d_ans_icon_proc	ans.c	/^int d_ans_icon_proc(int msg, DIALOG *d, int c)$/;"	f
+d_ans_list_proc	ans.c	/^int d_ans_list_proc(int msg, DIALOG *d, int c)$/;"	f
+d_ans_menu_proc	ans.c	/^int d_ans_menu_proc(int msg, DIALOG *d, int c)$/;"	f
+d_ans_push_proc	ans.c	/^int d_ans_push_proc(int msg, DIALOG *d, int c)$/;"	f
+d_ans_radio_proc	ans.c	/^int d_ans_radio_proc(int msg, DIALOG *d, int c)$/;"	f
+d_ans_shadow_box_proc	ans.c	/^int d_ans_shadow_box_proc(int msg, DIALOG *d, int c)$/;"	f
+d_ans_slider_proc	ans.c	/^int d_ans_slider_proc(int msg, DIALOG *d, int c)$/;"	f
+d_ans_text_list_proc	ans.c	/^int d_ans_text_list_proc(int msg, DIALOG *d, int c)$/;"	f
+d_ans_textbox_proc	ans.c	/^int d_ans_textbox_proc(int msg, DIALOG *d, int c)$/;"	f
+d_ans_window_proc	ans.c	/^int d_ans_window_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aphoton_box_proc	aphoton.c	/^int d_aphoton_box_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aphoton_button_proc	aphoton.c	/^int d_aphoton_button_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aphoton_check_proc	aphoton.c	/^int d_aphoton_check_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aphoton_clear_proc	aphoton.c	/^d_aphoton_clear_proc (int msg, DIALOG *d, int c)$/;"	f
+d_aphoton_edit_proc	aphoton.c	/^int d_aphoton_edit_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aphoton_icon_proc	aphoton.c	/^int d_aphoton_icon_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aphoton_list_proc	aphoton.c	/^int d_aphoton_list_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aphoton_menu_proc	aphoton.c	/^int d_aphoton_menu_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aphoton_push_proc	aphoton.c	/^int d_aphoton_push_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aphoton_radio_proc	aphoton.c	/^int d_aphoton_radio_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aphoton_shadow_box_proc	aphoton.c	/^int d_aphoton_shadow_box_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aphoton_slider_proc	aphoton.c	/^int d_aphoton_slider_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aphoton_text_list_proc	aphoton.c	/^int d_aphoton_text_list_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aphoton_textbox_proc	aphoton.c	/^int d_aphoton_textbox_proc(int msg, DIALOG *d, int c)$/;"	f
+d_aphoton_window_proc	aphoton.c	/^int d_aphoton_window_proc(int msg, DIALOG *d, int c)$/;"	f
+d_awin95_box_proc	awin95.c	/^int d_awin95_box_proc(int msg, DIALOG *d, int c)$/;"	f
+d_awin95_button_proc	awin95.c	/^int d_awin95_button_proc(int msg, DIALOG *d, int c)$/;"	f
+d_awin95_check_proc	awin95.c	/^int d_awin95_check_proc(int msg, DIALOG *d, int c)$/;"	f
+d_awin95_clear_proc	awin95.c	/^d_awin95_clear_proc (int msg, DIALOG *d, int c)$/;"	f
+d_awin95_edit_proc	awin95.c	/^int d_awin95_edit_proc(int msg, DIALOG *d, int c)$/;"	f
+d_awin95_icon_proc	awin95.c	/^int d_awin95_icon_proc(int msg, DIALOG *d, int c)$/;"	f
+d_awin95_list_proc	awin95.c	/^int d_awin95_list_proc(int msg, DIALOG *d, int c)$/;"	f
+d_awin95_menu_proc	awin95.c	/^int d_awin95_menu_proc(int msg, DIALOG *d, int c)$/;"	f
+d_awin95_push_proc	awin95.c	/^int d_awin95_push_proc(int msg, DIALOG *d, int c)$/;"	f
+d_awin95_radio_proc	awin95.c	/^int d_awin95_radio_proc(int msg, DIALOG *d, int c)$/;"	f
+d_awin95_shadow_box_proc	awin95.c	/^int d_awin95_shadow_box_proc(int msg, DIALOG *d, int c)$/;"	f
+d_awin95_slider_proc	awin95.c	/^int d_awin95_slider_proc(int msg, DIALOG *d, int c)$/;"	f
+d_awin95_text_list_proc	awin95.c	/^int d_awin95_text_list_proc(int msg, DIALOG *d, int c)$/;"	f
+d_awin95_textbox_proc	awin95.c	/^int d_awin95_textbox_proc(int msg, DIALOG *d, int c)$/;"	f
+d_awin95_window_proc	awin95.c	/^int d_awin95_window_proc(int msg, DIALOG *d, int c)$/;"	f
+d_hackish_edit_proc	examp.c	/^int d_hackish_edit_proc (int msg, DIALOG *d, int c)$/;"	f
+datafile	abitmap.c	/^    DATAFILE *datafile;$/;"	m	struct:AGUP_BITMAP_THEME_LIST	file:
+datapal	abeos.c	/^struct datapal$/;"	s	file:
+demo_windows	examp.c	/^int demo_windows(void)$/;"	f
+dgrey	ans.c	/^static int white, lgrey, dgrey, black, disabled;$/;"	v	file:
+disabled	abeos.c	/^static int disabled[5];$/;"	v	file:
+disabled	ans.c	/^static int white, lgrey, dgrey, black, disabled;$/;"	v	file:
+disabled_pushed	abeos.c	/^static int disabled_pushed[5];$/;"	v	file:
+do_main_dialog	examp.c	/^void do_main_dialog()$/;"	f
+dotted_rect	awin95.c	/^static INLINE void dotted_rect(int x1, int y1, int x2, int y2, int fg, int bg)$/;"	f	file:
+dotted_rect_wh	awin95.c	/^static INLINE void dotted_rect_wh(int x, int y, int w, int h, int fg, int bg)$/;"	f	file:
+draw_base	agtk.c	/^static void draw_base(BITMAP *bmp, DIALOG *d)$/;"	f	file:
+draw_base	aphoton.c	67;"	d	file:
+draw_base	awin95.c	/^static void draw_base(BITMAP *bmp, DIALOG *d)$/;"	f	file:
+draw_window_title	awin95.c	/^static void draw_window_title(DIALOG *d, AL_CONST char *text)$/;"	f	file:
+edge_color	abeos.c	/^static int edge_color;$/;"	v	file:
+edit_gray	aphoton.c	/^static int edit_gray, edit_white;$/;"	v	file:
+edit_proc	agupitrn.h	/^    int (*edit_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+edit_white	aphoton.c	/^static int edit_gray, edit_white;$/;"	v	file:
+elem	abitmap.c	/^    enum B_ELEMENT elem;$/;"	m	struct:BLOAD	typeref:enum:BLOAD::B_ELEMENT	file:
+fg_color	abitmap.c	/^    int fg_color, bg_color, mg_color;$/;"	m	struct:AGUP_BITMAP_THEME	file:
+fg_color	agupitrn.h	/^    int *fg_color;$/;"	m	struct:AGUP_THEME
+file_selector	examp.c	/^int file_selector(void)$/;"	f
+fill_textout	awin95.c	/^static void fill_textout(BITMAP *bmp, FONT *f, AL_CONST char *text,$/;"	f	file:
+find_theme_bitmap	abitmap.c	/^find_theme_bitmap (DATAFILE *datafile, char const *name)$/;"	f	file:
+find_used_bitmap	abitmap.c	/^find_used_bitmap (char const *name)$/;"	f	file:
+flags	abitmap.c	/^    flags;$/;"	m	struct:ABMAP	typeref:enum:ABMAP::__anon2	file:
+frame	abeos.c	/^static int frame[5];$/;"	v	file:
+frame2	abeos.c	/^static int frame2[5];$/;"	v	file:
+frame2_highlight	abeos.c	/^static int frame2_highlight[5];$/;"	v	file:
+frame_highlight	abeos.c	/^static int frame_highlight[5];$/;"	v	file:
+from	aphoton.c	/^    iRGB from;$/;"	m	struct:GOURAUD_RANGE	file:
+g	abeos.c	/^  int r, g, b;$/;"	m	struct:datapal	file:
+g	aphoton.c	/^    int r,g,b;$/;"	m	struct:iRGB	file:
+generate_bitmap	agtk.c	/^static BITMAP *generate_bitmap(AL_CONST char *templat[], int w, int h)$/;"	f	file:
+generate_bitmap	ans.c	/^static BITMAP *generate_bitmap(AL_CONST char *templat[], int w, int h)$/;"	f	file:
+generate_bitmap	aphoton.c	/^static BITMAP *generate_bitmap(AL_CONST unsigned char templat[], int w, int h)$/;"	f	file:
+generate_bitmap	awin95.c	/^static BITMAP *generate_bitmap(AL_CONST char *templat[], int w, int h)$/;"	f	file:
+get_color_string	abitmap.c	/^static int get_color_string (char const *str, char const *def)$/;"	f	file:
+get_state	abitmap.c	/^get_state (DIALOG *d)$/;"	f	file:
+getfuncptr	agtk.c	/^typedef char *(*getfuncptr)(int, int *);$/;"	t	file:
+getfuncptr	ans.c	/^typedef char *(*getfuncptr) (int, int *);$/;"	t	file:
+getfuncptr	aphoton.c	/^typedef char *(*getfuncptr)(int, int *);$/;"	t	file:
+getfuncptr	awin95.c	/^typedef char *(*getfuncptr)(int, int *);$/;"	t	file:
+global_theme	abitmap.c	/^static struct AGUP_BITMAP_THEME global_theme;$/;"	v	typeref:struct:AGUP_BITMAP_THEME	file:
+gray	awin95.c	/^static int white, highlight, normal, gray, black;$/;"	v	file:
+gtk_bevel	agtk.c	/^static void gtk_bevel(BITMAP *bmp, int x, int y, int w, int h, int state)$/;"	f	file:
+gtk_box	agtk.c	/^static void gtk_box(BITMAP *bmp, int x, int y, int w, int h, int state, int border)$/;"	f	file:
+gtk_draw_menu	agtk.c	/^static void gtk_draw_menu(int x, int y, int w, int h)$/;"	f	file:
+gtk_draw_menu_item	agtk.c	/^static void gtk_draw_menu_item(MENU *m, int x, int y, int w, int h, int bar, int sel)$/;"	f	file:
+gtk_draw_scrollable_frame	agtk.c	/^static void gtk_draw_scrollable_frame(DIALOG *d, int listsize, int offset, int height)$/;"	f	file:
+handle	ans.c	/^static AL_CONST char *handle[] =$/;"	v	file:
+handle_bmp	ans.c	/^static BITMAP *handle_bmp;$/;"	v	file:
+highlight	abeos.c	/^static int highlight[5];$/;"	v	file:
+highlight	agtk.c	/^static int white, highlight, normal, pressed, hshadow, nshadow, black;$/;"	v	file:
+highlight	aphoton.c	/^static int black, white, normal, highlight, shadow;$/;"	v	file:
+highlight	awin95.c	/^static int white, highlight, normal, gray, black;$/;"	v	file:
+hshadow	agtk.c	/^static int white, highlight, normal, pressed, hshadow, nshadow, black;$/;"	v	file:
+hshadow	awin95.c	/^static int hshadow, nshadow, blue;$/;"	v	file:
+iRGB	aphoton.c	/^typedef struct iRGB$/;"	s	file:
+iRGB	aphoton.c	/^} iRGB;$/;"	t	typeref:struct:iRGB	file:
+icon_proc	agupitrn.h	/^    int (*icon_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+init	abitmap.c	/^init (void)$/;"	f	file:
+init	agupitrn.h	/^    void (*init)(void);$/;"	m	struct:AGUP_THEME
+init	examp.c	/^int init()$/;"	f
+internal_border_thickness	awin95.c	/^    internal_border_thickness = 3,$/;"	e	enum:__anon3	file:
+last_h	abeos.c	/^static int last_x, last_y, last_w, last_h, menu_done;$/;"	v	file:
+last_h	abitmap.c	/^static int last_x, last_y, last_w, last_h, menu_done;$/;"	v	file:
+last_h	aphoton.c	/^static int last_x, last_y, last_w, last_h, menu_done;$/;"	v	file:
+last_w	abeos.c	/^static int last_x, last_y, last_w, last_h, menu_done;$/;"	v	file:
+last_w	abitmap.c	/^static int last_x, last_y, last_w, last_h, menu_done;$/;"	v	file:
+last_w	aphoton.c	/^static int last_x, last_y, last_w, last_h, menu_done;$/;"	v	file:
+last_x	abeos.c	/^static int last_x, last_y, last_w, last_h, menu_done;$/;"	v	file:
+last_x	abitmap.c	/^static int last_x, last_y, last_w, last_h, menu_done;$/;"	v	file:
+last_x	aphoton.c	/^static int last_x, last_y, last_w, last_h, menu_done;$/;"	v	file:
+last_y	abeos.c	/^static int last_x, last_y, last_w, last_h, menu_done;$/;"	v	file:
+last_y	abitmap.c	/^static int last_x, last_y, last_w, last_h, menu_done;$/;"	v	file:
+last_y	aphoton.c	/^static int last_x, last_y, last_w, last_h, menu_done;$/;"	v	file:
+lgrey	ans.c	/^static int white, lgrey, dgrey, black, disabled;$/;"	v	file:
+list_green	aphoton.c	/^static int list_white, list_green;$/;"	v	file:
+list_proc	agupitrn.h	/^    int (*list_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+list_white	aphoton.c	/^static int list_white, list_green;$/;"	v	file:
+lister	examp.c	/^char *lister(int index, int *list_size)$/;"	f
+main	examp.c	/^int main(void)$/;"	f
+main_dlg	examp.c	/^DIALOG main_dlg[] =$/;"	v
+masked_non_stretched_blit	abitmap.c	/^masked_non_stretched_blit (BITMAP *s, BITMAP *d, int sx, int sy, int w, int h,$/;"	f	file:
+menu	abeos.c	/^static int menu[5];$/;"	v	file:
+menu1	examp.c	/^MENU menu1[] =$/;"	v
+menu12	examp.c	/^MENU menu12[] =$/;"	v
+menu_arrow	agtk.c	/^static AL_CONST char *menu_arrow[] =$/;"	v	file:
+menu_arrow	ans.c	/^static AL_CONST char *menu_arrow[] =$/;"	v	file:
+menu_arrow	aphoton.c	/^static AL_CONST unsigned char menu_arrow[] =$/;"	v	file:
+menu_arrow	awin95.c	/^static AL_CONST char *menu_arrow[] =$/;"	v	file:
+menu_arrow_bmp	agtk.c	/^static BITMAP *menu_arrow_bmp;$/;"	v	file:
+menu_arrow_bmp	ans.c	/^static BITMAP *menu_arrow_bmp, *menu_arrow_sel_bmp;$/;"	v	file:
+menu_arrow_bmp	aphoton.c	/^static BITMAP *menu_arrow_bmp;$/;"	v	file:
+menu_arrow_bmp	awin95.c	/^static BITMAP *menu_arrow_bmp;$/;"	v	file:
+menu_arrow_sel	ans.c	/^static AL_CONST char *menu_arrow_sel[] =$/;"	v	file:
+menu_arrow_sel_bmp	ans.c	/^static BITMAP *menu_arrow_bmp, *menu_arrow_sel_bmp;$/;"	v	file:
+menu_done	abeos.c	/^static int last_x, last_y, last_w, last_h, menu_done;$/;"	v	file:
+menu_done	abitmap.c	/^static int last_x, last_y, last_w, last_h, menu_done;$/;"	v	file:
+menu_done	aphoton.c	/^static int last_x, last_y, last_w, last_h, menu_done;$/;"	v	file:
+menu_font	examp.c	/^MENU menu_font[] =$/;"	v
+menu_gray_from	aphoton.c	/^static int menu_gray_from, menu_gray_to;$/;"	v	file:
+menu_gray_range	aphoton.c	/^                            menu_gray_range, window_blue_range, slider_gray_range;$/;"	v	typeref:struct:	file:
+menu_gray_to	aphoton.c	/^static int menu_gray_from, menu_gray_to;$/;"	v	file:
+menu_proc	agupitrn.h	/^    int (*menu_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+menu_theme	examp.c	/^MENU menu_theme[] =$/;"	v
+menubar	examp.c	/^MENU menubar[] =$/;"	v
+mg_color	abitmap.c	/^    int fg_color, bg_color, mg_color;$/;"	m	struct:AGUP_BITMAP_THEME	file:
+mg_color	agupitrn.h	/^    int *mg_color;$/;"	m	struct:AGUP_THEME
+name	abitmap.c	/^    char const *name;$/;"	m	struct:BLOAD	file:
+name	agupitrn.h	/^    char *name;$/;"	m	struct:AGUP_THEME
+newfont	examp.c	/^FONT *oldfont, *newfont;$/;"	v
+none	abitmap.c	/^static BITMAP *none; \/* used for a hack to make a textbox transparent *\/$/;"	v	file:
+normal	abeos.c	/^static int normal[5];$/;"	v	file:
+normal	agtk.c	/^static int white, highlight, normal, pressed, hshadow, nshadow, black;$/;"	v	file:
+normal	aphoton.c	/^static int black, white, normal, highlight, shadow;$/;"	v	file:
+normal	awin95.c	/^static int white, highlight, normal, gray, black;$/;"	v	file:
+ns_bevel	ans.c	/^static void ns_bevel(BITMAP *bmp, int x, int y, int w, int h, int state)$/;"	f	file:
+ns_check	ans.c	/^static void ns_check(BITMAP *bmp, int x, int y)$/;"	f	file:
+ns_draw_menu	ans.c	/^static void ns_draw_menu(int x, int y, int w, int h)$/;"	f	file:
+ns_draw_menu_item	ans.c	/^static void ns_draw_menu_item(MENU * m, int x, int y, int w, int h, int bar, int sel)$/;"	f	file:
+ns_draw_scrollable_frame	ans.c	/^static void ns_draw_scrollable_frame(DIALOG *d, int listsize, int offset, int height)$/;"	f	file:
+nshadow	agtk.c	/^static int white, highlight, normal, pressed, hshadow, nshadow, black;$/;"	v	file:
+nshadow	awin95.c	/^static int hshadow, nshadow, blue;$/;"	v	file:
+oldfont	examp.c	/^FONT *oldfont, *newfont;$/;"	v
+pal	abeos.c	/^struct datapal pal[] = {$/;"	v	typeref:struct:datapal
+pal_dis	abeos.c	/^struct datapal pal_dis[] = {$/;"	v	typeref:struct:datapal
+pal_hl	abeos.c	/^struct datapal pal_hl[] = {$/;"	v	typeref:struct:datapal
+path	abitmap.c	/^    char *path;$/;"	m	struct:AGUP_BITMAP_THEME_LIST	file:
+photon_box	aphoton.c	/^static void photon_box(BITMAP *bmp, int x, int y, int w, int h, int color)$/;"	f	file:
+photon_container	aphoton.c	/^static void photon_container(BITMAP *bmp, int x, int y, int w, int h)$/;"	f	file:
+photon_do_draw_menu	aphoton.c	/^static void photon_do_draw_menu(int x, int y, int w, int h, int bar)$/;"	f	file:
+photon_draw_menu	aphoton.c	/^static void photon_draw_menu(int x, int y, int w, int h)$/;"	f	file:
+photon_draw_menu_item	aphoton.c	/^static void photon_draw_menu_item(MENU *m, int x, int y, int w, int h, int bar, int sel)$/;"	f	file:
+photon_draw_scrollable_frame	aphoton.c	/^static void photon_draw_scrollable_frame(DIALOG *d, int listsize, int offset,$/;"	f	file:
+photon_scrollbar	aphoton.c	/^static void photon_scrollbar(BITMAP *bmp, int x, int y, int w, int h,$/;"	f	file:
+photon_slider_cursor	aphoton.c	/^static void photon_slider_cursor(BITMAP *bmp, int x, int y, int w, int h, int vert)$/;"	f	file:
+photon_slider_mark	aphoton.c	/^static void photon_slider_mark(BITMAP *bmp, int x, int y)$/;"	f	file:
+photon_textout	aphoton.c	/^static void photon_textout(BITMAP *bmp, AL_CONST char *text, int x, int y,$/;"	f	file:
+plot	abeos.c	/^plot (BITMAP * bmp, char data[13][14], struct datapal *pal)$/;"	f	file:
+pos	abeos.c	/^      int total, visible, pos;$/;"	m	struct:BDATA::__anon1::BSCROLL	file:
+pressed	agtk.c	/^static int white, highlight, normal, pressed, hshadow, nshadow, black;$/;"	v	file:
+push_proc	agupitrn.h	/^    int (*push_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+pushed	abeos.c	/^static int pushed[5];$/;"	v	file:
+quit_proc	examp.c	/^int quit_proc(int msg, DIALOG *d, int c)$/;"	f
+r	abeos.c	/^  int r, g, b;$/;"	m	struct:datapal	file:
+r	aphoton.c	/^    int r,g,b;$/;"	m	struct:iRGB	file:
+radio	abeos.c	/^static BITMAP *radio[6];$/;"	v	file:
+radio	aphoton.c	/^static AL_CONST unsigned char radio[] =$/;"	v	file:
+radio_bmp	aphoton.c	/^static BITMAP *radio_bmp, *radio_sel_bmp;$/;"	v	file:
+radio_down	agtk.c	/^static AL_CONST char *radio_down[] =$/;"	v	file:
+radio_down	ans.c	/^static AL_CONST char *radio_down[] =$/;"	v	file:
+radio_down	awin95.c	/^static AL_CONST char *radio_down[] =$/;"	v	file:
+radio_down_bmp	agtk.c	/^static BITMAP *radio_down_bmp, *radio_up_bmp;$/;"	v	file:
+radio_down_bmp	ans.c	/^static BITMAP *radio_down_bmp, *radio_up_bmp;$/;"	v	file:
+radio_down_bmp	awin95.c	/^static BITMAP *radio_down_bmp, *radio_up_bmp, *radio_pressed_bmp, *scroll_arrow_bmp;$/;"	v	file:
+radio_pressed	awin95.c	/^static AL_CONST char *radio_pressed[] =$/;"	v	file:
+radio_pressed_bmp	awin95.c	/^static BITMAP *radio_down_bmp, *radio_up_bmp, *radio_pressed_bmp, *scroll_arrow_bmp;$/;"	v	file:
+radio_proc	agupitrn.h	/^    int (*radio_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+radio_sel	aphoton.c	/^static AL_CONST unsigned char radio_sel[] =$/;"	v	file:
+radio_sel_bmp	aphoton.c	/^static BITMAP *radio_bmp, *radio_sel_bmp;$/;"	v	file:
+radio_up	agtk.c	/^static AL_CONST char *radio_up[] =$/;"	v	file:
+radio_up	ans.c	/^static AL_CONST char *radio_up[] =$/;"	v	file:
+radio_up	awin95.c	/^static AL_CONST char *radio_up[] =$/;"	v	file:
+radio_up_bmp	agtk.c	/^static BITMAP *radio_down_bmp, *radio_up_bmp;$/;"	v	file:
+radio_up_bmp	ans.c	/^static BITMAP *radio_down_bmp, *radio_up_bmp;$/;"	v	file:
+radio_up_bmp	awin95.c	/^static BITMAP *radio_down_bmp, *radio_up_bmp, *radio_pressed_bmp, *scroll_arrow_bmp;$/;"	v	file:
+radiodata	abeos.c	/^char radiodata[13][14] = {$/;"	v
+radiooverlay	abeos.c	/^char radiooverlay[13][14] = {$/;"	v
+radiooverlay2	abeos.c	/^char radiooverlay2[13][14] = {$/;"	v
+rectedge	awin95.c	/^static INLINE void rectedge(BITMAP * bmp, int x1, int y1, int x2, int y2, int fg, int bg)$/;"	f	file:
+rectfillwh	agtk.c	/^static INLINE void rectfillwh(BITMAP *bmp, int x, int y, int w, int h, int color)$/;"	f	file:
+rectfillwh	aphoton.c	/^static INLINE void rectfillwh(BITMAP *bmp, int x, int y, int w, int h, int color)$/;"	f	file:
+rectfillwh	awin95.c	/^static INLINE void rectfillwh(BITMAP *bmp, int x, int y, int w, int h, int color)$/;"	f	file:
+rectgouraud	aphoton.c	/^static void rectgouraud(BITMAP *bmp, int x1, int y1, int x2, int y2,$/;"	f	file:
+rtext_proc	agupitrn.h	/^    int (*rtext_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+scroll	abeos.c	/^    } scroll;$/;"	m	union:BDATA::__anon1	typeref:struct:BDATA::__anon1::BSCROLL	file:
+scroll	abeos.c	/^static int scroll[5];$/;"	v	file:
+scroll_arrow	awin95.c	/^static AL_CONST char *scroll_arrow[] =$/;"	v	file:
+scroll_arrow_bmp	awin95.c	/^static BITMAP *radio_down_bmp, *radio_up_bmp, *radio_pressed_bmp, *scroll_arrow_bmp;$/;"	v	file:
+scroll_dis	abeos.c	/^static int scroll_dis[5];$/;"	v	file:
+scroll_hl	abeos.c	/^static int scroll_hl[5];$/;"	v	file:
+scrollbar_gray1	aphoton.c	/^static int scrollbar_gray1, scrollbar_gray2;$/;"	v	file:
+scrollbar_gray2	aphoton.c	/^static int scrollbar_gray1, scrollbar_gray2;$/;"	v	file:
+scrollbar_gray_range	aphoton.c	/^static struct GOURAUD_RANGE button_gray_range, scrollbar_gray_range,$/;"	v	typeref:struct:	file:
+sel	examp.c	/^char sel[10];$/;"	v
+sel2	examp.c	/^char sel2[10];$/;"	v
+select_font	examp.c	/^int select_font(void)$/;"	f
+select_theme	examp.c	/^int select_theme(void)$/;"	f
+set_theme_config	abitmap.c	/^set_theme_config (char const *path, DATAFILE *datafile)$/;"	f	file:
+shadow	aphoton.c	/^static int black, white, normal, highlight, shadow;$/;"	v	file:
+shadow_box_proc	agupitrn.h	/^    int (*shadow_box_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+shadow_color	abeos.c	/^static int shadow_color;$/;"	v	file:
+shutdown	abitmap.c	/^shutdown (void)$/;"	f	file:
+shutdown	agupitrn.h	/^    void (*shutdown)(void);$/;"	m	struct:AGUP_THEME
+slider	abeos.c	/^static int slider[5];$/;"	v	file:
+slider_dis	abeos.c	/^static int slider_dis[5];$/;"	v	file:
+slider_gray1	aphoton.c	/^static int slider_gray1, slider_gray2, slider_gray3, slider_gray4, slider_gray5;$/;"	v	file:
+slider_gray2	aphoton.c	/^static int slider_gray1, slider_gray2, slider_gray3, slider_gray4, slider_gray5;$/;"	v	file:
+slider_gray3	aphoton.c	/^static int slider_gray1, slider_gray2, slider_gray3, slider_gray4, slider_gray5;$/;"	v	file:
+slider_gray4	aphoton.c	/^static int slider_gray1, slider_gray2, slider_gray3, slider_gray4, slider_gray5;$/;"	v	file:
+slider_gray5	aphoton.c	/^static int slider_gray1, slider_gray2, slider_gray3, slider_gray4, slider_gray5;$/;"	v	file:
+slider_gray_range	aphoton.c	/^                            menu_gray_range, window_blue_range, slider_gray_range;$/;"	v	typeref:struct:	file:
+slider_proc	agupitrn.h	/^    int (*slider_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+slider_white1	aphoton.c	/^static int slider_white1, slider_white2;$/;"	v	file:
+slider_white2	aphoton.c	/^static int slider_white1, slider_white2;$/;"	v	file:
+sliderdata	abeos.c	/^char sliderdata[13][14] = {$/;"	v
+sliderhandle	abeos.c	/^static BITMAP *sliderhandle[2];$/;"	v	file:
+snprintf	abitmap.c	27;"	d	file:
+surprise	examp.c	/^int surprise()$/;"	f
+text	abeos.c	/^    char const *text;$/;"	m	union:BDATA::__anon1	file:
+text_list_proc	agupitrn.h	/^    int (*text_list_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+text_proc	agupitrn.h	/^    int (*text_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+textbox_proc	agupitrn.h	/^    int (*textbox_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+textpushx	abitmap.c	/^    int textpushx, textpushy;$/;"	m	struct:AGUP_BITMAP_THEME	file:
+textpushy	abitmap.c	/^    int textpushx, textpushy;$/;"	m	struct:AGUP_BITMAP_THEME	file:
+the_theme	aalg.c	/^static struct AGUP_THEME the_theme =$/;"	v	typeref:struct:AGUP_THEME	file:
+the_theme	aase.c	/^static struct AGUP_THEME the_theme =$/;"	v	typeref:struct:AGUP_THEME	file:
+the_theme	abeos.c	/^static struct AGUP_THEME the_theme = {$/;"	v	typeref:struct:AGUP_THEME	file:
+the_theme	agtk.c	/^static struct AGUP_THEME the_theme =$/;"	v	typeref:struct:AGUP_THEME	file:
+the_theme	ans.c	/^static struct AGUP_THEME the_theme = {$/;"	v	typeref:struct:AGUP_THEME	file:
+the_theme	aphoton.c	/^static struct AGUP_THEME the_theme =$/;"	v	typeref:struct:AGUP_THEME	file:
+the_theme	awin95.c	/^static struct AGUP_THEME the_theme =$/;"	v	typeref:struct:AGUP_THEME	file:
+theme	abitmap.c	/^    AGUP_THEME theme;$/;"	m	struct:AGUP_BITMAP_THEME_LIST	file:
+theme	abitmap.c	/^static struct AGUP_BITMAP_THEME *theme = &global_theme; \/* theme currently used *\/$/;"	v	typeref:struct:AGUP_BITMAP_THEME	file:
+theme_template	abitmap.c	/^static struct AGUP_THEME theme_template = {$/;"	v	typeref:struct:AGUP_THEME	file:
+themes	abitmap.c	/^static struct AGUP_BITMAP_THEME_LIST **themes = NULL;$/;"	v	typeref:struct:AGUP_BITMAP_THEME_LIST	file:
+themes_count	abitmap.c	/^static int themes_count = 0;$/;"	v	file:
+to	aphoton.c	/^    iRGB to;$/;"	m	struct:GOURAUD_RANGE	file:
+toggle_focus	examp.c	/^int toggle_focus(void)$/;"	f
+total	abeos.c	/^      int total, visible, pos;$/;"	m	struct:BDATA::__anon1::BSCROLL	file:
+u	abeos.c	/^  } u;$/;"	m	struct:BDATA	typeref:union:BDATA::__anon1	file:
+used_bitmap	abitmap.c	/^used_bitmap (BITMAP *bmp, char const *name)$/;"	f	file:
+used_bitmaps	abitmap.c	/^static BITMAP **used_bitmaps = NULL;$/;"	v	file:
+used_bitmaps_cleanup	abitmap.c	/^used_bitmaps_cleanup (void)$/;"	f	file:
+used_bitmaps_count	abitmap.c	/^static int used_bitmaps_count = 0;$/;"	v	file:
+used_bitmaps_names	abitmap.c	/^static char **used_bitmaps_names = NULL;$/;"	v	file:
+used_dat	abitmap.c	/^static DATAFILE *used_dat = NULL;$/;"	v	file:
+version	examp.c	/^char version[1024];$/;"	v
+visible	abeos.c	/^      int total, visible, pos;$/;"	m	struct:BDATA::__anon1::BSCROLL	file:
+white	abeos.c	/^static int white;$/;"	v	file:
+white	agtk.c	/^static int white, highlight, normal, pressed, hshadow, nshadow, black;$/;"	v	file:
+white	ans.c	/^static int white, lgrey, dgrey, black, disabled;$/;"	v	file:
+white	aphoton.c	/^static int black, white, normal, highlight, shadow;$/;"	v	file:
+white	awin95.c	/^static int white, highlight, normal, gray, black;$/;"	v	file:
+win95_bevel	awin95.c	/^static void win95_bevel(BITMAP *bmp, int x, int y, int w, int h, int state)$/;"	f	file:
+win95_box	awin95.c	/^static void win95_box(BITMAP *bmp, int x, int y, int w, int h, int pressed)$/;"	f	file:
+win95_check_bevel	awin95.c	/^static void win95_check_bevel(BITMAP *bmp, int x, int y, int w, int h, int state)$/;"	f	file:
+win95_draw_menu	awin95.c	/^static void win95_draw_menu(int x, int y, int w, int h)$/;"	f	file:
+win95_draw_menu_item	awin95.c	/^static void win95_draw_menu_item(MENU *m, int x, int y, int w, int h, int bar, int sel)$/;"	f	file:
+win95_draw_scrollable_frame	awin95.c	/^static void win95_draw_scrollable_frame(DIALOG *d, int listsize, int offset, int height)$/;"	f	file:
+win95_icon	awin95.c	/^static void win95_icon(BITMAP *bmp, int x, int y, int w, int h, int state)$/;"	f	file:
+win95_menu_box	awin95.c	/^static void win95_menu_box(BITMAP *bmp, int x, int y, int w, int h, int state)$/;"	f	file:
+win95_text_bevel	awin95.c	/^static void win95_text_bevel(BITMAP *bmp, int x, int y, int w, int h)$/;"	f	file:
+window_black	aphoton.c	/^static int window_black, window_gray;$/;"	v	file:
+window_blue1	aphoton.c	/^static int window_blue1, window_blue2, window_blue3;$/;"	v	file:
+window_blue2	aphoton.c	/^static int window_blue1, window_blue2, window_blue3;$/;"	v	file:
+window_blue3	aphoton.c	/^static int window_blue1, window_blue2, window_blue3;$/;"	v	file:
+window_blue_range	aphoton.c	/^                            menu_gray_range, window_blue_range, slider_gray_range;$/;"	v	typeref:struct:	file:
+window_gray	aphoton.c	/^static int window_black, window_gray;$/;"	v	file:
+window_proc	agupitrn.h	/^    int (*window_proc)(int, DIALOG *, int);$/;"	m	struct:AGUP_THEME
+work_around_fsel_bug	examp.c	/^static int work_around_fsel_bug = 0;$/;"	v	file:
+yellow	agtk.c	/^static int blue, yellow;$/;"	v	file:
