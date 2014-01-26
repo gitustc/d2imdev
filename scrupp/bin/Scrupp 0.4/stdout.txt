@@ -1,0 +1,3 @@
+Scrupp v0.4
+search path: C:\Users\anhong\Dropbox\scrupp\bin\Scrupp 0.4\
+Running FS_Quit.

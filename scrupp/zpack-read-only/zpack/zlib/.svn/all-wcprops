@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/62/trunk/zpack/zlib
+END
+inffast.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/62/trunk/zpack/zlib/inffast.h
+END
+inffixed.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/62/trunk/zpack/zlib/inffixed.h
+END
+deflate.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/62/trunk/zpack/zlib/deflate.c
+END
+zlib.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/62/trunk/zpack/zlib/zlib.h
+END
+zutil.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/62/trunk/zpack/zlib/zutil.c
+END
+deflate.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/62/trunk/zpack/zlib/deflate.h
+END
+crc32.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/62/trunk/zpack/zlib/crc32.c
+END
+zutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/62/trunk/zpack/zlib/zutil.h
+END
+inftrees.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/62/trunk/zpack/zlib/inftrees.c
+END
+crc32.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/62/trunk/zpack/zlib/crc32.h
+END
+trees.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/62/trunk/zpack/zlib/trees.c
+END
+inflate.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/62/trunk/zpack/zlib/inflate.c
+END
+uncompr.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/62/trunk/zpack/zlib/uncompr.c
+END
+zconf.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/62/trunk/zpack/zlib/zconf.h
+END
+inftrees.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/62/trunk/zpack/zlib/inftrees.h
+END
+trees.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/62/trunk/zpack/zlib/trees.h
+END
+inflate.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/62/trunk/zpack/zlib/inflate.h
+END
+zconf.in.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/62/trunk/zpack/zlib/zconf.in.h
+END
+inffast.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/62/trunk/zpack/zlib/inffast.c
+END
+compress.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/62/trunk/zpack/zlib/compress.c
+END
+adler32.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/62/trunk/zpack/zlib/adler32.c
+END
+infback.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/62/trunk/zpack/zlib/infback.c
+END

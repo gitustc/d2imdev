@@ -1,0 +1,681 @@
+// Emacs style mode select -*- C++ -*-
+// ----------------------------------------------------------------------------
+//
+// Copyright(C) 2009 Stephen McGranahan
+//
+// This file is part of Gooey a4
+//
+// Gooey a4 is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Limited General Public License as published 
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+// 
+// ----------------------------------------------------------------------------
+//
+// Gooey a4 is a C/SDL-based Graphic User Interface (GUI) library which
+// aims to provide a viable cross-platform user interface API which is simple,
+// elegant, and enables rapid application development.
+//
+// ----------------------------------------------------------------------------
+
+
+
+#include "gooeya4.h"
+
+
+
+bool gIsContainer(gWidget *widget)
+{
+   return widget ? widget->id(gContainerID) : false;
+}
+
+bool gContainerID(gIDFuncParam func)
+{
+   if(func == gContainerID)
+      return true;
+   return gWidgetID(func);
+}
+
+
+void gContainerDraw(gWidget *self)
+{
+   gContainer     *cself;
+   gWidget        *rover, *head;
+   bool           drawclipped = true;
+
+   if(!self->id(gContainerID))
+   {
+      gSetError("gContainerDraw: self failed id check!\n");
+      return;
+   }
+   if((self->behavior & behaviorInvisible) || !self->factory)
+      return;
+
+   cself = (gContainer *)self;
+
+   if(!gPushClippingStackInside(self->factory, &self->screenrect, false))
+      drawclipped = false;
+
+   // Draw embedded widgets first
+   head = cself->embhead;
+
+   for(rover = head->next; rover != head; rover = rover->next)
+   {
+      if(!drawclipped && !(rover->behavior & behaviorNoClip))
+         continue;
+      if(rover->behavior & behaviorNoClip)
+      {
+         if(gPushClippingStackInside(self->factory, &rover->screenrect, true))
+         {
+            rover->drawWidget(rover);
+            gPopClippingStack(self->factory);
+         }
+      }
+      else
+         rover->drawWidget(rover);
+   }
+
+   if(!gPushClippingStackInside(self->factory, &cself->childrect, false))
+   {
+      gPopClippingStack(self->factory);
+      drawclipped = false;
+   }
+
+   // The Draw the regular widgets
+   head = cself->head;
+   for(rover = head->next; rover != head; rover = rover->next)
+   {
+      if(!drawclipped && !(rover->behavior & behaviorNoClip))
+         continue;
+      if(rover->behavior & behaviorNoClip)
+      {
+         if(gPushClippingStackInside(self->factory, &rover->screenrect, true))
+         {
+            rover->drawWidget(rover);
+            gPopClippingStack(self->factory);
+         }
+      }
+      else
+         rover->drawWidget(rover);
+   }
+
+   if(drawclipped)
+   {
+      gPopClippingStack(self->factory);
+      gPopClippingStack(self->factory);
+   }
+}
+
+
+
+
+void gContainerEventHandler(gWidget *self, SDL_Event *event, bool *claimed)
+{
+   gContainer *cself;
+   gWidget *rover, *head;
+   bool wasclaimed = *claimed;
+   bool forkfocus;
+
+   if(!self->id(gContainerID))
+   {
+      gSetError("gContainerEventHandler: self failed id check!\n");
+      return;
+   }
+
+   if(self->behavior & behaviorNoEvent)
+      return;
+
+   cself = (gContainer *)self;
+
+   forkfocus = (event->type != SDL_MOUSEBUTTONDOWN) && 
+               (event->type != SDL_MOUSEMOTION) &&
+               (event->type != SDL_MOUSEBUTTONUP);
+
+   if(cself->kfocus && forkfocus)
+      cself->kfocus->eventHandler(cself->kfocus, event, claimed);
+
+   if(cself->mfocus && !forkfocus)
+      cself->mfocus->eventHandler(cself->mfocus, event, claimed);
+
+   if(event->type == SDL_MOUSEBUTTONDOWN)
+   {
+      // This is now the mouse-specific event loop because mouse events require a bit more processing.
+      head = cself->embhead;
+      for(rover = head->next; rover != head; rover = rover->next)
+      {
+         bool flag = *claimed;
+
+         if(rover == cself->mfocus)
+            continue;
+
+         rover->eventHandler(rover, event, claimed);
+
+         if(!flag && *claimed && cself->mfocus != rover)
+         {
+            if(cself->kfocus != rover)
+            {
+               if(cself->kfocus)
+                  cself->kfocus->setInFocus(cself->kfocus, false);
+
+               cself->kfocus->setInFocus(cself->kfocus, false);
+               cself->kfocus = rover;
+               rover->setInFocus(rover, true);
+            }
+
+            cself->mfocus = rover;
+         }
+      }
+
+      head = cself->head;
+      for(rover = head->next; rover != head; rover = rover->next)
+      {
+         bool flag = *claimed;
+
+         if(rover == cself->mfocus)
+            continue;
+
+         rover->eventHandler(rover, event, claimed);
+
+         if(!flag && *claimed && cself->mfocus != rover)
+         {
+            if(cself->kfocus != rover)
+            {
+               if(cself->kfocus)
+                  cself->kfocus->setInFocus(cself->kfocus, false);
+
+               cself->kfocus = rover;
+               rover->setInFocus(rover, true);
+               if(cself->sortchildren)
+                  cself->promoteChild(cself, rover);
+            }
+
+            cself->mfocus = rover;
+         }
+      }
+
+      if(!*claimed || wasclaimed)
+      {
+         if(cself->kfocus && !(cself->kfocus->behavior & behaviorKeepFocus))
+         {
+            cself->kfocus->setInFocus(cself->kfocus, false);
+            cself->kfocus = NULL;
+         }
+         cself->mfocus = NULL;
+      }
+   }
+   else if(!forkfocus)
+   {
+      // This is now the mouse-specific event loop because mouse events require 
+      // a bit more processing.
+      head = cself->embhead;
+      for(rover = head->next; rover != head; rover = rover->next)
+      {
+         if(rover == cself->mfocus)
+            continue;
+
+         rover->eventHandler(rover, event, claimed);
+      }
+
+      head = cself->head;
+      for(rover = head->next; rover != head; rover = rover->next)
+      {
+         if(rover == cself->mfocus)
+            continue;
+
+         rover->eventHandler(rover, event, claimed);
+      }
+
+      if(event->type == SDL_MOUSEBUTTONUP && 
+         cself->mfocus && !(cself->mfocus->state & stateAnyDown))
+         cself->mfocus = NULL;
+   }
+   else
+   {
+      // The event loops are much cleaner when the mouse events are handled 
+      // separately.
+      head = cself->embhead;
+      for(rover = head->next; rover != head; rover = rover->next)
+      {
+         if(rover == cself->kfocus && forkfocus)
+            continue;
+
+         rover->eventHandler(rover, event, claimed);
+      }
+
+      head = cself->head;
+      for(rover = head->next; rover != head; rover = rover->next)
+      {
+         if(rover == cself->kfocus && forkfocus)
+            continue;
+
+         rover->eventHandler(rover, event, claimed);
+      }
+   }
+
+   gWidgetEventHandler(self, event, claimed);
+}
+
+
+
+void gContainerCalcScreen(gWidget *self)
+{
+   gContainer *cself;
+   gWidget *rover, *head;
+
+   if(!self->id(gContainerID))
+   {
+      gSetError("gContainerCalcScreen: self failed id check!\n");
+      return;
+   }
+
+   cself = (gContainer *)self;
+
+   gWidgetCalcScreen(self);
+
+   // Padding should be accounted for here
+   cself->childrect.x1 = self->screenrect.x1 + cself->leftbuffer;
+   cself->childrect.x2 = self->screenrect.x2 - cself->rightbuffer;
+   cself->childrect.y1 = self->screenrect.y1 + cself->topbuffer;
+   cself->childrect.y2 = self->screenrect.y2 - cself->bottombuffer;
+
+   // Calculate the embedded widgets
+   head = cself->embhead;
+   for(rover = head->next; rover != head; rover = rover->next)
+      rover->calcScreen(rover);
+
+   // Calculate the main widgets
+   head = cself->head;
+   for(rover = head->next; rover != head; rover = rover->next)
+      rover->calcScreen(rover);
+}
+
+
+void gContainerUpdateSize(gWidget *self)
+{
+   gContainer *cself;
+   gWidget *rover, *head;
+
+   if(!self->id(gContainerID))
+   {
+      gSetError("gContainerUpdateSize: self failed id check!\n");
+      return;
+   }
+
+   gWidgetUpdateSize(self);
+
+   cself = (gContainer *)self;
+
+   // Calculate the embedded widgets
+   head = cself->embhead;
+   for(rover = head->next; rover != head; rover = rover->next)
+      rover->updateSize(rover);
+
+   // Calculate the main widgets
+   head = cself->head;
+   for(rover = head->next; rover != head; rover = rover->next)
+      rover->updateSize(rover);
+}
+
+
+
+
+void gContainerSetRect(gWidget *self, int x, int y, unsigned int w, unsigned int h)
+{
+   gContainer *cself;
+   gWidget *rover, *head;
+
+   if(!self->id(gContainerID))
+   {
+      gSetError("gContainerSetRect: self failed id check!\n");
+      return;
+   }
+
+   self->update(self);
+
+   self->rect.x = x;
+   self->rect.y = y;
+   self->rect.w = w;
+   self->rect.h = h;
+
+   self->calcScreen(self);
+
+   if(self->prect)
+   {
+      self->fromx2 = self->prect->x2 - self->screenrect.x2;
+      self->fromy2 = self->prect->y2 - self->screenrect.y2;
+   }
+
+   cself = (gContainer *)self;
+
+   // Calculate the embedded widgets
+   head = cself->embhead;
+   for(rover = head->next; rover != head; rover = rover->next)
+      rover->updateSize(rover);
+
+   // Calculate the main widgets
+   head = cself->head;
+   for(rover = head->next; rover != head; rover = rover->next)
+      rover->updateSize(rover);
+  
+
+   self->update(self);
+}
+
+
+
+void gContainerSetFactory(gWidget *self, gFactory *f)
+{
+   gContainer *cself;
+   gWidget *rover, *head;
+
+   if(!self->id(gContainerID))
+   {
+      gSetError("gContainerSetFactory: self failed id check!\n");
+      return;
+   }
+
+   cself = (gContainer *)self;
+
+   gWidgetSetFactory(self, f);
+
+   // Embedded widgets
+   head = cself->embhead;
+   for(rover = head->next; rover != head; rover = rover->next)
+      rover->setFactory(rover, f);
+
+   // Main widgets
+   head = cself->head;
+   for(rover = head->next; rover != head; rover = rover->next)
+      rover->setFactory(rover, f);
+}
+
+
+void gContainerSetInFocus(gWidget *self, bool infocus)
+{
+   gContainer *cself;
+
+   gWidgetSetInFocus(self, infocus);
+
+   if(!self->id(gContainerID))
+   {
+      gSetError("gContainerSetInFocus: self failed id check!\n");
+      return;
+   }
+
+   cself = (gContainer *)self;
+
+
+   if(!infocus && cself->kfocus)
+   {
+      cself->kfocus->setInFocus(cself->kfocus, false);
+      cself->kfocus = NULL;
+   }
+   else if(infocus && !cself->kfocus)
+   {
+      cself->kfocus = cself->head->next != cself->head ? cself->head->next 
+         : cself->embhead->next != cself->embhead ? cself->embhead->next : NULL;
+
+      if(!cself->kfocus)
+         return;
+
+      cself->kfocus->setInFocus(cself->kfocus, true);
+   }
+}
+
+
+
+
+
+void gContainerUpdate(gWidget *self)
+{
+   gContainer  *cself;
+   gWidget     *rover, *head;
+
+   gWidgetUpdate(self);
+
+   if(!self->id(gContainerID))
+   {
+      gSetError("gContainerUpdate: self failed id check!\n");
+      return;
+   }
+
+   cself = (gContainer *)self;
+
+   head = cself->head;
+   for(rover = head->next; rover != head; rover = rover->next)
+      rover->update(rover);
+
+   head = cself->embhead;
+   for(rover = head->next; rover != head; rover = rover->next)
+      rover->update(rover);
+}
+
+
+
+
+void gContainerDelete(gWidget *self)
+{
+   gContainer *cself;
+   gWidget *head;
+
+   if(!self->id(gContainerID))
+   {
+      gSetError("gContainerDelete: *self failed id check! Using gWidgetDelete\n");
+      gWidgetDelete(self);
+      return;
+   }
+
+   cself = (gContainer *)self;
+
+   // Delete main child ring
+   head = cself->head;
+   while(head->prev != head)
+   {
+      cself->deleteChild(cself, head->prev);
+   }
+   head->deleteWidget(head);
+
+   // Delete embedded widgets
+   head = cself->embhead;
+   while(head->prev != head)
+   {
+      head->prev->deleteWidget(head->prev);
+   }
+   head->deleteWidget(head);
+
+   // delete self
+   gWidgetDelete(self);
+}
+
+
+
+
+gWidget *gContainerGetTopWidget(gWidget *self, int mousex, int mousey)
+{
+   gWidget *r, *ret = NULL;
+   gContainer *c;
+
+   if(!self->id(gContainerID))
+   {
+      gSetError("gContainerGetTopWidget: self failed id check!\n");
+      return NULL;
+   }
+
+   c = (gContainer *)self;
+
+   if(c->kfocus && (ret = c->kfocus->getTopWidget(c->kfocus, mousex, mousey)))
+      return ret;
+
+   r = c->head->next;
+   while(r != c->head)
+   {
+      if((ret = r->getTopWidget(r, mousex, mousey)))
+         return ret;
+
+      r = r->next;
+   }
+
+
+   return gWidgetGetTopWidget(self, mousex, mousey);
+}
+
+
+
+
+
+void gInitContainer(gContainer *c)
+{
+   gInitWidget((gWidget *)c);
+      
+   c->id = gContainerID;
+
+   c->drawWidget = gContainerDraw;
+   c->eventHandler = gContainerEventHandler;
+   c->calcScreen = gContainerCalcScreen;
+   c->setFactory = gContainerSetFactory;
+   c->deleteWidget = gContainerDelete;
+   c->updateSize = gContainerUpdateSize;
+   c->setRect = gContainerSetRect;
+   c->setInFocus = gContainerSetInFocus;
+   c->getTopWidget = gContainerGetTopWidget;
+   c->update = gContainerUpdate;
+
+   c->addChild = gContainerAddChild;
+   c->removeChild = gContainerRemoveChild;
+   c->deleteChild = gContainerDeleteChild;
+   c->promoteChild = gContainerPromoteChild;
+   c->implantWidget = gContainerImplantWidget;
+   c->head = gNewWidget();
+   c->embhead = gNewWidget();
+   c->kfocus = c->mfocus = NULL;
+   c->topbuffer = c->bottombuffer = c->leftbuffer = c->rightbuffer = 0;
+   c->sortchildren = false;
+}
+
+
+gContainer *gNewContainer(void)
+{
+   gContainer *ret = malloc(sizeof(gContainer));
+   gInitContainer(ret);
+   return ret;
+}
+
+
+
+void gContainerAddChild(gContainer *self, gWidget *child)
+{
+   gWidget *rover;
+
+   if(child->parent)
+      child->parent->removeChild(child->parent, child);
+   else if(child->next != child || child->prev != child)
+      (child->prev->next = child->next)->prev = child->prev;
+
+   // Link into the render list
+   (child->next = self->head->next)->prev = child;
+   (child->prev = self->head)->next = child;
+
+   child->setParentRect(child, &self->childrect);
+   child->setFactory(child, self->factory);
+   child->parent = self;
+
+   child->setInFocus(child, true);
+   self->kfocus = child;
+
+   for(rover = child->next; rover != self->head; rover = rover->next)
+      rover->setInFocus(rover, false);
+}
+
+
+
+void gContainerRemoveChild(gContainer *self, gWidget *child)
+{
+   gWidget *rover;
+
+   for(rover = self->head->next; rover != self->head; rover = rover->next)
+   {
+      if(rover == child)
+         break;
+   }
+
+   if(rover == self->head)
+      return; // Error?
+
+   // Unlink from the lists.
+   (rover->next->prev = rover->prev)->next = rover->next;
+
+   if(rover == self->kfocus)
+   {
+      self->head->next->setInFocus(rover->next, true);
+      self->kfocus = self->head->next;
+   }
+
+   rover->setParentRect(child, NULL);
+   rover->parent = NULL;
+}
+
+
+
+void gContainerDeleteChild(gContainer *self, gWidget *child)
+{
+   self->removeChild(self, child);
+
+   child->deleteWidget(child);
+}
+
+
+
+
+void gContainerPromoteChild(gContainer *self, gWidget *child)
+{
+   gWidget *rover;
+
+   for(rover = self->head->next; rover != self->head; rover = rover->next)
+   {
+      if(rover == child)
+         break;
+   }
+
+   if(rover == self->head)
+      return; // Error?
+
+   // Unlink from the lists.
+   (rover->next->prev = rover->prev)->next = rover->next;
+
+   // Link into the render list
+   (child->next = self->head->next)->prev = child;
+   (child->prev = self->head)->next = child;
+}
+
+
+
+
+void gContainerImplantWidget(gContainer *self, gWidget *w)
+{
+   if(w->next != w || w->prev != w)
+      (w->prev->next = w->next)->prev = w->prev;
+   if(w->parent && w->parent->kfocus == w)
+      w->parent->kfocus = NULL;
+
+   // Link into rendering list.
+   (w->next = self->embhead->next)->prev = w;
+   (w->prev = self->embhead)->next = w;
+
+
+   w->setParentRect(w, &self->screenrect);
+   w->setFactory(w, self->factory);
+   w->parent = self;
+}
+
+
+
+
+

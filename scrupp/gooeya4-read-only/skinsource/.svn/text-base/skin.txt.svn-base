@@ -1,0 +1,202 @@
+// New skin format, quite a bit different but hopefully much better!
+
+
+set font = fontspec("trebuc.ttf", 12, rgb(10, 10, 10), plain);
+set bgimage = "bg.png";
+set bgalign = "centered";
+set bgcolor = rgb(202, 210, 220);
+
+cursors("cursors.png")
+{
+   default,           0,  0,  16,  22,    1,    1;
+   resize_width,     16,  0,  24,  16,   10,    4;
+   resize_height,    40,  0,  16,  22,    4,   10;
+   resize_negative,  56,  0,  16,  16,    8,    8;
+   resize_positive,  72,  0,  16,  16,    8,    8;
+   ibeam,            88,  0,  8,   19,    4,   10;
+}
+
+
+icons("icons.png")
+{
+   window_min,  0, 0, 8, 8;
+   window_max,  8, 0, 8, 8;
+   window_win, 16, 0, 8, 8;
+   window_x,   24, 0, 8, 8;
+   dir_up,     32, 0, 8, 8;
+   dir_down,   40, 0, 8, 8;
+   dir_left,   48, 0, 8, 8;
+   dir_right,  56, 0, 8, 8;
+   textbar,    64, 0, 2, 16;
+}
+
+icons("checkbox.png")
+{
+   uncheckedbox,        0,  0, 16, 16;
+   uncheckedbox_over,  16,  0, 16, 16;
+   uncheckedbox_down,  32,  0, 16, 16;
+   checkedbox,          0, 16, 16, 16;
+   checkedbox_over,    16, 16, 16, 16;
+   checkedbox_down,    32, 16, 16, 16;
+}
+
+
+
+
+process (window, "window.png")
+{
+   spans rows;
+
+   set titlebar_height = 26;  // The height (in pixels) of the titlebar
+   set button_spacing = 0;    // the space between the titlebar buttons.
+   set button_width = 22;     // width of the titlebar buttons
+   set button_height = 19;    // height of the titlebar buttons
+   set button_indent = 5;     // distance from the right edge of the window to the buttons
+   set button_top_indent = 4; // Distance from the top edge of the window to the buttons
+   set border = 2;            // border size around the window (for maximizing)
+   set padding = 4;           // padding around the child rect.
+   set title_indent = 16;     // size of right-indent for titlebar text
+
+   // Title font.
+   set font = fontspec("trebuc.ttf", 14, rgb(10, 10, 10), plain);
+
+   span(start, 26)
+   {
+      startbit(0, 0, 156, 26);
+      midbit(156, 0,  96, 26);
+      endbit(252, 0,   4, 26);
+   }
+   span(mid, 0)
+   {
+      startbit(0, 26,   2, 16);
+      midbit  (2, 26, 252, 18);
+      endbit(254, 26,   2, 16);
+   }
+   span(end, 214)
+   {
+      startbit(0, 42,   4, 214);
+      midbit  (4, 42, 248, 214);
+      endbit(252, 42,   4, 214);
+   }
+}
+
+
+process (window_focus:window, "window_focus.png")
+{
+   set font = fontspec("trebuc.ttf", 14, rgb(30, 30, 30), plain);
+}
+
+
+process (button,  "button.png")
+{
+   spans rows;
+
+   span(start, 14)
+   {
+      startbit(0, 0, 3, 14);
+      midbit(3, 0, 26, 14);
+      endbit(29, 0, 3, 14);
+   }
+
+   span(mid, 0)
+   {
+      startbit(0, 14, 3, 5);
+      midbit(3, 14, 26, 5);
+      endbit(29, 14, 3, 5);
+   }
+
+   span(end, 13)
+   {
+      startbit(0, 19, 3, 14);
+      midbit(3, 19, 26, 14);
+      endbit(29, 19, 3, 14);
+   }
+}
+
+process (button_over:button, "button_over.png") {}
+process (button_down:button, "button_down.png") {}
+
+
+
+
+
+process (buttonleft,  "buttonleft.png")
+{
+   span(start, 14)
+   {
+      startbit(0, 0, 3, 15);
+      midbit(3, 0, 25, 15);
+      endbit(28, 0, 4, 15);
+   }
+
+   span(mid, 0)
+   {
+      startbit(0, 15, 3, 3);
+      midbit(3, 15, 25, 3);
+      endbit(28, 15, 4, 3);
+   }
+
+   span(end, 13)
+   {
+      startbit(0, 18, 3, 14);
+      midbit(3, 18, 25, 14);
+      endbit(28, 18, 4, 14);
+   }
+}
+
+process (buttonleft_over:buttonleft, "buttonleft_over.png") {}
+process (buttonleft_down:buttonleft, "buttonleft_down.png") {}
+process (buttonmid:buttonleft,       "buttonmid.png") {}
+process (buttonmid_over:buttonleft,  "buttonmid_over.png") {}
+process (buttonmid_down:buttonleft,  "buttonmid_down.png") {}
+process (buttonright:buttonleft,     "buttonright.png") {}
+process (buttonright_over:buttonleft,"buttonright_over.png") {}
+process (buttonright_down:buttonleft,"buttonright_down.png") {}
+
+
+
+
+process (textbox,  "textbox.png")
+{
+   spans columns;
+   set font = fontspec("trebuc.ttf", 12, rgb(10, 10, 10), plain);
+   set selection_color = rgb(255, 255, 255);
+
+   set padding = 4;
+   set border_width = 1;
+
+   span(start, 3)
+   {
+      startbit(0, 0, 3, 3);
+      midbit(0, 3, 3, 4);
+      endbit(0, 7, 3, 9);
+   }
+
+   span(mid, 0)
+   {
+      startbit(3, 0, 111, 3);
+      midbit(3, 3, 111, 11);
+      endbit(3, 14, 111, 2);
+   }
+
+   span(end, 14)
+   {
+      startbit(114, 0, 14, 3);
+      midbit(114, 3, 14, 11);
+      endbit(114, 14, 14, 2);
+   }
+}
+
+process (textbox_focus:textbox,  "textbox_focus.png") {}
+
+
+process (selection, "textbox.png")
+{
+   spans rows;
+
+   span(mid, 0)
+   {
+      midcolor(220, 223, 229);
+   }
+}
+
