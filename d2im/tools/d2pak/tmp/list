@@ -1,11 +1,11 @@
-./mpqhash 1 ab/d2pak.sh
-./mpqhash 1 ab/main.c
-./mpqhash 1 ab/d2pak
-./mpqhash 1 ab/str2hash
-./mpqhash 1 ab/hashn.c
-./mpqhash 1 ab/res
-./mpqhash 1 ab/tad
-./mpqhash 1 ab/hashn
-./mpqhash 1 ab/abc
-./mpqhash 1 ab/tad.c
-./mpqhash 1 ab/d2pak.c
+ab/d2pak
+ab/hashn
+ab/d2pak.sh
+ab/main.c
+ab/tad.c
+ab/hashn.c
+ab/res
+ab/tad
+ab/abc
+ab/d2pak.c
+ab/str2hash
