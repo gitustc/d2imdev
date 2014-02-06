@@ -124,7 +124,7 @@ find_first_seed(){
         for seed in 1 2 3 4 5
         do
             local tmp_coll_perc=`test_capacity $seed $tmp_capacity`
-            # echo $seed $tmp_capacity $tmp_coll_perc
+            echo $seed $tmp_capacity $tmp_coll_perc
             if (( $tmp_coll_perc <= $COLLISION_PERC ))
             then
                 echo $seed $tmp_capacity
