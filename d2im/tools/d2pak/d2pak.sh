@@ -116,31 +116,49 @@ calc_all_hash(){
 ########################################################################
 
 
+########################################################################
+# calc_avg_step $file_count $seed $capacity
+calc_avg_step(){
+    ./avgstep $1 $3 $TMP_FOLDER_PATH/hashv_$2
+}
+########################################################################
 
 
 
 ########################################################################
-find_first_seed(){
+get_opts(){
 
     local tmp_capacity=$(($FILE_COUNT_IN_FOLDER * 1))
     while true
     do
-        for seed in 1 2 3 4 5
+
+        local tmp_min=`calc_avg_step $FILE_COUNT_IN_FOLDER 1 $tmp_capacity`
+        local tmp_seed=1
+        for seed in 2 3 4 5
         do
-            local tmp_coll_perc=`test_capacity $seed $tmp_capacity`
-            echo $FILE_COUNT_IN_FOLDER $seed $tmp_capacity $tmp_coll_perc
-            if (( $tmp_coll_perc <= $COLLISION_PERC ))
+            local tmp_minc=`calc_avg_step $FILE_COUNT_IN_FOLDER $seed $tmp_capacity`
+            if (( $tmp_minc < $tmp_min ))
             then
-                # echo $seed $tmp_capacity
-                OPTIMAL_SEED=$seed
-                OPTIMAL_CAPACITY=$tmp_capacity
-                return
+                tmp_min=$tmp_minc
+                tmp_seed=$seed
             fi
         done
+
+        echo $FILE_COUNT_IN_FOLDER $tmp_seed $tmp_capacity $tmp_min
+
+        if (( $tmp_min < "110" ))
+        then
+            # echo $seed $tmp_capacity
+            OPTIMAL_SEED=$tmp_seed
+            OPTIMAL_CAPACITY=$tmp_capacity
+            return
+        fi
+
+
         tmp_capacity=$(($tmp_capacity + 1))
     done
 }
-
+########################################################################
 
 
 
@@ -156,6 +174,6 @@ find_first_seed(){
 check_para $# $1
 init_tmp $1
 calc_all_hash
-find_first_seed
+get_opts
 
 echo $OPTIMAL_SEED $OPTIMAL_CAPACITY
