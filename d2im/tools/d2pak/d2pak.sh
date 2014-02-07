@@ -163,6 +163,14 @@ get_opts(){
 
 
 
+########################################################################
+gen_file_size(){
+    cp $TMP_FOLDER_PATH/list $TMP_FOLDER_PATH/calc_size
+    sed -i "s@.*@ls -al &@" $TMP_FOLDER_PATH/calc_size
+    chmod +x $TMP_FOLDER_PATH/calc_size
+    $TMP_FOLDER_PATH/calc_size | awk '{print $5}' - > $TMP_FOLDER_PATH/fsize
+}
+########################################################################
 
 
 
@@ -174,6 +182,7 @@ get_opts(){
 check_para $# $1
 init_tmp $1
 calc_all_hash
-get_opts
+#get_opts
+gen_file_size
 
-echo $OPTIMAL_SEED $OPTIMAL_CAPACITY
+# echo $OPTIMAL_SEED $OPTIMAL_CAPACITY
