@@ -148,41 +148,12 @@ get_opts(){
 
         if (($tmp_min < 110))
         then
-            echo $tmp_res
+            OPTIMAL_MIN="$tmp_capacity $tmp_res"
             return
         fi
         tmp_capacity=$(($tmp_capacity+1))
     done
 
-
-    # while true
-    # do
-
-    #     local tmp_min=`calc_avg_step $FILE_COUNT_IN_FOLDER 1 $tmp_capacity`
-    #     local tmp_seed=1
-    #     for seed in 2 3 4 5
-    #     do
-    #         local tmp_minc=`calc_avg_step $FILE_COUNT_IN_FOLDER $seed $tmp_capacity`
-    #         if (( $tmp_minc < $tmp_min ))
-    #         then
-    #             tmp_min=$tmp_minc
-    #             tmp_seed=$seed
-    #         fi
-    #     done
-
-    #     echo $FILE_COUNT_IN_FOLDER $tmp_seed $tmp_capacity $tmp_min
-
-    #     if (( $tmp_min < "110" ))
-    #     then
-    #         # echo $seed $tmp_capacity
-    #         OPTIMAL_SEED=$tmp_seed
-    #         OPTIMAL_CAPACITY=$tmp_capacity
-    #         return
-    #     fi
-
-
-    #     tmp_capacity=$(($tmp_capacity + 1))
-    # done
 }
 ##############################################################################################
 
@@ -190,18 +161,26 @@ get_opts(){
 
 
 ##############################################################################################
-gen_file_size(){
-    cp $TMP_FOLDER_PATH/list $TMP_FOLDER_PATH/calc_size
-    sed -i "s@.*@ls -al &@" $TMP_FOLDER_PATH/calc_size
-    chmod +x $TMP_FOLDER_PATH/calc_size
-    $TMP_FOLDER_PATH/calc_size | awk '{print $5}' - > $TMP_FOLDER_PATH/fsize
+gen_file_info(){
+    cat $TMP_FOLDER_PATH/list | while read line; do
+    ls -al $line | awk '{print $5}'; done > $TMP_FOLDER_PATH/file_size
+    awk 'BEGIN{start=0; print start}{start=$1+start; print start}' $TMP_FOLDER_PATH/file_size > $TMP_FOLDER_PATH/file_start
+    paste $TMP_FOLDER_PATH/file_size $TMP_FOLDER_PATH/file_start | sed '$d' - > $TMP_FOLDER_PATH/file_info
 }
 ##############################################################################################
 
 
 ##############################################################################################
-# gen_d2pk(){
-# }
+gen_file_head(){
+    local opt_capacity=`echo $OPTIMAL_MIN | awk '{print $1}' -`
+    local opt_seed0=`echo $OPTIMAL_MIN | awk '{print $2}' -`
+    local opt_seed1=`echo $OPTIMAL_MIN | awk '{print $3}' -`
+    local opt_seed2=`echo $OPTIMAL_MIN | awk '{print $4}' -`
+
+    cat $TMP_FOLDER_PATH/hashv_$opt_seed0 $TMP_FOLDER_PATH/hashv_$opt_seed1 $TMP_FOLDER_PATH/hashv_$opt_seed2 >$TMP_FOLDER_PATH/hashvseeds
+    ./genhead $FILE_COUNT_IN_FOLDER $opt_capacity $TMP_FOLDER_PATH/hashvseeds > $TMP_FOLDER_PATH/file_head
+
+}
 ##############################################################################################
 
 
@@ -213,7 +192,6 @@ check_para $# $1
 init_tmp $1
 calc_all_hash
 get_opts
-# gen_file_size
+gen_file_info
+gen_file_head
 # gen_d2pk
-
-# echo $OPTIMAL_SEED $OPTIMAL_CAPACITY
