@@ -130,14 +130,29 @@ calc_avg_step(){
 get_opts(){
 
     local tmp_capacity=$(($FILE_COUNT_IN_FOLDER * 1))
+    local tmp_min=999999
+    local tmp_res=999999
     ./permint > $TMP_FOLDER_PATH/perm
-    # sed -i "s@.*@calc_avg_step & $FILE_COUNT_IN_FOLDER $tmp_capacity@" $TMP_FOLDER_PATH/perm
 
-    cat $TMP_FOLDER_PATH/perm | while read line; do
-    calc_avg_step $line $FILE_COUNT_IN_FOLDER $tmp_capacity;
-    echo; done > $TMP_FOLDER_PATH/avgstep
-    paste $TMP_FOLDER_PATH/perm $TMP_FOLDER_PATH/avgstep > $TMP_FOLDER_PATH/perm_avgstep
-    awk 'BEGIN {min = 999999} {if($4<min){min=$4}}END{print "Min=", min}' $TMP_FOLDER_PATH/perm_avgstep
+    while true
+    do
+        cat $TMP_FOLDER_PATH/perm | while read line; do
+        calc_avg_step $line $FILE_COUNT_IN_FOLDER $tmp_capacity;
+        echo; done > $TMP_FOLDER_PATH/avgstep
+        paste $TMP_FOLDER_PATH/perm $TMP_FOLDER_PATH/avgstep > $TMP_FOLDER_PATH/perm_avgstep
+        tmp_res=`awk 'BEGIN{min = 999999}{if($4<min){min=$4; info=$0}}END{print info}' $TMP_FOLDER_PATH/perm_avgstep`
+        tmp_min=`echo $tmp_res | awk '{print $4}' -`
+
+        echo $tmp_capacity $tmp_res
+
+
+        if (($tmp_min < 110))
+        then
+            echo $tmp_res
+            return
+        fi
+        tmp_capacity=$(($tmp_capacity+1))
+    done
 
 
     # while true
