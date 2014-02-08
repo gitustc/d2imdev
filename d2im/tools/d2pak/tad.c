@@ -52,7 +52,7 @@ int main(int argc, char* argv[])
             return 2;
         }
 
-        u8 = (uint8_t)atoi(argv[2]);
+        u8 = (uint8_t)strtoul(argv[2],NULL,10);
         fseek(fp, 0, SEEK_END);
         fwrite(&u8, 1, 1, fp);
         fclose(fp);
@@ -66,7 +66,7 @@ int main(int argc, char* argv[])
             return 2;
         }
 
-        u16 = (uint16_t)atoi(argv[2]);
+        u16 = (uint16_t)strtoul(argv[2],NULL,10);
         fseek(fp, 0, SEEK_END);
         fwrite(&u16, 1, 2, fp);
         fclose(fp);
@@ -80,7 +80,7 @@ int main(int argc, char* argv[])
             return 2;
         }
 
-        u32 = (uint32_t)atoi(argv[2]);
+        u32 = (uint32_t)strtoul(argv[2],NULL,10);
         fseek(fp, 0, SEEK_END);
         fwrite(&u32, 1, 4, fp);
         fclose(fp);
@@ -93,7 +93,7 @@ int main(int argc, char* argv[])
             return 2;
         }
 
-        i8 = (int8_t)atoi(argv[2]);
+        i8 = (int8_t)strtol(argv[2],NULL,10);
         fseek(fp, 0, SEEK_END);
         fwrite(&i8, 1, 1, fp);
         fclose(fp);
@@ -107,7 +107,7 @@ int main(int argc, char* argv[])
             return 2;
         }
 
-        i16 = (int16_t)atoi(argv[2]);
+        i16 = (int16_t)strtol(argv[2],NULL,10);
         fseek(fp, 0, SEEK_END);
         fwrite(&i16, 1, 2, fp);
         fclose(fp);
@@ -121,7 +121,7 @@ int main(int argc, char* argv[])
             return 2;
         }
 
-        u32 = (int32_t)atoi(argv[2]);
+        u32 = (int32_t)strtol(argv[2],NULL,10);
         fseek(fp, 0, SEEK_END);
         fwrite(&i32, 1, 4, fp);
         fclose(fp);

@@ -126,6 +126,29 @@ calc_avg_step(){
     ./avgstep $4 $5 $TMP_FOLDER_PATH/hashv
 }
 ##############################################################################################
+# check_unique $s1 $s2 $s3 $avgstep
+check_unique(){
+
+    # echo $1
+    # echo $2
+    # echo $3
+    # echo $4
+
+    local tmp_len1=0 
+    local tmp_len2=0 
+    tmp_len1=`paste $TMP_FOLDER_PATH/hashv_$2 $TMP_FOLDER_PATH/hashv_$3 | uniq | awk 'END{print NR}' -`
+    tmp_len2=`paste $TMP_FOLDER_PATH/hashv_$2 $TMP_FOLDER_PATH/hashv_$3 | awk 'END{print NR}' -`
+
+    # echo $tmp_len1
+    # echo $tmp_len2
+    if (( $tmp_len1 != $tmp_len2 ))
+    then
+        return 1
+    fi
+    return 0
+
+}
+
 ##############################################################################################
 get_opts(){
 
@@ -148,8 +171,12 @@ get_opts(){
 
         if (($tmp_min < 110))
         then
-            OPTIMAL_MIN="$tmp_capacity $tmp_res"
-            return
+            if check_unique $tmp_res
+            then
+                echo unique
+                OPTIMAL_MIN="$tmp_capacity $tmp_res"
+                return
+            fi
         fi
         tmp_capacity=$(($tmp_capacity+1))
     done
@@ -172,6 +199,7 @@ gen_file_info(){
 
 ##############################################################################################
 gen_file_head(){
+    local target=$TMP_FOLDER_PATH/stream
     local opt_capacity=`echo $OPTIMAL_MIN | awk '{print $1}' -`
     local opt_seed0=`echo $OPTIMAL_MIN | awk '{print $2}' -`
     local opt_seed1=`echo $OPTIMAL_MIN | awk '{print $3}' -`
@@ -180,19 +208,34 @@ gen_file_head(){
     cat $TMP_FOLDER_PATH/hashv_$opt_seed0 $TMP_FOLDER_PATH/hashv_$opt_seed1 $TMP_FOLDER_PATH/hashv_$opt_seed2 >$TMP_FOLDER_PATH/hashvseeds
     ./genhead $FILE_COUNT_IN_FOLDER $opt_capacity $TMP_FOLDER_PATH/hashvseeds > $TMP_FOLDER_PATH/file_head
 
+    rm -f $target
+
+    echo $FILE_COUNT_IN_FOLDER >> $target
+    echo $opt_capacity >> $target
+    echo $opt_seed0 >> $target
+    echo $opt_seed1 >> $target
+    echo $opt_seed2 >> $target
+    awk '{printf("%u\n%u\n%u\n",$1,$2,$3)}' $TMP_FOLDER_PATH/file_head >> $target
+    awk '{printf("%u\n%u\n",$1,$2)}' $TMP_FOLDER_PATH/file_info >> $target
+
 }
 ##############################################################################################
-
-
 gen_d2pk(){
-    local taget=$TMP_FOLDER_PATH/taget
-    echo 68 > $taget
-    echo 50 > $taget
-    echo 80 > $taget
-    awk '{printf("%u\n%u\n%u\n",$1,$2,$3)}' $TMP_FOLDER_PATH/file_head
-    awk '{printf("%u\n%u\n",$1,$2)}' $TMP_FOLDER_PATH/file_info
-}
+    local target=$TMP_FOLDER_PATH/$INPUT_FOLDER_PATH.d2p
+    rm -f $target
 
+    ./tad -u8 68 $target
+    ./tad -u8 50 $target
+    ./tad -u8 80 $target
+    cat $TMP_FOLDER_PATH/stream | while read line; do
+    ./tad -u32 $line $target; done
+
+    cat $TMP_FOLDER_PATH/list | while read line; do
+    cat $line >> $target; done
+
+    mv $target $INPUT_FOLDER_PATH.d2p
+}
+##############################################################################################
 
 ##############################################################################################
 # main entry
