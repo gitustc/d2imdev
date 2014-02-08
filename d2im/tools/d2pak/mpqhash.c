@@ -1,5 +1,24 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename: mpqhash.c
+ *        Created: 02/08/2014 04:08:30 PM
+ *  Last Modified: 02/08/2014 04:10:11 PM
+ *
+ *    Description: hash function, from mpq file format
+ *
+ *        Version: 1.0
+ *       Revision: none
+ *       Compiler: gcc
+ *
+ *         Author: ANHONG
+ *          Email: anhonghe@gmail.com
+ *   Organization: USTC
+ *
+ * =====================================================================================
+ */
+#include "mpqhash.h"
 #include <stdint.h>
-#include <stdio.h>
 /* {{{ glb_encry_table */
 static uint32_t glb_encry_table[1280] = {
     0X55C636E2,
