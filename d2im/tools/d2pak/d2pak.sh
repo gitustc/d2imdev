@@ -184,6 +184,14 @@ gen_file_head(){
 ##############################################################################################
 
 
+gen_d2pk(){
+    local taget=$TMP_FOLDER_PATH/taget
+    echo 68 > $taget
+    echo 50 > $taget
+    echo 80 > $taget
+    awk '{printf("%u\n%u\n%u\n",$1,$2,$3)}' $TMP_FOLDER_PATH/file_head
+    awk '{printf("%u\n%u\n",$1,$2)}' $TMP_FOLDER_PATH/file_info
+}
 
 
 ##############################################################################################
@@ -194,4 +202,4 @@ calc_all_hash
 get_opts
 gen_file_info
 gen_file_head
-# gen_d2pk
+gen_d2pk
