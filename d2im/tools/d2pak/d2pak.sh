@@ -136,7 +136,7 @@ get_opts(){
             }
         }END{print info}' $tmp_perm_avgs`
         tmp_min=`echo $tmp_res | awk '{print $4}' -`
-        echo $tmp_capacity $tmp_res
+        echo $FILE_COUNT_IN_FOLDER $tmp_capacity $tmp_res
 
         if (($tmp_min < 110))
         then
@@ -180,6 +180,11 @@ gen_file_head(){
     local opt_seed1=`echo $OPTIMAL_MIN | awk '{print $3}' -`
     local opt_seed2=`echo $OPTIMAL_MIN | awk '{print $4}' -`
 
+    # echo $opt_capacity
+    # echo $opt_seed0
+    # echo $opt_seed1
+    # echo $opt_seed2
+
     local opt_hash0=$TMP_FOLDER_PATH/hashv_$opt_seed0
     local opt_hash1=$TMP_FOLDER_PATH/hashv_$opt_seed1
     local opt_hash2=$TMP_FOLDER_PATH/hashv_$opt_seed2
@@ -208,10 +213,8 @@ gen_d2pk(){
     local target=$TMP_FOLDER_PATH/$INPUT_FOLDER_PATH.d2p
     rm -f $target
 
-    ./tad -u8 68 $target
-    ./tad -u8 50 $target
-    ./tad -u8 80 $target
-    ./tad -u8 75 $target
+    
+    printf "%s" "D2PK" >> $target
     cat $TMP_FOLDER_PATH/stream | while read line; do
     ./tad -u32 $line $target; done
 

@@ -1,11 +1,11 @@
 /*
  * =====================================================================================
  *
- *       Filename: hashmain.c
- *        Created: 02/08/2014 05:54:35 PM
- *  Last Modified: 02/08/2014 06:05:34 PM
+ *       Filename: str2u32.c
+ *        Created: 02/08/2014 07:42:39 PM
+ *  Last Modified: 02/08/2014 07:48:29 PM
  *
- *    Description: mpqhash
+ *    Description: 0x00000000 -> u32
  *
  *        Version: 1.0
  *       Revision: none
@@ -18,10 +18,20 @@
  * =====================================================================================
  */
 
-#include "mpqhash.h"
 #include <stdio.h>
 #include <stdint.h>
+
+
 int main(int argc, char *argv[]){
-    printf("0X%08X\n", mpqhash(argv[2], (uint32_t)strtoul(argv[1],NULL,10)));
+
+    uint32_t    i;
+
+    i = strtoul(argv[1], NULL, 16);
+
+
+    printf("%lu\n", i);
+
+    printf("0X%08X\n", i);
     return 0;
+
 }

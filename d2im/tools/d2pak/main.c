@@ -3,7 +3,7 @@
  *
  *       Filename: main.c
  *        Created: 02/08/2014 03:49:09 PM
- *  Last Modified: 02/08/2014 06:11:25 PM
+ *  Last Modified: 02/08/2014 07:18:35 PM
  *
  *    Description: for test
  *
@@ -55,7 +55,7 @@ int main(){
    {
        int k;
        for(k=0;k<f->capacity;k++){
-           printf("slot %d: crc1=%lu crc2=%lu idx=%lu\n", k, f->hash[3*k], f->hash[3*k+1], f->hash[3*k+2]);
+           printf("slot %d: crc1=0X%08X crc2=0X%08X idx=%u\n", k, f->hash[3*k], f->hash[3*k+1], f->hash[3*k+2]);
        }
    }
 
