@@ -19,8 +19,9 @@ FILE_COUNT_IN_FOLDER=0
 COLLISION_PERC=1
 OPTIMAL_MIN=999999
 
-INIT_CAPACITY_FACTOR=10
+INIT_CAPACITY_FACTOR=1
 OPT_AVG_STEP_THRESHOLD=110
+APPEND_THE_FILE_LIST=1
 
 
 #######################################################################################
@@ -231,6 +232,11 @@ gen_d2pk(){
 
     cat $TMP_FOLDER_PATH/list | while read line; do
     cat "$line" >> $target; done
+
+    if (( $APPEND_THE_FILE_LIST == 1 ))
+    then
+        cat $TMP_FOLDER_PATH/list >> $target
+    fi
     echo done
 }
 
