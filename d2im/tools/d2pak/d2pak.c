@@ -10,11 +10,10 @@ d2pak *d2pak_open(const char *str)
     int     crcs;
 
     f = malloc(sizeof(d2pak));
-    memset(f, 0, sizeof(d2pak));
-
     if( !f ){
         goto _d2pk_open_failed;
     }
+    memset(f, 0, sizeof(d2pak));
 
     f->fp = fopen(str, "r");
     if( !(f->fp) ){
@@ -22,7 +21,7 @@ d2pak *d2pak_open(const char *str)
     }
 
     {
-        uint8_t ch[4];
+        char ch[4];
         fread(ch, 1, 4, f->fp);
 
         if(strncmp(ch, "D2PK", 4)){
@@ -89,8 +88,9 @@ int d2pak_find(d2pak *f, d2pakfd *fd, const char *str){
         while(1){
             if(f->hash[k*3+2]!=f->blk_num){
                 if(f->hash[k*3]==fd->crc1 && f->hash[k*3+1]==fd->crc2){
-                    fd->start = f->entries[2 * f->hash[k*3+2] + 0];
-                    fd->len   = f->entries[2 * f->hash[k*3+2] + 1];
+                    fd->start = f->entries[2 * f->hash[k*3+2] + 1];
+                    fd->len   = f->entries[2 * f->hash[k*3+2] + 0];
+                    fd->idx   = k;
                     return 0;
                 }else{
                     k = (k+1)%f->capacity;
@@ -107,18 +107,34 @@ int d2pak_find(d2pak *f, d2pakfd *fd, const char *str){
 }
 
 int d2pak_seek(d2pak *f, d2pakfd *fd){
-    return fseek(f->fp, 24+f->capacity*3+f->blk_num*2+fd->start, SEEK_SET);
+    if(!f || !fd){
+        return -1;
+    }
+    fseek(f->fp, 0, SEEK_SET);
+    return fseek(f->fp, 24+f->capacity*3*4+f->blk_num*2*4+fd->start, SEEK_SET);
 }
 
 void *d2pak_read(d2pak *f, d2pakfd *fd){
 
     void *p;
 
+    if(!f || !fd){
+        goto _d2pak_read_failed;
+    }
+
+
+
     p = malloc(fd->len);
     if(!p){
         goto _d2pak_read_failed;
     }
-    fread(p, fd->len, 1, f->fp);
+
+    /* printf("in read: len=%lu p=0X%08X\n", fd->len, p); */
+
+    if(fread(p, fd->len, 1, f->fp) != 1){
+        /* printf("in read: i=%d len=%lu read failed.....\n", i, fd->len); */
+        goto _d2pak_read_failed;
+    }
     return p;
 
 _d2pak_read_failed:
@@ -130,14 +146,30 @@ _d2pak_read_failed:
 
 void *d2pak_fread(d2pak *f, const char *str, int *size){
     d2pakfd fd;
+    void    *p;
 
     if( !f || !str || !size ){
-        return NULL;
+        goto _d2pak_fread_fail;
     }
 
-    d2pak_find(f, &fd, str);
+    if(d2pak_find(f, &fd, str)){
+        goto _d2pak_fread_fail;
+    }
+    /* printf("crc0=0X%08X\ncrc1=0X%08X\ncrc2=0X%08X\n", fd.crc0, fd.crc1, fd.crc2); */
+    /* printf("start=%lu\nlen=%lu\nidx=%lu\n", fd.start, fd.len, fd.idx); */
     d2pak_seek(f, &fd);
-    return d2pak_read(f, &fd);
+
+    p = d2pak_read(f, &fd);
+    if(!p){
+        goto _d2pak_fread_fail;
+    }
+
+    *size = fd.len;
+    return p;
+
+_d2pak_fread_fail:
+    *size = 0;
+    return NULL;
 }
 
 

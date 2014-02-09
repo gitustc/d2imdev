@@ -3,7 +3,7 @@
  *
  *       Filename: str2u32.c
  *        Created: 02/08/2014 07:42:39 PM
- *  Last Modified: 02/08/2014 07:48:29 PM
+ *  Last Modified: 02/08/2014 10:08:33 PM
  *
  *    Description: 0x00000000 -> u32
  *
@@ -29,9 +29,7 @@ int main(int argc, char *argv[]){
     i = strtoul(argv[1], NULL, 16);
 
 
-    printf("%lu\n", i);
-
-    printf("0X%08X\n", i);
+    printf("%lu", i);
     return 0;
 
 }

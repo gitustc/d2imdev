@@ -13,13 +13,14 @@
 
 
 
-TMP_FOLDER_PATH="./tmp"
 INPUT_FOLDER_PATH=$1
+TMP_FOLDER_PATH=${INPUT_FOLDER_PATH}_tmp
 FILE_COUNT_IN_FOLDER=0
 COLLISION_PERC=1
 OPTIMAL_MIN=999999
 
-
+INIT_CAPACITY_FACTOR=10
+OPT_AVG_STEP_THRESHOLD=110
 
 
 #######################################################################################
@@ -32,7 +33,7 @@ OPTIMAL_MIN=999999
 calc_hashv(){
     rm -f $TMP_FOLDER_PATH/hashv_$1
     cat $TMP_FOLDER_PATH/list | while read line; do
-    ./mpqhash $1 $line >> $TMP_FOLDER_PATH/hashv_$1; done
+    ./mpqhash $1 "$line" >> $TMP_FOLDER_PATH/hashv_$1; done
 }
 
 
@@ -111,7 +112,7 @@ check_unique(){
 #######################################################################################
 get_opts(){
 
-    local tmp_capacity=$(($FILE_COUNT_IN_FOLDER * 1))
+    local tmp_capacity=$(($FILE_COUNT_IN_FOLDER * $INIT_CAPACITY_FACTOR))
     local tmp_min=999999
     local tmp_res=999999
 
@@ -121,30 +122,39 @@ get_opts(){
 
     ./permint > $TMP_FOLDER_PATH/perm
 
+    # cat $tmp_perm | while read line; do
+    # calc_avg_step $line $FILE_COUNT_IN_FOLDER $tmp_capacity;
+    # echo; done > $tmp_avgs
+
+    # paste $tmp_perm $tmp_avgs > $tmp_perm_avgs
+    # exit
+
     while true
     do
         cat $TMP_FOLDER_PATH/perm | while read line; do
         calc_avg_step $line $FILE_COUNT_IN_FOLDER $tmp_capacity;
-        echo; done > $TMP_FOLDER_PATH/avgstep
+        echo; done > $tmp_avgs
 
         paste $tmp_perm $tmp_avgs > $tmp_perm_avgs
         tmp_res=`awk 'BEGIN{ min = 999999}
         {
             if($4<min){
-                min=$4; 
-                info=$0
+                min  = $4;
+                info = $0;
             }
         }END{print info}' $tmp_perm_avgs`
         tmp_min=`echo $tmp_res | awk '{print $4}' -`
         echo $FILE_COUNT_IN_FOLDER $tmp_capacity $tmp_res
 
-        if (($tmp_min < 110))
+        if (( $tmp_min < $OPT_AVG_STEP_THRESHOLD ))
         then
             if check_unique $tmp_res
             then
                 echo uniqueness check succeed !!!
                 OPTIMAL_MIN="$tmp_capacity $tmp_res"
                 return
+            else
+                echo uniqueness check failed ...
             fi
         fi
         tmp_capacity=$(($tmp_capacity+1))
@@ -160,11 +170,11 @@ gen_file_info(){
     local tmp_file_info=$TMP_FOLDER_PATH/file_info
 
     cat $tmp_file_list | while read line; do
-    ls -al $line | awk '{print $5}'; done > $tmp_file_size
-    awk 'BEGIN{start=0; print start}
+    ls -al "$line" | awk '{printf("0X%08X\n", $5)}' -; done > $tmp_file_size
+    awk 'BEGIN{start=0; printf("0X%08X\n", start)}
     {
         start=$1+start;
-        print start
+        printf("0X%08X\n", start);
     }' $tmp_file_size > $tmp_file_start
     paste $tmp_file_size $tmp_file_start | sed '$d' - > $tmp_file_info
 }
@@ -198,30 +208,30 @@ gen_file_head(){
 
     rm -f $target
 
-    echo $FILE_COUNT_IN_FOLDER >> $target
-    echo $opt_capacity >> $target
-    echo $opt_seed0 >> $target
-    echo $opt_seed1 >> $target
-    echo $opt_seed2 >> $target
-    awk '{printf("%u\n%u\n%u\n",$1,$2,$3)}' $file_head >> $target
-    awk '{printf("%u\n%u\n",$1,$2)}' $file_info >> $target
+    awk 'BEGIN{printf("0X%08X\n", '"$FILE_COUNT_IN_FOLDER"')}' >> $target
+    awk 'BEGIN{printf("0X%08X\n", '"$opt_capacity"')}' >> $target
+    awk 'BEGIN{printf("0X%08X\n", '"$opt_seed0"')}' >> $target
+    awk 'BEGIN{printf("0X%08X\n", '"$opt_seed1"')}' >> $target
+    awk 'BEGIN{printf("0X%08X\n", '"$opt_seed2"')}' >> $target
+    awk '{printf("%s\n%s\n%s\n",$1,$2,$3)}' $file_head >> $target
+    awk '{printf("%s\n%s\n",$1,$2)}' $file_info >> $target
 }
 
 
 #######################################################################################
 gen_d2pk(){
-    local target=$TMP_FOLDER_PATH/$INPUT_FOLDER_PATH.d2p
+    local target=$INPUT_FOLDER_PATH.d2p
     rm -f $target
 
-    
+
+    echo start to gerenate $target
     printf "%s" "D2PK" >> $target
     cat $TMP_FOLDER_PATH/stream | while read line; do
-    ./tad -u32 $line $target; done
+    ./tad -u32 `./strtou32 $line` $target; done
 
     cat $TMP_FOLDER_PATH/list | while read line; do
-    cat $line >> $target; done
-
-    mv $target $INPUT_FOLDER_PATH.d2p
+    cat "$line" >> $target; done
+    echo done
 }
 
 #######################################################################################

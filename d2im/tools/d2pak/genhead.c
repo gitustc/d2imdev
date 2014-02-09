@@ -1,11 +1,11 @@
 /*
  * =====================================================================================
  *
- *       Filename: collision.c
+ *       Filename: genhead.c
  *        Created: 02/06/2014 09:53:44 PM
- *  Last Modified: 02/08/2014 07:02:18 PM
+ *  Last Modified: 02/08/2014 09:29:47 PM
  *
- *    Description: calculate the collision
+ *    Description: genhead
  *
  *        Version: 1.0
  *       Revision: none
@@ -22,28 +22,25 @@
 #include <stdio.h> 
 #include <stdlib.h> 
 #include <stdint.h> 
+#include <string.h> 
 
 int main(int argc, char *argv[]) 
 { 
-    /* avgstep $file_count $capacity $crc0 $crc1 $crc2 */
 
-    FILE *fp=NULL; 
     char strline[1024];
 
     int file_count;
     int capacity;
     int i;
 
-
-    uint32_t  *file_crc=NULL;
-    uint32_t  *hash_table=NULL;
-    uint32_t  *flag=NULL;
-
+    FILE        *fp         = NULL;
+    uint32_t    *file_crc   = NULL;
+    uint32_t    *hash_table = NULL;
+    uint32_t    *flag       = NULL;
 
 
     file_count = atoi(argv[1]);
     capacity   = atoi(argv[2]);
-
 
 
     file_crc = (uint32_t *)malloc(file_count*3*sizeof(uint32_t));
@@ -67,10 +64,12 @@ int main(int argc, char *argv[])
 
     i = 0;
     while (i<file_count*3){ 
+        char *p;
         fgets(strline,1024,fp);
-        strline[10] = '\0';
-        file_crc[i] = (uint32_t)strtoul(strline, NULL, 16);
-        /* printf("%d: %s %lu\n", i, strline, file_crc[i]); */
+        p = strchr(strline, '0');
+        p[10] = '\0';
+        file_crc[i] = (uint32_t)strtoul(p, NULL, 16);
+        /* printf("%d: %s 0X%08X %lu\n", i, p, file_crc[i], file_crc[i]); */
         i++;
     } 
 
@@ -97,7 +96,8 @@ int main(int argc, char *argv[])
 
 
     for(i=0;i<capacity;i++){
-        printf("%lu\t%lu\t%lu\n", hash_table[i*2], hash_table[i*2+1], flag[i]);
+        printf("0X%08X\t0X%08X\t0X%08X\n", hash_table[i*2], hash_table[i*2+1], flag[i]);
+        /* printf("%lu\t%lu\t%lu\n", hash_table[i*2], hash_table[i*2+1], flag[i]); */
     }
 
 

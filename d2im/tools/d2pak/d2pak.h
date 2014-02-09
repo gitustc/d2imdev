@@ -3,7 +3,7 @@
  *
  *       Filename: d2pak.h
  *        Created: 02/08/2014 03:42:43 PM
- *  Last Modified: 02/08/2014 05:40:35 PM
+ *  Last Modified: 02/09/2014 12:20:48 AM
  *
  *    Description: d2pak.h
  *
@@ -47,6 +47,7 @@ typedef struct {
 
     uint32_t    start;
     uint32_t    len;
+    uint32_t    idx;
 
 }d2pakfd;
 
