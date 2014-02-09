@@ -3,7 +3,7 @@
  *
  *       Filename: collision.c
  *        Created: 02/06/2014 09:53:44 PM
- *  Last Modified: 02/08/2014 07:07:31 PM
+ *  Last Modified: 02/07/2014 10:48:30 PM
  *
  *    Description: calculate the collision
  *
@@ -27,51 +27,64 @@ int main(int argc, char *argv[])
 { 
     /* avgstep $file_count $capacity $crc0 $crc1 $crc2 */
 
-    FILE *fp=NULL; 
-    char strline[1024];
+    FILE *fp; 
+    char StrLine[1024];
 
     int file_count;
     int capacity;
     int i;
 
 
-    uint32_t  *file_crc=NULL;
-    uint32_t  *hash_table=NULL;
-    uint32_t  *flag=NULL;
+    uint32_t  *file_crc;
+    uint32_t  *hash_table;
+    uint32_t  *flag;
 
 
 
     file_count = atoi(argv[1]);
     capacity   = atoi(argv[2]);
 
-
+    
 
     file_crc = (uint32_t *)malloc(file_count*3*sizeof(uint32_t));
     if(!file_crc){
-        goto _avgstep_fail;
+        fprintf(stderr, "malloc failed...\n");
+        return -1;
     }
 
     hash_table = (uint32_t *)malloc(capacity*2*sizeof(uint32_t));
     if(!hash_table){
-        goto _avgstep_fail;
+        fprintf(stderr, "malloc failed...\n");
+        free(file_crc);
+        return -1;
     }
+
 
     flag = (uint32_t *)malloc(capacity*sizeof(uint32_t));
     if(!flag){
-        goto _avgstep_fail;
+        fprintf(stderr, "malloc failed...\n");
+        free(file_crc);
+        free(hash_table);
+        return -1;
     }
 
-    if((fp = fopen(argv[3],"r")) == NULL){ 
-        goto _avgstep_fail;
+    if((fp = fopen(argv[3],"r")) == NULL)
+    { 
+        printf("error!"); 
+        free(file_crc);
+        free(hash_table);
+        free(flag);
+        return -1; 
     } 
 
     i = 0;
-    while (i<file_count*3){ 
-        fgets(strline,1024,fp);
-        strline[10] = '\0';
-        file_crc[i] = (uint32_t)strtoul(strline, NULL, 16);
-        /* printf("%d: %s %lu\n", i, strline, file_crc[i]); */
+    while (!feof(fp)) 
+    { 
+        fgets(StrLine,1024,fp);
+        StrLine[10] = '\0';
+        file_crc[i] = (uint32_t)strtoul(StrLine, NULL, 16);
         i++;
+        /* printf("%s %lu\n", StrLine, file_crc[i]); */
     } 
 
     for(i=0;i<capacity;i++){
@@ -86,7 +99,8 @@ int main(int argc, char *argv[])
             /* here if file_count > capacity */
             /* trap in dead loop */
             if(flag[k] == file_count){
-                hash_table[k*2+0] = file_crc[file_count*1+i];
+                /* hash_table[k] = file_crc[i]; */
+                hash_table[k*2] = file_crc[file_count+i];
                 hash_table[k*2+1] = file_crc[file_count*2+i];
                 flag[k] = i;
                 break;
@@ -109,8 +123,7 @@ int main(int argc, char *argv[])
             k = file_crc[i]%capacity;
             tmp_count = 1;
             while(1){
-                if(hash_table[k*2] == file_crc[i+file_count] && 
-                        hash_table[k*2+1] == file_crc[i+file_count*2]){
+                if(hash_table[k*2] == file_crc[i+file_count] && hash_table[k*2+1]==file_crc[i+file_count*2]){
                     sum_count += tmp_count;
                     /* printf("%d: tmp_cnt=%d sum_cnt=%d\n", i, tmp_count, sum_count); */
                     break;
@@ -118,25 +131,17 @@ int main(int argc, char *argv[])
                 k = (k+1)%capacity;
                 tmp_count++;
             }
+
         }
+
         printf("%d", sum_count*100/file_count);
     }
 
 
-_avgstep_fail:
+    fclose(fp);
+    free(file_crc);
+    free(hash_table);
+    free(flag);
 
-    if(fp){
-        fclose(fp);
-    }
-    if(file_crc){
-        free(file_crc);
-    }
-    if(hash_table){
-        free(hash_table);
-    }
-    if(flag){
-        free(flag);
-    }
-
-    return 0;
+    return 0; 
 }
